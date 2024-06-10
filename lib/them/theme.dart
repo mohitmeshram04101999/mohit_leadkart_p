@@ -8,8 +8,13 @@ import '../helper/helper.dart';
 ThemeData AppTheme()
 {
   return ThemeData(
+    brightness: Brightness.light,
     primaryColor: MyHelper.appConstent.primeryColor,
 secondaryHeaderColor: MyHelper.appConstent.leadTiletagColor,
+    textTheme: TextTheme(
+      displayMedium: MyHelper.textStyls.mediumText,
+      displaySmall: MyHelper.textStyls.smallText,
+    ),
 
 
 

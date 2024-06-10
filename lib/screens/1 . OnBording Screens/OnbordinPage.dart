@@ -1,11 +1,13 @@
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:leadkart/component/clips/onbording%20cliper.dart';
 import 'package:leadkart/helper/dimention.dart';
 
 import '../../helper/helper.dart';
+import '../../login_pages/login_screen.dart';
 
-class OnBordingPage extends StatelessWidget {
+class OnBordingPage extends StatefulWidget {
   PageController pageController;
   String mainText;
   String subTitle;
@@ -20,6 +22,11 @@ class OnBordingPage extends StatelessWidget {
     super.key
   });
 
+  @override
+  State<OnBordingPage> createState() => _OnBordingPageState();
+}
+
+class _OnBordingPageState extends State<OnBordingPage> {
   @override
   Widget build(BuildContext context) {
 
@@ -37,20 +44,20 @@ class OnBordingPage extends StatelessWidget {
               width: double.infinity,
               height: SC.from_width(500),
               color: MyHelper.appConstent.OnbordingAppBar,
-              child: child,
+              child: widget.child,
             ),
           ),
           SizedBox(height: SC.from_width(76),),
 
 
           //main text
-          Text(mainText,style: MyHelper.textStyls.onBordingMainText,),
+          Text(widget.mainText,style: MyHelper.textStyls.onBordingMainText,),
           SizedBox(height: SC.from_width(16),),
 
           //subtitle
           Padding(
             padding: MyHelper.appConstent.horizontalPedding,
-            child: Text(subTitle,textAlign: TextAlign.center,style: MyHelper.textStyls.onBordingSubTitle,),
+            child: Text(widget.subTitle,textAlign: TextAlign.center,style: MyHelper.textStyls.onBordingSubTitle,),
           ),
           Spacer(),
 
@@ -60,7 +67,7 @@ class OnBordingPage extends StatelessWidget {
               padding:MyHelper.appConstent.horizontalPedding,
               child: Row(
                 children: [
-            
+
                   InkWell(
                     onTap: (){},
                       child: Padding(
@@ -68,17 +75,22 @@ class OnBordingPage extends StatelessWidget {
                         child: Text("Skip",style: TextStyle(fontSize: SC.from_width(14),fontWeight: FontWeight.w500),),
                       )),
                   Spacer(),
-            
-                  ElevatedButton(onPressed: (){
-                    if(lastPage)
-                      {
-            
-                      }
-                    else
-                      {
-                        pageController.nextPage(duration: Duration(milliseconds: 150), curve: Curves.linear);
-                      }
-                  }, child: Text("Continue"))
+                  widget.lastPage? ElevatedButton(
+                    onPressed: () {
+                      context.pushNamed("logInScreen");
+
+                      // Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+                    },
+                    child: Text("Start"),
+                  ):ElevatedButton(
+                    onPressed: () {
+                      widget.pageController.nextPage(
+                        duration: Duration(milliseconds: 150),
+                        curve: Curves.linear,
+                      );
+                    },
+                    child: Text("Continue"),
+                  ),
                 ],
               ),
             ),
