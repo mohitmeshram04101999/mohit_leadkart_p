@@ -20,6 +20,14 @@ secondaryHeaderColor: MyHelper.appConstent.leadTiletagColor,
     colorScheme: ColorScheme.light(
       primary: MyHelper.appConstent.primeryColor,
     ),
+
+    inputDecorationTheme: InputDecorationTheme(
+      labelStyle: TextStyle(color: Colors.grey),// Your label text
+      border: OutlineInputBorder(),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.grey, width: 2.0), // Custom border color
+      ),
+    ),
     
     //Eleveted Button THeme
     elevatedButtonTheme: ElevatedButtonThemeData(
