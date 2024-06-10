@@ -14,15 +14,11 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-
-  final _formKey = GlobalKey<FormState>();
-  bool showEmptyNumberError = false;
-
+class _LogInPageState extends State<LogInPage> {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
+
 
       body: SingleChildScrollView(
         child: Column(
@@ -111,6 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     ),
                   ),
+
                   SizedBox(height: SC.from_height(20),),
 
                   // GFBUTTON //

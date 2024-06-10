@@ -1,3 +1,4 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -25,29 +26,36 @@ class _CampaignSettingState extends State<CampaignSetting> {
         title: Text('Ad Campaign Settings'),
       ),
       body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: SC.from_height(17)),
+        padding: EdgeInsets.symmetric(horizontal: SC.from_height(17)),
         child: ListView(
           children: [
             SizedBox(height: SC.from_height(10),),
             Container(
               width: double.infinity,
               height: SC.from_height(115),
-              decoration: BoxDecoration(color: Color.fromRGBO(36, 238, 221, 0.3),borderRadius: BorderRadius.circular(SC.from_height(10))),
+              decoration: BoxDecoration(
+                  color: Color.fromRGBO(36, 238, 221, 0.3),
+                  borderRadius: BorderRadius.circular(SC.from_height(10))),
               child: ListTile(
-                title: Text('Target our area and audience',style: TextStyle(color: Colors.black,fontSize:SC.from_height(16) ),),
-                subtitle: Text('# Place the icon in the top right \n corner# Place the icon in the \ntop right corner# ',style: TextStyle(color: Colors.grey,fontSize:SC.from_height(14) ),),
+                title: Text('Target our area and audience', style: TextStyle(
+                    color: Colors.black, fontSize: SC.from_height(16)),),
+                subtitle: Text(
+                  '# Place the icon in the top right \n corner# Place the icon in the \ntop right corner# ',
+                  style: TextStyle(
+                      color: Colors.grey, fontSize: SC.from_height(14)),),
                 trailing: Container(
                   clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(),
-                  width:  SC.from_height(60),
-                  height:  SC.from_height(92),
-                  child: Image.asset('assets/img_2.png',fit: BoxFit.cover,),
+                  width: SC.from_height(60),
+                  height: SC.from_height(92),
+                  child: Image.asset('assets/img_2.png', fit: BoxFit.cover,),
                 ),
               ),
             ),
 
             SizedBox(height: SC.from_height(10),),
-            Text('Select the Gender',style: TextStyle(fontSize:SC.from_height(17) ),),
+            Text('Select the Gender',
+              style: TextStyle(fontSize: SC.from_height(17)),),
 
             // RADIO BUTTON //
             Row(
@@ -126,12 +134,14 @@ class _CampaignSettingState extends State<CampaignSetting> {
             Chip(
               label: Text(
                 'Bhopal Railway station, Railway Colony,Bhopal Madhya Predesh India',
-                style: TextStyle(color: Colors.grey,fontSize:SC.from_height(13) ),
+                style: TextStyle(
+                    color: Colors.grey, fontSize: SC.from_height(13)),
                 maxLines: 2, // Set max lines for the text
                 overflow: TextOverflow.ellipsis,
               ),
               backgroundColor:
-              Colors.grey.shade200, // Customize chip background color
+              Colors.grey.shade200,
+              // Customize chip background color
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(
                     SC.from_height(5)), // Match container border radius
@@ -158,17 +168,24 @@ class _CampaignSettingState extends State<CampaignSetting> {
               padding: EdgeInsets.symmetric(horizontal: SC.from_height(10)),
               width: double.infinity,
               height: SC.from_height(50),
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),border: Border.all(color: Colors.grey)),
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.grey)),
               child: Row(
                 children: [
 
-                  Text('Add Target Area',style: TextStyle(fontSize: SC.from_height(14.5),color: Colors.grey,fontWeight: FontWeight.w500),),
+                  Text('Add Target Area', style: TextStyle(
+                      fontSize: SC.from_height(14.5),
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w500),),
                   Expanded(child: Container()),
                   InkWell(
-                      onTap: (){
+                      onTap: () {
 
                       },
-                      child: Text('Add',style: TextStyle(fontSize: SC.from_height(15.5),fontWeight: FontWeight.w600,color: Color.fromRGBO(36, 238, 221, 1)),)),
+                      child: Text('Add', style: TextStyle(
+                          fontSize: SC.from_height(15.5),
+                          fontWeight: FontWeight.w600,
+                          color: Color.fromRGBO(36, 238, 221, 1)),)),
                 ],
               ),
             ),
@@ -178,44 +195,56 @@ class _CampaignSettingState extends State<CampaignSetting> {
             Row(
               children: [
 
-                Text('Targeting Suggestions',style: TextStyle(fontSize: SC.from_height(15.5),color: Colors.black,fontWeight: FontWeight.w500),),
+                Text('Targeting Suggestions', style: TextStyle(
+                    fontSize: SC.from_height(15.5),
+                    color: Colors.black,
+                    fontWeight: FontWeight.w500),),
 
                 SizedBox(width: SC.from_height(7),),
                 InkWell(
-                    onTap: (){
+                    onTap: () {
 
                     },
-                    child: Text(' (optional)',style: TextStyle(fontSize: SC.from_height(15.5),color: Colors.grey),)),
+                    child: Text(' (optional)', style: TextStyle(
+                        fontSize: SC.from_height(15.5), color: Colors.grey),)),
               ],
             ),
 
             SizedBox(height: SC.from_height(15),),
-            Text('You can suggest to which type of audience you want to show this ad',style: TextStyle(fontSize:SC.from_height(16),color: Colors.grey ),),
+            Text(
+              'You can suggest to which type of audience you want to show this ad',
+              style: TextStyle(
+                  fontSize: SC.from_height(16), color: Colors.grey),),
 
             SizedBox(height: SC.from_height(15),),
-
 
 
             // TARGET SUGESTION TEXTFIELD //
             TextFormField(
               cursorColor: Colors.grey,
-              maxLines: 2, // Allow multiline input
-              keyboardType: TextInputType.multiline, // Allow multiline keyboard
+              maxLines: 2,
+              // Allow multiline input
+              keyboardType: TextInputType.multiline,
+              // Allow multiline keyboard
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(SC.from_height(7)),
                   borderSide:
                   BorderSide(color: Colors.grey), // Set border color
                 ),
-                labelText: 'Target Sugestion', // Add label text
+                labelText: 'Target Sugestion',
+                // Add label text
                 labelStyle:
-                TextStyle(color: Colors.grey), // Customize label text style
+                TextStyle(color: Colors.grey),
+                // Customize label text style
                 contentPadding: EdgeInsets.symmetric(
                     vertical: SC.from_height(12),
-                    horizontal: SC.from_height(10)), // Adjust padding
+                    horizontal: SC.from_height(10)),
+                // Adjust padding
                 filled: true,
                 fillColor: Colors
-                    .white, // Optional: Set background color of the text field
+                    .white,
+                // Optional: Set background color of the text field
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(SC.from_height(7)),
                   borderSide:
@@ -250,18 +279,21 @@ class _CampaignSettingState extends State<CampaignSetting> {
             SizedBox(height: SC.from_height(15),),
 
             GestureDetector(
-              onTap: (){
+              onTap: () {
 
               },
               child: Container(
-                width: SC.from_height(180) ,
-                height:  SC.from_height(40),
+                width: SC.from_height(180),
+                height: SC.from_height(40),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Icon(Icons.settings,color: Color.fromRGBO(36, 238, 221, 1),),
+                    Icon(
+                      Icons.settings, color: Color.fromRGBO(36, 238, 221, 1),),
                     SizedBox(width: SC.from_height(7),),
-                    Text('Advance Setting',style: TextStyle(fontSize: SC.from_height(16),color: Color.fromRGBO(36, 238, 221, 1),),)
+                    Text('Advance Setting', style: TextStyle(
+                      fontSize: SC.from_height(16),
+                      color: Color.fromRGBO(36, 238, 221, 1),),)
                   ],
                 ),
               ),
@@ -271,9 +303,11 @@ class _CampaignSettingState extends State<CampaignSetting> {
             //  RANGE SLIDER //
             Row(
               children: [
-                Text('Age Range',style: TextStyle(fontSize:SC.from_height(17) ),),
+                Text(
+                  'Age Range', style: TextStyle(fontSize: SC.from_height(17)),),
                 Expanded(child: Container()),
-                Text('18 to 66',style: TextStyle(fontSize:SC.from_height(17) ),),
+                Text(
+                  '18 to 66', style: TextStyle(fontSize: SC.from_height(17)),),
               ],
             ),
             SizedBox(height: SC.from_height(10),),
@@ -288,7 +322,8 @@ class _CampaignSettingState extends State<CampaignSetting> {
                   _values.start.round().toString(),
                   _values.end.round().toString(),
                 ),
-                activeColor: Color.fromRGBO(36, 238, 221, 1), // Set active color
+                activeColor: Color.fromRGBO(36, 238, 221, 1),
+                // Set active color
                 inactiveColor: Colors.grey.shade400,
                 onChanged: (newvalues) {
                   setState(() {
@@ -298,7 +333,7 @@ class _CampaignSettingState extends State<CampaignSetting> {
               ),
             ),
             SizedBox(height: SC.from_height(20),),
-            Text('Days',style: TextStyle(fontSize:SC.from_height(17) )),
+            Text('Days', style: TextStyle(fontSize: SC.from_height(17))),
 
             SizedBox(height: SC.from_height(20),),
 
@@ -308,18 +343,20 @@ class _CampaignSettingState extends State<CampaignSetting> {
               width: SC.from_height(340), // Adjust as needed
               child: GFButton(
                 onPressed: () {
-
                   Get.to(CampaignSetting());
                   // Your onPressed logic here
                 },
-                color: Color.fromRGBO(36, 238, 221, 1), // The button's background color
+                color: Color.fromRGBO(36, 238, 221, 1),
+                // The button's background color
                 borderShape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
+                  borderRadius: BorderRadius.circular(
+                      10.0), // Adjust the radius as needed
                 ),
                 child: Center(
                   child: Text(
                     'Proceed to payment',
-                    style: TextStyle(color: Colors.white,fontSize: SC.from_height(16)), // Text color
+                    style: TextStyle(color: Colors.white,
+                        fontSize: SC.from_height(16)), // Text color
                   ),
                 ),
               ),
