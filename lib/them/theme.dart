@@ -8,8 +8,13 @@ import '../helper/helper.dart';
 ThemeData AppTheme()
 {
   return ThemeData(
+    brightness: Brightness.light,
     primaryColor: MyHelper.appConstent.primeryColor,
 secondaryHeaderColor: MyHelper.appConstent.leadTiletagColor,
+    textTheme: TextTheme(
+      displayMedium: MyHelper.textStyls.mediumText,
+      displaySmall: MyHelper.textStyls.smallText,
+    ),
 
 
 
@@ -19,14 +24,6 @@ secondaryHeaderColor: MyHelper.appConstent.leadTiletagColor,
     //ColorScheme
     colorScheme: ColorScheme.light(
       primary: MyHelper.appConstent.primeryColor,
-    ),
-
-    inputDecorationTheme: InputDecorationTheme(
-      labelStyle: TextStyle(color: Colors.grey),// Your label text
-      border: OutlineInputBorder(),
-      focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.grey, width: 2.0), // Custom border color
-      ),
     ),
     
     //Eleveted Button THeme
