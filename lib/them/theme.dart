@@ -9,6 +9,12 @@ ThemeData AppTheme()
 {
   return ThemeData(
     primaryColor: MyHelper.appConstent.primeryColor,
+secondaryHeaderColor: MyHelper.appConstent.leadTiletagColor,
+
+
+
+
+
 
     //ColorScheme
     colorScheme: ColorScheme.light(
