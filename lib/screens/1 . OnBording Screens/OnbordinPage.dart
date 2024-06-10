@@ -82,7 +82,7 @@ class _OnBordingPageState extends State<OnBordingPage> {
                   Spacer(),
                   widget.lastPage? ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>LogInPage()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
                     },
                     child: Text("Start"),
                   ):ElevatedButton(
