@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:leadkart/component/clips/onbording%20cliper.dart';
 import 'package:leadkart/helper/dimention.dart';
 
@@ -72,7 +73,7 @@ class OnBordingPage extends StatelessWidget {
                   ElevatedButton(onPressed: (){
                     if(lastPage)
                       {
-            
+            context.pushNamed('getNewLeads');
                       }
                     else
                       {

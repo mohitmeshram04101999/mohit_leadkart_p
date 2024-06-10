@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:leadkart/helper/dimention.dart';
-import 'package:leadkart/screens/1%20.%20OnBording%20Screens/OnBordingnavigation.dart';
+import 'package:leadkart/routes/router.dart';
 import 'package:leadkart/them/theme.dart';
 
 void main()
@@ -14,9 +15,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SC.getScreen(context);
-    return MaterialApp(
+    return GetMaterialApp.router(
       theme: AppTheme(),
-      home: OnBordingMain(),
+      routeInformationProvider: GoRouterConfig.router.routeInformationProvider,
+      routerDelegate: GoRouterConfig.router.routerDelegate,
+      backButtonDispatcher: GoRouterConfig.router.backButtonDispatcher,
+      routeInformationParser: GoRouterConfig.router.routeInformationParser,
     );
   }
 }
