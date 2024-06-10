@@ -30,7 +30,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  get: ^4.6.5
   getwidget: ^4.0.0
   dotted_border: ^2.1.0
 

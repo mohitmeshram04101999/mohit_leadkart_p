@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/components/button/gf_button.dart';
+import 'package:go_router/go_router.dart';
 import 'package:leadkart/login_pages/otp_screen.dart';
 
 import '../helper/dimention.dart';
@@ -11,10 +12,10 @@ class LoginScreen extends StatefulWidget {
 
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<LoginScreen> createState() => _LogInPageState();
 }
 
-class _LogInPageState extends State<LogInPage> {
+class _LogInPageState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,7 +118,7 @@ class _LogInPageState extends State<LogInPage> {
                     child: GFButton(
                       onPressed: () {
 
-                        Get.to(OtpScreen());
+                        context.pushNamed("homePage");
                         // Your onPressed logic here
                       },
                       color: Color.fromRGBO(36, 238, 221, 1), // The button's background color
