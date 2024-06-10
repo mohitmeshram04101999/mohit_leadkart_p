@@ -1,9 +1,6 @@
 import 'package:go_router/go_router.dart';
-import 'package:leadkart/login_pages/login_screen.dart';
-import 'package:leadkart/screens/1%20.%20OnBording%20Screens/OnBordingnavigation.dart';
 import 'package:leadkart/screens/leads/getNewLeads.dart';
-
-import '../component/bottom_navigation_screen.dart';
+import 'package:leadkart/screens/onBoardingScreens/OnBordingnavigation.dart';
 class GoRouterConfig {
   static final router = GoRouter(
     initialLocation: '/',
