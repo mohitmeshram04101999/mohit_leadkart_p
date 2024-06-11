@@ -1,4 +1,8 @@
+
+
 import 'package:go_router/go_router.dart';
+
+import 'package:leadkart/leads/add_detail_screen.dart';
 import 'package:leadkart/login_pages/login_screen.dart';
 import 'package:leadkart/screens/1%20.%20OnBording%20Screens/OnBordingnavigation.dart';
 import 'package:leadkart/screens/leads/getNewLeads.dart';
@@ -26,7 +30,17 @@ class GoRouterConfig {
         name: 'homePage',
         path: '/homePage',
         builder: (context, state) =>MyBottomNavigationBar(),
+
+        routes: [
+          GoRoute(
+            path: 'AddDetailScreen',
+            name: 'AddDetailScreeen',
+            builder: (context,state)=>AddDetailScreen(),
+
+          )
+        ]
       ),
+
     ],
   );
 }

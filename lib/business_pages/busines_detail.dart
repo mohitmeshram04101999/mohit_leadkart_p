@@ -2,8 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:leadkart/ads/add_detail_screen.dart';
+import 'package:go_router/go_router.dart';
+
 import 'package:leadkart/helper/dimention.dart';
+import 'package:leadkart/helper/helper.dart';
+import 'package:leadkart/leads/create_add_setting.dart';
 
 class BusinessDetail extends StatefulWidget {
   const BusinessDetail({Key? key}) : super(key: key);
@@ -28,9 +31,13 @@ class _BusinessDetailState extends State<BusinessDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('Business Detail'),
+
+     appBar:  AppBar(
+        foregroundColor: Colors.white,
+        backgroundColor: MyHelper.appConstent.primeryColor,
+        title: Text('Business Detail',),
       ),
+
       body: Padding(
         padding:   EdgeInsets.symmetric(horizontal: SC.from_height(14)),
         child: Column(
@@ -107,28 +114,33 @@ class _BusinessDetailState extends State<BusinessDetail> {
             SizedBox(height: SC.from_height(22),),
 
             // Campaign Settings //
-            Container(
-              width: double.infinity,
-              height: SC.from_height(50),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(SC.from_height(10)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.shade300, // Shadow color
-                    spreadRadius: 1, // Spread radius
-                    blurRadius: 5, // Blur radius
-                    offset: Offset(0, 1), // Offset in x and y direction
-                  ),
-                ],
-              ),
-              child: Row(
-                children: [
-                  SizedBox(width: SC.from_height(10),),
-                  Icon(Icons.description,color: Colors.grey,size: SC.from_height(24) ,),
-                  SizedBox(width: SC.from_height(10),),
-                  Text('Campaign Settings',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w500,fontSize: SC.from_height(15)),)
-                ],
+            InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>AddCreation()));
+              },
+              child: Container(
+                width: double.infinity,
+                height: SC.from_height(50),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(SC.from_height(10)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.shade300, // Shadow color
+                      spreadRadius: 1, // Spread radius
+                      blurRadius: 5, // Blur radius
+                      offset: Offset(0, 1), // Offset in x and y direction
+                    ),
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    SizedBox(width: SC.from_height(10),),
+                    Icon(Icons.description,color: Colors.grey,size: SC.from_height(24) ,),
+                    SizedBox(width: SC.from_height(10),),
+                    Text('Campaign Settings',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w500,fontSize: SC.from_height(15)),)
+                  ],
+                ),
               ),
             ),
             SizedBox(height: SC.from_height(11),),
@@ -136,7 +148,8 @@ class _BusinessDetailState extends State<BusinessDetail> {
             //Billing Details //
             InkWell(
               onTap: (){
-                // Get.off(AddDetailScreen());
+                // Get.to(AddDetailScreen());
+                context.pushNamed('AddDetailScreeen');
               },
               child: Container(
                 width: double.infinity,

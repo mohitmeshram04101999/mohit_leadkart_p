@@ -263,6 +263,9 @@ class _AdsPageState extends State<AdsPage> {
           ),
 
           SizedBox(height: SC.from_height(18),),
+
+
+
           // RECOMMENDATION //
           Container(
 

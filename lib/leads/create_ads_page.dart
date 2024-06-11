@@ -3,8 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:go_router/go_router.dart';
 import 'package:leadkart/add_images/campaign_setting_page.dart';
 import 'package:leadkart/helper/dimention.dart';
+import 'package:leadkart/helper/helper.dart';
 
 class CreateAds extends StatefulWidget {
   const CreateAds({Key? key}) : super(key: key);
@@ -24,9 +26,13 @@ class _CreateAdsState extends State<CreateAds> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Create an Ad'),
+
+      appBar:  AppBar(
+        foregroundColor: Colors.white,
+        backgroundColor: MyHelper.appConstent.primeryColor,
+        title: Text('Create an Ad',)
       ),
+
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: SC.from_height(15)),
         children: [
@@ -222,7 +228,7 @@ class _CreateAdsState extends State<CreateAds> {
           ),
           Container(
             width: double.infinity,
-            height: SC.from_height(95),
+            // height: SC.from_height(100),
             decoration: BoxDecoration(
                 color: Color.fromRGBO(236, 253, 243, 0.5),
                 borderRadius: BorderRadius.circular(
@@ -648,7 +654,7 @@ class _CreateAdsState extends State<CreateAds> {
             child: GFButton(
               onPressed: () {
 
-                Get.to(CampaignSetting());
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> CampaignSetting()));
                 // Your onPressed logic here
               },
               color: Color.fromRGBO(36, 238, 221, 1), // The button's background color
