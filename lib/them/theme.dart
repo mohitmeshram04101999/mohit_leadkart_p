@@ -11,6 +11,14 @@ ThemeData AppTheme()
     brightness: Brightness.light,
     primaryColor: MyHelper.appConstent.primeryColor,
 secondaryHeaderColor: MyHelper.appConstent.leadTiletagColor,
+    iconTheme: IconThemeData(
+      color: MyHelper.appConstent.iconContainerColor,
+      size: SC.from_width(20)
+    ),
+    checkboxTheme: CheckboxThemeData(
+      fillColor: MaterialStateProperty.resolveWith((states) => MyHelper.appConstent.checkBoxColor),
+      checkColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+    ),
     textTheme: TextTheme(
       displayMedium: MyHelper.textStyls.mediumText,
       displaySmall: MyHelper.textStyls.smallText,

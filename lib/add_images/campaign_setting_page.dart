@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:go_router/go_router.dart';
 import 'package:leadkart/helper/dimention.dart';
 
 class CampaignSetting extends StatefulWidget {
@@ -343,7 +344,8 @@ class _CampaignSettingState extends State<CampaignSetting> {
               width: SC.from_height(340), // Adjust as needed
               child: GFButton(
                 onPressed: () {
-                  Get.to(CampaignSetting());
+                  // Get.to(CampaignSetting());
+                  context.pushNamed('getNewLeads');
                   // Your onPressed logic here
                 },
                 color: Color.fromRGBO(36, 238, 221, 1),
