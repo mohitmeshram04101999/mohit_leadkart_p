@@ -91,7 +91,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
           SizedBox(width: SC.from_height(60)),
 
-          HelpButton(),
+          HelpButton(
+            icon: Icon(Icons.call_outlined,size:  SC.from_height(17)),
+            text: 'Help ?',
+          ),
 
           // Container(
           //   child: Row(

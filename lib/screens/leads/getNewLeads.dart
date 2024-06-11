@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:leadkart/helper/helper.dart';
 import 'package:leadkart/them/constents.dart';
 
@@ -117,9 +118,11 @@ class GetNewLeads extends StatelessWidget {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.pushNamed('imageEditor');
+                    },
                     child: Text('Next'),
                   ),
                 ),
@@ -143,7 +146,7 @@ class _LeadSelecterState extends State<LeadSelecter> {
   Widget build(BuildContext context) {
     return             Container(
 
-      margin: EdgeInsets.symmetric(horizontal:SC.from_height(15)),
+      margin: EdgeInsets.symmetric(horizontal:SC.from_height(8)),
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(11),
         color: Colors.white,
         boxShadow: [
@@ -295,7 +298,7 @@ class _BudgetSelecterState extends State<BudgetSelecter> {
         borderRadius: BorderRadius.circular(10),
       ),
       padding: const EdgeInsets.symmetric(
-          horizontal: 10, vertical: 0),
+          horizontal: 0, vertical: 0),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
