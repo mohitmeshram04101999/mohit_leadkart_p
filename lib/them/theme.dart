@@ -16,8 +16,22 @@ secondaryHeaderColor: MyHelper.appConstent.leadTiletagColor,
       displaySmall: MyHelper.textStyls.smallText,
     ),
 
+    appBarTheme: AppBarTheme(
+      backgroundColor: MyHelper.appConstent.primeryColor
+    ),
 
 
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      
+      style: ButtonStyle(
+        iconSize: MaterialStateProperty.resolveWith((states) => SC.from_width(20)),
+        padding:MaterialStateProperty.resolveWith((states) => EdgeInsets.symmetric(horizontal: SC.from_width(10))),
+          shape: MaterialStateProperty.resolveWith((states) =>RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50),
+          )),
+        side:MaterialStateProperty.resolveWith((states) => BorderSide(color: Colors.red))
+      ),
+    ),
 
 
 
