@@ -12,7 +12,7 @@ ThemeData AppTheme()
     primaryColor: MyHelper.appConstent.primeryColor,
 secondaryHeaderColor: MyHelper.appConstent.leadTiletagColor,
     iconTheme: IconThemeData(
-      color: MyHelper.appConstent.iconContainerColor,
+      color: Colors.black,
       size: SC.from_width(20)
     ),
     checkboxTheme: CheckboxThemeData(

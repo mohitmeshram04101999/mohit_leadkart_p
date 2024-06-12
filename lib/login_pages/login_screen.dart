@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -5,7 +7,9 @@ import 'package:getwidget/components/button/gf_button.dart';
 import 'package:go_router/go_router.dart';
 import 'package:leadkart/helper/helper.dart';
 import 'package:leadkart/login_pages/otp_screen.dart';
-
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:leadkart/my%20custom%20assets%20dart%20file/my_math.dart';
+import 'package:leadkart/my%20custom%20assets%20dart%20file/myast%20dart%20file.dart';
 import '../helper/dimention.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,6 +21,24 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LogInPageState extends State<LoginScreen> {
+  loginWithFacebook() async {
+    final LoginResult result = await FacebookAuth.i.login(
+      loginBehavior: LoginBehavior.webOnly,
+      loginTracking: LoginTracking.enabled,
+      permissions: ['email', 'public_profile'],
+    ); // by default we request the email and the public profile
+// or FacebookAuth.i.login()
+    if (result.status == LoginStatus.success) {
+      // you are logged
+      final AccessToken accessToken = result.accessToken!;
+      log('Access Token: ${accessToken.tokenString}');
+    } else {
+      log('Error');
+log(result.status.toString());
+log(result.message.toString());
+    }
+  }
+  double value = 0.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +55,6 @@ class _LogInPageState extends State<LoginScreen> {
 
               child: Image.asset('assets/2.png',fit: BoxFit.cover,),
             ),
-
             Container(
               width: double.infinity,
               height:SC.from_height(450) ,
@@ -153,14 +174,19 @@ class _LogInPageState extends State<LoginScreen> {
                             child: Image.asset('assets/google.png',fit: BoxFit.cover,))),
 
                       ),
-                      Container(
-                        width:  SC.from_height(140),
-                        height:  SC.from_height(54),
-                        decoration: BoxDecoration(border: Border.all(color: Colors.grey),borderRadius: BorderRadius.circular(10)),
-                        child: Center(child: Container(
-                            width:  SC.from_height(32),
-                            height:  SC.from_height(32),
-                            child: Image.asset('assets/facebook.png',fit: BoxFit.cover,))),
+                      InkWell(
+                        onTap: () async{
+await loginWithFacebook();
+                        },
+                        child: Container(
+                          width:  SC.from_height(140),
+                          height:  SC.from_height(54),
+                          decoration: BoxDecoration(border: Border.all(color: Colors.grey),borderRadius: BorderRadius.circular(10)),
+                          child: Center(child: Container(
+                              width:  SC.from_height(32),
+                              height:  SC.from_height(32),
+                              child: Image.asset('assets/facebook.png',fit: BoxFit.cover,))),
+                        ),
                       ),
                     ],
                   )
