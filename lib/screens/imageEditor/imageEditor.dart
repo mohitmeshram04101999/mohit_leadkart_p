@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leadkart/helper/helper.dart';
 
 class ImageEditor extends StatefulWidget {
   const ImageEditor({super.key});
@@ -33,31 +34,17 @@ class _ImageEditorState extends State<ImageEditor> {
         ],
       ),
       bottomNavigationBar: BottomAppBar(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        child: ListView(
+          scrollDirection: Axis.horizontal,
           children: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.crop, color: Colors.black,),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.rotate_left, color: Colors.black,),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.flip, color: Colors.black,),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.filter, color: Colors.black,),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.text_fields, color: Colors.black,),
-            ),
+BottomChips(text: 'Frame', onTap: (){}),
+BottomChips(text: 'Text', onTap: (){}),
+BottomChips(text: 'Image', onTap: (){}),
+BottomChips(text: 'Adjust', onTap: (){}),
+BottomChips(text: 'Business', onTap: (){}),
+BottomChips(text: 'Sticker', onTap: (){}),
           ],
-        ),
+        )
       ),
       body: Column(
         mainAxisSize: MainAxisSize.min,
@@ -159,3 +146,32 @@ SizedBox(height: 10),
     );
   }
 }
+
+class BottomChips extends StatefulWidget {
+  final String text;
+  final String? icon;
+   Function()? onTap;
+   BottomChips({super.key, required this.text, this.icon, this.onTap});
+
+  @override
+  State<BottomChips> createState() => _BottomChipsState();
+}
+
+class _BottomChipsState extends State<BottomChips> {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ActionChip(label: Row(
+        children: [
+          Icon(Icons.filter_frames_outlined),
+          SizedBox(width:5),
+          Text(widget.text),
+        ],
+      ), backgroundColor: MyHelper.appConstent.leadsBannerColor, shape: StadiumBorder(
+
+      ), onPressed: widget.onTap),
+    );
+  }
+}
+
