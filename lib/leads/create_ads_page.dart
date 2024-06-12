@@ -6,6 +6,7 @@ import 'package:getwidget/getwidget.dart';
 import 'package:go_router/go_router.dart';
 import 'package:leadkart/add_images/campaign_setting_page.dart';
 import 'package:leadkart/helper/dimention.dart';
+import 'package:leadkart/helper/helper.dart';
 
 class CreateAds extends StatefulWidget {
   const CreateAds({Key? key}) : super(key: key);
@@ -649,7 +650,7 @@ class _CreateAdsState extends State<CreateAds> {
             child: GFButton(
               onPressed: () {
 
-               context.pushNamed('campaignSettings');
+                Get.to(CampaignSetting());
                 // Your onPressed logic here
               },
               color: Color.fromRGBO(36, 238, 221, 1), // The button's background color

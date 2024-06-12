@@ -1,15 +1,14 @@
 import 'package:go_router/go_router.dart';
 import 'package:leadkart/add_images/campaign_setting_page.dart';
 import 'package:leadkart/business_pages/growBusinessFaster.dart';
+
+import 'package:leadkart/leads/add_detail_screen.dart';
 import 'package:leadkart/login_pages/login_screen.dart';
 import 'package:leadkart/screens/imageEditor/imageEditor.dart';
 import 'package:leadkart/screens/leads/getNewLeads.dart';
 import 'package:leadkart/screens/leads/getNewLeads.dart';
-import 'package:leadkart/screens/onBoardingScreens/OnBordingnavigation.dart';
 
 import '../component/bottom_navigation_screen.dart';
-import 'package:leadkart/screens/onBoardingScreens/OnBordingnavigation.dart';
-import '../login_pages/login_screen.dart';
 class GoRouterConfig {
   static final router = GoRouter(
     initialLocation: '/',
@@ -28,6 +27,15 @@ class GoRouterConfig {
         name: 'homePage',
         path: '/homePage',
         builder: (context, state) =>MyBottomNavigationBar(),
+
+        routes: [
+          GoRoute(
+            path: 'AddDetailScreen',
+            name: 'AddDetailScreeen',
+            builder: (context,state)=>AddDetailScreen(),
+
+          )
+        ]
         routes: [
           GoRoute(
             name: 'getNewLeads',
@@ -39,6 +47,7 @@ class GoRouterConfig {
           GoRoute(path: 'imageEditor', name: 'imageEditor', builder: (context, state) => ImageEditor()),
         ],
       ),
+
     ],
   );
 }

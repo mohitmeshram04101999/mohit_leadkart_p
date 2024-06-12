@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/components/button/gf_button.dart';
 import 'package:go_router/go_router.dart';
+import 'package:leadkart/helper/helper.dart';
 import 'package:leadkart/login_pages/otp_screen.dart';
 
 import '../helper/dimention.dart';
@@ -66,9 +67,10 @@ class _LogInPageState extends State<LoginScreen> {
 
                   SizedBox(height: SC.from_height(20),),
 
-                  //  TEXTFIELD   PHONE NO.//
                   Container(
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                     height: SC.from_height(45),
                     padding: EdgeInsets.symmetric(horizontal: SC.from_height(20)), // Optional padding to give some space around the TextField
                     child: TextFormField(
@@ -76,38 +78,24 @@ class _LogInPageState extends State<LoginScreen> {
                       cursorColor: Colors.grey,
                       inputFormatters: [LengthLimitingTextInputFormatter(10)],
                       decoration: InputDecoration(
-                        labelText: 'Enter moblie no',
-                        labelStyle: TextStyle(color: Colors.grey),// Your label text
-                        border: OutlineInputBorder(),
+                        labelText: 'Enter mobile no',
+                        labelStyle: TextStyle(color: Colors.grey), // Your label text
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.grey, width: 1.0), // Set default border color
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.grey, width: 1.0), // Set enabled border color
+                        ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey, width: 2.0), // Custom border color
-                        ),// Add this to make the TextField border more prominent
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: Colors.grey, width: 0.5), // Custom border color for focused state
+                        ),
                       ),
-
-                      // validator: (value) {
-                      //   if (value == null || value.isEmpty) {
-                      //     if (showEmptyNumberError) {
-                      //       return 'Mobile No. can not be empty';
-                      //     }
-                      //   } else {
-                      //     // Use regular expression to check if the input contains only numeric digits
-                      //     final RegExp numericRegex = RegExp(r'^[0-9]+$');
-                      //
-                      //     if (!numericRegex.hasMatch(value)) {
-                      //       return 'Please enter only numeric digits';
-                      //     }
-                      //
-                      //     // Check for the exact length of 10
-                      //     if (value.length != 10) {
-                      //       return 'Please enter a valid 10-digit Mobile No.';
-                      //     }
-                      //   }
-                      //   return null;
-                      // },
-                      // autovalidateMode: AutovalidateMode.onUserInteraction,
-
                     ),
                   ),
+
 
                   SizedBox(height: SC.from_height(20),),
 
@@ -121,7 +109,7 @@ class _LogInPageState extends State<LoginScreen> {
                         context.pushNamed("homePage");
                         // Your onPressed logic here
                       },
-                      color: Color.fromRGBO(36, 238, 221, 1), // The button's background color
+                      color: MyHelper.appConstent.primeryColor, // The button's background color
                       borderShape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
                       ),
@@ -142,10 +130,10 @@ class _LogInPageState extends State<LoginScreen> {
                     child: Row(
                       children: [
 
-                        Container(width: SC.from_height(122),child: Divider(thickness: 1.5,)),
+                        Container(width: SC.from_height(122),child: Divider(thickness: 1.5,color: Colors.grey.shade300,)),
 
                         Text(' or Log with ',style: TextStyle(color: Colors.grey,fontSize: SC.from_height(16))),
-                        Container(width: SC.from_height(122),child: Divider(thickness: 1.5,)),
+                        Container(width: SC.from_height(122),child: Divider(thickness: 1.5,color: Colors.grey.shade300)),
                       ],
                     ),
                   ),

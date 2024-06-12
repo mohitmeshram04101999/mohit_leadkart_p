@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SC.getScreen(context);
     return GetMaterialApp.router(
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
       theme:Theme.of(context).brightness==Brightness.light? AppTheme():AppTheme(),
       routeInformationProvider: GoRouterConfig.router.routeInformationProvider,

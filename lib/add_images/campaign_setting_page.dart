@@ -24,6 +24,7 @@ class _CampaignSettingState extends State<CampaignSetting> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        foregroundColor: Colors.white,
         title: Text('Ad Campaign Settings'),
       ),
       body: Padding(
@@ -32,18 +33,19 @@ class _CampaignSettingState extends State<CampaignSetting> {
           children: [
             SizedBox(height: SC.from_height(10),),
             Container(
+              padding: EdgeInsets.all(SC.from_height(5),),
               width: double.infinity,
-              height: SC.from_height(115),
+              // height: SC.from_height(115),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(36, 238, 221, 0.3),
                   borderRadius: BorderRadius.circular(SC.from_height(10))),
               child: ListTile(
                 title: Text('Target our area and audience', style: TextStyle(
-                    color: Colors.black, fontSize: SC.from_height(16)),),
+                    color: Colors.black, fontSize: SC.from_height(18)),),
                 subtitle: Text(
                   '# Place the icon in the top right \n corner# Place the icon in the \ntop right corner# ',
                   style: TextStyle(
-                      color: Colors.grey, fontSize: SC.from_height(14)),),
+                      color: Colors.grey, fontSize: SC.from_height(15)),),
                 trailing: Container(
                   clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(),
