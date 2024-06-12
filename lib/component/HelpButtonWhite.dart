@@ -6,7 +6,9 @@ import '../helper/dimention.dart';
 
 class HelpButton extends StatelessWidget {
   void Function()? onPress;
-  HelpButton({this.onPress,super.key});
+  Widget? icon;
+  String text;
+  HelpButton({this.onPress,super.key, required this.text, this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +21,7 @@ class HelpButton extends StatelessWidget {
 
         //Button Style
           style: ButtonStyle(
+            iconColor: MaterialStateProperty.resolveWith((states) => Colors.white),
               side: MaterialStateProperty.resolveWith((states) => BorderSide(color: Colors.white))
           ),
           onPressed:onPress,
@@ -26,9 +29,9 @@ class HelpButton extends StatelessWidget {
           //Icon and Text
           child: Row(
             children: [
-              Icon(Icons.call_outlined,color: Colors.white,),
-              SizedBox(width: SC.from_width(2),),
-              Text("Help",style: TextStyle(
+              icon!,
+              SizedBox(width: SC.from_width(5),),
+              Text(text,style: TextStyle(
                   color: Colors.white
               )),
             ],

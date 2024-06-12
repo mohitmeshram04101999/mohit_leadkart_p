@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:go_router/go_router.dart';
 import 'package:leadkart/add_images/campaign_setting_page.dart';
 import 'package:leadkart/helper/dimention.dart';
 
@@ -648,7 +649,7 @@ class _CreateAdsState extends State<CreateAds> {
             child: GFButton(
               onPressed: () {
 
-                Get.to(CampaignSetting());
+               context.pushNamed('campaignSettings');
                 // Your onPressed logic here
               },
               color: Color.fromRGBO(36, 238, 221, 1), // The button's background color
