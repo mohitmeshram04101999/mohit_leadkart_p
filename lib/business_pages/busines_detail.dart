@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:leadkart/helper/dimention.dart';
 import 'package:leadkart/helper/helper.dart';
 import 'package:leadkart/leads/create_add_setting.dart';
+import 'package:leadkart/screens/user/create_user.dart';
 
 class BusinessDetail extends StatefulWidget {
   const BusinessDetail({Key? key}) : super(key: key);
@@ -179,28 +180,33 @@ class _BusinessDetailState extends State<BusinessDetail> {
             SizedBox(height: SC.from_height(11),),
 
             //Payment & Invoices //
-            Container(
-              width: double.infinity,
-              height: SC.from_height(50),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(SC.from_height(10)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.shade300, // Shadow color
-                    spreadRadius: 1, // Spread radius
-                    blurRadius: 5, // Blur radius
-                    offset: Offset(0, 1), // Offset in x and y direction
-                  ),
-                ],
-              ),
-              child: Row(
-                children: [
-                  SizedBox(width: SC.from_height(10),),
-                  Icon(Icons.description,color: Colors.grey,size: SC.from_height(24) ,),
-                  SizedBox(width: SC.from_height(10),),
-                  Text('Payment & Invoices',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w500,fontSize: SC.from_height(15)),)
-                ],
+            InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>CreateUser()));
+              },
+              child: Container(
+                width: double.infinity,
+                height: SC.from_height(50),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(SC.from_height(10)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.shade300, // Shadow color
+                      spreadRadius: 1, // Spread radius
+                      blurRadius: 5, // Blur radius
+                      offset: Offset(0, 1), // Offset in x and y direction
+                    ),
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    SizedBox(width: SC.from_height(10),),
+                    Icon(Icons.description,color: Colors.grey,size: SC.from_height(24) ,),
+                    SizedBox(width: SC.from_height(10),),
+                    Text('Payment & Invoices',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w500,fontSize: SC.from_height(15)),)
+                  ],
+                ),
               ),
             ),
             SizedBox(height: SC.from_height(11),),

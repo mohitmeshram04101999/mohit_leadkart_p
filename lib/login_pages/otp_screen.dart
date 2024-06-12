@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:leadkart/component/bottom_navigation_screen.dart';
@@ -232,6 +233,38 @@ class _OtpScreenState extends State<OtpScreen> {
                 ],
               ),
             ),
+
+            // TEXT FIELD  otp//
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(horizontal: 30),
+            //   child:  OtpTextField(
+            //
+            //     keyboardType: TextInputType.number,
+            //     focusedBorderColor: Color.fromRGBO(36, 238, 221, 0.5),
+            //     cursorColor: Colors.grey.shade300,
+            //     borderRadius: BorderRadius.circular( SC.from_height(10)),
+            //     numberOfFields: 4,
+            //     borderColor: Color(0xFF512DA8),
+            //     showFieldAsBox: true,
+            //     fieldWidth: SC.from_height(55),  // Adjust the width of each field
+            //     fieldHeight: SC.from_height(55),
+            //
+            //     onCodeChanged: (String code) {
+            //       // Handle validation or checks here
+            //     },
+            //     onSubmit: (String verificationCode) {
+            //       showDialog(
+            //         context: context,
+            //         builder: (context) {
+            //           return AlertDialog(
+            //             title: Text("Verification Code"),
+            //             content: Text('Code entered is $verificationCode'),
+            //           );
+            //         },
+            //       );
+            //     }, // end onSubmit
+            //   ),
+            // ),
 
 
             SizedBox(height: SC.from_height(40),),

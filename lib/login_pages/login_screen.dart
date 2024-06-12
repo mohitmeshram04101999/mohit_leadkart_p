@@ -107,6 +107,7 @@ class _LogInPageState extends State<LoginScreen> {
                       onPressed: () {
 
                         context.pushNamed("homePage");
+                        // Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpScreen()));
                         // Your onPressed logic here
                       },
                       color: MyHelper.appConstent.primeryColor, // The button's background color
