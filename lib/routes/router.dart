@@ -9,6 +9,7 @@ import 'package:leadkart/screens/leads/getNewLeads.dart';
 import 'package:leadkart/screens/leads/getNewLeads.dart';
 
 import '../component/bottom_navigation_screen.dart';
+import '../screens/onBoardingScreens/OnBordingnavigation.dart';
 class GoRouterConfig {
   static final router = GoRouter(
     initialLocation: '/',
@@ -34,9 +35,7 @@ class GoRouterConfig {
             name: 'AddDetailScreeen',
             builder: (context,state)=>AddDetailScreen(),
 
-          )
-        ]
-        routes: [
+          ),
           GoRoute(
             name: 'getNewLeads',
             path: 'getNewLeads',

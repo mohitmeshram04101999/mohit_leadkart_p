@@ -205,12 +205,6 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(height: SC.from_height(20),),
 
 
-          MyactionButton(
-              onActionComplit: (v){},
-              action: ()async{
-                await Future.delayed(Duration(seconds: 3));
-              },
-              duretion: Duration(milliseconds: 300))
 
         ],
       ),
