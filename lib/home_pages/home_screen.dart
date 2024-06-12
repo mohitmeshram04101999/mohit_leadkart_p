@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:leadkart/component/HelpButtonWhite.dart';
 import 'package:leadkart/component/addRequirmentTile.dart';
+import 'package:leadkart/component/aiAddTile.dart';
 import 'package:leadkart/my%20custom%20assets%20dart%20file/actionButton.dart';
 import 'package:leadkart/helper/dimention.dart';
 
@@ -123,6 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
           SizedBox(height: SC.from_height(8),),
 
+          //Ai Add grid
           GridView.builder(
             primary: false,
             physics: NeverScrollableScrollPhysics(),
@@ -136,36 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
             itemCount: items.length,
             itemBuilder: (context, index) {
               final item = items[index];
-              return  Container(
-                margin: EdgeInsets.symmetric(horizontal: SC.from_width(5)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    AspectRatio(
-                      aspectRatio: 1,
-                      child: Container(
-                        padding: EdgeInsets.all(SC.from_width(8)),
-                        // decoration: BoxDecoration(border: Border.all()),
-                        child: Image.asset(
-                          item['image']!,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: SC.from_width(3)), // Add some spacing between image and text
-                    Expanded(
-                      child: Text(
-                        item['text']!,
-                        style: TextStyle(
-                          fontSize: SC.from_width(15),
-                        ),
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1, // Adjust maxLines if you want to limit the number of lines for text
-                      ),
-                    ),
-                  ],
-                ),
-              );
+              return  AiAddTile(icon: Image.asset(item["image"].toString(),fit: BoxFit.cover,), title: item["text"].toString());
 
             },
           ),
@@ -191,6 +164,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
           SizedBox(height: SC.from_height(15),),
 
+          //add Requirment
           ListView.builder(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
