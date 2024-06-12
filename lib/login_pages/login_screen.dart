@@ -23,7 +23,7 @@ class LoginScreen extends StatefulWidget {
 class _LogInPageState extends State<LoginScreen> {
   loginWithFacebook() async {
     final LoginResult result = await FacebookAuth.i.login(
-      loginBehavior: LoginBehavior.webOnly,
+      
       loginTracking: LoginTracking.enabled,
       permissions: ['email', 'public_profile'],
     ); // by default we request the email and the public profile
