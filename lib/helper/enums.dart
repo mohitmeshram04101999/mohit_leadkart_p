@@ -1,0 +1,4 @@
+enum ImageInside {
+  dialog,
+  imageView
+}
