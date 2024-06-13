@@ -59,12 +59,12 @@ class _AddCreationState extends State<AddCreation> {
 
           Padding(
             padding:   EdgeInsets.symmetric(horizontal:SC.from_height(0) ),
-            child: Text('What’s your Business',style: TextStyle(fontSize: SC.from_height(17),fontWeight: FontWeight.w600),),
+            child: Text('What’s your Business',style: TextStyle(fontSize: SC.from_height(19),fontWeight: FontWeight.w500),),
           ),
           SizedBox(height: SC.from_height(7),),
           Padding(
             padding:   EdgeInsets.symmetric(horizontal:SC.from_height(0) ),
-            child: Text('Let us know which of the following describe the  business',style: TextStyle(fontSize: SC.from_height(15),color: Colors.grey),),
+            child: Text('Let us know which of the following describe the  business',style: TextStyle(fontWeight: FontWeight.w500,fontSize: SC.from_height(16),color: Colors.grey.shade700),),
           ),
 
           SizedBox(
@@ -84,7 +84,7 @@ class _AddCreationState extends State<AddCreation> {
                 ),
                 labelText: 'Busines Name', // Add label text
                 labelStyle:
-                TextStyle(color: Colors.grey), // Customize label text style
+                TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(15)), // Customize label text style
                 contentPadding: EdgeInsets.symmetric(
                     vertical: SC.from_height(12),
                     horizontal: SC.from_height(10)), // Adjust padding
@@ -94,7 +94,7 @@ class _AddCreationState extends State<AddCreation> {
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(SC.from_height(7)),
                   borderSide:
-                  BorderSide(color: Colors.grey), // Set border color
+                  BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(SC.from_height(7)),
@@ -139,7 +139,7 @@ class _AddCreationState extends State<AddCreation> {
                 ),
                 labelText: 'Mobile No', // Add label text
                 labelStyle:
-                TextStyle(color: Colors.grey), // Customize label text style
+                TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(15)), // Customize label text style
                 contentPadding: EdgeInsets.symmetric(
                     vertical: SC.from_height(12),
                     horizontal: SC.from_height(10)), // Adjust padding
@@ -149,7 +149,7 @@ class _AddCreationState extends State<AddCreation> {
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(SC.from_height(7)),
                   borderSide:
-                  BorderSide(color: Colors.grey), // Set border color
+                  BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(SC.from_height(7)),
@@ -182,7 +182,7 @@ class _AddCreationState extends State<AddCreation> {
           // Select business category //
           Padding(
             padding:   EdgeInsets.symmetric(horizontal:SC.from_height(0) ),
-            child: Text('Select business category',style: TextStyle(fontSize: SC.from_height(17),fontWeight: FontWeight.w600),),
+            child: Text('Select business category',style: TextStyle(fontSize: SC.from_height(18),fontWeight: FontWeight.w500),),
           ),
 
           SizedBox(height: SC.from_height(15),),
@@ -195,11 +195,12 @@ class _AddCreationState extends State<AddCreation> {
               cursorColor: Colors.grey,
               decoration: InputDecoration(
                 hintText: 'Select busines category',
+                hintStyle: TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(15)),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(SC.from_height(7)),
                   borderSide: BorderSide(color: Colors.grey), // Set border color
                 ),
-                suffixIcon: Icon(Icons.search, color: Colors.grey), // Add search icon
+                suffixIcon: Icon(Icons.search, color: Colors.grey.shade700), // Add search icon
                 contentPadding: EdgeInsets.symmetric(
                     vertical: SC.from_height(12),
                     horizontal: SC.from_height(10)), // Adjust padding
@@ -207,7 +208,7 @@ class _AddCreationState extends State<AddCreation> {
                 fillColor: Colors.white, // Optional: Set background color of the text field
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(SC.from_height(7)),
-                  borderSide: BorderSide(color: Colors.grey), // Set border color
+                  borderSide: BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(SC.from_height(7)),
@@ -244,22 +245,25 @@ class _AddCreationState extends State<AddCreation> {
                 data.length,
                     (index) => Padding(
                   padding: EdgeInsets.only(bottom: SC.from_height(10)), // Space between rows
-                  child: Row(
-                    children: [
-                      Image.asset(
-                        data[index]['image']!,
-                        width: SC.from_height(24), // Adjust image size as needed
-                        height: SC.from_height(24),
-                      ),
-                      SizedBox(width: SC.from_height(10)),
-                      Text(
-                        data[index]['text']!,
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: SC.from_height(17),
+                  child: Padding(
+                    padding:   EdgeInsets.only(top: SC.from_height(8)),
+                    child: Row(
+                      children: [
+                        Image.asset(
+                          data[index]['image']!,
+                          width: SC.from_height(24), // Adjust image size as needed
+                          height: SC.from_height(24),
                         ),
-                      ),
-                    ],
+                        SizedBox(width: SC.from_height(12)),
+                        Text(
+                          data[index]['text']!,
+                          style: TextStyle(
+                            color: Colors.grey.shade700,
+                            fontSize: SC.from_height(17),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -285,7 +289,7 @@ class _AddCreationState extends State<AddCreation> {
               child: Center(
                 child: Text(
                   'Next',
-                  style: TextStyle(color: Colors.white,fontSize: SC.from_height(17)), // Text color
+                  style: TextStyle(color: Colors.white,fontSize: SC.from_height(18)), // Text color
                 ),
               ),
             ),

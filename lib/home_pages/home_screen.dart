@@ -17,9 +17,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
   final List<Map<String, String>> items = [
+
     {'image': 'assets/home_images/img_1.png', 'text': 'AI Meta content'},
     {'image': 'assets/img.png', 'text': 'AI created Ads'},
-    {'image': 'assets/home_images/img_2.png', 'text': 'Machine Learning'},
+    {'image': 'assets/home_images/img_2.png', 'text': 'Leads'},
     {'image': 'assets/home_images/img_5.png', 'text': 'Ad Reports'},
   ];
 
@@ -48,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
           width: SC.from_height(30),
           height: SC.from_height(30),
           decoration: BoxDecoration(
+
             borderRadius: BorderRadius.circular(10),
           ),
           child: Image.asset(
@@ -83,13 +85,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 value: value,
                 child: Text(
                   value,
-                  style: TextStyle(color: Colors.white, fontSize: SC.from_height(18)),
+                  style: TextStyle(color: Colors.white, fontSize: SC.from_height(19.5)),
                 ),
               );
             }).toList(),
           ),
 
-          SizedBox(width: SC.from_height(60)),
+          SizedBox(width: SC.from_height(80)),
 
           HelpButton(),
 
@@ -97,15 +99,15 @@ class _HomeScreenState extends State<HomeScreen> {
           //   child: Row(
           //     mainAxisAlignment: MainAxisAlignment.center,
           //     children: [
-          //       Icon(Icons.call_outlined,size:  SC.from_height(17),),
+          //       Icon(Icons.search,size:  SC.from_height(17),color: Colors.white,),
           //       SizedBox(width: SC.from_height(4),),
-          //       Center(child: Text('Help ?',style: TextStyle(fontSize: SC.from_height(16),color: Colors.white),),),
+          //       Center(child: Text('Search',style: TextStyle(fontSize: SC.from_height(16),color: Colors.white),),),
           //     ],
           //   ),
           //   width: SC.from_height(85),
           //   height: SC.from_height(30),
           //   decoration: BoxDecoration(borderRadius: BorderRadius.circular(SC.from_height(15)),border: Border.all(
-          //       color: Colors.white
+          //       color: Colors.white,width: 1.5
           //   )),
           // ),
           SizedBox(width: SC.from_height(20)),
@@ -119,10 +121,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
           SizedBox(height: SC.from_height(15),),
 
-          Text('Introducing AI-powered ads with Leadkart',style: TextStyle(fontSize: SC.from_height(17)),),
+          Text('Introducing AI-powered ads with Leadkart',style: TextStyle(fontSize: SC.from_height(18),  fontWeight: FontWeight.w500,),),
 
           SizedBox(height: SC.from_height(8),),
 
+
+          // GRIDVIEW BUILDER //
           GridView.builder(
             primary: false,
             physics: NeverScrollableScrollPhysics(),
@@ -142,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     AspectRatio(
-                      aspectRatio: 1,
+                      aspectRatio: 0.9,
                       child: Container(
                         padding: EdgeInsets.all(SC.from_width(8)),
                         // decoration: BoxDecoration(border: Border.all()),
@@ -157,7 +161,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Text(
                         item['text']!,
                         style: TextStyle(
-                          fontSize: SC.from_width(15),
+                          color: Color.fromRGBO(0, 0, 0, 7),
+                          fontWeight: FontWeight.w500,
+                          fontSize: SC.from_width(16),
                         ),
                         overflow: TextOverflow.ellipsis,
                         maxLines: 1, // Adjust maxLines if you want to limit the number of lines for text
@@ -185,9 +191,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
           Image.asset('assets/home_images/4.png',fit: BoxFit.cover,),
 
-          SizedBox(height: SC.from_height(15),),
+          SizedBox(height: SC.from_height(19),),
 
-          Text('Choose your Ad requirement',style: TextStyle(fontSize:  SC.from_height(16)),),
+          Text('Choose your Ad requirement',style: TextStyle(fontSize:  SC.from_height(18),fontWeight: FontWeight.w500),),
 
           SizedBox(height: SC.from_height(15),),
 
@@ -195,23 +201,28 @@ class _HomeScreenState extends State<HomeScreen> {
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
             itemBuilder: (context,index){
-              return Container(margin: EdgeInsets.only(top: SC.from_height(8),left: SC.from_height(2),right: SC.from_height(2)),
-                width: double.infinity,
-                height: SC.from_height(85),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  // border: Border.all(),
-                  borderRadius: BorderRadius.circular(SC.from_height(8)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.10), // Shadow color with opacity
-                      spreadRadius: 2, // Spread radius
-                      blurRadius: 3, // Blur radius
-                      offset: Offset(0, 4), // Offset in x and y directions
-                    ),
-                  ],
+              return InkWell(
+                onTap: (){
+
+                },
+                child: Container(margin: EdgeInsets.only(top: SC.from_height(15),left: SC.from_height(2),right: SC.from_height(2)),
+                  width: double.infinity,
+                  height: SC.from_height(85),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    // border: Border.all(),
+                    borderRadius: BorderRadius.circular(SC.from_height(8)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.10), // Shadow color with opacity
+                        spreadRadius: 0.5, // Spread radius
+                        blurRadius: 5, // Blur radius
+                        offset: Offset(1, 2), // Offset in x and y directions
+                      ),
+                    ],
+                  ),
+                  child: AddREquirmentTile(icon:Icon(iconList[index],color: Colors.black54,),),
                 ),
-                child: AddREquirmentTile(icon:Icon(iconList[index]),),
               );
             },
             itemCount: 4,
@@ -225,15 +236,18 @@ class _HomeScreenState extends State<HomeScreen> {
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
               child: Image.asset('assets/home_images/img_4.png',fit: BoxFit.cover,)),
 
+
+
           SizedBox(height: SC.from_height(20),),
 
 
-          MyactionButton(
-              onActionComplit: (v){},
-              action: ()async{
-                await Future.delayed(Duration(seconds: 3));
-              },
-              duretion: Duration(milliseconds: 300))
+          // MyactionButton(
+          //     onActionComplit: (v){},
+          //     action: ()async{
+          //       await Future.delayed(Duration(seconds: 3));
+          //     },
+          //     duretion: Duration(milliseconds: 300)),
+          SizedBox(height: SC.from_height(10),),
 
         ],
       ),

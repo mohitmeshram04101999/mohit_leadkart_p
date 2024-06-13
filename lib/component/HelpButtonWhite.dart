@@ -17,6 +17,7 @@ class HelpButton extends StatelessWidget {
       //Outlin Button
       child: OutlinedButton(
 
+
         //Button Style
           style: ButtonStyle(
               side: MaterialStateProperty.resolveWith((states) => BorderSide(color: Colors.white))
@@ -28,8 +29,8 @@ class HelpButton extends StatelessWidget {
             children: [
               Icon(Icons.call_outlined,color: Colors.white,),
               SizedBox(width: SC.from_width(2),),
-              Text("Help",style: TextStyle(
-                  color: Colors.white
+              Text("Help ?",style: TextStyle(
+                  color: Colors.white,fontSize: SC.from_height(16)
               )),
             ],
           )),

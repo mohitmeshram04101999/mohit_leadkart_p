@@ -36,7 +36,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
      appBar:  AppBar(
         foregroundColor: Colors.white,
         backgroundColor: MyHelper.appConstent.primeryColor,
-        title: Text('Business Detail',),
+        title: Text('Business Detail',style: TextStyle(fontSize: SC.from_height(21)),),
       ),
 
       body: Padding(
@@ -78,11 +78,13 @@ class _BusinessDetailState extends State<BusinessDetail> {
                         borderRadius: BorderRadius.circular(SC.from_height(55))
                     ),
                     clipBehavior: Clip.hardEdge,
-                    width: SC.from_height(55),
-                    height: SC.from_height(55),
+                    width: SC.from_height(58),
+                    height: SC.from_height(58),
                     child: Image.asset('assets/img_1.png'),
                   ),
-                  Text('Pawan Kumar',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize:SC.from_height(18) ),),
+                  SizedBox(height: SC.from_height(12),),
+                  Text('Pawan Kumar',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize:SC.from_height(19) ),),
+                  SizedBox(height: SC.from_height(5),),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: SC.from_height(28)),
                     child: RichText(overflow: TextOverflow.ellipsis,
@@ -139,7 +141,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
                     SizedBox(width: SC.from_height(10),),
                     Icon(Icons.description,color: Colors.grey,size: SC.from_height(24) ,),
                     SizedBox(width: SC.from_height(10),),
-                    Text('Campaign Settings',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w500,fontSize: SC.from_height(15)),)
+                    Text('Campaign Settings',style: TextStyle(color: Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)),)
                   ],
                 ),
               ),
@@ -172,7 +174,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
                     SizedBox(width: SC.from_height(10),),
                     Icon(Icons.description,color: Colors.grey,size: SC.from_height(24) ,),
                     SizedBox(width: SC.from_height(10),),
-                    Text('Billing Details',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w500,fontSize: SC.from_height(15)),)
+                    Text('Billing Details',style: TextStyle(color: Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)),)
                   ],
                 ),
               ),
@@ -202,9 +204,9 @@ class _BusinessDetailState extends State<BusinessDetail> {
                 child: Row(
                   children: [
                     SizedBox(width: SC.from_height(10),),
-                    Icon(Icons.description,color: Colors.grey,size: SC.from_height(24) ,),
+                    Icon(Icons.payment,color: Colors.grey,size: SC.from_height(24) ,),
                     SizedBox(width: SC.from_height(10),),
-                    Text('Payment & Invoices',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w500,fontSize: SC.from_height(15)),)
+                    Text('Payment & Invoices',style: TextStyle(color: Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)),)
                   ],
                 ),
               ),
@@ -230,9 +232,9 @@ class _BusinessDetailState extends State<BusinessDetail> {
               child: Row(
                 children: [
                   SizedBox(width: SC.from_height(10),),
-                  Icon(Icons.description,color: Colors.grey,size: SC.from_height(24) ,),
+                  Icon(Icons.blur_circular_sharp,color: Colors.grey,size: SC.from_height(24) ,),
                   SizedBox(width: SC.from_height(10),),
-                  Text('Manage Website',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w500,fontSize: SC.from_height(15)),)
+                  Text('Manage Website',style: TextStyle(color: Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)),)
                 ],
               ),
             ),
@@ -259,7 +261,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
                   SizedBox(width: SC.from_height(10),),
                   Icon(Icons.notifications_none,color: Colors.grey,size: SC.from_height(24) ,),
                   SizedBox(width: SC.from_height(10),),
-                  Text('Notification',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w500,fontSize: SC.from_height(15)),)
+                  Text('Notification',style: TextStyle(color: Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)),)
                 ],
               ),
             ),
@@ -286,7 +288,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
                   SizedBox(width: SC.from_height(10),),
                   Icon(Icons.logout,color: Colors.grey,size: SC.from_height(24) ,),
                   SizedBox(width: SC.from_height(10),),
-                  Text('Logout',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w500,fontSize: SC.from_height(15)),)
+                  Text('Logout',style: TextStyle(color: Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)),)
                 ],
               ),
             )

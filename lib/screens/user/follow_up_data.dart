@@ -43,11 +43,11 @@ class _FollowUpDateState extends State<FollowUpDate> {
       appBar:  AppBar(
         foregroundColor: Colors.white,
         backgroundColor: MyHelper.appConstent.primeryColor,
-        title: Text('Set Follow Up Date',),
+        title: Text('Set Follow Up Date',style: TextStyle(fontSize:  SC.from_height(21)),),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: SC.from_height(25)),
-        child: Column(
+        child: ListView(
 
           children: [
             SizedBox(height: SC.from_height(22),),
@@ -76,7 +76,7 @@ class _FollowUpDateState extends State<FollowUpDate> {
                 cursorColor: Colors.grey,
                 decoration: InputDecoration(
                   hintText: 'Select date',
-                  hintStyle: TextStyle(fontSize: SC.from_height(15),color: Colors.grey),
+                  hintStyle: TextStyle(fontSize: SC.from_height(16),color: Colors.grey.shade600),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(SC.from_height(7)),
                     borderSide: BorderSide(color: Colors.grey), // Set border color
@@ -93,11 +93,11 @@ class _FollowUpDateState extends State<FollowUpDate> {
                   fillColor: Colors.white, // Optional: Set background color of the text field
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(SC.from_height(7)),
-                    borderSide: BorderSide(color: Colors.grey), // Set border color
+                    borderSide: BorderSide(color: Colors.grey.shade400), // Set border color
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(SC.from_height(7)),
-                    borderSide: BorderSide(color: Colors.grey), // Set border color when focused
+                    borderSide: BorderSide(color: Colors.grey.shade400), // Set border color when focused
                   ),
                 ),
 
@@ -113,7 +113,7 @@ class _FollowUpDateState extends State<FollowUpDate> {
                 cursorColor: Colors.grey,
                 decoration: InputDecoration(
                   hintText: 'Select time',
-                  hintStyle: TextStyle(fontSize: SC.from_height(15), color: Colors.grey),
+                  hintStyle: TextStyle(fontSize: SC.from_height(16),color: Colors.grey.shade600),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(SC.from_height(7)),
                     borderSide: BorderSide(color: Colors.grey), // Set border color
@@ -132,11 +132,11 @@ class _FollowUpDateState extends State<FollowUpDate> {
                   fillColor: Colors.white, // Optional: Set background color of the text field
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(SC.from_height(7)),
-                    borderSide: BorderSide(color: Colors.grey), // Set border color
+                    borderSide: BorderSide(color: Colors.grey.shade400), // Set border color
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(SC.from_height(7)),
-                    borderSide: BorderSide(color: Colors.grey), // Set border color when focused
+                    borderSide: BorderSide(color: Colors.grey.shade400), // Set border color when focused
                   ),
                 ),
               ),
@@ -159,7 +159,7 @@ class _FollowUpDateState extends State<FollowUpDate> {
                   ),
                   labelText: 'Write a note here...', // Add label text
                   labelStyle:
-                  TextStyle(color: Colors.grey,fontSize: SC.from_height(15)), // Customize label text style
+                  TextStyle(color: Colors.grey.shade600,fontSize: SC.from_height(16)), // Customize label text style
                   contentPadding: EdgeInsets.symmetric(
                       vertical: SC.from_height(12),
                       horizontal: SC.from_height(10)), // Adjust padding
@@ -169,12 +169,12 @@ class _FollowUpDateState extends State<FollowUpDate> {
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(SC.from_height(7)),
                     borderSide:
-                    BorderSide(color: Colors.grey), // Set border color
+                    BorderSide(color: Colors.grey.shade400), // Set border color
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(SC.from_height(7)),
                     borderSide: BorderSide(
-                        color: Colors.grey), // Set border color when focused
+                        color: Colors.grey.shade400), // Set border color when focused
                   ),
                 ),
                 validator: (value) {
@@ -197,7 +197,7 @@ class _FollowUpDateState extends State<FollowUpDate> {
               ),
             ),
 
-            SizedBox(height: SC.from_height(30),),
+            SizedBox(height: SC.from_height(35),),
 
             // GFBUTTON //
             Container(
@@ -216,7 +216,7 @@ class _FollowUpDateState extends State<FollowUpDate> {
                 child: Center(
                   child: Text(
                     'Save',
-                    style: TextStyle(color: Colors.white,fontSize: SC.from_height(17)), // Text color
+                    style: TextStyle(color: Colors.white,fontSize: SC.from_height(18)), // Text color
                   ),
                 ),
               ),
@@ -238,8 +238,8 @@ class _FollowUpDateState extends State<FollowUpDate> {
               SizedBox(height: SC.from_height(20),),
               ListTile(
                 leading: Icon(Icons.arrow_back),
-                title: Text('Set Follow up date',style: TextStyle(fontSize:SC.from_height(19) ),),
-                subtitle: Text('07 May 2024, 09:32 AM',style: TextStyle(fontSize:SC.from_height(15),color: Colors.grey ),),
+                title: Text('Set Follow up date',style: TextStyle(color: Colors.grey.shade700,fontSize:SC.from_height(19),fontWeight: FontWeight.w500 ),),
+                subtitle: Text('07 May 2024, 09:32 AM',style: TextStyle(fontSize:SC.from_height(15),color: Colors.grey.shade700 ),),
                 onTap: () {
                   Navigator.pop(context);
                 },
@@ -271,14 +271,14 @@ class _FollowUpDateState extends State<FollowUpDate> {
                             'Today',
                             style: TextStyle(
                               fontSize: SC.from_height(16),
-                              color: Colors.grey,
+                              color: Colors.grey.shade700,
                             ),
                           ),
                           Text(
                             'At 09:32 AM',
                             style: TextStyle(
                               fontSize: SC.from_height(16),
-                              color: Colors.grey,
+                              color: Colors.grey.shade700,
                             ),
                           ),
                         ],

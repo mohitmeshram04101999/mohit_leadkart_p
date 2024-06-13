@@ -59,11 +59,12 @@ class _LogInPageState extends State<LoginScreen> {
                 children: [
 
                   SizedBox(height: SC.from_height(30),),
-                  Text('Let’s sign in ', style: TextStyle(fontSize:SC.from_height(24),fontWeight: FontWeight.w600 ),),
+                  Text('Let’s sign in ', style: TextStyle(fontSize:SC.from_height(26),fontWeight: FontWeight.w600 ),),
                   SizedBox(height: SC.from_height(10),),
                   Container(
                       width: double.infinity,
-                      margin: EdgeInsets.symmetric(horizontal: 25),child: Text('Sign in your account using mobile no. or, Google \n                         Facebook and Mail ', style: TextStyle(fontSize:SC.from_height(15),color: Colors.grey),)),
+                      margin: EdgeInsets.symmetric(horizontal: 25),child: Center(child: Text('Sign in your account using mobile no. or, Google \n                         Facebook and Mail ',
+                    style: TextStyle(fontSize:SC.from_height(16),color: Color.fromRGBO(96, 96, 96, 1),fontWeight: FontWeight.w500),))),
 
                   SizedBox(height: SC.from_height(20),),
 
@@ -79,7 +80,7 @@ class _LogInPageState extends State<LoginScreen> {
                       inputFormatters: [LengthLimitingTextInputFormatter(10)],
                       decoration: InputDecoration(
                         labelText: 'Enter mobile no',
-                        labelStyle: TextStyle(color: Colors.grey), // Your label text
+                        labelStyle: TextStyle(color: Colors.black,fontSize: SC.from_height(16)), // Your label text
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide(color: Colors.grey, width: 1.0), // Set default border color
@@ -97,17 +98,17 @@ class _LogInPageState extends State<LoginScreen> {
                   ),
 
 
-                  SizedBox(height: SC.from_height(20),),
+                  SizedBox(height: SC.from_height(30),),
 
-                  // GFBUTTON //
+                  // GFBUTTON   COUNTINUE //
                   Container(
                     height: SC.from_height(45), // Adjust as needed
                     width: SC.from_height(340), // Adjust as needed
                     child: GFButton(
                       onPressed: () {
 
-                        context.pushNamed("homePage");
-                        // Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpScreen()));
+                        // context.pushNamed("homePage");
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpScreen()));
                         // Your onPressed logic here
                       },
                       color: MyHelper.appConstent.primeryColor, // The button's background color
@@ -117,7 +118,7 @@ class _LogInPageState extends State<LoginScreen> {
                       child: Center(
                         child: Text(
                           'Continue',
-                          style: TextStyle(color: Colors.white,fontSize: SC.from_height(14)), // Text color
+                          style: TextStyle(color: Colors.white,fontSize: SC.from_height(15.5)), // Text color
                         ),
                       ),
                     ),
@@ -133,7 +134,7 @@ class _LogInPageState extends State<LoginScreen> {
 
                         Container(width: SC.from_height(122),child: Divider(thickness: 1.5,color: Colors.grey.shade300,)),
 
-                        Text(' or Log with ',style: TextStyle(color: Colors.grey,fontSize: SC.from_height(16))),
+                        Text('  or Log with  ',style: TextStyle(color: Colors.grey,fontSize: SC.from_height(17),fontWeight: FontWeight.w500)),
                         Container(width: SC.from_height(122),child: Divider(thickness: 1.5,color: Colors.grey.shade300)),
                       ],
                     ),
@@ -142,10 +143,10 @@ class _LogInPageState extends State<LoginScreen> {
                   SizedBox(height: SC.from_height(30),),
 
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Container(
-                        width:  SC.from_height(140),
+                        width:  SC.from_height(150),
                         height:  SC.from_height(54),
                         decoration: BoxDecoration(border: Border.all(color: Colors.grey),borderRadius: BorderRadius.circular(10)),
                         child: Center(child: Container(
@@ -155,7 +156,7 @@ class _LogInPageState extends State<LoginScreen> {
 
                       ),
                       Container(
-                        width:  SC.from_height(140),
+                        width:  SC.from_height(150),
                         height:  SC.from_height(54),
                         decoration: BoxDecoration(border: Border.all(color: Colors.grey),borderRadius: BorderRadius.circular(10)),
                         child: Center(child: Container(

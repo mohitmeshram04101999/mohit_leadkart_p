@@ -17,12 +17,14 @@ class AddREquirmentTile extends StatelessWidget {
         backgroundColor: Color.fromRGBO(241, 241, 241, 1),
         radius:SC.from_height(25),
       ),
-      title: Text('Get Leads from Social Platforms',maxLines: 1,overflow: TextOverflow.ellipsis,),
+      title: Text('Get Leads from Social Platforms',maxLines: 1,overflow: TextOverflow.ellipsis,
+        style: TextStyle(fontSize: SC.from_height(15),fontWeight: FontWeight.w500),),
       subtitle: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text('Acquire customers from insta, fb',maxLines: 1,overflow: TextOverflow.ellipsis,),
+          Text('Acquire customers from insta, fb',maxLines: 1,overflow: TextOverflow.ellipsis
+            ,style: TextStyle(fontSize: SC.from_height(15),fontWeight: FontWeight.w500,color: Colors.grey),),
           SizedBox(height: SC.from_height(5),),
           Row(
             children: [

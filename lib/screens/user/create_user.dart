@@ -13,6 +13,8 @@ class CreateUser extends StatefulWidget {
 }
 
 class _CreateUserState extends State<CreateUser> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +43,7 @@ class _CreateUserState extends State<CreateUser> {
         
                 child: Image.asset('assets/img_9.png',fit: BoxFit.cover,)
               ),
-              SizedBox(height: SC.from_height(22),),
+              SizedBox(height: SC.from_height(0),),
         
               // Enter user name //
               Container(
@@ -49,8 +51,8 @@ class _CreateUserState extends State<CreateUser> {
                 child: TextFormField(
                   cursorColor: Colors.grey,
                   decoration: InputDecoration(
-                    labelText: 'Enter mobile no',
-                    labelStyle: TextStyle(color: Colors.grey,fontSize: SC.from_height(15)), // Your label text
+                    labelText: 'Name',
+                    labelStyle: TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(16)), // Your label text
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide(color: Colors.grey, width: 1.0), // Set default border color
@@ -99,7 +101,7 @@ class _CreateUserState extends State<CreateUser> {
                   inputFormatters: [LengthLimitingTextInputFormatter(10)],
                   decoration: InputDecoration(
                     labelText: 'Email-ID',
-                    labelStyle: TextStyle(color: Colors.grey,fontSize: SC.from_height(15)), // Your label text
+                    labelStyle: TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(16)),// Your label text
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide(color: Colors.grey, width: 1.0), // Set default border color
@@ -132,7 +134,8 @@ class _CreateUserState extends State<CreateUser> {
                     contentPadding: EdgeInsets.symmetric(
                         horizontal: SC.from_height(10)), // Adjust padding
                     hintText: 'Select roles for user',
-                    hintStyle: TextStyle(color: Colors.grey,fontSize: SC.from_height(15))// Add hint text
+
+                    hintStyle:  TextStyle(fontWeight: FontWeight.w400,color: Colors.grey.shade700,fontSize: SC.from_height(16))// Add hint text
                   ),
                   items: <String>['Option 1', 'Option 2', 'Option 3', 'Option 4']
                       .map((String value) {
@@ -164,7 +167,7 @@ class _CreateUserState extends State<CreateUser> {
                   cursorColor: Colors.grey,
                   decoration: InputDecoration(
                     labelText: 'Password',
-                    labelStyle: TextStyle(color: Colors.grey,fontSize: SC.from_height(15)), // Your label text
+                    labelStyle: TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(16)),// Your label text
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide(color: Colors.grey, width: 1.0), // Set default border color
@@ -191,7 +194,7 @@ class _CreateUserState extends State<CreateUser> {
                   cursorColor: Colors.grey,
                   decoration: InputDecoration(
                     labelText: 'Confirm Password',
-                    labelStyle: TextStyle(color: Colors.grey,fontSize: SC.from_height(15)), // Your label text
+                    labelStyle: TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(16)), // Your label text
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide(color: Colors.grey, width: 1.0), // Set default border color
@@ -209,6 +212,10 @@ class _CreateUserState extends State<CreateUser> {
                 ),
               ),
         
+              SizedBox(height: SC.from_height(30),),
+
+
+
               SizedBox(height: SC.from_height(30),),
         
               // GFBUTTON //
@@ -228,7 +235,7 @@ class _CreateUserState extends State<CreateUser> {
                   child: Center(
                     child: Text(
                       'Create',
-                      style: TextStyle(color: Colors.white,fontSize: SC.from_height(17)), // Text color
+                      style: TextStyle(color: Colors.white,fontSize: SC.from_height(18)), // Text color
                     ),
                   ),
                 ),
