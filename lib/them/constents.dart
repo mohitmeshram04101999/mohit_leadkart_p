@@ -12,5 +12,6 @@ class AppConstent
   Color OnbordingAppBar = const Color.fromRGBO(8 , 101, 192, .1);
   Color leadTiletagColor = const Color.fromRGBO(74, 157, 238, .6);
   Color checkBoxColor = const Color.fromRGBO(87, 42, 200, 1);
+  Color dottedBorderColor = const Color.fromRGBO(217, 217, 217, 1);
   EdgeInsets horizontalPedding = EdgeInsets.symmetric(horizontal: SC.from_width(20));
 }

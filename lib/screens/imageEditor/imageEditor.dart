@@ -1,6 +1,15 @@
+import 'dart:io';
+
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
+import 'package:leadkart/component/adjustImageView.dart';
+import 'package:leadkart/component/imagePickerDialog.dart';
+import 'package:leadkart/component/imageView.dart';
+import 'package:leadkart/helper/controllerInstances.dart';
 import 'package:leadkart/helper/helper.dart';
+
 
 class ImageEditor extends StatefulWidget {
   const ImageEditor({super.key});
@@ -10,6 +19,7 @@ class ImageEditor extends StatefulWidget {
 }
 
 class _ImageEditorState extends State<ImageEditor> {
+  final imageController = Controllers.imageEditorController;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,9 +30,12 @@ class _ImageEditorState extends State<ImageEditor> {
           OutlinedButton(
             onPressed: () {},
             style: ButtonStyle(
-              fixedSize: MaterialStateProperty.resolveWith((states) => Size(100, 20)),
-              backgroundColor: MaterialStateProperty.resolveWith((states) => Theme.of(context).primaryColor),
-              side: MaterialStateProperty.resolveWith((states) => BorderSide(color: Colors.white)),
+              fixedSize:
+                  MaterialStateProperty.resolveWith((states) => Size(100, 20)),
+              backgroundColor: MaterialStateProperty.resolveWith(
+                  (states) => Theme.of(context).primaryColor),
+              side: MaterialStateProperty.resolveWith(
+                  (states) => BorderSide(color: Colors.white)),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -35,20 +48,106 @@ class _ImageEditorState extends State<ImageEditor> {
         ],
       ),
       bottomNavigationBar: BottomAppBar(
-        child: ListView(
-          scrollDirection: Axis.horizontal,
-          children: [
-BottomChips(text: 'Frame', onTap: (){}),
-BottomChips(text: 'Text', onTap: (){}),
-BottomChips(text: 'Image', onTap: (){
-  showDialog(context: context, builder: (context) => ImageDialog());
-}),
-BottomChips(text: 'Adjust', onTap: (){}),
-BottomChips(text: 'Business', onTap: (){}),
-BottomChips(text: 'Sticker', onTap: (){}),
-          ],
-        )
-      ),
+        height: imageController.isAdjustClicked.value?150:100,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              imageController.isAdjustClicked.value?  Expanded(
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  children: [
+                    AdjustOption(text: 'Brightness', onTap: () {
+                      showModalBottomSheet(context: context, builder: (context) {
+                        return StatefulBuilder(
+                          builder: (context, setState) =>  Container(
+                            height: 150,
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    IconButton(onPressed: (){
+                                      context.pop();
+                                    }, icon: Icon(Icons.arrow_back)),
+                                    Icon(Icons.sunny),
+                                    SizedBox(width: 5),
+                                    Text('Brightness')
+                                  ],
+                                ),
+                                Slider(
+                                  value: imageController.imageBrightness.value,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      imageController.imageBrightness.value = value;
+                                    });
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },);
+                    }),
+                    AdjustOption(text: 'Saturation', onTap: () {
+                      showModalBottomSheet(context: context, builder: (context) {
+                        return StatefulBuilder(
+                          builder: (context, setState) =>  Container(
+                            height: 150,
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    IconButton(onPressed: (){
+                                      context.pop();
+                                    }, icon: Icon(Icons.arrow_back)),
+                                    Icon(Icons.sunny),
+                                    SizedBox(width: 5),
+                                    Text('Saturation')
+                                  ],
+                                ),
+                                Slider(
+                                  value: imageController.imageSaturation.value,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      imageController.imageSaturation.value = value;
+                                    });
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },);
+                    }),
+                  ],
+                ),
+              ):Container(),
+              Expanded(
+                child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        children: [
+                BottomChips(text: 'Frame', onTap: () {}),
+                BottomChips(text: 'Text', onTap: () {}),
+                BottomChips(
+                    text: 'Image',
+                    onTap: () {
+                      imageController.isAdjustClicked.value = false;
+                      showDialog(
+                          context: context, builder: (context) => ImagePickerDialog());
+                    }),
+                BottomChips(text: 'Adjust', onTap: () {
+                  setState(() {
+                    imageController.isAdjustClicked.value = !imageController.isAdjustClicked.value;
+                  });
+                }),
+                BottomChips(text: 'Business', onTap: () {}),
+                BottomChips(text: 'Sticker', onTap: () {}),
+                        ],
+                      ),
+              ),
+            ],
+          )),
       body: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -88,25 +187,12 @@ BottomChips(text: 'Sticker', onTap: (){}),
                     ),
                   ),
                 ),
-
               ],
             ),
           ),
           SizedBox(height: 10),
-          Container(
-            width: MediaQuery.of(context).size.width,
-height: MediaQuery.of(context).size.width,
-            margin: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.grey,
-              borderRadius: BorderRadius.circular(10),
-              image: DecorationImage(
-                image: AssetImage('assets/home_images/img.png'),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-SizedBox(height: 10),
+         !imageController.isAdjustClicked.value? ImageView():AdjustImageView(),
+          SizedBox(height: 10),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -153,8 +239,8 @@ SizedBox(height: 10),
 class BottomChips extends StatefulWidget {
   final String text;
   final String? icon;
-   Function()? onTap;
-   BottomChips({super.key, required this.text, this.icon, this.onTap});
+  Function()? onTap;
+  BottomChips({super.key, required this.text, this.icon, this.onTap});
 
   @override
   State<BottomChips> createState() => _BottomChipsState();
@@ -165,68 +251,48 @@ class _BottomChipsState extends State<BottomChips> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: ActionChip(label: Row(
-        children: [
-          Icon(Icons.filter_frames_outlined),
-          SizedBox(width:5),
-          Text(widget.text),
-        ],
-      ), backgroundColor: MyHelper.appConstent.leadsBannerColor, shape: StadiumBorder(
-
-      ), onPressed: widget.onTap),
+      child: ActionChip(
+          label: Row(
+            children: [
+              Icon(Icons.filter_frames_outlined),
+              SizedBox(width: 5),
+              Text(widget.text),
+            ],
+          ),
+          backgroundColor: MyHelper.appConstent.leadsBannerColor,
+          shape: StadiumBorder(),
+          onPressed: widget.onTap),
     );
   }
 }
-
-class ImageDialog extends StatefulWidget {
-  const ImageDialog({super.key});
+class AdjustOption extends StatefulWidget {
+  final String text;
+  final String? icon;
+  Function()? onTap;
+  AdjustOption({super.key, required this.text, this.icon, this.onTap});
 
   @override
-  State<ImageDialog> createState() => _ImageDialogState();
+  State<AdjustOption> createState() => _AdjustOptionState();
 }
 
-class _ImageDialogState extends State<ImageDialog> {
+class _AdjustOptionState extends State<AdjustOption> {
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-      title: Text('Select Image'),
-      content: Container(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            DottedBorder(
-              strokeCap: StrokeCap.butt,
-              radius: Radius.circular(10),
-              child: Container(
-                width: double.maxFinite,
-                height: 200,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.add, color: Theme.of(context).primaryColor),
-                    SizedBox(width: 10),
-                    Text('upload an Image', style: TextStyle(color: Theme.of(context).primaryColor)),
-                  ],
-                )
-              ),
-            ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                OutlinedButton(onPressed: (){}, child: Text('Cancel'), style: ButtonStyle(
-                  shape: MaterialStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder(borderRadius: BorderRadius.circular(10), side: BorderSide(color: Theme.of(context).primaryColor))),
-                  fixedSize: MaterialStatePropertyAll<Size>(Size(100, 40)),
-                ),),
-                ElevatedButton(onPressed: (){}, child: Text('Submit')),
-              ],
-            )
-          ],
-        ),
-      ),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ActionChip(
+          label: Row(
+            children: [
+              Icon(Icons.filter_frames_outlined),
+              SizedBox(width: 5),
+              Text(widget.text),
+            ],
+          ),
+          backgroundColor: MyHelper.appConstent.leadsBannerColor,
+          shape: StadiumBorder(
+            side: BorderSide(color: Colors.transparent),
+          ),
+          onPressed: widget.onTap),
     );
   }
 }
