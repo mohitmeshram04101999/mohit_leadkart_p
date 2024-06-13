@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:leadkart/helper/helper.dart';
 
@@ -39,7 +40,9 @@ class _ImageEditorState extends State<ImageEditor> {
           children: [
 BottomChips(text: 'Frame', onTap: (){}),
 BottomChips(text: 'Text', onTap: (){}),
-BottomChips(text: 'Image', onTap: (){}),
+BottomChips(text: 'Image', onTap: (){
+  showDialog(context: context, builder: (context) => ImageDialog());
+}),
 BottomChips(text: 'Adjust', onTap: (){}),
 BottomChips(text: 'Business', onTap: (){}),
 BottomChips(text: 'Sticker', onTap: (){}),
@@ -174,4 +177,58 @@ class _BottomChipsState extends State<BottomChips> {
     );
   }
 }
+
+class ImageDialog extends StatefulWidget {
+  const ImageDialog({super.key});
+
+  @override
+  State<ImageDialog> createState() => _ImageDialogState();
+}
+
+class _ImageDialogState extends State<ImageDialog> {
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Text('Select Image'),
+      content: Container(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            DottedBorder(
+              strokeCap: StrokeCap.butt,
+              radius: Radius.circular(10),
+              child: Container(
+                width: double.maxFinite,
+                height: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.add, color: Theme.of(context).primaryColor),
+                    SizedBox(width: 10),
+                    Text('upload an Image', style: TextStyle(color: Theme.of(context).primaryColor)),
+                  ],
+                )
+              ),
+            ),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                OutlinedButton(onPressed: (){}, child: Text('Cancel'), style: ButtonStyle(
+                  shape: MaterialStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder(borderRadius: BorderRadius.circular(10), side: BorderSide(color: Theme.of(context).primaryColor))),
+                  fixedSize: MaterialStatePropertyAll<Size>(Size(100, 40)),
+                ),),
+                ElevatedButton(onPressed: (){}, child: Text('Submit')),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 
