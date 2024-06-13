@@ -4,7 +4,6 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:leadkart/component/HelpButtonWhite.dart';
 import 'package:leadkart/component/addRequirmentTile.dart';
-import 'package:leadkart/component/aiAddTile.dart';
 import 'package:leadkart/my%20custom%20assets%20dart%20file/actionButton.dart';
 import 'package:leadkart/helper/dimention.dart';
 
@@ -18,9 +17,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
   final List<Map<String, String>> items = [
+
     {'image': 'assets/home_images/img_1.png', 'text': 'AI Meta content'},
     {'image': 'assets/img.png', 'text': 'AI created Ads'},
-    {'image': 'assets/home_images/img_2.png', 'text': 'Machine Learning'},
+    {'image': 'assets/home_images/img_2.png', 'text': 'Leads'},
     {'image': 'assets/home_images/img_5.png', 'text': 'Ad Reports'},
   ];
 
@@ -49,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
           width: SC.from_height(30),
           height: SC.from_height(30),
           decoration: BoxDecoration(
+
             borderRadius: BorderRadius.circular(10),
           ),
           child: Image.asset(
@@ -56,97 +57,57 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         actions: [
-          InkWell(
-            onTap: () {
-              showModalBottomSheet(context: context, builder: (context) {
-                return Container(
-                  height: SC.from_height(200),
-                  child: Column(
-                    children: [
-                      ListTile(
-                        title: Text('SK e solution 1'),
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                      ListTile(
-                        title: Text('SK e solution 2'),
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                      ListTile(
-                        title: Text('SK e solution 3'),
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                    ],
-                  ),
-                );
-              },);
-            },
-            child: Row(
-              children: [
-                Text(" SK e solution  ",style: TextStyle(color: Colors.white,fontSize: SC.from_height(18)),),
-                Icon(Icons.arrow_drop_down, color: Colors.white,size: SC.from_height(17)),
-              ],
+          DropdownButton<String>(
+            hint: Text(
+              " SK e solution  ",
+              style: TextStyle(color: Colors.white, fontSize: SC.from_height(18)),
             ),
-          ),
-          // DropdownButton<String>(
-          //   hint: Text(
-          //     " SK e solution  ",
-          //     style: TextStyle(color: Colors.white, fontSize: SC.from_height(18)),
-          //   ),
-          //   value: dropdownValue,
-          //   icon: Transform.rotate(
-          //     angle: 1.5708, // 90 degrees in radians (π/2 or 1.5708 radians)
-          //     child: Icon(Icons.arrow_forward_ios_rounded, color: Colors.white,size: SC.from_height(17)),
-          //   ),
-          //   iconSize: SC.from_height(22),
-          //   elevation: 16,
-          //   style: TextStyle(color: Colors.black),
-          //   underline: Container(), // Remove the underline
-          //   onChanged: (String? newValue) {
-          //     setState(() {
-          //       dropdownValue = newValue;
-          //       // Handle the selected option here
-          //       print('Selected: $dropdownValue');
-          //     });
-          //   },
-          //
-          //   items: <String>['SK e solution 1 ', 'SK e solution 2 ', 'SK e solution 3 ']
-          //       .map<DropdownMenuItem<String>>((String value) {
-          //     return DropdownMenuItem<String>(
-          //       value: value,
-          //       child: Text(
-          //         value,
-          //         style: TextStyle(color: Colors.white, fontSize: SC.from_height(18)),
-          //       ),
-          //     );
-          //   }).toList(),
-          // ),
+            value: dropdownValue,
+            icon: Transform.rotate(
+              angle: 1.5708, // 90 degrees in radians (π/2 or 1.5708 radians)
+              child: Icon(Icons.arrow_forward_ios_rounded, color: Colors.white,size: SC.from_height(17)),
+            ),
+            iconSize: SC.from_height(22),
+            elevation: 16,
+            style: TextStyle(color: Colors.black),
+            underline: Container(), // Remove the underline
+            onChanged: (String? newValue) {
+              setState(() {
+                dropdownValue = newValue;
+                // Handle the selected option here
+                print('Selected: $dropdownValue');
+              });
+            },
 
-          SizedBox(width: SC.from_height(60)),
-
-          HelpButton(
-            icon: Icon(Icons.call_outlined,size:  SC.from_height(17)),
-            text: 'Help ?',
+            items: <String>['SK e solution 1 ', 'SK e solution 2 ', 'SK e solution 3 ']
+                .map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(
+                  value,
+                  style: TextStyle(color: Colors.white, fontSize: SC.from_height(19.5)),
+                ),
+              );
+            }).toList(),
           ),
+
+          SizedBox(width: SC.from_height(80)),
+
+          HelpButton(),
 
           // Container(
           //   child: Row(
           //     mainAxisAlignment: MainAxisAlignment.center,
           //     children: [
-          //       Icon(Icons.call_outlined,size:  SC.from_height(17),),
+          //       Icon(Icons.search,size:  SC.from_height(17),color: Colors.white,),
           //       SizedBox(width: SC.from_height(4),),
-          //       Center(child: Text('Help ?',style: TextStyle(fontSize: SC.from_height(16),color: Colors.white),),),
+          //       Center(child: Text('Search',style: TextStyle(fontSize: SC.from_height(16),color: Colors.white),),),
           //     ],
           //   ),
           //   width: SC.from_height(85),
           //   height: SC.from_height(30),
           //   decoration: BoxDecoration(borderRadius: BorderRadius.circular(SC.from_height(15)),border: Border.all(
-          //       color: Colors.white
+          //       color: Colors.white,width: 1.5
           //   )),
           // ),
           SizedBox(width: SC.from_height(20)),
@@ -160,11 +121,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
           SizedBox(height: SC.from_height(15),),
 
-          Text('Introducing AI-powered ads with Leadkart',style: TextStyle(fontSize: SC.from_height(17)),),
+          Text('Introducing AI-powered ads with Leadkart',style: TextStyle(fontSize: SC.from_height(18),  fontWeight: FontWeight.w500,),),
 
           SizedBox(height: SC.from_height(8),),
 
-          //Ai Add grid
+
+          // GRIDVIEW BUILDER //
           GridView.builder(
             primary: false,
             physics: NeverScrollableScrollPhysics(),
@@ -178,7 +140,38 @@ class _HomeScreenState extends State<HomeScreen> {
             itemCount: items.length,
             itemBuilder: (context, index) {
               final item = items[index];
-              return  AiAddTile(icon: Image.asset(item["image"].toString(),fit: BoxFit.cover,), title: item["text"].toString());
+              return  Container(
+                margin: EdgeInsets.symmetric(horizontal: SC.from_width(5)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    AspectRatio(
+                      aspectRatio: 0.9,
+                      child: Container(
+                        padding: EdgeInsets.all(SC.from_width(8)),
+                        // decoration: BoxDecoration(border: Border.all()),
+                        child: Image.asset(
+                          item['image']!,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: SC.from_width(3)), // Add some spacing between image and text
+                    Expanded(
+                      child: Text(
+                        item['text']!,
+                        style: TextStyle(
+                          color: Color.fromRGBO(0, 0, 0, 7),
+                          fontWeight: FontWeight.w500,
+                          fontSize: SC.from_width(16),
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1, // Adjust maxLines if you want to limit the number of lines for text
+                      ),
+                    ),
+                  ],
+                ),
+              );
 
             },
           ),
@@ -198,34 +191,38 @@ class _HomeScreenState extends State<HomeScreen> {
 
           Image.asset('assets/home_images/4.png',fit: BoxFit.cover,),
 
+          SizedBox(height: SC.from_height(19),),
+
+          Text('Choose your Ad requirement',style: TextStyle(fontSize:  SC.from_height(18),fontWeight: FontWeight.w500),),
+
           SizedBox(height: SC.from_height(15),),
 
-          Text('Choose your Ad requirement',style: TextStyle(fontSize:  SC.from_height(16)),),
-
-          SizedBox(height: SC.from_height(15),),
-
-          //add Requirment
           ListView.builder(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
             itemBuilder: (context,index){
-              return Container(margin: EdgeInsets.only(top: SC.from_height(8),left: SC.from_height(2),right: SC.from_height(2)),
-                width: double.infinity,
-                height: SC.from_height(85),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  // border: Border.all(),
-                  borderRadius: BorderRadius.circular(SC.from_height(8)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.10), // Shadow color with opacity
-                      spreadRadius: 2, // Spread radius
-                      blurRadius: 3, // Blur radius
-                      offset: Offset(0, 4), // Offset in x and y directions
-                    ),
-                  ],
+              return InkWell(
+                onTap: (){
+
+                },
+                child: Container(margin: EdgeInsets.only(top: SC.from_height(15),left: SC.from_height(2),right: SC.from_height(2)),
+                  width: double.infinity,
+                  height: SC.from_height(85),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    // border: Border.all(),
+                    borderRadius: BorderRadius.circular(SC.from_height(8)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.10), // Shadow color with opacity
+                        spreadRadius: 0.5, // Spread radius
+                        blurRadius: 5, // Blur radius
+                        offset: Offset(1, 2), // Offset in x and y directions
+                      ),
+                    ],
+                  ),
+                  child: AddREquirmentTile(icon:Icon(iconList[index],color: Colors.black54,),),
                 ),
-                child: AddREquirmentTile(icon:Icon(iconList[index]),),
               );
             },
             itemCount: 4,
@@ -239,9 +236,18 @@ class _HomeScreenState extends State<HomeScreen> {
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
               child: Image.asset('assets/home_images/img_4.png',fit: BoxFit.cover,)),
 
+
+
           SizedBox(height: SC.from_height(20),),
 
 
+          // MyactionButton(
+          //     onActionComplit: (v){},
+          //     action: ()async{
+          //       await Future.delayed(Duration(seconds: 3));
+          //     },
+          //     duretion: Duration(milliseconds: 300)),
+          SizedBox(height: SC.from_height(10),),
 
         ],
       ),

@@ -39,7 +39,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
       appBar: AppBar(
         foregroundColor: Colors.white,
         backgroundColor: MyHelper.appConstent.primeryColor,
-        title: Text('Add Detail',),
+        title: Text('Add Detail',style: TextStyle(fontSize: SC.from_height(21)),),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: SC.from_height(18)),
@@ -81,7 +81,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                         'Lead Generation',
                         style: TextStyle(
                             fontWeight: FontWeight.w600,
-                            fontSize: SC.from_height(17),
+                            fontSize: SC.from_height(18),
                             color:  MyHelper.appConstent.primeryColor),
                       ),
                       Container(
@@ -91,6 +91,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                           child: Text(
                             'Finished',
                             style: TextStyle(
+                              fontSize: SC.from_height(15),
                                 color: MyHelper.appConstent.primeryColor),
                           ),
                         ),
@@ -104,11 +105,12 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                       Text(
                         '1 May - 10 May',
                         style: TextStyle(
-                            color: Colors.grey, fontSize: SC.from_height(14)),
+                          fontWeight: FontWeight.w500,
+                            color: Colors.grey.shade700, fontSize: SC.from_height(15)),
                       ),
                       Row(
                         children: [
-                          SizedBox(width: SC.from_height(90)),
+                          SizedBox(width: SC.from_height(95)),
 
                           InkWell(
                             onTap: (){
@@ -117,8 +119,8 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                             child: Text(
                               'See Detail >',
                               style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: SC.from_height(15),
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: SC.from_height(16.5),
                                   color: Color.fromRGBO(36, 238, 221, 1)),
                             ),
                           )
@@ -135,15 +137,15 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
             Text(
               'Yay, Your ad reached to 211109 people',
               style: TextStyle(
-                  fontWeight: FontWeight.w600, fontSize: SC.from_height(15)),
+                  fontWeight: FontWeight.w600, fontSize: SC.from_height(17)),
             ),
             SizedBox(
-              height: SC.from_height(15),
+              height: SC.from_height(12),
             ),
             Text(
               'Congratulations, in just 10 days your ad has reached to 211109 people and got 191 leads.',
               style: TextStyle(
-                  fontSize: SC.from_height(14), color: Colors.grey),
+                  fontSize: SC.from_height(15), color: Colors.grey.shade700),
             ),
             SizedBox(
               height: SC.from_height(15),
@@ -158,7 +160,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                 child: Text(
                   'See All Leads',
                   style: TextStyle(
-                      fontSize: SC.from_height(16),
+                      fontSize: SC.from_height(17),
                       color: Color.fromRGBO(36, 238, 221, 1)),
                 ),
               ),
@@ -185,14 +187,14 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                           'Facebook',
                           style: TextStyle(
                               color: Color.fromRGBO(36, 238, 221, 1),
-                              fontSize: SC.from_height(15)),
+                              fontSize: SC.from_height(16)),
                         ),
                         SizedBox(
                           width: SC.from_height(10),
                         ),
                         Text(
                           'Instagram',
-                          style: TextStyle(fontSize: SC.from_height(15)),
+                          style: TextStyle(fontSize: SC.from_height(16)),
                         )
                       ],
                     ),
@@ -209,24 +211,27 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                                 Text(
                                   item['label']!,
                                   style: TextStyle(
-                                    fontSize: SC.from_height(14),
-                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: SC.from_height(15),
+                                    color: Colors.grey.shade700,
                                   ),
                                 ),
                                 Spacer(),
                                 Text(
                                   item['value1']!,
                                   style: TextStyle(
-                                    fontSize: SC.from_height(14),
-                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: SC.from_height(15),
+                                    color: Colors.grey.shade700,
                                   ),
                                 ),
                                 SizedBox(width: SC.from_height(20)),
                                 Text(
                                   item['value2']!,
                                   style: TextStyle(
-                                    fontSize: SC.from_height(14),
-                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: SC.from_height(15),
+                                    color: Colors.grey.shade700,
                                   ),
                                 ),
                               ],
@@ -265,8 +270,8 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                   child: Text(
                     'Facebook',
                     style: TextStyle(
-                      color: isFacebookSelected ? Colors.white : Colors.black,
-                      fontSize: SC.from_height(15),
+                      color: isFacebookSelected ? Colors.white : Colors.grey.shade700,fontWeight: FontWeight.w500,
+                      fontSize: SC.from_height(16),
                     ),
                   ),
                 ),
@@ -295,8 +300,8 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                   child: Text(
                     'Instagram',
                     style: TextStyle(
-                      color: isInstagramSelected ? Colors.white : Colors.black,
-                      fontSize: SC.from_height(15),
+                      color: isInstagramSelected ? Colors.white : Colors.grey.shade700,fontWeight: FontWeight.w500,
+                      fontSize: SC.from_height(16),
                     ),
                   ),
                 ),
@@ -315,6 +320,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
             SizedBox(
               height: SC.from_height(30),
             ),
+
             // DEVICE AND VIEWS //
             Padding(
               padding: EdgeInsets.symmetric(horizontal: SC.from_height(15)),
@@ -323,7 +329,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                 children: [
                   Text(
                     'Device',
-                    style: TextStyle(fontSize: SC.from_height(17)),
+                    style: TextStyle(fontSize: SC.from_height(18),color: Colors.grey.shade700,fontWeight: FontWeight.w500),
                   ),
                   InkWell(
                     onTap: (){
@@ -332,7 +338,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                     child: Text(
                       'Views',
                       style: TextStyle(
-                          fontSize: SC.from_height(17),
+                          fontSize: SC.from_height(18),
                           color: Color.fromRGBO(36, 238, 221, 1)),
                     ),
                   ),
@@ -347,24 +353,26 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                 Container(
                   clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(),
-                  width: SC.from_height(40),
-                  height: SC.from_height(50),
+                  width: SC.from_height(55),
+                  height: SC.from_height(55),
                   child: Image.asset('assets/phone.png'),
                 ),
                 Text(
                   'Mobile',
                   style: TextStyle(
-                      color: Colors.grey, fontSize: SC.from_height(14)),
+                    fontWeight: FontWeight.w500,
+                      color: Colors.grey.shade700, fontSize: SC.from_height(16)),
                 ),
                 Text(
                   '3.08 lacs',
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: SC.from_height(16),
+                      fontSize: SC.from_height(18),
                       fontWeight: FontWeight.w600),
                 ),
               ],
             ),
+
             SizedBox(
               height: SC.from_height(30),
             ),
@@ -379,6 +387,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
             SizedBox(
               height: SC.from_height(30),
             ),
+
             // AGE AND VIEWS  BarChart //
             Padding(
               padding: EdgeInsets.symmetric(horizontal: SC.from_height(15)),
@@ -387,7 +396,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                 children: [
                   Text(
                     'Age',
-                    style: TextStyle(fontSize: SC.from_height(17)),
+                    style: TextStyle(fontSize: SC.from_height(18),color: Colors.grey.shade700,fontWeight: FontWeight.w500),
                   ),
                   InkWell(
                     onTap: (){
@@ -396,14 +405,13 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                     child: Text(
                       'Views',
                       style: TextStyle(
-                          fontSize: SC.from_height(17),
+                          fontSize: SC.from_height(18),
                           color: Color.fromRGBO(36, 238, 221, 1)),
                     ),
                   ),
                 ],
               ),
             ),
-
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -474,7 +482,6 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                 ],
               ),
             ),
-
              Center(
                child: Text('Age Group',style: TextStyle(color: Colors.grey),),
              ),
@@ -503,7 +510,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                 children: [
                   Text(
                     'Post Engagement',
-                    style: TextStyle(fontSize: SC.from_height(18),fontWeight: FontWeight.w600,color: Colors.grey),
+                    style: TextStyle(fontSize: SC.from_height(18),fontWeight: FontWeight.w600,color: Colors.grey.shade700),
                   ),
                   Text(
                     '4322',
@@ -524,32 +531,32 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
               iconPath: 'assets/img_5.png',
               title: 'Comment 1',
               count: '45',
-              textColor: Colors.grey,
-              countColor: Colors.grey,
+              textColor: Colors.grey.shade600,
+              countColor: Colors.grey.shade600,
             ),
-            SizedBox(height: 7),
+            SizedBox(height: 9),
             buildCommentWidget(
               iconPath: 'assets/img_6.png',
               title: 'Post Save',
               count: '32',
-              textColor: Colors.grey,
-              countColor: Colors.grey,
+              textColor: Colors.grey.shade600,
+              countColor: Colors.grey.shade600,
             ),
-            SizedBox(height: 7),
+            SizedBox(height: 9),
             buildCommentWidget(
               iconPath: 'assets/img_7.png',
               title: 'Link Click',
               count: '18',
-              textColor: Colors.grey,
-              countColor: Colors.grey,
+              textColor: Colors.grey.shade600,
+              countColor: Colors.grey.shade600,
             ),
-            SizedBox(height: 7),
+            SizedBox(height: 9),
             buildCommentWidget(
               iconPath: 'assets/img_8.png',
               title: 'Reaction',
               count: '63',
-              textColor: Colors.grey,
-              countColor: Colors.grey,
+              textColor: Colors.grey.shade600,
+              countColor: Colors.grey.shade600,
             ),
           ],
         ),
@@ -578,7 +585,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                 children: [
                   Text(
                     'Gender',
-                    style: TextStyle(fontSize: SC.from_height(18),fontWeight: FontWeight.w600,color: Colors.grey),
+                    style: TextStyle(fontSize: SC.from_height(19),fontWeight: FontWeight.w600,color: Colors.grey.shade700),
                   ),
                   InkWell(
                     onTap: (){
@@ -587,7 +594,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                     child: Text(
                       'Views (CTR)',
                       style: TextStyle(
-                          fontSize: SC.from_height(17),
+                          fontSize: SC.from_height(18),
                           color: Color.fromRGBO(36, 238, 221, 1)),
                     ),
                   ),
@@ -783,7 +790,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                 children: [
                   Text(
                     'Top Placement ',
-                    style: TextStyle(fontSize: SC.from_height(18),fontWeight: FontWeight.w600,color: Colors.grey),
+                    style: TextStyle(fontSize: SC.from_height(19),fontWeight: FontWeight.w600,color: Colors.grey.shade700),
                   ),
                   InkWell(
                     onTap: (){
@@ -792,7 +799,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                     child: Text(
                       'Views',
                       style: TextStyle(
-                          fontSize: SC.from_height(17),
+                          fontSize: SC.from_height(18),
                           color: Color.fromRGBO(36, 238, 221, 1)),
                     ),
                   ),
@@ -920,7 +927,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                 children: [
                   Text(
                     'Top Performing State ',
-                    style: TextStyle(fontSize: SC.from_height(18),fontWeight: FontWeight.w600,color: Colors.grey),
+                    style: TextStyle(fontSize: SC.from_height(19),fontWeight: FontWeight.w600,color: Colors.grey.shade700),
                   ),
                   Text(
                     '',
@@ -935,21 +942,19 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
               height: SC.from_height(15),
             ),
             Container(
+              // decoration: BoxDecoration(border: Border.all()),
               width: double.infinity,
-              child: Column(
-                children: [
-                  Container(
-                    color: Colors.blue,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                      Text('City',style: TextStyle(color: Colors.white,fontSize:SC.from_height(15) ),),
-                      Text('Views',style: TextStyle(color: Colors.white,fontSize:SC.from_height(15) ),),
-                      Text('Click',style: TextStyle(color: Colors.white,fontSize:SC.from_height(15) ),),
-                      Text('CTR',style: TextStyle(color: Colors.white,fontSize:SC.from_height(15) ),),
-                    ],),
-                  )
-                ],
+              height: SC.from_height(25),
+              child: Container(
+                color: Colors.blue,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                  Text('City',style: TextStyle(color: Colors.white,fontSize:SC.from_height(16) ),),
+                  Text('Views',style: TextStyle(color: Colors.white,fontSize:SC.from_height(16) ),),
+                  Text('Click',style: TextStyle(color: Colors.white,fontSize:SC.from_height(16) ),),
+                  Text('CTR',style: TextStyle(color: Colors.white,fontSize:SC.from_height(16) ),),
+                ],),
               ),
             ),
 
@@ -993,14 +998,14 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                       child: Container(
 
                         padding: EdgeInsets.all(SC.from_height(8)),
-                        color: Colors.blue.shade300,
+                        color: Colors.blue.shade200,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: List.generate(
                             names.length,
                                 (index) => Padding(
                                   padding:   EdgeInsets.all(SC.from_height(8)),
-                                  child: Text(names[index],style: TextStyle(color: Colors.white,fontSize: SC.from_height(14)),),
+                                  child: Text(names[index],style: TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(16)),),
                                 ),
                           ),
                         ),
@@ -1016,7 +1021,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                             ages.length,
                                 (index) => Padding(
                                   padding:   EdgeInsets.all(SC.from_height(8)),
-                                  child: Text('${ages[index]}',style: TextStyle(color: Colors.black,fontSize: SC.from_height(14)),),
+                                  child: Text('${ages[index]}',style: TextStyle(color: Colors.black,fontSize: SC.from_height(16)),),
                                 ),
                           ),
                         ),
@@ -1033,7 +1038,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                             clicks.length,
                                 (index) => Padding(
                                   padding:   EdgeInsets.all(SC.from_height(8)),
-                                  child: Text('${clicks[index]}',style: TextStyle(color: Colors.black,fontSize: SC.from_height(14)),),
+                                  child: Text('${clicks[index]}',style: TextStyle(color: Colors.black,fontSize: SC.from_height(16)),),
                                 ),
                           ),
                         ),
@@ -1049,7 +1054,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                             ctr.length,
                                 (index) => Padding(
                                   padding:   EdgeInsets.all(SC.from_height(8)),
-                                  child: Text('${ctr[index].toStringAsFixed(1)}%',style: TextStyle(color: Colors.black,fontSize: SC.from_height(14)),),
+                                  child: Text('${ctr[index].toStringAsFixed(1)}%',style: TextStyle(color: Colors.black,fontSize: SC.from_height(16)),),
                                 ),
                           ),
                         ),
@@ -1076,7 +1081,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
     required Color countColor,
   }) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15),
+      padding: EdgeInsets.symmetric(horizontal: SC.from_height(15)),
       child: Row(
         children: [
           Container(
@@ -1087,15 +1092,15 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
               color: Colors.black,
             ),
           ),
-          SizedBox(width: 8),
+          SizedBox(width: SC.from_height(10)),
           Text(
             title,
-            style: TextStyle(fontSize: SC.from_height(16), color: textColor),
+            style: TextStyle(fontSize: SC.from_height(16), color: textColor,fontWeight: FontWeight.w500),
           ),
           Expanded(child: Container()),
           Text(
             count,
-            style: TextStyle(fontSize: SC.from_height(16), color: countColor),
+            style: TextStyle(fontSize: SC.from_height(16), color: countColor,fontWeight: FontWeight.w500),
           ),
         ],
       ),

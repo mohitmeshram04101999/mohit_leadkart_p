@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:getwidget/components/button/gf_button.dart';
+import 'package:leadkart/component/HelpButtonWhite.dart';
 import 'package:leadkart/component/addRequirmentTile.dart';
 import 'package:leadkart/helper/dimention.dart';
 import 'package:leadkart/helper/helper.dart';
@@ -39,6 +40,11 @@ class _BusinesCategoryState extends State<BusinesCategory> {
         foregroundColor: Colors.white,
         backgroundColor: MyHelper.appConstent.primeryColor,
         title: Text('Busines Category',),
+        actions: [
+
+          HelpButton(),
+           SizedBox(width: SC.from_height(20)),
+        ],
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: SC.from_height(15)),
@@ -48,16 +54,16 @@ class _BusinesCategoryState extends State<BusinesCategory> {
 
             Padding(
               padding:   EdgeInsets.symmetric(horizontal:SC.from_height(0) ),
-              child: Text('What’s your Business',style: TextStyle(fontSize: SC.from_height(18),fontWeight: FontWeight.w600),),
+              child: Text('What’s your Business',style: TextStyle(fontSize: SC.from_height(19.5),fontWeight: FontWeight.w500,color: Colors.grey.shade700),),
             ),
             SizedBox(height: SC.from_height(7),),
             Padding(
               padding:   EdgeInsets.symmetric(horizontal:SC.from_height(0) ),
-              child: Text('Let us know which of the following describe the  business',style: TextStyle(fontSize: SC.from_height(16),color: Colors.grey),),
+              child: Text('Let us know which of the following describe the  business',style: TextStyle(fontSize: SC.from_height(17),color: Colors.grey.shade700),),
             ),
 
             SizedBox(
-              height: SC.from_height(15),
+              height: SC.from_height(18),
             ),
 
             // Busines Name //
@@ -73,7 +79,7 @@ class _BusinesCategoryState extends State<BusinesCategory> {
                   ),
                   labelText: 'Busines Name', // Add label text
                   labelStyle:
-                  TextStyle(color: Colors.grey,fontSize: SC.from_height(15)), // Customize label text style
+                  TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(16)), // Customize label text style
                   contentPadding: EdgeInsets.symmetric(
                       vertical: SC.from_height(12),
                       horizontal: SC.from_height(10)), // Adjust padding
@@ -110,12 +116,12 @@ class _BusinesCategoryState extends State<BusinesCategory> {
                 autovalidateMode: AutovalidateMode.onUserInteraction,
               ),
             ),
-            SizedBox(height: SC.from_height(15),),
+            SizedBox(height: SC.from_height(18),),
 
             // Select business category //
             Padding(
               padding:   EdgeInsets.symmetric(horizontal:SC.from_height(0) ),
-              child: Text('Select business category',style: TextStyle(fontSize: SC.from_height(17),fontWeight: FontWeight.w600),),
+              child: Text('Select business category',style: TextStyle(fontSize: SC.from_height(18),fontWeight: FontWeight.w600),),
             ),
 
             SizedBox(height: SC.from_height(15),),
@@ -128,12 +134,12 @@ class _BusinesCategoryState extends State<BusinesCategory> {
                 cursorColor: Colors.grey,
                 decoration: InputDecoration(
                   hintText: 'Select busines category',
-                  hintStyle: TextStyle(fontSize: SC.from_height(15),color: Colors.grey),
+                  hintStyle: TextStyle(fontSize: SC.from_height(16.5),color: Colors.grey.shade700),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(SC.from_height(7)),
                     borderSide: BorderSide(color: Colors.grey), // Set border color
                   ),
-                  prefixIcon: Icon(Icons.search, color: Colors.grey,), // Add search icon
+                  prefixIcon: Icon(Icons.search, color: Colors.grey.shade700,), // Add search icon
                   contentPadding: EdgeInsets.symmetric(
                       vertical: SC.from_height(12),
                       horizontal: SC.from_height(10)), // Adjust padding
@@ -186,7 +192,7 @@ class _BusinesCategoryState extends State<BusinesCategory> {
               itemBuilder: (context, index) {
                 return Container(
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey),
+                    border: Border.all(color: Colors.grey.shade400),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Column(
@@ -200,7 +206,7 @@ class _BusinesCategoryState extends State<BusinesCategory> {
                       SizedBox(height: SC.from_height(10)),
                       Text(
                         categoryNames[index], // Use the name from the list
-                        style: TextStyle(color: Colors.grey, fontSize: SC.from_height(15)),
+                        style: TextStyle(color: Colors.grey.shade700, fontSize: SC.from_height(15)),
                         textAlign: TextAlign.center,
                       ),
                     ],
@@ -230,7 +236,7 @@ class _BusinesCategoryState extends State<BusinesCategory> {
                 child: Center(
                   child: Text(
                     'Next',
-                    style: TextStyle(color: Colors.white,fontSize: SC.from_height(17)), // Text color
+                    style: TextStyle(color: Colors.white,fontSize: SC.from_height(18)), // Text color
                   ),
                 ),
               ),

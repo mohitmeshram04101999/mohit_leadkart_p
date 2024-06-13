@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -7,9 +5,7 @@ import 'package:getwidget/components/button/gf_button.dart';
 import 'package:go_router/go_router.dart';
 import 'package:leadkart/helper/helper.dart';
 import 'package:leadkart/login_pages/otp_screen.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-import 'package:leadkart/my%20custom%20assets%20dart%20file/my_math.dart';
-import 'package:leadkart/my%20custom%20assets%20dart%20file/myast%20dart%20file.dart';
+
 import '../helper/dimention.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -21,24 +17,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LogInPageState extends State<LoginScreen> {
-  loginWithFacebook() async {
-    final LoginResult result = await FacebookAuth.i.login(
-      
-      loginTracking: LoginTracking.enabled,
-      permissions: ['email', 'public_profile'],
-    ); // by default we request the email and the public profile
-// or FacebookAuth.i.login()
-    if (result.status == LoginStatus.success) {
-      // you are logged
-      final AccessToken accessToken = result.accessToken!;
-      log('Access Token: ${accessToken.tokenString}');
-    } else {
-      log('Error');
-log(result.status.toString());
-log(result.message.toString());
-    }
-  }
-  double value = 0.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,6 +33,7 @@ log(result.message.toString());
 
               child: Image.asset('assets/2.png',fit: BoxFit.cover,),
             ),
+
             Container(
               width: double.infinity,
               height:SC.from_height(450) ,
@@ -80,11 +59,12 @@ log(result.message.toString());
                 children: [
 
                   SizedBox(height: SC.from_height(30),),
-                  Text('Let’s sign in ', style: TextStyle(fontSize:SC.from_height(24),fontWeight: FontWeight.w600 ),),
+                  Text('Let’s sign in ', style: TextStyle(fontSize:SC.from_height(26),fontWeight: FontWeight.w600 ),),
                   SizedBox(height: SC.from_height(10),),
                   Container(
                       width: double.infinity,
-                      margin: EdgeInsets.symmetric(horizontal: 25),child: Text('Sign in your account using mobile no. or, Google \n                         Facebook and Mail ', style: TextStyle(fontSize:SC.from_height(15),color: Colors.grey),)),
+                      margin: EdgeInsets.symmetric(horizontal: 25),child: Center(child: Text('Sign in your account using mobile no. or, Google \n                         Facebook and Mail ',
+                    style: TextStyle(fontSize:SC.from_height(16),color: Color.fromRGBO(96, 96, 96, 1),fontWeight: FontWeight.w500),))),
 
                   SizedBox(height: SC.from_height(20),),
 
@@ -100,7 +80,7 @@ log(result.message.toString());
                       inputFormatters: [LengthLimitingTextInputFormatter(10)],
                       decoration: InputDecoration(
                         labelText: 'Enter mobile no',
-                        labelStyle: TextStyle(color: Colors.grey), // Your label text
+                        labelStyle: TextStyle(color: Colors.black,fontSize: SC.from_height(16)), // Your label text
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide(color: Colors.grey, width: 1.0), // Set default border color
@@ -118,17 +98,17 @@ log(result.message.toString());
                   ),
 
 
-                  SizedBox(height: SC.from_height(20),),
+                  SizedBox(height: SC.from_height(30),),
 
-                  // GFBUTTON //
+                  // GFBUTTON   COUNTINUE //
                   Container(
                     height: SC.from_height(45), // Adjust as needed
                     width: SC.from_height(340), // Adjust as needed
                     child: GFButton(
                       onPressed: () {
 
-                        context.pushNamed("homePage");
-                        // Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpScreen()));
+                        // context.pushNamed("homePage");
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpScreen()));
                         // Your onPressed logic here
                       },
                       color: MyHelper.appConstent.primeryColor, // The button's background color
@@ -138,7 +118,7 @@ log(result.message.toString());
                       child: Center(
                         child: Text(
                           'Continue',
-                          style: TextStyle(color: Colors.white,fontSize: SC.from_height(14)), // Text color
+                          style: TextStyle(color: Colors.white,fontSize: SC.from_height(15.5)), // Text color
                         ),
                       ),
                     ),
@@ -154,7 +134,7 @@ log(result.message.toString());
 
                         Container(width: SC.from_height(122),child: Divider(thickness: 1.5,color: Colors.grey.shade300,)),
 
-                        Text(' or Log with ',style: TextStyle(color: Colors.grey,fontSize: SC.from_height(16))),
+                        Text('  or Log with  ',style: TextStyle(color: Colors.grey,fontSize: SC.from_height(17),fontWeight: FontWeight.w500)),
                         Container(width: SC.from_height(122),child: Divider(thickness: 1.5,color: Colors.grey.shade300)),
                       ],
                     ),
@@ -163,10 +143,10 @@ log(result.message.toString());
                   SizedBox(height: SC.from_height(30),),
 
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Container(
-                        width:  SC.from_height(140),
+                        width:  SC.from_height(150),
                         height:  SC.from_height(54),
                         decoration: BoxDecoration(border: Border.all(color: Colors.grey),borderRadius: BorderRadius.circular(10)),
                         child: Center(child: Container(
@@ -175,19 +155,14 @@ log(result.message.toString());
                             child: Image.asset('assets/google.png',fit: BoxFit.cover,))),
 
                       ),
-                      InkWell(
-                        onTap: () async{
-await loginWithFacebook();
-                        },
-                        child: Container(
-                          width:  SC.from_height(140),
-                          height:  SC.from_height(54),
-                          decoration: BoxDecoration(border: Border.all(color: Colors.grey),borderRadius: BorderRadius.circular(10)),
-                          child: Center(child: Container(
-                              width:  SC.from_height(32),
-                              height:  SC.from_height(32),
-                              child: Image.asset('assets/facebook.png',fit: BoxFit.cover,))),
-                        ),
+                      Container(
+                        width:  SC.from_height(150),
+                        height:  SC.from_height(54),
+                        decoration: BoxDecoration(border: Border.all(color: Colors.grey),borderRadius: BorderRadius.circular(10)),
+                        child: Center(child: Container(
+                            width:  SC.from_height(32),
+                            height:  SC.from_height(32),
+                            child: Image.asset('assets/facebook.png',fit: BoxFit.cover,))),
                       ),
                     ],
                   )
