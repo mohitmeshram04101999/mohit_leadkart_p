@@ -66,7 +66,7 @@ class _SelectedEditorImageViewState extends State<SelectedEditorImageView> {
               isShow: !imageController.isAdjustClicked.value,
             onPanUpdate: (details) {
               setState(() {
-                angle = angle +( details.delta.dy / 10);
+                angle = angle -( details.delta.dy / 10);
               });
             },
               onTap: () {
