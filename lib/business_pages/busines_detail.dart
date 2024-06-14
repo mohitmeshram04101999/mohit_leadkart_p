@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:go_router/go_router.dart';
+import 'package:leadkart/business_pages/additional_detail.dart';
 
 import 'package:leadkart/helper/dimention.dart';
 import 'package:leadkart/helper/helper.dart';
@@ -214,28 +215,33 @@ class _BusinessDetailState extends State<BusinessDetail> {
             SizedBox(height: SC.from_height(11),),
 
             // Manage Website //
-            Container(
-              width: double.infinity,
-              height: SC.from_height(50),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(SC.from_height(10)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.shade300, // Shadow color
-                    spreadRadius: 1, // Spread radius
-                    blurRadius: 5, // Blur radius
-                    offset: Offset(0, 1), // Offset in x and y direction
-                  ),
-                ],
-              ),
-              child: Row(
-                children: [
-                  SizedBox(width: SC.from_height(10),),
-                  Icon(Icons.blur_circular_sharp,color: Colors.grey,size: SC.from_height(24) ,),
-                  SizedBox(width: SC.from_height(10),),
-                  Text('Manage Website',style: TextStyle(color: Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)),)
-                ],
+            InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>AdditionalDetail()));
+              },
+              child: Container(
+                width: double.infinity,
+                height: SC.from_height(50),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(SC.from_height(10)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.shade300, // Shadow color
+                      spreadRadius: 1, // Spread radius
+                      blurRadius: 5, // Blur radius
+                      offset: Offset(0, 1), // Offset in x and y direction
+                    ),
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    SizedBox(width: SC.from_height(10),),
+                    Icon(Icons.blur_circular_sharp,color: Colors.grey,size: SC.from_height(24) ,),
+                    SizedBox(width: SC.from_height(10),),
+                    Text('Manage Website',style: TextStyle(color: Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)),)
+                  ],
+                ),
               ),
             ),
             SizedBox(height: SC.from_height(11),),

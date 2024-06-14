@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:go_router/go_router.dart';
 import 'package:leadkart/component/bottom_navigation_screen.dart';
 import 'package:leadkart/helper/dimention.dart';
+import 'package:pinput/pinput.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({Key? key}) : super(key: key);
@@ -16,10 +18,48 @@ class OtpScreen extends StatefulWidget {
 
 class _OtpScreenState extends State<OtpScreen> {
 
+
+  final defaultPinTheme = PinTheme(
+    width:  SC.from_height(58),  // Increased width
+    height:  SC.from_height(58), // Increased height
+    textStyle: TextStyle(
+      fontSize:  SC.from_height(18),
+      color: Colors.black,
+      fontWeight: FontWeight.w600,
+    ),
+    decoration: BoxDecoration(
+      border: Border.all(color: Colors.grey.shade200), // Changed border color
+      borderRadius: BorderRadius.circular( SC.from_height(10)),
+    ),
+  );
+
   FocusNode focusNode1 = FocusNode();
   FocusNode focusNode2 = FocusNode();
   FocusNode focusNode3 = FocusNode();
   FocusNode focusNode4 = FocusNode();
+
+
+  bool _isLoading = false;
+
+  void _handleButtonTap() {
+    setState(() {
+      _isLoading = true; // Show loading indicator
+    });
+
+    // Simulate a delay before navigating
+    Future.delayed(Duration(seconds: 2), () {
+      // Navigate to the next screen
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => MyBottomNavigationBar()),
+      ).then((_) {
+        // After navigating back, set isLoading to false
+        setState(() {
+          _isLoading = false;
+        });
+      });
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,209 +105,43 @@ class _OtpScreenState extends State<OtpScreen> {
 
 
             SizedBox(height: SC.from_height(40),),
-            // TEXT FIELD  otp//
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    clipBehavior: Clip.hardEdge,
-                    // decoration: BoxDecoration(borderRadius: BorderRadius.circular(SC.from_width(9))),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(SC.from_width(10)),
-                      border: Border.all(color: Colors.grey.shade200), // Adding border color
-                    ),
-                    width: SC.from_width(60),
-                    height: SC.from_width(60),
-                    alignment: Alignment.center,
 
-                    child: TextField(
-                      cursorColor: Colors.grey,
-                      // controller: _otpApi.otpController1.value,
 
-                      keyboardType: TextInputType.number,
-                      textAlign: TextAlign.center,
-                      onChanged: (value) {
-                        if (value.length == 1) {
-                          FocusScope.of(context).nextFocus();
-                        } else if (value.isEmpty) {
-                          FocusScope.of(context).previousFocus();
-                        }
-                      },
-                      inputFormatters: [
-                        LengthLimitingTextInputFormatter(1),
-                        FilteringTextInputFormatter.digitsOnly
-                      ],
-                      decoration: InputDecoration(
-                          hintText: "",
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                              BorderRadius.circular(SC.from_width(9)),
-                              borderSide: BorderSide(
-                                color: Color.fromRGBO(36, 238, 221, 1),
-                              )),
 
-                          border: InputBorder.none),
+      // PINPUT OTP TEXT FIELD  //
+      SizedBox(height: SC.from_height(20),),
+      Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Pinput(
 
-                    ),
-                  ),
-                  Container(
-                    clipBehavior: Clip.hardEdge,
-                    // decoration: BoxDecoration(borderRadius: BorderRadius.circular(SC.from_width(9))),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(SC.from_width(10)),
-                      border: Border.all(color: Colors.grey.shade200), // Adding border color
-                    ),
-                    width: SC.from_width(60),
-                    height: SC.from_width(60),
-                    alignment: Alignment.center,
-                    child: TextField(
-                      cursorColor: Colors.grey,
-                      // controller: _otpApi.otpController2.value,
-                      focusNode: focusNode2,
-                      keyboardType: TextInputType.number,
-                      textAlign: TextAlign.center,
-                      onChanged: (value) {
-                        if (value.length == 1) {
-                          FocusScope.of(context).nextFocus();
-                        } else if (value.isEmpty) {
-                          FocusScope.of(context).previousFocus();
-                        }
-                      },
-                      inputFormatters: [
-                        LengthLimitingTextInputFormatter(1),
-                        FilteringTextInputFormatter.digitsOnly
-                      ],
-                      decoration: InputDecoration(
-                          hintText: "",
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                              BorderRadius.circular(SC.from_width(9)),
-                              borderSide: BorderSide(
-                                color: Color.fromRGBO(36, 238, 221, 1),
-                              )
-                          ),
-                          border: InputBorder.none),
-
-                    ),
-                  ),
-                  Container(
-                    clipBehavior: Clip.hardEdge,
-                    // decoration: BoxDecoration(borderRadius: BorderRadius.circular(SC.from_width(9))),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(SC.from_width(10)),
-                      border: Border.all(color: Colors.grey.shade200), // Adding border color
-                    ),
-                    width: SC.from_width(60),
-                    height: SC.from_width(60),
-                    alignment: Alignment.center,
-                    child: TextField(
-                      cursorColor: Colors.grey,
-                      // controller: _otpApi.otpController3.value,
-                      focusNode: focusNode3,
-                      keyboardType: TextInputType.number,
-                      textAlign: TextAlign.center,
-                      onChanged: (value) {
-                        if (value.length == 1) {
-                          FocusScope.of(context).nextFocus();
-                        } else if (value.isEmpty) {
-                          FocusScope.of(context).previousFocus();
-                        }
-                      },
-                      inputFormatters: [
-                        LengthLimitingTextInputFormatter(1),
-                        FilteringTextInputFormatter.digitsOnly
-                      ],
-                      decoration: InputDecoration(
-                          hintText: "",
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                              BorderRadius.circular(SC.from_width(9)),
-                              borderSide: BorderSide(
-                                color: Color.fromRGBO(36, 238, 221, 1),
-                              )
-                          ),
-                          border: InputBorder.none),
-
-                    ),
-                  ),
-                  Container(
-                    clipBehavior: Clip.hardEdge,
-                    // decoration: BoxDecoration(borderRadius: BorderRadius.circular(SC.from_width(9))),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(SC.from_width(10)),
-                      border: Border.all(color: Colors.grey.shade200), // Adding border color
-                    ),
-                    width: SC.from_width(60),
-                    height: SC.from_width(60),
-                    alignment: Alignment.center,
-                    child: TextField(
-                      cursorColor: Colors.grey,
-                      // controller: _otpApi.otpController4.value,
-                      focusNode: focusNode4,
-                      keyboardType: TextInputType.number,
-                      textAlign: TextAlign.center,
-                      onChanged: (value) {
-                        if (value.length == 1) {
-                          FocusScope.of(context).nextFocus();
-                        } else if (value.isEmpty) {
-                          FocusScope.of(context).previousFocus();
-                        }
-                      },
-                      inputFormatters: [
-                        LengthLimitingTextInputFormatter(1),
-                        FilteringTextInputFormatter.digitsOnly
-                      ],
-                      decoration: InputDecoration(
-                          hintText: "",
-
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                              BorderRadius.circular(SC.from_width(9)),
-                              borderSide: BorderSide(
-                                color: Color.fromRGBO(36, 238, 221, 1),
-                              )
-                          ),
-                          border: InputBorder.none),
-
-                    ),
-                  ),
-                ],
+            length: 4,
+            defaultPinTheme: defaultPinTheme,
+            focusedPinTheme: defaultPinTheme.copyWith(
+              decoration: BoxDecoration(
+                border: Border.all(color: Color.fromRGBO(36, 238, 221, 1)), // Changed border color for focused state
+                borderRadius: BorderRadius.circular( SC.from_height(10)),
+              ),
+            ),
+            submittedPinTheme: defaultPinTheme.copyWith(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(color: Colors.grey.shade200), // Keep the border for submitted state
+                borderRadius: BorderRadius.circular( SC.from_height(10)),
               ),
             ),
 
-            // TEXT FIELD  otp//
-            // Padding(
-            //   padding: const EdgeInsets.symmetric(horizontal: 30),
-            //   child:  OtpTextField(
-            //
-            //     keyboardType: TextInputType.number,
-            //     focusedBorderColor: Color.fromRGBO(36, 238, 221, 0.5),
-            //     cursorColor: Colors.grey.shade300,
-            //     borderRadius: BorderRadius.circular( SC.from_height(10)),
-            //     numberOfFields: 4,
-            //     borderColor: Color(0xFF512DA8),
-            //     showFieldAsBox: true,
-            //     fieldWidth: SC.from_height(55),  // Adjust the width of each field
-            //     fieldHeight: SC.from_height(55),
-            //
-            //     onCodeChanged: (String code) {
-            //       // Handle validation or checks here
-            //     },
-            //     onSubmit: (String verificationCode) {
-            //       showDialog(
-            //         context: context,
-            //         builder: (context) {
-            //           return AlertDialog(
-            //             title: Text("Verification Code"),
-            //             content: Text('Code entered is $verificationCode'),
-            //           );
-            //         },
-            //       );
-            //     }, // end onSubmit
-            //   ),
-            // ),
+            separatorBuilder: (index) => SizedBox(width:  SC.from_height(20)),
+            // Space between the PIN fields
+            onChanged: (value) {
+              print('PIN changed: $value');
+            },
+            onCompleted: (pin) {
+              print('PIN completed: $pin');
+            },
+          ),
+        ),
+      ),
 
 
             SizedBox(height: SC.from_height(40),),
@@ -285,29 +159,55 @@ class _OtpScreenState extends State<OtpScreen> {
 
             SizedBox(height: SC.from_height(40),),
             // GFBUTTON //
-            Container(
-              height: SC.from_height(45), // Adjust as needed
-              width: SC.from_height(340), // Adjust as needed
-              child: GFButton(
-                onPressed: () {
+            // Container(
+            //   height: SC.from_height(45), // Adjust as needed
+            //   width: SC.from_height(340), // Adjust as needed
+            //   child: GFButton(
+            //     onPressed: () {
+            //
+            //       // Get.off(MyBottomNavigationBar());
+            //       context.pushNamed("homePage");
+            //       // Your onPressed logic here
+            //     },
+            //     color: Color.fromRGBO(36, 238, 221, 1), // The button's background color
+            //     borderShape: RoundedRectangleBorder(
+            //       borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
+            //     ),
+            //     child: Center(
+            //       child: Text(
+            //         'Verify OTP',
+            //         style: TextStyle(color: Colors.white,fontSize: SC.from_height(17.5)), // Text color
+            //       ),
+            //     ),
+            //   ),
+            // ),
 
-                  // Get.off(MyBottomNavigationBar());
-                  context.pushNamed("homePage");
-                  // Your onPressed logic here
-                },
-                color: Color.fromRGBO(36, 238, 221, 1), // The button's background color
-                borderShape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
-                ),
-                child: Center(
-                  child: Text(
-                    'Verify OTP',
-                    style: TextStyle(color: Colors.white,fontSize: SC.from_height(17.5)), // Text color
+            Center(
+              child: Container(
+                height: SC.from_height(45), // Adjust as needed
+                width: SC.from_height(340),  // Adjust as needed
+                child: _isLoading
+                    ? SpinKitCircle(
+                  color: Color.fromRGBO(36, 238, 221, 1), // Customize the color of the spinner
+                  size: 50.0, // Adjust the size of the spinner
+                )
+                    : ElevatedButton(
+                  onPressed: _handleButtonTap,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromRGBO(36, 238, 221, 1), // Background color
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Verify OTP',
+                      style: TextStyle(color: Colors.white,fontSize: SC.from_height(17.5)),
+                    ),
                   ),
                 ),
               ),
             ),
-
           ],
         ),
       ),
