@@ -74,7 +74,8 @@ class _MyactionButtonState extends State<MyactionButton> {
           duration: widget.duretion,
           height: widget.height,
           width: loding?widget.height:widget.width??MediaQuery.of(context).size.width-30,
-          child: Center(child: loding?CircularProgressIndicator(
+          child: Center(child: loding?
+          CircularProgressIndicator(
             color: Colors.white,
           ):widget.child??Text("Press",style: TextStyle(color: Colors.white,fontSize: 20),)),
           decoration: !loding?

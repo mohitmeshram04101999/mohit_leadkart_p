@@ -70,15 +70,18 @@ class _LogInPageState extends State<LoginScreen> {
 
                   Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(SC.from_height(10)),
                     ),
-                    height: SC.from_height(45),
+                    height: SC.from_height(47),
                     padding: EdgeInsets.symmetric(horizontal: SC.from_height(20)), // Optional padding to give some space around the TextField
                     child: TextFormField(
+
                       keyboardType: TextInputType.number,
                       cursorColor: Colors.grey,
                       inputFormatters: [LengthLimitingTextInputFormatter(10)],
+                      style: TextStyle(fontSize: SC.from_height(16)),
                       decoration: InputDecoration(
+
                         labelText: 'Enter mobile no',
                         labelStyle: TextStyle(color: Colors.black,fontSize: SC.from_height(16)), // Your label text
                         border: OutlineInputBorder(

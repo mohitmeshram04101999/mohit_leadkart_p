@@ -4,7 +4,6 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:leadkart/component/HelpButtonWhite.dart';
 import 'package:leadkart/component/addRequirmentTile.dart';
-import 'package:leadkart/my%20custom%20assets%20dart%20file/actionButton.dart';
 import 'package:leadkart/helper/dimention.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -58,6 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         actions: [
           DropdownButton<String>(
+            dropdownColor: Color.fromRGBO(36, 238, 221, 0.6),
             hint: Text(
               " SK e solution  ",
               style: TextStyle(color: Colors.white, fontSize: SC.from_height(18)),
@@ -82,6 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
             items: <String>['SK e solution 1 ', 'SK e solution 2 ', 'SK e solution 3 ']
                 .map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
+
                 value: value,
                 child: Text(
                   value,
