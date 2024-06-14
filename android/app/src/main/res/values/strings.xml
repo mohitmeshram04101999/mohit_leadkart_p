@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="facebook_app_id">1145248570048903</string>
-    <string name="facebook_client_token">5f74a6bc5ad39c98fe0d1040692e9139</string>
+    <string name="facebook_app_id">1026997902180256</string>
+    <string name="fb_login_protocol_scheme">fb1026997902180256</string>
+    <string name="app_name">leadkart_facebook</string>
+    <string name="facebook_client_token">372fd9090246ac11beb42d38a80b393d</string>
 </resources>

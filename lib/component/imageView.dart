@@ -48,7 +48,7 @@ class _ImageViewState extends State<ImageView> {
                     color: Colors.grey,
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
-                      image: AssetImage('assets/home_images/img.png'),
+                      image: AssetImage('assets/add_images/img_3.png'),
                       fit: BoxFit.cover,
                     ),
                   ),

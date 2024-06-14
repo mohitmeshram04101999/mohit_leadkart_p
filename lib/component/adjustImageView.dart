@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'dart:io';
+import 'dart:ui';
 
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
@@ -33,61 +34,72 @@ borderRadius: BorderRadius.circular(10),
           height: MediaQuery.of(context).size.width,
           child: Obx(
             () {
-              return ColorFiltered(
-                colorFilter: ColorFilter.mode(Colors.grey.withOpacity(
-                    imageController.imageSaturation.value), BlendMode.saturation),
+              return ImageFiltered(
+                imageFilter: ImageFilter.blur(sigmaX: imageController.imageBlur.value*5, sigmaY: imageController.imageBlur.value*5),
                 child: ColorFiltered(
-                  colorFilter: ColorFilter.mode(Colors.black.withOpacity(
-                      imageController.imageBrightness.value), BlendMode.darken),
-                  child: Stack(children: [
-                    Container(
-                      width: MediaQuery
-                          .of(context)
-                          .size
-                          .width,
-                      height: MediaQuery
-                          .of(context)
-                          .size
-                          .width,
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(
-                          image: AssetImage('assets/home_images/img.png'),
-                          fit: BoxFit.cover,
-                        ),
+                  colorFilter: ColorFilter.mode(Colors.grey.withOpacity(
+                      imageController.imageContrast.value), BlendMode.overlay),
+                  child: ColorFiltered(
+                    colorFilter: ColorFilter.mode(Colors.blue.withOpacity(
+                        imageController.imageHue.value), BlendMode.hue),
+                    child: ColorFiltered(
+                      colorFilter: ColorFilter.mode(Colors.grey.withOpacity(
+                          imageController.imageSaturation.value), BlendMode.saturation),
+                      child: ColorFiltered(
+                        colorFilter: ColorFilter.mode(Colors.black.withOpacity(
+                            imageController.imageBrightness.value), BlendMode.darken),
+                        child: Stack(children: [
+                          Container(
+                            width: MediaQuery
+                                .of(context)
+                                .size
+                                .width,
+                            height: MediaQuery
+                                .of(context)
+                                .size
+                                .width,
+                            decoration: BoxDecoration(
+                              color: Colors.grey,
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                image: AssetImage('assets/add_images/img_3.png'),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+
+                             imageController.selectedImage.value != ''
+                                ? GestureDetector(
+                               onPanUpdate: (details) {
+                                 // setState(() {
+                                 //   imageController.imageOffset.value += details
+                                 //       .delta; // Update the position based on the drag
+                                 //   log('Image Offset: ${imageController.imageOffset.value}');
+                                 // });
+                               },
+                               child: Stack(
+                                 children: [
+                                   Positioned(
+                                     left: imageController.imageOffset.value.dx,
+                                     top: imageController.imageOffset.value.dy,
+                                     child: SelectedEditorImageView(
+                                       imagePath: imageController.selectedImage.value,
+                                       iconPath: 'assets/close.svg',
+                                     ),
+                                   ),
+                                 ],
+                               ),
+                             )
+                                : Container(),
+                          // Container(
+                          //   width: MediaQuery.of(context).size.width,
+                          //   height:MediaQuery.of(context).size.width,
+                          //   color:Colors.transparent
+                          // )
+                        ]),
                       ),
                     ),
-
-                       imageController.selectedImage.value != ''
-                          ? GestureDetector(
-                         onPanUpdate: (details) {
-                           // setState(() {
-                           //   imageController.imageOffset.value += details
-                           //       .delta; // Update the position based on the drag
-                           //   log('Image Offset: ${imageController.imageOffset.value}');
-                           // });
-                         },
-                         child: Stack(
-                           children: [
-                             Positioned(
-                               left: imageController.imageOffset.value.dx,
-                               top: imageController.imageOffset.value.dy,
-                               child: SelectedEditorImageView(
-                                 imagePath: imageController.selectedImage.value,
-                                 iconPath: 'assets/close.svg',
-                               ),
-                             ),
-                           ],
-                         ),
-                       )
-                          : Container(),
-                    // Container(
-                    //   width: MediaQuery.of(context).size.width,
-                    //   height:MediaQuery.of(context).size.width,
-                    //   color:Colors.transparent
-                    // )
-                  ]),
+                  ),
                 ),
               );
             }

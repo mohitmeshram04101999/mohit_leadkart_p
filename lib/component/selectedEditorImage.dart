@@ -23,14 +23,12 @@ class SelectedEditorImageView extends StatefulWidget {
 
 class _SelectedEditorImageViewState extends State<SelectedEditorImageView> {
   final imageController = Controllers.imageEditorController;
-  double? scale = 1.5;
-  double angle = 0;
   @override
   Widget build(BuildContext context) {
     return widget.imagePath.isNotEmpty? Transform.rotate(
-      angle: angle,
+      angle: imageController.imageRotation.value,
       child: Transform.scale(
-        scale: scale!,
+        scale:imageController.imageScale.value,
         child: Stack(
           clipBehavior: Clip.none,
           children: [
@@ -56,7 +54,7 @@ class _SelectedEditorImageViewState extends State<SelectedEditorImageView> {
               isShow: !imageController.isAdjustClicked.value,
             onPanUpdate: (details) {
               setState(() {
-                scale = scale! +( details.delta.dy / 10);
+               imageController.imageScale.value =imageController.imageScale.value +( details.delta.dy / 10);
               });
             },
               onTap: () {
@@ -66,7 +64,7 @@ class _SelectedEditorImageViewState extends State<SelectedEditorImageView> {
               isShow: !imageController.isAdjustClicked.value,
             onPanUpdate: (details) {
               setState(() {
-                angle = angle -( details.delta.dy / 10);
+                imageController.imageRotation.value = imageController.imageRotation.value -( details.delta.dy / 10);
               });
             },
               onTap: () {

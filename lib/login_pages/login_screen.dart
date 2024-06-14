@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -17,6 +19,26 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LogInPageState extends State<LoginScreen> {
+  loginWithFacebook() async {
+    final LoginResult results = await FacebookAuth.i.login(); // by default we request the email and the public profile
+    final LoginResult result = await FacebookAuth.i.expressLogin(); // by default we request the email and the public profile
+// or FacebookAuth.i.login()
+    log(result.status.toString());
+    if (result.status == LoginStatus.success) {
+      // you are logged
+      final AccessToken accessToken = result.accessToken!;
+      log('Access Token: ${accessToken.tokenString}');
+      final userData = await FacebookAuth.instance.getUserData(
+        fields: "name,email,picture, birthday,first_name,last_name",
+      );
+      log("User Data: $userData");
+    } else {
+      log('Error');
+log(result.status.toString());
+log('Error: ${result.message.toString()}');
+    }
+  }
+  double value = 0.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +55,6 @@ class _LogInPageState extends State<LoginScreen> {
 
               child: Image.asset('assets/2.png',fit: BoxFit.cover,),
             ),
-
             Container(
               width: double.infinity,
               height:SC.from_height(450) ,
@@ -59,7 +80,7 @@ class _LogInPageState extends State<LoginScreen> {
                 children: [
 
                   SizedBox(height: SC.from_height(30),),
-                  Text('Let’s sign in ', style: TextStyle(fontSize:SC.from_height(26),fontWeight: FontWeight.w600 ),),
+                  Text('Let’s sign in ', style: TextStyle(fontSize:SC.from_height(24),fontWeight: FontWeight.w600 ),),
                   SizedBox(height: SC.from_height(10),),
                   Container(
                       width: double.infinity,
@@ -97,9 +118,33 @@ class _LogInPageState extends State<LoginScreen> {
                           borderSide: BorderSide(color: Colors.grey, width: 0.5), // Custom border color for focused state
                         ),
                       ),
+
+                      // validator: (value) {
+                      //   if (value == null || value.isEmpty) {
+                      //     if (showEmptyNumberError) {
+                      //       return 'Mobile No. can not be empty';
+                      //     }
+                      //   } else {
+                      //     // Use regular expression to check if the input contains only numeric digits
+                      //     final RegExp numericRegex = RegExp(r'^[0-9]+$');
+                      //
+                      //     if (!numericRegex.hasMatch(value)) {
+                      //       return 'Please enter only numeric digits';
+                      //     }
+                      //
+                      //     // Check for the exact length of 10
+                      //     if (value.length != 10) {
+                      //       return 'Please enter a valid 10-digit Mobile No.';
+                      //     }
+                      //   }
+                      //   return null;
+                      // },
+                      // autovalidateMode: AutovalidateMode.onUserInteraction,
+
                     ),
                   ),
 
+                  SizedBox(height: SC.from_height(20),),
 
                   SizedBox(height: SC.from_height(30),),
 
