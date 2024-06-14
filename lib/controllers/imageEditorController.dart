@@ -20,9 +20,12 @@ class ImageEditorController extends GetxController {
     }
   }
   final imageOffset = Offset.zero.obs;
+  final imageScale = 1.0.obs;
+  final imageRotation = 0.0.obs;
 final isAdjustClicked = false.obs;
   final imageBrightness = 0.0.obs;
   final imageContrast = 0.0.obs;
+  final imageBlur = 0.0.obs;
   final imageSaturation = 0.0.obs;
   final imageSharpness = 0.0.obs;
   final imageHue = 0.0.obs;

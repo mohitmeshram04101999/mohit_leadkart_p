@@ -119,6 +119,99 @@ class _ImageEditorState extends State<ImageEditor> {
                         );
                       },);
                     }),
+                    AdjustOption(text: 'Hue', onTap: () {
+                      showModalBottomSheet(context: context, builder: (context) {
+                        return StatefulBuilder(
+                          builder: (context, setState) =>  Container(
+                            height: 150,
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    IconButton(onPressed: (){
+                                      context.pop();
+                                    }, icon: Icon(Icons.arrow_back)),
+                                    Icon(Icons.sunny),
+                                    SizedBox(width: 5),
+                                    Text('Hue')
+                                  ],
+                                ),
+                                Slider(
+                                  value: imageController.imageHue.value,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      imageController.imageHue.value = value;
+                                    });
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },);
+                    }),
+AdjustOption(text: 'Contrast', onTap: () {
+                      showModalBottomSheet(context: context, builder: (context) {
+                        return StatefulBuilder(
+                          builder: (context, setState) =>  Container(
+                            height: 150,
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    IconButton(onPressed: (){
+                                      context.pop();
+                                    }, icon: Icon(Icons.arrow_back)),
+                                    Icon(Icons.sunny),
+                                    SizedBox(width: 5),
+                                    Text('Contrast')
+                                  ],
+                                ),
+                                Slider(
+                                  value: imageController.imageContrast.value,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      imageController.imageContrast.value = value;
+                                    });
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },);
+                    }),
+                    AdjustOption(text: 'Blur', onTap: () {
+                      showModalBottomSheet(context: context, builder: (context) {
+                        return StatefulBuilder(
+                          builder: (context, setState) =>  Container(
+                            height: 150,
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    IconButton(onPressed: (){
+                                      context.pop();
+                                    }, icon: Icon(Icons.arrow_back)),
+                                    Icon(Icons.sunny),
+                                    SizedBox(width: 5),
+                                    Text('Blur')
+                                  ],
+                                ),
+                                Slider(
+                                  value: imageController.imageBlur.value,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      imageController.imageBlur.value = value;
+                                    });
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },);
+                    }),
                   ],
                 ),
               ):Container(),
@@ -132,7 +225,9 @@ class _ImageEditorState extends State<ImageEditor> {
                 BottomChips(
                     text: 'Image',
                     onTap: () {
-                      imageController.isAdjustClicked.value = false;
+                      setState(() {
+                        imageController.isAdjustClicked.value = false;
+                      });
                       showDialog(
                           context: context, builder: (context) => ImagePickerDialog());
                     }),

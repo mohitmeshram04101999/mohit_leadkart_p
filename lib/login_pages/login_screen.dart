@@ -21,20 +21,22 @@ class LoginScreen extends StatefulWidget {
 
 class _LogInPageState extends State<LoginScreen> {
   loginWithFacebook() async {
-    final LoginResult result = await FacebookAuth.i.login(
-      loginBehavior: LoginBehavior.webOnly,
-      loginTracking: LoginTracking.enabled,
-      permissions: ['email', 'public_profile'],
-    ); // by default we request the email and the public profile
+    final LoginResult results = await FacebookAuth.i.login(); // by default we request the email and the public profile
+    final LoginResult result = await FacebookAuth.i.expressLogin(); // by default we request the email and the public profile
 // or FacebookAuth.i.login()
+    log(result.status.toString());
     if (result.status == LoginStatus.success) {
       // you are logged
       final AccessToken accessToken = result.accessToken!;
       log('Access Token: ${accessToken.tokenString}');
+      final userData = await FacebookAuth.instance.getUserData(
+        fields: "name,email,picture, birthday,first_name,last_name",
+      );
+      log("User Data: $userData");
     } else {
       log('Error');
 log(result.status.toString());
-log(result.message.toString());
+log('Error: ${result.message.toString()}');
     }
   }
   double value = 0.0;
