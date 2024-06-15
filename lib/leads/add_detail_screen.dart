@@ -434,7 +434,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                       backgroundColor: Colors.white,// Hide Y-axis for better visual
                       plotAreaBorderWidth: 0,
                         // Remove plot area border
-                      series: <ChartSeries>[
+                      series: [
                         ColumnSeries<SalesData, String>(
                           dataSource: <SalesData>[
                             SalesData('Below-10', 20),
