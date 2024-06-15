@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/components/button/gf_button.dart';
 import 'package:go_router/go_router.dart';
+import 'package:leadkart/component/custom_button.dart';
 import 'package:leadkart/helper/helper.dart';
 import 'package:leadkart/login_pages/otp_screen.dart';
 
@@ -64,7 +65,7 @@ class _LogInPageState extends State<LoginScreen> {
                   Container(
                       width: double.infinity,
                       margin: EdgeInsets.symmetric(horizontal: 25),child: Center(child: Text('Sign in your account using mobile no. or, Google \n                         Facebook and Mail ',
-                    style: TextStyle(fontSize:SC.from_height(16),color: Color.fromRGBO(96, 96, 96, 1),fontWeight: FontWeight.w500),))),
+                    style: TextStyle(fontSize:SC.fromWidth(30),color: Color.fromRGBO(96, 96, 96, 1),fontWeight: FontWeight.w500),))),
 
                   SizedBox(height: SC.from_height(20),),
 
@@ -104,41 +105,29 @@ class _LogInPageState extends State<LoginScreen> {
                   SizedBox(height: SC.from_height(30),),
 
                   // GFBUTTON   COUNTINUE //
-                  Container(
-                    height: SC.from_height(45), // Adjust as needed
-                    width: SC.from_height(340), // Adjust as needed
-                    child: GFButton(
-                      onPressed: () {
 
-                        // context.pushNamed("homePage");
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpScreen()));
-                        // Your onPressed logic here
-                      },
-                      color: MyHelper.appConstent.primeryColor, // The button's background color
-                      borderShape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Continue',
-                          style: TextStyle(color: Colors.white,fontSize: SC.from_height(15.5)), // Text color
-                        ),
-                      ),
-                    ),
+                  CustomButton(
+                    text: 'Continue', onPressed: () {
+                    // context.pushNamed("homePage");
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpScreen()));
+                  },
                   ),
 
-                  // ROW //
+
+
+                 // ROW //
                   SizedBox(height: SC.from_height(40),),
 
                   Padding(
                     padding:   EdgeInsets.symmetric(horizontal: SC.from_height(17)),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
 
-                        Container(width: SC.from_height(122),child: Divider(thickness: 1.5,color: Colors.grey.shade300,)),
+                        Container(width: SC.fromWidth(4),child: Divider(thickness: 1.5,color: Colors.grey.shade300,)),
 
                         Text('  or Log with  ',style: TextStyle(color: Colors.grey,fontSize: SC.from_height(17),fontWeight: FontWeight.w500)),
-                        Container(width: SC.from_height(122),child: Divider(thickness: 1.5,color: Colors.grey.shade300)),
+                        Container(width: SC.fromWidth(4),child: Divider(thickness: 1.5,color: Colors.grey.shade300)),
                       ],
                     ),
                   ),
