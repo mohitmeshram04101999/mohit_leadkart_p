@@ -2,8 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:leadkart/ads/add_detail_screen.dart';
+import 'package:go_router/go_router.dart';
+
 import 'package:leadkart/helper/dimention.dart';
+import 'package:leadkart/helper/helper.dart';
+import 'package:leadkart/leads/create_add_setting.dart';
+import 'package:leadkart/screens/user/create_user.dart';
 
 class BusinessDetail extends StatefulWidget {
   const BusinessDetail({Key? key}) : super(key: key);
@@ -28,9 +32,13 @@ class _BusinessDetailState extends State<BusinessDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('Business Detail'),
+
+     appBar:  AppBar(
+        foregroundColor: Colors.white,
+        backgroundColor: MyHelper.appConstent.primeryColor,
+        title: Text('Business Detail',style: TextStyle(fontSize: SC.from_height(21)),),
       ),
+
       body: Padding(
         padding:   EdgeInsets.symmetric(horizontal: SC.from_height(14)),
         child: Column(
@@ -70,11 +78,13 @@ class _BusinessDetailState extends State<BusinessDetail> {
                         borderRadius: BorderRadius.circular(SC.from_height(55))
                     ),
                     clipBehavior: Clip.hardEdge,
-                    width: SC.from_height(55),
-                    height: SC.from_height(55),
+                    width: SC.from_height(58),
+                    height: SC.from_height(58),
                     child: Image.asset('assets/img_1.png'),
                   ),
-                  Text('Pawan Kumar',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize:SC.from_height(18) ),),
+                  SizedBox(height: SC.from_height(12),),
+                  Text('Pawan Kumar',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize:SC.from_height(19) ),),
+                  SizedBox(height: SC.from_height(5),),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: SC.from_height(28)),
                     child: RichText(overflow: TextOverflow.ellipsis,
@@ -107,36 +117,9 @@ class _BusinessDetailState extends State<BusinessDetail> {
             SizedBox(height: SC.from_height(22),),
 
             // Campaign Settings //
-            Container(
-              width: double.infinity,
-              height: SC.from_height(50),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(SC.from_height(10)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.shade300, // Shadow color
-                    spreadRadius: 1, // Spread radius
-                    blurRadius: 5, // Blur radius
-                    offset: Offset(0, 1), // Offset in x and y direction
-                  ),
-                ],
-              ),
-              child: Row(
-                children: [
-                  SizedBox(width: SC.from_height(10),),
-                  Icon(Icons.description,color: Colors.grey,size: SC.from_height(24) ,),
-                  SizedBox(width: SC.from_height(10),),
-                  Text('Campaign Settings',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w500,fontSize: SC.from_height(15)),)
-                ],
-              ),
-            ),
-            SizedBox(height: SC.from_height(11),),
-
-            //Billing Details //
             InkWell(
               onTap: (){
-                // Get.off(AddDetailScreen());
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>AddCreation()));
               },
               child: Container(
                 width: double.infinity,
@@ -158,7 +141,40 @@ class _BusinessDetailState extends State<BusinessDetail> {
                     SizedBox(width: SC.from_height(10),),
                     Icon(Icons.description,color: Colors.grey,size: SC.from_height(24) ,),
                     SizedBox(width: SC.from_height(10),),
-                    Text('Billing Details',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w500,fontSize: SC.from_height(15)),)
+                    Text('Campaign Settings',style: TextStyle(color: Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)),)
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: SC.from_height(11),),
+
+            //Billing Details //
+            InkWell(
+              onTap: (){
+                // Get.to(AddDetailScreen());
+                context.pushNamed('AddDetailScreeen');
+              },
+              child: Container(
+                width: double.infinity,
+                height: SC.from_height(50),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(SC.from_height(10)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.shade300, // Shadow color
+                      spreadRadius: 1, // Spread radius
+                      blurRadius: 5, // Blur radius
+                      offset: Offset(0, 1), // Offset in x and y direction
+                    ),
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    SizedBox(width: SC.from_height(10),),
+                    Icon(Icons.description,color: Colors.grey,size: SC.from_height(24) ,),
+                    SizedBox(width: SC.from_height(10),),
+                    Text('Billing Details',style: TextStyle(color: Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)),)
                   ],
                 ),
               ),
@@ -166,28 +182,33 @@ class _BusinessDetailState extends State<BusinessDetail> {
             SizedBox(height: SC.from_height(11),),
 
             //Payment & Invoices //
-            Container(
-              width: double.infinity,
-              height: SC.from_height(50),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(SC.from_height(10)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.shade300, // Shadow color
-                    spreadRadius: 1, // Spread radius
-                    blurRadius: 5, // Blur radius
-                    offset: Offset(0, 1), // Offset in x and y direction
-                  ),
-                ],
-              ),
-              child: Row(
-                children: [
-                  SizedBox(width: SC.from_height(10),),
-                  Icon(Icons.description,color: Colors.grey,size: SC.from_height(24) ,),
-                  SizedBox(width: SC.from_height(10),),
-                  Text('Payment & Invoices',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w500,fontSize: SC.from_height(15)),)
-                ],
+            InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>CreateUser()));
+              },
+              child: Container(
+                width: double.infinity,
+                height: SC.from_height(50),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(SC.from_height(10)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.shade300, // Shadow color
+                      spreadRadius: 1, // Spread radius
+                      blurRadius: 5, // Blur radius
+                      offset: Offset(0, 1), // Offset in x and y direction
+                    ),
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    SizedBox(width: SC.from_height(10),),
+                    Icon(Icons.payment,color: Colors.grey,size: SC.from_height(24) ,),
+                    SizedBox(width: SC.from_height(10),),
+                    Text('Payment & Invoices',style: TextStyle(color: Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)),)
+                  ],
+                ),
               ),
             ),
             SizedBox(height: SC.from_height(11),),
@@ -211,9 +232,9 @@ class _BusinessDetailState extends State<BusinessDetail> {
               child: Row(
                 children: [
                   SizedBox(width: SC.from_height(10),),
-                  Icon(Icons.description,color: Colors.grey,size: SC.from_height(24) ,),
+                  Icon(Icons.blur_circular_sharp,color: Colors.grey,size: SC.from_height(24) ,),
                   SizedBox(width: SC.from_height(10),),
-                  Text('Manage Website',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w500,fontSize: SC.from_height(15)),)
+                  Text('Manage Website',style: TextStyle(color: Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)),)
                 ],
               ),
             ),
@@ -240,7 +261,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
                   SizedBox(width: SC.from_height(10),),
                   Icon(Icons.notifications_none,color: Colors.grey,size: SC.from_height(24) ,),
                   SizedBox(width: SC.from_height(10),),
-                  Text('Notification',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w500,fontSize: SC.from_height(15)),)
+                  Text('Notification',style: TextStyle(color: Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)),)
                 ],
               ),
             ),
@@ -267,7 +288,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
                   SizedBox(width: SC.from_height(10),),
                   Icon(Icons.logout,color: Colors.grey,size: SC.from_height(24) ,),
                   SizedBox(width: SC.from_height(10),),
-                  Text('Logout',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w500,fontSize: SC.from_height(15)),)
+                  Text('Logout',style: TextStyle(color: Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)),)
                 ],
               ),
             )

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:go_router/go_router.dart';
 import 'package:leadkart/component/bottom_navigation_screen.dart';
 import 'package:leadkart/helper/dimention.dart';
+import 'package:leadkart/my%20custom%20assets%20dart%20file/actionButton.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({Key? key}) : super(key: key);
@@ -23,9 +26,10 @@ class _OtpScreenState extends State<OtpScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        foregroundColor: Colors.white,
         title: Container(
           // decoration: BoxDecoration(border: Border.all()),
-            width: SC.from_height(270),child: Center(child: Text('Verify OTP',style: TextStyle(fontWeight: FontWeight.w600),))),
+            width: SC.from_height(270),child: Center(child: Text('Verify OTP',style: TextStyle(fontWeight: FontWeight.w500,fontSize: SC.from_height(21)),))),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -49,6 +53,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   children: [
                     TextSpan(
                       text: 'We have sent you a 4 digit code to verify your\n            phone number on ',
+                      style: TextStyle(color: Colors.grey.shade600)
                     ),
                     TextSpan(
                       text: '9988090679',
@@ -60,7 +65,7 @@ class _OtpScreenState extends State<OtpScreen> {
             ),
 
 
-            SizedBox(height: SC.from_height(50),),
+            SizedBox(height: SC.from_height(40),),
             // TEXT FIELD  otp//
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -233,6 +238,38 @@ class _OtpScreenState extends State<OtpScreen> {
               ),
             ),
 
+            // TEXT FIELD  otp//
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(horizontal: 30),
+            //   child:  OtpTextField(
+            //
+            //     keyboardType: TextInputType.number,
+            //     focusedBorderColor: Color.fromRGBO(36, 238, 221, 0.5),
+            //     cursorColor: Colors.grey.shade300,
+            //     borderRadius: BorderRadius.circular( SC.from_height(10)),
+            //     numberOfFields: 4,
+            //     borderColor: Color(0xFF512DA8),
+            //     showFieldAsBox: true,
+            //     fieldWidth: SC.from_height(55),  // Adjust the width of each field
+            //     fieldHeight: SC.from_height(55),
+            //
+            //     onCodeChanged: (String code) {
+            //       // Handle validation or checks here
+            //     },
+            //     onSubmit: (String verificationCode) {
+            //       showDialog(
+            //         context: context,
+            //         builder: (context) {
+            //           return AlertDialog(
+            //             title: Text("Verification Code"),
+            //             content: Text('Code entered is $verificationCode'),
+            //           );
+            //         },
+            //       );
+            //     }, // end onSubmit
+            //   ),
+            // ),
+
 
             SizedBox(height: SC.from_height(40),),
 
@@ -240,9 +277,9 @@ class _OtpScreenState extends State<OtpScreen> {
               padding:  EdgeInsets.symmetric(horizontal: SC.from_height(20)),
               child: Row(
                 children: [
-                  Text('Please wait 00:30s',style: TextStyle(fontSize: SC.from_height(15),color: Colors.grey),),
+                  Text('Please wait 00:30s',style: TextStyle(fontSize: SC.from_height(16),color: Colors.grey),),
                   Expanded(child: Container()),
-                  Text('Resend OTP',style: TextStyle(fontSize: SC.from_height(15),color: Colors.grey)),
+                  Text('Resend OTP',style: TextStyle(fontSize: SC.from_height(16),color: Colors.grey.shade700)),
                 ],
               ),
             ),
@@ -255,7 +292,8 @@ class _OtpScreenState extends State<OtpScreen> {
               child: GFButton(
                 onPressed: () {
 
-                  Get.off(MyBottomNavigationBar());
+                  // Get.off(MyBottomNavigationBar());
+                  context.pushNamed("homePage");
                   // Your onPressed logic here
                 },
                 color: Color.fromRGBO(36, 238, 221, 1), // The button's background color
@@ -265,11 +303,12 @@ class _OtpScreenState extends State<OtpScreen> {
                 child: Center(
                   child: Text(
                     'Verify OTP',
-                    style: TextStyle(color: Colors.white,fontSize: SC.from_height(16)), // Text color
+                    style: TextStyle(color: Colors.white,fontSize: SC.from_height(17.5)), // Text color
                   ),
                 ),
               ),
             ),
+            
 
           ],
         ),
