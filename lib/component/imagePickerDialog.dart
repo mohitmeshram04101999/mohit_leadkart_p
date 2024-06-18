@@ -10,6 +10,9 @@ import 'package:leadkart/component/selectedImageView.dart';
 import 'package:leadkart/helper/controllerInstances.dart';
 import 'package:leadkart/helper/enums.dart';
 import 'package:leadkart/helper/helper.dart';
+import 'package:uuid/uuid.dart';
+
+import '../controllers/imageEditorController.dart';
 
 class ImagePickerDialog extends StatefulWidget {
   const ImagePickerDialog({super.key});
@@ -83,16 +86,105 @@ class _ImagePickerDialogState extends State<ImagePickerDialog> {
                   },
                   child: Text('Cancel'),
                   style: ButtonStyle(
-                    shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+                    shape: WidgetStatePropertyAll<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                             side: BorderSide(
                                 color: Theme.of(context).primaryColor))),
-                    fixedSize: MaterialStatePropertyAll<Size>(Size(100, 40)),
+                    fixedSize: WidgetStatePropertyAll<Size>(Size(100, 40)),
                   ),
                 ),
                 ElevatedButton(onPressed: () {
                   imageController.selectedImage.value = imageController.image.value;
+                  imageController.widgetList.add(WidgetConfigModel(
+                      brightness: imageController.imageBrightness.value,
+                      contrast: imageController.imageContrast.value,
+                      blur: imageController.imageBlur.value,
+                      saturation: imageController.imageSaturation.value,
+                      sharpness: imageController.imageSharpness.value,
+                      hue: imageController.imageHue.value,
+                      child:Image.file(File(imageController.image.value)),
+                      scale: imageController.imageScale.value,
+                      rotation: imageController.imageRotation.value,
+                      offset: imageController.imageOffset.value,
+                    widgetId: Uuid().v4(),
+                    widgetType: WidgetType.image.toString()
+                  ));
+                  context.pop();
+                }, child: Text('Submit')),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class TextFieldPickerDialog extends StatefulWidget {
+  const TextFieldPickerDialog({super.key});
+
+  @override
+  State<TextFieldPickerDialog> createState() => _TextFieldPickerDialogState();
+}
+
+class _TextFieldPickerDialogState extends State<TextFieldPickerDialog> {
+  final imageController = Controllers.imageEditorController;
+  final textController = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      backgroundColor: Colors.white,
+      surfaceTintColor: Colors.white,
+      title: Text('Add TextField?'),
+      content: Container(
+        color: Colors.white,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextField(
+              controller: textController,
+              decoration: InputDecoration(
+                hintText: 'Enter Text',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                OutlinedButton(
+                  onPressed: () {
+                    textController.clear();
+                    context.pop();
+                  },
+                  child: Text('Cancel'),
+                  style: ButtonStyle(
+                    shape: WidgetStatePropertyAll<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(
+                                color: Theme.of(context).primaryColor))),
+                    fixedSize: WidgetStatePropertyAll<Size>(Size(100, 40)),
+                  ),
+                ),
+                ElevatedButton(onPressed: () {
+                  imageController.widgetList.add(WidgetConfigModel(
+                      brightness: imageController.imageBrightness.value,
+                      contrast: imageController.imageContrast.value,
+                      blur: imageController.imageBlur.value,
+                      saturation: imageController.imageSaturation.value,
+                      sharpness: imageController.imageSharpness.value,
+                      hue: imageController.imageHue.value,
+                      child:Text(textController.text),
+                      scale: imageController.imageScale.value,
+                      rotation: imageController.imageRotation.value,
+                      offset: imageController.imageOffset.value,
+                      widgetId: Uuid().v4(),
+                    widgetType: WidgetType.textField.toString()
+                  ));
+                  textController.clear();
                   context.pop();
                 }, child: Text('Submit')),
               ],

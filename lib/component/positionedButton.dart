@@ -11,7 +11,7 @@ class TopPostionedButton extends StatefulWidget {
   final double height;
   final Function() onTap;
   final Color color;
-  const TopPostionedButton({super.key, this.iconPath = 'assets/repic.svg', this.top=-10, this.right=-10, this.width=30, this.height=30, required this.onTap, this.color=Colors.red, this.isShow= true});
+  const TopPostionedButton({super.key, this.iconPath = 'assets/repic.svg', this.top=-10, this.right=-10, this.width=45, this.height=45, required this.onTap, this.color=Colors.red, this.isShow= true});
 
   @override
   State<TopPostionedButton> createState() => _TopPostionedButtonState();
@@ -52,7 +52,7 @@ class BottomPostionedButton extends StatefulWidget {
   final Function() onTap;
   final Function(DragUpdateDetails) onPanUpdate;
   final Color color;
-  const BottomPostionedButton({super.key, this.iconPath = 'assets/repic.svg', this.bottom=-10, this.right=-10, this.width=30, this.height=30, required this.onTap, this.color=Colors.red, required this.onPanUpdate, this.isShow= true});
+  const BottomPostionedButton({super.key, this.iconPath = 'assets/repic.svg', this.bottom=-10, this.right=-10, this.width=45, this.height=45, required this.onTap, this.color=Colors.red, required this.onPanUpdate, this.isShow= true});
 
   @override
   State<BottomPostionedButton> createState() => _BottomPostionedButtonState();
@@ -95,7 +95,7 @@ class BottomLeftPostionedButton extends StatefulWidget {
   final Function() onTap;
   final Function(DragUpdateDetails) onPanUpdate;
   final Color color;
-  const BottomLeftPostionedButton({super.key, this.iconPath = 'assets/repic.svg', this.bottom=-10, this.left=-10, this.width=30, this.height=30, required this.onTap, this.color=Colors.red, required this.onPanUpdate, this.isShow= true});
+  const BottomLeftPostionedButton({super.key, this.iconPath = 'assets/repic.svg', this.bottom=-10, this.left=-10, this.width=45, this.height=45, required this.onTap, this.color=Colors.red, required this.onPanUpdate, this.isShow= true});
 
   @override
   State<BottomLeftPostionedButton> createState() => _BottomLeftPostionedButtonState();

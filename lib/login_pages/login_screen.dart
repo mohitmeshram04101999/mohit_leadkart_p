@@ -22,8 +22,11 @@ class LoginScreen extends StatefulWidget {
 
 class _LogInPageState extends State<LoginScreen> {
   loginWithFacebook() async {
-    final LoginResult results = await FacebookAuth.i.login(); // by default we request the email and the public profile
-    final LoginResult result = await FacebookAuth.i.expressLogin(); // by default we request the email and the public profile
+    final LoginResult result = await FacebookAuth.instance.login(
+      permissions: ['email', 'public_profile'],
+      loginBehavior: LoginBehavior.webOnly,
+    ); // by default we request the email and the public profile
+    // final LoginResult result = await FacebookAuth.instance.expressLogin(); // by default we request the email and the public profile
 // or FacebookAuth.i.login()
     log(result.status.toString());
     if (result.status == LoginStatus.success) {
@@ -31,7 +34,6 @@ class _LogInPageState extends State<LoginScreen> {
       final AccessToken accessToken = result.accessToken!;
       log('Access Token: ${accessToken.tokenString}');
       final userData = await FacebookAuth.instance.getUserData(
-        fields: "name,email,picture, birthday,first_name,last_name",
       );
       log("User Data: $userData");
     } else {
@@ -88,7 +90,7 @@ log('Error: ${result.message.toString()}');
                   Container(
                       width: double.infinity,
                       margin: EdgeInsets.symmetric(horizontal: 25),child: Text('Sign in your account using mobile no. or, Google \n                         Facebook and Mail ',
-                     style: TextStyle(fontSize:SC.fromWidth(30),color: Color.fromRGBO(96, 96, 96, 1),fontWeight: FontWeight.w500),))),
+                     style: TextStyle(fontSize:SC.fromWidth(30),color: Color.fromRGBO(96, 96, 96, 1),fontWeight: FontWeight.w500),)),
 
                   SizedBox(height: SC.from_height(20),),
 

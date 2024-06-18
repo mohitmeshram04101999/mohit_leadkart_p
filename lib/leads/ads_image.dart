@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:go_router/go_router.dart';
 import 'package:leadkart/helper/dimention.dart';
 import 'package:leadkart/helper/helper.dart';
 import 'package:leadkart/leads/select_plan.dart';
@@ -314,21 +315,24 @@ class _AdsPageState extends State<AdsPage> {
 
 
                   // VIEW REPORTS //
-                  Padding(
-                    padding:  EdgeInsets.only(right: SC.from_height(12)),
-                    child: Column(
-                      children: [
-                        Text(
-                          'View Reports',
-                          style: TextStyle(
-                            color: Color.fromRGBO(36, 238, 221, 1),
-                            fontSize: SC.from_height(15),
+                  InkWell(
+                    onTap: () => context.pushNamed('AddDetailScreen'),
+                    child: Padding(
+                      padding:  EdgeInsets.only(right: SC.from_height(12)),
+                      child: Column(
+                        children: [
+                          Text(
+                            'View Reports',
+                            style: TextStyle(
+                              color: Color.fromRGBO(36, 238, 221, 1),
+                              fontSize: SC.from_height(15),
 
-                            // This adds the underline
+                              // This adds the underline
+                            ),
                           ),
-                        ),
-                        Container(height: SC.from_height(1),width: SC.from_height(85),child: Divider(thickness: 1,color: MyHelper.appConstent.primeryColor,)),
-                      ],
+                          Container(height: SC.from_height(1),width: SC.from_height(85),child: Divider(thickness: 1,color: MyHelper.appConstent.primeryColor,)),
+                        ],
+                      ),
                     ),
                   ),
 
