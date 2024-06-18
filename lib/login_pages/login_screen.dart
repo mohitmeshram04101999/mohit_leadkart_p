@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/components/button/gf_button.dart';
 import 'package:go_router/go_router.dart';
@@ -27,7 +28,7 @@ class _LogInPageState extends State<LoginScreen> {
     if (result.status == LoginStatus.success) {
       // you are logged
       final AccessToken accessToken = result.accessToken!;
-      log('Access Token: ${accessToken.tokenString}');
+      // log('Access Token: ${accessToken.tokenString}');
       final userData = await FacebookAuth.instance.getUserData(
         fields: "name,email,picture, birthday,first_name,last_name",
       );

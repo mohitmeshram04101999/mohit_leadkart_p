@@ -147,10 +147,12 @@ class _OtpScreenState extends State<OtpScreen> {
                               BorderRadius.circular(SC.from_width(9)),
                               borderSide: BorderSide(
                                 color: Color.fromRGBO(36, 238, 221, 1),
-                              )),
+                              ))
+                              ),),),
 
       // PINPUT OTP TEXT FIELD  //
       SizedBox(height: SC.from_height(20),),
+
       Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -199,29 +201,7 @@ class _OtpScreenState extends State<OtpScreen> {
             ),
 
             SizedBox(height: SC.from_height(40),),
-            // GFBUTTON //
-            // Container(
-            //   height: SC.from_height(45), // Adjust as needed
-            //   width: SC.from_height(340), // Adjust as needed
-            //   child: GFButton(
-            //     onPressed: () {
-            //
-            //       // Get.off(MyBottomNavigationBar());
-            //       context.pushNamed("homePage");
-            //       // Your onPressed logic here
-            //     },
-            //     color: Color.fromRGBO(36, 238, 221, 1), // The button's background color
-            //     borderShape: RoundedRectangleBorder(
-            //       borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
-            //     ),
-            //     child: Center(
-            //       child: Text(
-            //         'Verify OTP',
-            //         style: TextStyle(color: Colors.white,fontSize: SC.from_height(17.5)), // Text color
-            //       ),
-            //     ),
-            //   ),
-            // ),
+
 
             Center(
               child: Container(
@@ -253,6 +233,7 @@ class _OtpScreenState extends State<OtpScreen> {
           ],
         ),
       ),
-    );
+      ]
+    )));
   }
 }
