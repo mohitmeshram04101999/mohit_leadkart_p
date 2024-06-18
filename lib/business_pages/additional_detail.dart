@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:leadkart/helper/dimention.dart';
 import 'package:leadkart/helper/helper.dart';
-import 'package:speech_to_text/speech_to_text.dart';
+// import 'package:speech_to_text/speech_to_text.dart';
 
 
 class AdditionalDetail extends StatefulWidget {
@@ -16,59 +16,59 @@ class AdditionalDetail extends StatefulWidget {
 
 class _AdditionalDetailState extends State<AdditionalDetail> {
 
-  SpeechToText speechToText = SpeechToText();
+  // SpeechToText speechToText = SpeechToText();
   bool isListening = false;
   TextEditingController textEditingController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    initializeSpeechRecognizer();
+    // initializeSpeechRecognizer();
   }
 
   // INITIALIZE SPEECH RECOGINIZER //
-  void initializeSpeechRecognizer() async {
-    bool available = await speechToText.initialize(
-      onStatus: (status) => print('Status: $status'),
-      onError: (error) => print('Error: $error'),
-    );
-    if (available) {
-      print('Speech recognizer initialized');
-    } else {
-      print('Failed to initialize speech recognizer');
-    }
-  }
+  // void initializeSpeechRecognizer() async {
+  //   bool available = await speechToText.initialize(
+  //     onStatus: (status) => print('Status: $status'),
+  //     onError: (error) => print('Error: $error'),
+  //   );
+  //   if (available) {
+  //     print('Speech recognizer initialized');
+  //   } else {
+  //     print('Failed to initialize speech recognizer');
+  //   }
+  // }
 
   // VOICE START LISTINING //
-  void startListening() async {
-    if (!isListening) {
-      bool available = await speechToText.hasPermission && await speechToText.initialize();
-      if (available) {
-        setState(() {
-          isListening = true;
-        });
-
-        speechToText.listen(
-
-          listenFor: Duration(seconds: 10),
-          onResult: (result) {
-            setState(() {
-              textEditingController.text = result.recognizedWords;
-              isListening = false;
-            });
-            print('Result: ${result.recognizedWords}');
-          },
-        );
-      } else {
-        print('Microphone not available or not initialized');
-      }
-    } else {
-      speechToText.stop();
-      setState(() {
-        isListening = false;
-      });
-    }
-  }
+  // void startListening() async {
+  //   if (!isListening) {
+  //     bool available = await speechToText.hasPermission && await speechToText.initialize();
+  //     if (available) {
+  //       setState(() {
+  //         isListening = true;
+  //       });
+  //
+  //       speechToText.listen(
+  //
+  //         listenFor: Duration(seconds: 10),
+  //         onResult: (result) {
+  //           setState(() {
+  //             textEditingController.text = result.recognizedWords;
+  //             isListening = false;
+  //           });
+  //           print('Result: ${result.recognizedWords}');
+  //         },
+  //       );
+  //     } else {
+  //       print('Microphone not available or not initialized');
+  //     }
+  //   } else {
+  //     speechToText.stop();
+  //     setState(() {
+  //       isListening = false;
+  //     });
+  //   }
+  // }
 
   final List<String> items = [
     'Website Development',
@@ -128,7 +128,7 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
                           cursorColor: Colors.grey,
                           decoration: InputDecoration(
                             prefixIcon: GestureDetector(
-                              onTap: startListening,
+                              // onTap: startListening,
                               child: isListening ? Icon(Icons.record_voice_over) : Icon(Icons.mic),
                             ),
                             border: OutlineInputBorder(

@@ -53,30 +53,31 @@ class _ImageViewState extends State<ImageView> {
                     ),
                   ),
                 ),
-
-                   imageController.selectedImage.value != ''
-                      ? GestureDetector(
+                  for(var i in imageController.widgetList) GestureDetector(
                     onPanUpdate: (details) {
                       setState(() {
-                        imageController.imageOffset.value += details
-                            .delta; // Update the position based on the drag
-                        log('Image Offset: ${imageController.imageOffset.value}');
+                        //if selected image position is within the image container
+                        // if(i.offset.dx + details.delta.dx >= 0 && i.offset.dx + details.delta.dx <= MediaQuery.of(context).size.width - 100 && i.offset.dy + details.delta.dy >= 0 && i.offset.dy + details.delta.dy <= MediaQuery.of(context).size.width - 100) {
+                        //   i.offset = Offset(i.offset.dx + details.delta.dx, i.offset.dy + details.delta.dy);
+                        // }
+i.offset = Offset(i.offset.dx + details.delta.dx, i.offset.dy + details.delta.dy);
+
                       });
                     },
                     child: Stack(
                       children: [
                         Positioned(
-                          left: imageController.imageOffset.value.dx,
-                          top: imageController.imageOffset.value.dy,
-                          child: SelectedEditorImageView(
-                            imagePath: imageController.selectedImage.value,
+                          left: i.offset.dx,
+                          top: i.offset.dy,
+                          child: i.widgetType==WidgetType.image.toString()? SelectedEditorWidgetView(
+                            widgetId: i.widgetId,
+                            child: i.child,
                             iconPath: 'assets/close.svg',
-                          ),
+                          ):SelectEditorTextFieldView(child: i.child, width: 300, height: 100, widgetId: i.widgetId, iconPath: 'assets/close.svg'),
                         ),
                       ],
                     ),
                   )
-                      : Container()
               ]);
             }
           ),

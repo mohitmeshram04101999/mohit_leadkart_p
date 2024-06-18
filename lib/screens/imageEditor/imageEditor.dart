@@ -221,7 +221,13 @@ AdjustOption(text: 'Contrast', onTap: () {
                         shrinkWrap: true,
                         children: [
                 BottomChips(text: 'Frame', onTap: () {}),
-                BottomChips(text: 'Text', onTap: () {}),
+                BottomChips(text: 'Text', onTap: () {
+                  setState(() {
+                    imageController.isAdjustClicked.value = false;
+                  });
+                  showDialog(
+                      context: context, builder: (context) => TextFieldPickerDialog());
+                }),
                 BottomChips(
                     text: 'Image',
                     onTap: () {

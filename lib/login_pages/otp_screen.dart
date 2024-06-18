@@ -7,8 +7,8 @@ import 'package:getwidget/getwidget.dart';
 import 'package:go_router/go_router.dart';
 import 'package:leadkart/component/bottom_navigation_screen.dart';
 import 'package:leadkart/helper/dimention.dart';
-import 'package:leadkart/my%20custom%20assets%20dart%20file/actionButton.dart';
 import 'package:pinput/pinput.dart';
+import 'package:leadkart/my%20custom%20assets%20dart%20file/actionButton.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({Key? key}) : super(key: key);
@@ -106,53 +106,11 @@ class _OtpScreenState extends State<OtpScreen> {
 
 
             SizedBox(height: SC.from_height(40),),
-            // TEXT FIELD  otp//
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    clipBehavior: Clip.hardEdge,
-                    // decoration: BoxDecoration(borderRadius: BorderRadius.circular(SC.from_width(9))),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(SC.from_width(10)),
-                      border: Border.all(color: Colors.grey.shade200), // Adding border color
-                    ),
-                    width: SC.from_width(60),
-                    height: SC.from_width(60),
-                    alignment: Alignment.center,
 
-                    child: TextField(
-                      cursorColor: Colors.grey,
-                      // controller: _otpApi.otpController1.value,
 
-                      keyboardType: TextInputType.number,
-                      textAlign: TextAlign.center,
-                      onChanged: (value) {
-                        if (value.length == 1) {
-                          FocusScope.of(context).nextFocus();
-                        } else if (value.isEmpty) {
-                          FocusScope.of(context).previousFocus();
-                        }
-                      },
-                      inputFormatters: [
-                        LengthLimitingTextInputFormatter(1),
-                        FilteringTextInputFormatter.digitsOnly
-                      ],
-                      decoration: InputDecoration(
-                          hintText: "",
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                              BorderRadius.circular(SC.from_width(9)),
-                              borderSide: BorderSide(
-                                color: Color.fromRGBO(36, 238, 221, 1),
-                              ))
-                              ),),),
 
       // PINPUT OTP TEXT FIELD  //
       SizedBox(height: SC.from_height(20),),
-
       Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -230,10 +188,10 @@ class _OtpScreenState extends State<OtpScreen> {
               ),
             ),
 
+
           ],
         ),
       ),
-      ]
-    )));
+    );
   }
 }

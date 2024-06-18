@@ -13,6 +13,9 @@ import '../screens/onBoardingScreens/OnBordingnavigation.dart';
 class GoRouterConfig {
   static final router = GoRouter(
     initialLocation: '/',
+    redirect: (context, state) {
+
+    },
     routes: [
       GoRoute(
         path: '/',
@@ -32,7 +35,7 @@ class GoRouterConfig {
         routes: [
           GoRoute(
             path: 'AddDetailScreen',
-            name: 'AddDetailScreeen',
+            name: 'AddDetailScreen',
             builder: (context,state)=>AddDetailScreen(),
 
           ),

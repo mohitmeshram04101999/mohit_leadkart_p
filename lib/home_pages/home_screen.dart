@@ -56,41 +56,14 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         actions: [
-          DropdownButton<String>(
-            dropdownColor: Color.fromRGBO(36, 238, 221, 0.6),
-            hint: Text(
-              " SK e solution  ",
-              style: TextStyle(color: Colors.white, fontSize: SC.from_height(18)),
-            ),
-            value: dropdownValue,
-            icon: Transform.rotate(
-              angle: 1.5708, // 90 degrees in radians (π/2 or 1.5708 radians)
-              child: Icon(Icons.arrow_forward_ios_rounded, color: Colors.white,size: SC.from_height(17)),
-            ),
-            iconSize: SC.from_height(22),
-            elevation: 16,
-            style: TextStyle(color: Colors.black),
-            underline: Container(), // Remove the underline
-            onChanged: (String? newValue) {
-              setState(() {
-                dropdownValue = newValue;
-                // Handle the selected option here
-                print('Selected: $dropdownValue');
-              });
-            },
+TextButton(onPressed: () {
 
-            items: <String>['SK e solution 1 ', 'SK e solution 2 ', 'SK e solution 3 ']
-                .map<DropdownMenuItem<String>>((String value) {
-              return DropdownMenuItem<String>(
-
-                value: value,
-                child: Text(
-                  value,
-                  style: TextStyle(color: Colors.white, fontSize: SC.from_height(19.5)),
-                ),
-              );
-            }).toList(),
-          ),
+}, child: Row(
+  children: [
+    Text(" SK e solutions",style: TextStyle(color: Colors.white,fontSize: SC.from_height(16)),),
+    Icon(Icons.arrow_drop_down,color: Colors.white,)
+  ],
+)),
 
           SizedBox(width: SC.from_height(80)),
 

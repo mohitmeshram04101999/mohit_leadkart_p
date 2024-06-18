@@ -68,29 +68,30 @@ borderRadius: BorderRadius.circular(10),
                             ),
                           ),
 
-                             imageController.selectedImage.value != ''
-                                ? GestureDetector(
-                               onPanUpdate: (details) {
-                                 // setState(() {
-                                 //   imageController.imageOffset.value += details
-                                 //       .delta; // Update the position based on the drag
-                                 //   log('Image Offset: ${imageController.imageOffset.value}');
-                                 // });
-                               },
-                               child: Stack(
-                                 children: [
-                                   Positioned(
-                                     left: imageController.imageOffset.value.dx,
-                                     top: imageController.imageOffset.value.dy,
-                                     child: SelectedEditorImageView(
-                                       imagePath: imageController.selectedImage.value,
-                                       iconPath: 'assets/close.svg',
-                                     ),
-                                   ),
-                                 ],
-                               ),
-                             )
-                                : Container(),
+                          for(var i in imageController.widgetList) GestureDetector(
+                            onPanUpdate: (details) {
+                              setState(() {
+                                // imageController.imageOffset.value += details
+                                //     .delta; // Update the position based on the drag
+                                // log('Image Offset: ${imageController.imageOffset.value}');
+                                // i.offset+= details.delta;
+                              });
+                            },
+                            child: Stack(
+                              children: [
+                                Positioned(
+                                  left: i.offset.dx,
+                                  top: i.offset.dy,
+                                  child: SelectedEditorWidgetView(
+                                    widgetId: i.widgetId,
+                                    child: i.child,
+                                    iconPath: 'assets/close.svg',
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+
                           // Container(
                           //   width: MediaQuery.of(context).size.width,
                           //   height:MediaQuery.of(context).size.width,
