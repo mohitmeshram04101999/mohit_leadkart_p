@@ -16,8 +16,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SC.getScreen(context);
-    return DevicePreview(
-      builder: (context) => GetMaterialApp.router(
+    return  DevicePreview(
+      builder: (context)=>
+     GetMaterialApp.router(
         debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.light,
         theme:Theme.of(context).brightness==Brightness.light? AppTheme():AppTheme(),

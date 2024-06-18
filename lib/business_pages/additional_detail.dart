@@ -293,60 +293,64 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
                         Row(
                           children: [
                              // Optional: Add some space before the chip
-                            Chip(
-                              label: Text(
-                                'App Development',
-                                style: TextStyle(color: Colors.grey.shade700,fontSize:SC.from_height(15) ),
-                              ),
-                              backgroundColor:
-                              Colors.white, // Customize chip background color
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(
-                                    SC.from_height(
-                                        15)), // Match container border radius
-                                side: BorderSide(
-                                    color: Colors
-                                        .grey), // Optional: Match container border color
-                              ),
+                            Flexible(
+                              child: Chip(
+                                label: Text(
+                                  'App Development',
+                                  style: TextStyle(color: Colors.grey.shade700,fontSize:SC.fromWidth(26) ),
+                                ),
+                                backgroundColor:
+                                Colors.white, // Customize chip background color
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(
+                                      SC.from_height(
+                                          15)), // Match container border radius
+                                  side: BorderSide(
+                                      color: Colors
+                                          .grey), // Optional: Match container border color
+                                ),
 
-                              // Optional: Add an icon to the chip
-                              onDeleted: () {
-                                // Handle chip deletion or button click action
-                                print('Chip button pressed');
-                              },
-                              deleteIcon: Icon(Icons.cancel,
-                                  color: Colors
-                                      .grey), // Optional: Customize delete icon
-                              deleteButtonTooltipMessage:
-                              'Remove', // Tooltip for the delete button
+                                // Optional: Add an icon to the chip
+                                onDeleted: () {
+                                  // Handle chip deletion or button click action
+                                  print('Chip button pressed');
+                                },
+                                deleteIcon: Icon(Icons.cancel,
+                                    color: Colors
+                                        .grey), // Optional: Customize delete icon
+                                deleteButtonTooltipMessage:
+                                'Remove', // Tooltip for the delete button
+                              ),
                             ),
                             SizedBox(width: SC.from_height(10)),
-                            Chip(
-                              label: Text(
-                                'UI UX Design',
-                                style: TextStyle(color: Colors.grey.shade700,fontSize:SC.from_height(15) ),
-                              ),
-                              backgroundColor:
-                              Colors.white, // Customize chip background color
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(
-                                    SC.from_height(
-                                        15)), // Match container border radius
-                                side: BorderSide(
+                            Flexible(
+                              child: Chip(
+                                label: Text(
+                                  'UI UX Design',
+                                  style: TextStyle(color: Colors.grey.shade700,fontSize:SC.from_height(15) ),
+                                ),
+                                backgroundColor:
+                                Colors.white, // Customize chip background color
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(
+                                      SC.from_height(
+                                          15)), // Match container border radius
+                                  side: BorderSide(
+                                      color: Colors
+                                          .grey), // Optional: Match container border color
+                                ),
+                              
+                                // Optional: Add an icon to the chip
+                                onDeleted: () {
+                                  // Handle chip deletion or button click action
+                                  print('Chip button pressed');
+                                },
+                                deleteIcon: Icon(Icons.cancel,
                                     color: Colors
-                                        .grey), // Optional: Match container border color
+                                        .grey), // Optional: Customize delete icon
+                                deleteButtonTooltipMessage:
+                                'Remove', // Tooltip for the delete button
                               ),
-
-                              // Optional: Add an icon to the chip
-                              onDeleted: () {
-                                // Handle chip deletion or button click action
-                                print('Chip button pressed');
-                              },
-                              deleteIcon: Icon(Icons.cancel,
-                                  color: Colors
-                                      .grey), // Optional: Customize delete icon
-                              deleteButtonTooltipMessage:
-                              'Remove', // Tooltip for the delete button
                             ),
 
                           ],
@@ -355,32 +359,34 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
                         SizedBox(
                             width: SC.from_height(
                                 10)), // Optional: Add some space before the chip
-                        Chip(
-                          label: Text(
-                            'Website Development',
-                            style: TextStyle(color: Colors.grey.shade700,fontSize:SC.from_height(15) ),
-                          ),
-                          backgroundColor:
-                          Colors.white, // Customize chip background color
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(
-                                SC.from_height(
-                                    15)), // Match container border radius
-                            side: BorderSide(
+                        Flexible(
+                          child: Chip(
+                            label: Text(
+                              'Website Development',
+                              style: TextStyle(color: Colors.grey.shade700,fontSize:SC.fromWidth(26) ),
+                            ),
+                            backgroundColor:
+                            Colors.white, // Customize chip background color
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                  SC.from_height(
+                                      15)), // Match container border radius
+                              side: BorderSide(
+                                  color: Colors
+                                      .grey), // Optional: Match container border color
+                            ),
+                          
+                            // Optional: Add an icon to the chip
+                            onDeleted: () {
+                              // Handle chip deletion or button click action
+                              print('Chip button pressed');
+                            },
+                            deleteIcon: Icon(Icons.cancel,
                                 color: Colors
-                                    .grey), // Optional: Match container border color
+                                    .grey), // Optional: Customize delete icon
+                            deleteButtonTooltipMessage:
+                            'Remove', // Tooltip for the delete button
                           ),
-
-                          // Optional: Add an icon to the chip
-                          onDeleted: () {
-                            // Handle chip deletion or button click action
-                            print('Chip button pressed');
-                          },
-                          deleteIcon: Icon(Icons.cancel,
-                              color: Colors
-                                  .grey), // Optional: Customize delete icon
-                          deleteButtonTooltipMessage:
-                          'Remove', // Tooltip for the delete button
                         ),
 
                       ],
@@ -398,7 +404,7 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
                       child: Text(
                         ' Services ',
                         style: TextStyle(
-                            color: Colors.grey.shade700, fontSize: SC.from_height(16)),
+                            color: Colors.grey.shade700, fontSize: SC.fromWidth(26)),
                       ),
                     ),
                   )

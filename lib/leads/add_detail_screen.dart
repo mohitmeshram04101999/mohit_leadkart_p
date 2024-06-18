@@ -19,7 +19,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
 
   List<String> names = ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace'];
 
-  List<int> ages = [25, 30, 35, 40, 45, 50, 55];
+  List<int> views = [25, 30, 35, 40, 45, 50, 55];
   List<int> clicks = [25, 30, 35, 40, 45, 50, 55];
   List<int> ctr = [25, 30, 35, 40, 45, 50, 55];
 
@@ -81,7 +81,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                         'Lead Generation',
                         style: TextStyle(
                             fontWeight: FontWeight.w600,
-                            fontSize: SC.from_height(18),
+                            fontSize: SC.fromWidth(27),
                             color:  MyHelper.appConstent.primeryColor),
                       ),
                       Container(
@@ -106,12 +106,10 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                         '1 May - 10 May',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
-                            color: Colors.grey.shade700, fontSize: SC.from_height(15)),
+                            color: Colors.grey.shade700, fontSize: SC.fromWidth(30)),
                       ),
                       Row(
                         children: [
-                          SizedBox(width: SC.from_height(95)),
-
                           InkWell(
                             onTap: (){
 
@@ -120,7 +118,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                               'See Detail >',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
-                                  fontSize: SC.from_height(16.5),
+                                  fontSize: SC.fromWidth(27),
                                   color: Color.fromRGBO(36, 238, 221, 1)),
                             ),
                           )
@@ -176,7 +174,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                   border: Border.all(color: Colors.grey.shade300),
                   borderRadius: BorderRadius.circular(SC.from_height(8))),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: SC.from_height(18)),
+                padding: EdgeInsets.only(left: SC.fromWidth(45),right: SC.fromWidth(35)),
                 child: Column(
                   children: [
                     //  FACEBOOK AND INSTAGRAM //
@@ -201,12 +199,14 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                     Flexible(
                       child: ListView.builder(
                         shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
                         itemCount: data.length,
                         itemBuilder: (context, index) {
                           final item = data[index];
                           return Padding(
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             child: Row(
+
                               children: [
                                 Text(
                                   item['label']!,
@@ -225,7 +225,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                                     color: Colors.grey.shade700,
                                   ),
                                 ),
-                                SizedBox(width: SC.from_height(20)),
+                                SizedBox(width: SC.fromWidth(18)),
                                 Text(
                                   item['value2']!,
                                   style: TextStyle(
@@ -264,7 +264,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                 });
               },
               child: Container(
-                width: SC.from_height(150),
+                width: SC.fromWidth(2.8),
                 height: SC.from_height(45),
                 child: Center(
                   child: Text(
@@ -294,7 +294,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                 });
               },
               child: Container(
-                width: SC.from_height(150),
+                width: SC.fromWidth(2.8),
                 height: SC.from_height(45),
                 child: Center(
                   child: Text(
@@ -922,20 +922,9 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
             // Top Performing State and CTR //
             Padding(
               padding: EdgeInsets.symmetric(horizontal: SC.from_height(15)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Top Performing State ',
-                    style: TextStyle(fontSize: SC.from_height(19),fontWeight: FontWeight.w600,color: Colors.grey.shade700),
-                  ),
-                  Text(
-                    '',
-                    style: TextStyle(
-                        fontSize: SC.from_height(17),
-                        color: Color.fromRGBO(36, 238, 221, 1)),
-                  ),
-                ],
+              child:    Text(
+                'Top Performing State ',
+                style: TextStyle(fontSize: SC.from_height(19),fontWeight: FontWeight.w600,color: Colors.grey.shade700),
               ),
             ),
             SizedBox(
@@ -994,6 +983,9 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
               children: [
                 TableRow(
                   children: [
+
+                    // CITY TABLE CELL //
+
                     TableCell(
                       child: Container(
 
@@ -1002,15 +994,35 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: List.generate(
-                            names.length,
+                            views.length,
                                 (index) => Padding(
-                                  padding:   EdgeInsets.all(SC.from_height(8)),
-                                  child: Text(names[index],style: TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(16)),),
-                                ),
+                              padding:   EdgeInsets.all(SC.from_height(8)),
+                              child: Flexible(child: Text('${names[index]}',
+                                style: TextStyle(overflow: TextOverflow.ellipsis,color: Colors.black,fontSize: SC.from_height(16)),)),
+                            ),
                           ),
                         ),
                       ),
                     ),
+                    // TableCell(
+                    //   child: Container(
+                    //
+                    //     padding: EdgeInsets.all(SC.from_height(8)),
+                    //     color: Colors.blue.shade200,
+                    //     child: Column(
+                    //       crossAxisAlignment: CrossAxisAlignment.center,
+                    //       children: List.generate(
+                    //         names.length,
+                    //             (index) => Padding(
+                    //               padding:   EdgeInsets.all(SC.from_height(6)),
+                    //               child: Text(names[index],style: TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(15.3)),),
+                    //             ),
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+
+                    // VIEWS TABLE CELL //
                     TableCell(
                       child: Container(
                         padding: EdgeInsets.all(SC.from_height(8)),
@@ -1018,15 +1030,17 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: List.generate(
-                            ages.length,
+                            views.length,
                                 (index) => Padding(
                                   padding:   EdgeInsets.all(SC.from_height(8)),
-                                  child: Text('${ages[index]}',style: TextStyle(color: Colors.black,fontSize: SC.from_height(16)),),
+                                  child: Text('${views[index]}',style: TextStyle(color: Colors.black,fontSize: SC.from_height(16)),),
                                 ),
                           ),
                         ),
                       ),
                     ),
+
+                    // CLICK TABLE CELL //
                     TableCell(
                       child: Container(
                         padding: EdgeInsets.all(SC.from_height(8)),
@@ -1044,6 +1058,8 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                         ),
                       ),
                     ),
+
+                    // CTR TABLE CELL //
                     TableCell(
                       child: Container(
                         padding: EdgeInsets.all(SC.from_height(8)),
@@ -1054,7 +1070,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                             ctr.length,
                                 (index) => Padding(
                                   padding:   EdgeInsets.all(SC.from_height(8)),
-                                  child: Text('${ctr[index].toStringAsFixed(1)}%',style: TextStyle(color: Colors.black,fontSize: SC.from_height(16)),),
+                                  child: Text('${ctr[index].toStringAsFixed(0)}%',style: TextStyle(color: Colors.black,fontSize: SC.from_height(16)),),
                                 ),
                           ),
                         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:leadkart/component/image_row.dart';
 import 'package:leadkart/helper/dimention.dart';
 
 class AddImages extends StatefulWidget {
@@ -95,7 +96,7 @@ class _AddImagesState extends State<AddImages> {
             }).toList(),
           ),
 
-          SizedBox(width: SC.from_height(80)),
+          SizedBox(width: SC.from_width(50)),
 
     Container(
           child: Row(
@@ -189,86 +190,35 @@ class _AddImagesState extends State<AddImages> {
         children: [
           SizedBox(height: SC.from_height(18),),
 
-          // AI CREATED IMAGES //
-          ListTile(
-            title: Text('AI Created Images',style: TextStyle(fontSize: SC.from_height(19),fontWeight: FontWeight.w500),),
-            subtitle: Text('For Your Business',style: TextStyle(color: Colors.grey.shade400,fontSize: SC.from_height(14),fontWeight: FontWeight.w500),),
-            trailing: Text('See more',style: TextStyle(fontSize: SC.from_height(16),color: Color.fromRGBO(36, 238, 221, 1)),),
+          CustomListTile(
+            title: 'AI Created Images',
+            subtitle: 'For Your Business',
+            trailingText: 'See more',
           ),
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
 
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: List.generate(3, (index) {
-                  return Container(
-                    margin: EdgeInsets.all(SC.from_height(4)),
-                    width: SC.from_height(125),
-                    height: SC.from_height(125),
-                    // decoration: BoxDecoration(border: Border.all()),
-                    // child: Image.asset('assets/add_images/img.png'),
-                    child: Image.asset(imagePaths[index],fit: BoxFit.cover,),
-                  );
-                }),
-              ),
-            ),
-          ),
+
+
+          ImageRow(imagePaths: ['assets/add_images/img.png', 'assets/add_images/img_1.png', 'assets/add_images/img_2.png']),
 
           // BUSINESS IMAGE //
-          ListTile(
-            title: Text('Business Image',style: TextStyle(fontSize: SC.from_height(19),fontWeight: FontWeight.w500),),
-            subtitle: Text('For Your Business',style: TextStyle(color: Colors.grey.shade400,fontSize: SC.from_height(14),fontWeight: FontWeight.w500),),
-            trailing: Text('See more',style: TextStyle(fontSize: SC.from_height(16),color: Color.fromRGBO(36, 238, 221, 1)),),
-          ),
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
 
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: List.generate(3, (index) {
-                  return Container(
-                    margin: EdgeInsets.all(SC.from_height(4)),
-                    width: SC.from_height(125),
-                    height: SC.from_height(125),
-                    // decoration: BoxDecoration(border: Border.all()),
-                    // child: Image.asset('assets/add_images/img.png'),
-                    child: Image.asset(imagePaths2[index],fit: BoxFit.cover,),
-                  );
-                }),
-              ),
-            ),
+          CustomListTile(
+            title: 'Business Image',
+            subtitle: 'For Your Business',
+            trailingText: 'See more',
           ),
+
+          ImageRow(imagePaths: ['assets/add_images/img_3.png', 'assets/add_images/img_4.png', 'assets/add_images/img_5.png']),
 
           // AYUSHMAN BHARAT DIWAS //
-          ListTile(
-            title: Text('Ayushman Bharat Diwas',style: TextStyle(fontSize: SC.from_height(19),fontWeight: FontWeight.w500),),
-            subtitle: Text('Today',style: TextStyle(color: Colors.grey.shade400,fontSize: SC.from_height(14),fontWeight: FontWeight.w500),),
-            trailing: Text('See more',style: TextStyle(fontSize: SC.from_height(16),color: Color.fromRGBO(36, 238, 221, 1)),),
+          CustomListTile(
+            title: 'Ayushman Bharat Diwas',
+            subtitle: 'For Your Business',
+            trailingText: 'See more',
           ),
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
 
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: List.generate(3, (index) {
-                  return Container(
-                    margin: EdgeInsets.all(SC.from_height(4)),
-                    width: SC.from_height(125),
-                    height: SC.from_height(125),
-                    // decoration: BoxDecoration(border: Border.all()),
-                    // child: Image.asset('assets/add_images/img.png'),
-                    child: Image.asset(imagePaths3[index],fit: BoxFit.cover,),
-                  );
-                }),
-              ),
-            ),
-          ),
+           
+          ImageRow(imagePaths: ['assets/add_images/img_6.png', 'assets/add_images/img_7.png', 'assets/add_images/img_8.png']),
 
         ],
       ),

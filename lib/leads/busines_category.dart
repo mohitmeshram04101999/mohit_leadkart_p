@@ -3,6 +3,7 @@ import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:getwidget/components/button/gf_button.dart';
 import 'package:leadkart/component/HelpButtonWhite.dart';
 import 'package:leadkart/component/addRequirmentTile.dart';
+import 'package:leadkart/component/custom_button.dart';
 import 'package:leadkart/helper/dimention.dart';
 import 'package:leadkart/helper/helper.dart';
 import 'package:leadkart/screens/user/follow_up_data.dart';
@@ -183,10 +184,10 @@ class _BusinesCategoryState extends State<BusinesCategory> {
               physics: NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
-                mainAxisExtent: SC.from_height(115),
+                mainAxisExtent: SC.fromHeight(8),
                 crossAxisSpacing: SC.from_height(15),
                 mainAxisSpacing: SC.from_height(15),
-                childAspectRatio: (SC.from_width(50) / SC.from_height(80)), // Adjust the aspect ratio as needed
+                // childAspectRatio: (SC.from_width(50) / SC.from_height(80)), // Adjust the aspect ratio as needed
               ),
               itemCount: categoryNames.length, // Number of containers you want to display
               itemBuilder: (context, index) {
@@ -206,7 +207,7 @@ class _BusinesCategoryState extends State<BusinesCategory> {
                       SizedBox(height: SC.from_height(10)),
                       Text(
                         categoryNames[index], // Use the name from the list
-                        style: TextStyle(color: Colors.grey.shade700, fontSize: SC.from_height(15)),
+                        style: TextStyle(color: Colors.grey.shade700, fontSize: SC.fromWidth(30)),
                         textAlign: TextAlign.center,
                       ),
                     ],
@@ -220,27 +221,14 @@ class _BusinesCategoryState extends State<BusinesCategory> {
 
 
             // GFBUTTON //
-            Container(
-              height: SC.from_height(45), // Adjust as needed
-              width: SC.from_height(340), // Adjust as needed
-              child: GFButton(
-                onPressed: () {
 
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> FollowUpDate()));
-                  // Your onPressed logic here
-                },
-                color: Color.fromRGBO(36, 238, 221, 1), // The button's background color
-                borderShape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
-                ),
-                child: Center(
-                  child: Text(
-                    'Next',
-                    style: TextStyle(color: Colors.white,fontSize: SC.from_height(18)), // Text color
-                  ),
-                ),
-              ),
+            CustomButton(
+              text: 'Next', onPressed: () {
+              // context.pushNamed("homePage");
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> FollowUpDate()));
+            },
             ),
+
 
             SizedBox(height: SC.from_height(20),),
 
