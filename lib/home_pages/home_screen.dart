@@ -45,10 +45,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
         title: Container(
           clipBehavior: Clip.hardEdge,
-          width: SC.from_height(30),
+          width: SC.from_width(40),
           height: SC.from_height(30),
           decoration: BoxDecoration(
-
+            // border: Border.all(),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Image.asset(
@@ -92,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
             }).toList(),
           ),
 
-          SizedBox(width: SC.from_height(80)),
+          SizedBox(width: SC.from_width(50)),
 
           HelpButton(),
 
@@ -122,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
           SizedBox(height: SC.from_height(15),),
 
-          Text('Introducing AI-powered ads with Leadkart',style: TextStyle(fontSize: SC.from_height(18),  fontWeight: FontWeight.w500,),),
+          Text('Introducing AI-powered ads with Leadkart',style: TextStyle(fontSize: SC.fromWidth(22),  fontWeight: FontWeight.w500,),),
 
           SizedBox(height: SC.from_height(8),),
 

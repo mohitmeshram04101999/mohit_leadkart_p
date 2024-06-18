@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:leadkart/component/custom_button.dart';
 import 'package:leadkart/helper/dimention.dart';
 
 class CampaignSetting extends StatefulWidget {
@@ -341,29 +342,15 @@ class _CampaignSettingState extends State<CampaignSetting> {
             SizedBox(height: SC.from_height(20),),
 
             // GFBUTTON //
-            Container(
-              height: SC.from_height(45), // Adjust as needed
-              width: SC.from_height(340), // Adjust as needed
-              child: GFButton(
-                onPressed: () {
-                  Get.to(CampaignSetting());
-                  // Your onPressed logic here
-                },
-                color: Color.fromRGBO(36, 238, 221, 1),
-                // The button's background color
-                borderShape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(
-                      10.0), // Adjust the radius as needed
-                ),
-                child: Center(
-                  child: Text(
-                    'Proceed to payment',
-                    style: TextStyle(color: Colors.white,
-                        fontSize: SC.from_height(17)), // Text color
-                  ),
-                ),
-              ),
+
+            CustomButton(
+              text: 'Proceed to payment', onPressed: () {
+              // context.pushNamed("homePage");
+              // Navigator.push(context, MaterialPageRoute(builder: (context)=> CampaignSetting()));
+            },
             ),
+
+
 
             SizedBox(height: SC.from_height(20),),
           ],

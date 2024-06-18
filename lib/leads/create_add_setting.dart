@@ -295,6 +295,8 @@ class _AddCreationState extends State<AddCreation> {
             ),
           ),
 
+          SizedBox(height: SC.from_height(12),),
+
         ],
       ),
     );

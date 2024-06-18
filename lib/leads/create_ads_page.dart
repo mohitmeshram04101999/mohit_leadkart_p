@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:go_router/go_router.dart';
 import 'package:leadkart/add_images/campaign_setting_page.dart';
+import 'package:leadkart/component/custom_button.dart';
 import 'package:leadkart/helper/dimention.dart';
 import 'package:leadkart/helper/helper.dart';
 
@@ -407,7 +408,8 @@ class _CreateAdsState extends State<CreateAds> {
               borderRadius: BorderRadius.circular(SC.from_height(7)),
             ),
             width: double.infinity,
-            height: SC.from_height(95),
+            // height: SC.from_height(100),
+            height: SC.fromHeight(8.2),
             child: Stack(
               // alignment: Alignment.bottomCenter,
               children: [
@@ -540,12 +542,12 @@ class _CreateAdsState extends State<CreateAds> {
                       width: SC.from_height(12),
                     ),
                     Container(
-                      width: SC.from_height(150),
-                      height: SC.from_height(32),
+                      padding: EdgeInsets.only(left: 8,right: 8,top: 5,bottom: 5),
+                      // height: SC.from_height(32),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(color: Colors.grey,),
-                        borderRadius: BorderRadius.circular(SC.from_height(15)),
+                        borderRadius: BorderRadius.circular(SC.fromWidth(15)),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -554,7 +556,7 @@ class _CreateAdsState extends State<CreateAds> {
                             'Food Shopper',
                             style: TextStyle(
                                 color: Colors.grey.shade700,
-                                fontSize:SC.from_height(15)),
+                                fontSize:SC.fromWidth(27)),
                           ),
                           Icon(
                             Icons.add,
@@ -567,8 +569,7 @@ class _CreateAdsState extends State<CreateAds> {
                       width: SC.from_height(20),
                     ),
                     Container(
-                      width: SC.from_height(120),
-                      height: SC.from_height(32),
+                      padding: EdgeInsets.only(left: 8,right: 8,top: 5,bottom: 5),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(color: Colors.grey),
@@ -581,7 +582,7 @@ class _CreateAdsState extends State<CreateAds> {
                             'Retailer',
                             style: TextStyle(
                                 color: Colors.grey.shade700,
-                                fontSize:SC.from_height(15)),
+                                fontSize:SC.fromWidth(27)),
                           ),
                           Icon(
                             Icons.add,
@@ -651,27 +652,14 @@ class _CreateAdsState extends State<CreateAds> {
           ),
 
           // GFBUTTON //
-          Container(
-            height: SC.from_height(45), // Adjust as needed
-            width: SC.from_height(340), // Adjust as needed
-            child: GFButton(
-              onPressed: () {
-
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> CampaignSetting()));
-                // Your onPressed logic here
-              },
-              color: Color.fromRGBO(36, 238, 221, 1), // The button's background color
-              borderShape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
-              ),
-              child: Center(
-                child: Text(
-                  'Next',
-                  style: TextStyle(color: Colors.white,fontSize: SC.from_height(17)), // Text color
-                ),
-              ),
-            ),
+          CustomButton(
+            text: 'Next', onPressed: () {
+            // context.pushNamed("homePage");
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> CampaignSetting()));
+          },
           ),
+
+
           SizedBox(
             height: SC.from_height(15),
           ),

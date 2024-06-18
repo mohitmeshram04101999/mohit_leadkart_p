@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:getwidget/components/button/gf_button.dart';
+import 'package:leadkart/component/custom_button.dart';
 import 'package:leadkart/helper/dimention.dart';
 import 'package:leadkart/helper/helper.dart';
 import 'package:leadkart/leads/busines_category.dart';
@@ -216,30 +217,20 @@ class _CreateUserState extends State<CreateUser> {
 
 
 
-              SizedBox(height: SC.from_height(30),),
+              SizedBox(height: SC.fromHeight(50),),
         
               // GFBUTTON //
-              Container(
-                height: SC.from_height(45), // Adjust as needed
-                width: SC.from_height(340), // Adjust as needed
-                child: GFButton(
-                  onPressed: () {
-        
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> BusinesCategory()));
-                    // Your onPressed logic here
-                  },
-                  color: Color.fromRGBO(36, 238, 221, 1), // The button's background color
-                  borderShape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Create',
-                      style: TextStyle(color: Colors.white,fontSize: SC.from_height(18)), // Text color
-                    ),
-                  ),
-                ),
+
+              CustomButton(
+                text: 'Create', onPressed: () {
+                // context.pushNamed("homePage");
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> BusinesCategory()));
+              },
               ),
+
+
+
+              SizedBox(height: SC.from_height(11),),
             ],
           ),
         ),

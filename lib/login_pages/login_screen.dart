@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
-import 'package:getwidget/components/button/gf_button.dart';
-import 'package:go_router/go_router.dart';
+
 import 'package:leadkart/component/custom_button.dart';
-import 'package:leadkart/helper/helper.dart';
+
 import 'package:leadkart/login_pages/otp_screen.dart';
 
 import '../helper/dimention.dart';
@@ -29,6 +27,8 @@ class _LogInPageState extends State<LoginScreen> {
           children:[
 
             Container(
+              // margin: EdgeInsets.only(top: 35,bottom: 35),
+              // decoration: BoxDecoration(border: Border.all()),
               width: double.infinity,
               height: SC.from_height(360),
 
@@ -62,10 +62,17 @@ class _LogInPageState extends State<LoginScreen> {
                   SizedBox(height: SC.from_height(30),),
                   Text('Let’s sign in ', style: TextStyle(fontSize:SC.from_height(26),fontWeight: FontWeight.w600 ),),
                   SizedBox(height: SC.from_height(10),),
-                  Container(
-                      width: double.infinity,
-                      margin: EdgeInsets.symmetric(horizontal: 25),child: Center(child: Text('Sign in your account using mobile no. or, Google \n                         Facebook and Mail ',
-                    style: TextStyle(fontSize:SC.fromWidth(30),color: Color.fromRGBO(96, 96, 96, 1),fontWeight: FontWeight.w500),))),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(30)),
+                    child: Container(
+                        width: SC.fromWidth(1.1), child: Center(child: Text('Sign in your account using mobile no. or, Google',
+                      style: TextStyle( fontSize:SC.fromWidth(28),color: Color.fromRGBO(96, 96, 96, 1),fontWeight: FontWeight.w500),textAlign: TextAlign.center,))),
+                  ),Padding(
+                    padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(30)),
+                    child: Container(
+                        width: SC.fromWidth(1.1), child: Center(child: Text('Facebook and Mail',
+                      style: TextStyle( fontSize:SC.fromWidth(28),color: Color.fromRGBO(96, 96, 96, 1),fontWeight: FontWeight.w500),textAlign: TextAlign.center,))),
+                  ),
 
                   SizedBox(height: SC.from_height(20),),
 
@@ -104,13 +111,16 @@ class _LogInPageState extends State<LoginScreen> {
 
                   SizedBox(height: SC.from_height(30),),
 
-                  // GFBUTTON   COUNTINUE //
+                  //    COUNTINUE //
 
-                  CustomButton(
-                    text: 'Continue', onPressed: () {
-                    // context.pushNamed("homePage");
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpScreen()));
-                  },
+                  Padding(
+                    padding:  EdgeInsets.symmetric(horizontal: 25),
+                    child: CustomButton(
+                      text: 'Continue', onPressed: () {
+                      // context.pushNamed("homePage");
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>OtpScreen()));
+                    },
+                    ),
                   ),
 
 
@@ -126,7 +136,7 @@ class _LogInPageState extends State<LoginScreen> {
 
                         Container(width: SC.fromWidth(4),child: Divider(thickness: 1.5,color: Colors.grey.shade300,)),
 
-                        Text('  or Log with  ',style: TextStyle(color: Colors.grey,fontSize: SC.from_height(17),fontWeight: FontWeight.w500)),
+                        Text('  or Log with  ',style: TextStyle(color: Colors.grey,fontSize: SC.fromWidth(26),fontWeight: FontWeight.w500)),
                         Container(width: SC.fromWidth(4),child: Divider(thickness: 1.5,color: Colors.grey.shade300)),
                       ],
                     ),
@@ -134,29 +144,39 @@ class _LogInPageState extends State<LoginScreen> {
 
                   SizedBox(height: SC.from_height(30),),
 
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Container(
-                        width:  SC.from_height(150),
-                        height:  SC.from_height(54),
-                        decoration: BoxDecoration(border: Border.all(color: Colors.grey),borderRadius: BorderRadius.circular(10)),
-                        child: Center(child: Container(
-                            width:  SC.from_height(41),
-                            height:  SC.from_height(41),
-                            child: Image.asset('assets/google.png',fit: BoxFit.cover,))),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Expanded(
+                          child: Container(
+                            // width:  SC.fromWidth(3),
+                            height:  SC.from_height(54),
+                            decoration: BoxDecoration(border: Border.all(color: Colors.grey),borderRadius: BorderRadius.circular(10)),
+                            child: Center(child: Container(
+                                width:  SC.from_height(41),
+                                height:  SC.from_height(41),
+                                child: Image.asset('assets/google.png',fit: BoxFit.cover,))),
 
-                      ),
-                      Container(
-                        width:  SC.from_height(150),
-                        height:  SC.from_height(54),
-                        decoration: BoxDecoration(border: Border.all(color: Colors.grey),borderRadius: BorderRadius.circular(10)),
-                        child: Center(child: Container(
-                            width:  SC.from_height(32),
-                            height:  SC.from_height(32),
-                            child: Image.asset('assets/facebook.png',fit: BoxFit.cover,))),
-                      ),
-                    ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          child: Container(
+                            // width:  SC.from_height(150),
+                            height:  SC.from_height(54),
+                            decoration: BoxDecoration(border: Border.all(color: Colors.grey),borderRadius: BorderRadius.circular(10)),
+                            child: Center(child: Container(
+                                width:  SC.from_height(32),
+                                height:  SC.from_height(32),
+                                child: Image.asset('assets/facebook.png',fit: BoxFit.cover,))),
+                          ),
+                        ),
+                      ],
+                    ),
                   )
 
                 ],

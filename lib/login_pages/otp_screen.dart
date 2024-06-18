@@ -86,25 +86,27 @@ class _OtpScreenState extends State<OtpScreen> {
             Container(
               width: double.infinity,
               margin: EdgeInsets.symmetric(horizontal: 25),
-              child: RichText(
-                text: TextSpan(
-                  style: TextStyle(fontSize: SC.from_height(15), color: Colors.grey),
-                  children: [
-                    TextSpan(
-                      text: 'We have sent you a 4 digit code to verify your\n            phone number on ',
-                      style: TextStyle(color: Colors.grey.shade600)
-                    ),
-                    TextSpan(
-                      text: '9988090679',
-                      style: TextStyle(color: Color.fromRGBO(36, 238, 221, 1)), // Change color of the phone number
-                    ),
-                  ],
+              child: Center(
+                child: RichText(
+                  text: TextSpan(
+                    style: TextStyle(fontSize: SC.fromWidth(28), color: Colors.grey),
+                    children: [
+                      TextSpan(
+                        text: 'We have sent you a 4 digit code to verify your\n            phone number on ',
+                        style: TextStyle(color: Colors.grey.shade600)
+                      ),
+                      TextSpan(
+                        text: '9988090679',
+                        style: TextStyle(color: Color.fromRGBO(36, 238, 221, 1)), // Change color of the phone number
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
 
 
-            SizedBox(height: SC.from_height(40),),
+            SizedBox(height:  SC.fromWidth(28),),
 
 
 
@@ -162,6 +164,7 @@ class _OtpScreenState extends State<OtpScreen> {
 
             Center(
               child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 18,vertical: 10),
                 height: SC.from_height(45), // Adjust as needed
                 width: SC.from_height(340),  // Adjust as needed
                 child: _isLoading
