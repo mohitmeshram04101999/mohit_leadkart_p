@@ -73,7 +73,7 @@ i.offset = Offset(i.offset.dx + details.delta.dx, i.offset.dy + details.delta.dy
                             widgetId: i.widgetId,
                             child: i.child,
                             iconPath: 'assets/close.svg',
-                          ):SelectEditorTextFieldView(child: i.child, width: 300, height: 100, widgetId: i.widgetId, iconPath: 'assets/close.svg'),
+                          ):SelectedEditorTextView(child: i.child, width: 300, height: 100, widgetId: i.widgetId, iconPath: 'assets/close.svg'),
                         ),
                       ],
                     ),
