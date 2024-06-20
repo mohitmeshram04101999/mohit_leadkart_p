@@ -83,6 +83,8 @@ borderRadius: BorderRadius.circular(10),
                                   left: i.offset.dx,
                                   top: i.offset.dy,
                                   child: SelectedEditorWidgetView(
+                                    width: 200,
+                                    height: 200,
                                     widgetId: i.widgetId,
                                     child: i.child,
                                     iconPath: 'assets/close.svg',

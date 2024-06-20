@@ -225,8 +225,9 @@ AdjustOption(text: 'Contrast', onTap: () {
                   setState(() {
                     imageController.isAdjustClicked.value = false;
                   });
-                  showDialog(
-                      context: context, builder: (context) => TextFieldPickerDialog());
+                  showModalBottomSheet(context: context, builder: (context) {
+                    return TextFieldPickerDialog();
+                  },);
                 }),
                 BottomChips(
                     text: 'Image',

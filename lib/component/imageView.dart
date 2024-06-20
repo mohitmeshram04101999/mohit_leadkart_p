@@ -60,7 +60,7 @@ class _ImageViewState extends State<ImageView> {
                         // if(i.offset.dx + details.delta.dx >= 0 && i.offset.dx + details.delta.dx <= MediaQuery.of(context).size.width - 100 && i.offset.dy + details.delta.dy >= 0 && i.offset.dy + details.delta.dy <= MediaQuery.of(context).size.width - 100) {
                         //   i.offset = Offset(i.offset.dx + details.delta.dx, i.offset.dy + details.delta.dy);
                         // }
-i.offset = Offset(i.offset.dx + details.delta.dx, i.offset.dy + details.delta.dy);
+                  i.offset = Offset(i.offset.dx + details.delta.dx, i.offset.dy + details.delta.dy);
 
                       });
                     },
@@ -69,11 +69,14 @@ i.offset = Offset(i.offset.dx + details.delta.dx, i.offset.dy + details.delta.dy
                         Positioned(
                           left: i.offset.dx,
                           top: i.offset.dy,
+
                           child: i.widgetType==WidgetType.image.toString()? SelectedEditorWidgetView(
+                            width: 200,
+                            height: 200,
                             widgetId: i.widgetId,
                             child: i.child,
                             iconPath: 'assets/close.svg',
-                          ):SelectEditorTextFieldView(child: i.child, width: 300, height: 100, widgetId: i.widgetId, iconPath: 'assets/close.svg'),
+                          ):SelectedEditorTextView(child: i.child, width: 300, height: 100, widgetId: i.widgetId, iconPath: 'assets/close.svg'),
                         ),
                       ],
                     ),

@@ -133,21 +133,28 @@ class _TextFieldPickerDialogState extends State<TextFieldPickerDialog> {
   final textController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-      backgroundColor: Colors.white,
-      surfaceTintColor: Colors.white,
-      title: Text('Add TextField?'),
-      content: Container(
+    return  Container(
         color: Colors.white,
         child: Column(
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TextField(
-              controller: textController,
-              decoration: InputDecoration(
-                hintText: 'Enter Text',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text("Write somethig below", style:Theme.of(context).textTheme.displayMedium!.copyWith(fontSize: 20)),
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  maxLines: 100,
+                  controller: textController,
+                  decoration: InputDecoration(
+                    hintText: 'Enter Text',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -177,22 +184,23 @@ class _TextFieldPickerDialogState extends State<TextFieldPickerDialog> {
                       saturation: imageController.imageSaturation.value,
                       sharpness: imageController.imageSharpness.value,
                       hue: imageController.imageHue.value,
-                      child:Text(textController.text),
+                      child:Text(textController.text, style: TextStyle(
+                        color:Colors.white
+                      ),),
                       scale: imageController.imageScale.value,
                       rotation: imageController.imageRotation.value,
                       offset: imageController.imageOffset.value,
                       widgetId: Uuid().v4(),
                     widgetType: WidgetType.textField.toString()
                   ));
-                  textController.clear();
+                  // textController.clear();
                   context.pop();
                 }, child: Text('Submit')),
               ],
             )
           ],
         ),
-      ),
-    );
+      );
   }
 }
 
