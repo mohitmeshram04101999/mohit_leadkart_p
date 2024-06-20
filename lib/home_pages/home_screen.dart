@@ -183,14 +183,14 @@ class _HomeScreenState extends State<HomeScreen> {
             clipBehavior: Clip.hardEdge,
             child:
             Image.asset('assets/home_images/img_3.png',fit: BoxFit.cover,),
-            width: SC.from_height(250),
-            height: SC.from_height(200),
+            // width: SC.fromWidth(50),
+            // height: SC.from_height(200),
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(SC.from_height(8)),),
           ),
 
           SizedBox(height: SC.from_height(15),),
 
-          Image.asset('assets/home_images/4.png',fit: BoxFit.cover,),
+          Container(child: Image.asset('assets/home_images/4.png',fit: BoxFit.cover,)),
 
           SizedBox(height: SC.from_height(19),),
 
@@ -198,6 +198,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
           SizedBox(height: SC.from_height(15),),
 
+          // CHOOSE ADD REQUIREMENT //
           ListView.builder(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
@@ -232,7 +233,7 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(height: SC.from_height(20),),
 
           Container(
-              height: SC.from_height(134),
+              // height: SC.from_height(134),
               clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
               child: Image.asset('assets/home_images/img_4.png',fit: BoxFit.cover,)),
@@ -241,13 +242,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
           SizedBox(height: SC.from_height(20),),
 
-
-          // MyactionButton(
-          //     onActionComplit: (v){},
-          //     action: ()async{
-          //       await Future.delayed(Duration(seconds: 3));
-          //     },
-          //     duretion: Duration(milliseconds: 300)),
           SizedBox(height: SC.from_height(10),),
 
         ],

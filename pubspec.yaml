@@ -81,6 +81,7 @@ flutter:
     - assets/add_images/
     - assets/home_images/
     - assets/bottom_nav/
+    - assets/payments/
     - assets/rive/
 #     - images/a_dot_ham.jpeg
 

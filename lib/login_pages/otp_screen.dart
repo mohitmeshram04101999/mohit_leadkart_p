@@ -113,37 +113,37 @@ class _OtpScreenState extends State<OtpScreen> {
       // PINPUT OTP TEXT FIELD  //
       SizedBox(height: SC.from_height(20),),
       Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Pinput(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Pinput(
 
-            length: 4,
-            defaultPinTheme: defaultPinTheme,
-            focusedPinTheme: defaultPinTheme.copyWith(
-              decoration: BoxDecoration(
-                border: Border.all(color: Color.fromRGBO(36, 238, 221, 1)), // Changed border color for focused state
-                borderRadius: BorderRadius.circular( SC.from_height(10)),
+                  length: 4,
+                  defaultPinTheme: defaultPinTheme,
+                  focusedPinTheme: defaultPinTheme.copyWith(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Color.fromRGBO(36, 238, 221, 1)), // Changed border color for focused state
+                      borderRadius: BorderRadius.circular( SC.from_height(10)),
+                    ),
+                  ),
+                  submittedPinTheme: defaultPinTheme.copyWith(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(color: Colors.grey.shade200), // Keep the border for submitted state
+                      borderRadius: BorderRadius.circular( SC.from_height(10)),
+                    ),
+                  ),
+
+                  separatorBuilder: (index) => SizedBox(width:  SC.from_height(20)),
+                  // Space between the PIN fields
+                  onChanged: (value) {
+                    print('PIN changed: $value');
+                  },
+                  onCompleted: (pin) {
+                    print('PIN completed: $pin');
+                  },
+                ),
               ),
             ),
-            submittedPinTheme: defaultPinTheme.copyWith(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Colors.grey.shade200), // Keep the border for submitted state
-                borderRadius: BorderRadius.circular( SC.from_height(10)),
-              ),
-            ),
-
-            separatorBuilder: (index) => SizedBox(width:  SC.from_height(20)),
-            // Space between the PIN fields
-            onChanged: (value) {
-              print('PIN changed: $value');
-            },
-            onCompleted: (pin) {
-              print('PIN completed: $pin');
-            },
-          ),
-        ),
-      ),
 
 
             SizedBox(height: SC.from_height(40),),

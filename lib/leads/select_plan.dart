@@ -4,6 +4,7 @@ import 'package:leadkart/component/custom_button.dart';
 import 'package:leadkart/component/select_plan_widget.dart';
 import 'package:leadkart/helper/dimention.dart';
 import 'package:leadkart/helper/helper.dart';
+import 'package:leadkart/leads/payment_details.dart';
 import 'package:leadkart/screens/leads/getNewLeads.dart';
 
 class SelectPlan extends StatefulWidget {
@@ -135,7 +136,7 @@ class _SelectPlanState extends State<SelectPlan> {
 
           CustomButton(
             text: 'Proceed to Payment', onPressed: () {
-
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>PaymentDetails()));
           },
           ),
 

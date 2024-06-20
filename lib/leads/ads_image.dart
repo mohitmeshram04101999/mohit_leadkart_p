@@ -62,7 +62,6 @@ class _AdsPageState extends State<AdsPage> {
       'platforms': [
         'assets/facebook.png',
         'assets/add_images/insta.png',
-        'assets/twitter.png',
       ],
     },
     // Add more recommendations as needed
@@ -217,7 +216,7 @@ class _AdsPageState extends State<AdsPage> {
       //   ],
       // ),
       body: Padding(
-        padding:   EdgeInsets.symmetric(horizontal:SC.from_height(19) ),
+        padding:   EdgeInsets.symmetric(horizontal:SC.from_height(17) ),
         child: ListView(
           children: [
 

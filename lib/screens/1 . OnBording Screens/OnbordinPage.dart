@@ -37,7 +37,6 @@ class _OnBordingPageState extends State<OnBordingPage> {
         children: [
 
           //Min App bar
-
           ClipPath(
             clipper: OnbordingAppBarClip(),
             child: Container(

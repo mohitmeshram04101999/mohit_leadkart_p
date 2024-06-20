@@ -27,8 +27,10 @@ class _LogInPageState extends State<LoginScreen> {
           children:[
 
             Container(
+
               // margin: EdgeInsets.only(top: 35,bottom: 35),
               // decoration: BoxDecoration(border: Border.all()),
+
               width: double.infinity,
               height: SC.from_height(360),
 

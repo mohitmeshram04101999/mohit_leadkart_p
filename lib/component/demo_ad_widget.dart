@@ -86,7 +86,7 @@ class DemoAdWidget extends StatelessWidget {
               children: [
                 Text(
                   mainText,
-                  style: TextStyle(color: mainTextColor, fontWeight: FontWeight.w600, fontSize: SC.from_height(16)),
+                  style: TextStyle(color: mainTextColor, fontWeight: FontWeight.w600, fontSize: SC.from_height(17)),
                 ),
                 SizedBox(width: SC.fromWidth(11.5)),
                 Row(
@@ -142,7 +142,8 @@ class DemoAdWidget extends StatelessWidget {
                     'View Reports',
                     style: TextStyle(
                       color: Color.fromRGBO(36, 238, 221, 1),
-                      fontSize: SC.from_height(15),
+                      // fontSize: SC.from_height(15),
+                      fontSize: SC.fromWidth(27),
                     ),
                   ),
                 ),

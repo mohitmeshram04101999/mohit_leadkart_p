@@ -67,12 +67,12 @@ class RecommendationWidget extends StatelessWidget {
                 Expanded(
                   child: Text(
                     description,
-                    style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: SC.from_height(18)),
+                    style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: SC.fromWidth(22)),
                   ),
                 ),
                 Text(
                   'Duration : $duration',
-                  style: TextStyle(fontWeight: FontWeight.w500,color: Colors.black54,fontSize: SC.from_height(13)),
+                  style: TextStyle(fontWeight: FontWeight.w500,color: Color.fromARGB(96, 96, 96, 1),fontSize: SC.fromWidth(30)),
                 ),
               ],
             ),
@@ -89,21 +89,21 @@ class RecommendationWidget extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    Text('Lead', style: TextStyle(fontWeight: FontWeight.w500,color: Colors.black54,fontSize:SC.from_height(17))),
+                    Text('Lead', style: TextStyle(color: Colors.black45,fontSize:SC.from_height(17))),
                     SizedBox(height: 5),
                     Text(leads.toString(), style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize:SC.from_height(17) )),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('Reach', style: TextStyle(fontWeight: FontWeight.w500,color: Colors.black54,fontSize:SC.from_height(17))),
+                    Text('Reach', style: TextStyle(color: Colors.black45,fontSize:SC.from_height(17))),
                     SizedBox(height: 5),
                     Text(reach.toString(), style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize:SC.from_height(17) )),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('Platform', style: TextStyle(fontWeight: FontWeight.w500,color: Colors.black54,fontSize:SC.from_height(17) )),
+                    Text('Platform', style: TextStyle(color: Colors.black45,fontSize:SC.from_height(17) )),
                     SizedBox(height: SC.from_height(5)),
                     Row(
                       children: platforms.map((platform) {
