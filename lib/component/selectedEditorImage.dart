@@ -55,81 +55,76 @@ RxBool isClicked = false.obs;
   Widget build(BuildContext context) {
     log(isClicked.value.toString());
     return widget.widgetId.isNotEmpty
-        ? AnimatedContainer(
-      duration: Duration(milliseconds: 0),
-      constraints: BoxConstraints(
-        // maxWidth: MediaQuery.of(context).size.width,
-        // maxHeight: MediaQuery.of(context).size.width,
-        minWidth: 100,
-        minHeight: 100,
-      ),
-      // decoration: BoxDecoration(
-      //   // borderRadius: BorderRadius.circular(10),
-      //   // color: Colors.white.withOpacity(0.5),
-      //   border: Border.all(color: Color.fromRGBO(109, 57, 255, 1
-      //   ), width: 2),
-      // ),
-      width: _width*imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale,
-      height: _height*imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Stack(
-          clipBehavior: Clip.none,
-          alignment: Alignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
-              child: Transform.rotate(
-                angle: imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).rotation,
-                child: Transform.scale(
-                  scale: imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale,
-                  alignment: Alignment.center,
-                  key: _widgetKey,
-                  child: widget.child,
+        ? FittedBox(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Stack(
+              clipBehavior: Clip.none,
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  constraints: BoxConstraints(
+                    // maxWidth: MediaQuery.of(context).size.width,
+                    // maxHeight: MediaQuery.of(context).size.width,
+                    minWidth: 100,
+                    minHeight: 100,
+                  ),
+                  width: _width*imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale,
+                  height: _height*imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+                    child: Transform.rotate(
+                      angle: imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).rotation,
+                      child: Transform.scale(
+                        scale: imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale,
+                        alignment: Alignment.center,
+                        key: _widgetKey,
+                        child: widget.child,
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            TopPostionedButton(
-              isShow: !imageController.isAdjustClicked.value,
-              onTap: () {
-                log('${widget.widgetId}');
-                imageController.widgetList.removeWhere((element) => element.widgetId == widget.widgetId);
-              },
-              iconPath: widget.iconPath,
-            ),
-            BottomPostionedButton(
-              isShow: !imageController.isAdjustClicked.value,
-              onPanUpdate: (details) {
-                setState(() {
-                  if (imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale + (details.delta.dy / 10) > 0.1) {
-                    double scale = imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale;
-                    imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale = scale + (details.delta.dy / 10);
-                  }
-                  WidgetsBinding.instance.addPostFrameCallback((_) {
-                    _getWidgetSize();
-                  });
-                });
+                TopPostionedButton(
+                  isShow: !imageController.isAdjustClicked.value,
+                  onTap: () {
+                    log('${widget.widgetId}');
+                    imageController.widgetList.removeWhere((element) => element.widgetId == widget.widgetId);
+                  },
+                  iconPath: widget.iconPath,
+                ),
+                BottomPostionedButton(
+                  isShow: !imageController.isAdjustClicked.value,
+                  onPanUpdate: (details) {
+                    setState(() {
+                      if (imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale + (details.delta.dy / 10) > 0.1) {
+                        double scale = imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale;
+                        imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale = scale + (details.delta.dy / 10);
+                      }
+                      WidgetsBinding.instance.addPostFrameCallback((_) {
+                        _getWidgetSize();
+                      });
+                    });
 
-              },
-              onTap: () {},
-              iconPath: 'assets/expand.svg',
+                  },
+                  onTap: () {},
+                  iconPath: 'assets/expand.svg',
+                ),
+                BottomLeftPostionedButton(
+                  isShow: !imageController.isAdjustClicked.value,
+                  onPanUpdate: (details) {
+                    setState(() {
+                      double rotation = imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).rotation;
+                      imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).rotation = rotation - (details.delta.dy * 0.02);
+                      imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).rotation %= 2 * 3.141592653589793;
+                    });
+                  },
+                  onTap: () {},
+                  iconPath: 'assets/scale.svg',
+                ),
+              ],
             ),
-            BottomLeftPostionedButton(
-              isShow: !imageController.isAdjustClicked.value,
-              onPanUpdate: (details) {
-                setState(() {
-                  double rotation = imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).rotation;
-                  imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).rotation = rotation - (details.delta.dy * 0.02);
-                  imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).rotation %= 2 * 3.141592653589793;
-                });
-              },
-              onTap: () {},
-              iconPath: 'assets/scale.svg',
-            ),
-          ],
-        ),
-      ),
-    )
+          ),
+        )
         : Container();
   }
 }
