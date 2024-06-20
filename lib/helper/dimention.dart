@@ -23,6 +23,9 @@ class  SC{
 
     return ans;
   }
+  static double fromWidth(double n){
+    return Screen_width/n;
+  }
 
 
   static double from_height(double n)

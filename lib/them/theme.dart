@@ -11,6 +11,14 @@ ThemeData AppTheme()
     brightness: Brightness.light,
     primaryColor: MyHelper.appConstent.primeryColor,
 secondaryHeaderColor: MyHelper.appConstent.leadTiletagColor,
+    iconTheme: IconThemeData(
+      color: Colors.black,
+      size: SC.from_width(20)
+    ),
+    checkboxTheme: CheckboxThemeData(
+      fillColor: WidgetStateProperty.resolveWith((states) => MyHelper.appConstent.checkBoxColor),
+      checkColor: WidgetStateProperty.resolveWith((states) => Colors.white),
+    ),
     textTheme: TextTheme(
       displayMedium: MyHelper.textStyls.mediumText,
       displaySmall: MyHelper.textStyls.smallText,
@@ -24,12 +32,12 @@ secondaryHeaderColor: MyHelper.appConstent.leadTiletagColor,
     outlinedButtonTheme: OutlinedButtonThemeData(
       
       style: ButtonStyle(
-        iconSize: MaterialStateProperty.resolveWith((states) => SC.from_width(20)),
-        padding:MaterialStateProperty.resolveWith((states) => EdgeInsets.symmetric(horizontal: SC.from_width(10))),
-          shape: MaterialStateProperty.resolveWith((states) =>RoundedRectangleBorder(
+        iconSize: WidgetStateProperty.resolveWith((states) => SC.from_width(20)),
+        padding:WidgetStateProperty.resolveWith((states) => EdgeInsets.symmetric(horizontal: SC.from_width(10))),
+          shape: WidgetStateProperty.resolveWith((states) =>RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
           )),
-        side:MaterialStateProperty.resolveWith((states) => BorderSide(color: Colors.red))
+        side:WidgetStateProperty.resolveWith((states) => BorderSide(color: Colors.red))
       ),
     ),
 
@@ -45,15 +53,15 @@ secondaryHeaderColor: MyHelper.appConstent.leadTiletagColor,
       
       style: ButtonStyle(
         //border
-        shape: MaterialStateProperty.resolveWith((states) => RoundedRectangleBorder(
+        shape: WidgetStateProperty.resolveWith((states) => RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8)
         )),
 
-        foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+        foregroundColor: WidgetStateProperty.resolveWith((states) => Colors.white),
 
-        backgroundColor: MaterialStateProperty.resolveWith((states) => MyHelper.appConstent.primeryColor),
+        backgroundColor: WidgetStateProperty.resolveWith((states) => MyHelper.appConstent.primeryColor),
 
-        textStyle: MaterialStateProperty.resolveWith((states) => TextStyle(fontSize: SC.from_width(14),fontWeight: FontWeight.w600,color: Colors.white))
+        textStyle: WidgetStateProperty.resolveWith((states) => TextStyle(fontSize: SC.from_width(14),fontWeight: FontWeight.w600,color: Colors.white))
       )
     ),
 

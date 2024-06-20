@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:leadkart/component/leadeTile.dart';
 import 'package:leadkart/helper/dimention.dart';
-import 'package:leadkart/screens/1%20.%20OnBording%20Screens/OnbordinPage.dart';
+import 'package:leadkart/screens/onBoardingScreens/OnbordinPage.dart';
 
 class On2 extends StatelessWidget {
   PageController pageController;

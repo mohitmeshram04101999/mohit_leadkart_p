@@ -2,11 +2,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:leadkart/add_images/add_images.dart';
-import 'package:leadkart/ads/ads_image.dart';
-import 'package:leadkart/ads/create_ads_page.dart';
 import 'package:leadkart/business_pages/busines_detail.dart';
 import 'package:leadkart/helper/dimention.dart';
 import 'package:leadkart/home_pages/home_screen.dart';
+import 'package:leadkart/leads/ads_image.dart';
+import 'package:leadkart/leads/create_ads_page.dart';
 
 
 class MyBottomNavigationBar extends StatefulWidget {
@@ -72,7 +72,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
               selectedItemColor: Color.fromRGBO(36, 238, 221, 1),
               unselectedItemColor: Colors.grey,
               selectedLabelStyle: TextStyle(color: Color.fromRGBO(36, 238, 221, 1)),
-              unselectedLabelStyle: TextStyle(color: Colors.grey),
+              unselectedLabelStyle: TextStyle(color: Colors.black26),
               onTap: (page) {
                 setState(() {
                   curruntPage = page;
@@ -86,8 +86,8 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                 ),
                 BottomNavigationBarItem(
                   icon: Container(
-                    width: SC.from_width(22),
-                    height: SC.from_width(22),
+                    width: SC.from_width(23),
+                    height: SC.from_width(23),
                     child: Image.asset(
                       'assets/bottom_nav/5.png',
                       color: curruntPage == 1 ? Color.fromRGBO(36, 238, 221, 1) : Colors.grey,
@@ -97,8 +97,8 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                 ),
                 BottomNavigationBarItem(
                   icon: Container(
-                    width: SC.from_width(22),
-                    height: SC.from_width(22),
+                    width: SC.from_width(23),
+                    height: SC.from_width(23),
                     child: Image.asset(
                       'assets/bottom_nav/2.png',
                       color: curruntPage == 2 ? Color.fromRGBO(36, 238, 221, 1) : Colors.grey,
@@ -108,8 +108,8 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                 ),
                 BottomNavigationBarItem(
                   icon: Container(
-                    width: SC.from_width(22),
-                    height: SC.from_width(22),
+                    width: SC.from_width(23),
+                    height: SC.from_width(23),
                     child: Image.asset(
                       'assets/bottom_nav/3.png',
                       color: curruntPage == 3 ? Color.fromRGBO(36, 238, 221, 1) : Colors.grey,
@@ -119,8 +119,8 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                 ),
                 BottomNavigationBarItem(
                   icon: Container(
-                    width: SC.from_width(22),
-                    height: SC.from_width(22),
+                    width: SC.from_width(23),
+                    height: SC.from_width(23),
                     child: Image.asset(
                       'assets/bottom_nav/4.png',
                       color: curruntPage == 4 ? Color.fromRGBO(36, 238, 221, 1) : Colors.grey,

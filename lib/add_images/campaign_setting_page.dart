@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:go_router/go_router.dart';
 import 'package:leadkart/helper/dimention.dart';
 
 class CampaignSetting extends StatefulWidget {
@@ -23,6 +24,7 @@ class _CampaignSettingState extends State<CampaignSetting> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        foregroundColor: Colors.white,
         title: Text('Ad Campaign Settings'),
       ),
       body: Padding(
@@ -31,18 +33,19 @@ class _CampaignSettingState extends State<CampaignSetting> {
           children: [
             SizedBox(height: SC.from_height(10),),
             Container(
+              padding: EdgeInsets.all(SC.from_height(5),),
               width: double.infinity,
-              height: SC.from_height(115),
+              // height: SC.from_height(115),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(36, 238, 221, 0.3),
                   borderRadius: BorderRadius.circular(SC.from_height(10))),
               child: ListTile(
                 title: Text('Target our area and audience', style: TextStyle(
-                    color: Colors.black, fontSize: SC.from_height(16)),),
+                    color: Colors.black, fontSize: SC.from_height(18)),),
                 subtitle: Text(
-                  '# Place the icon in the top right \n corner# Place the icon in the \ntop right corner# ',
+                  '# Place the icon in the top right \ncorner# Place the icon in the\ntop right corner# ',
                   style: TextStyle(
-                      color: Colors.grey, fontSize: SC.from_height(14)),),
+                      color: Colors.grey, fontSize: SC.from_height(15)),),
                 trailing: Container(
                   clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(),
@@ -53,9 +56,9 @@ class _CampaignSettingState extends State<CampaignSetting> {
               ),
             ),
 
-            SizedBox(height: SC.from_height(10),),
+            SizedBox(height: SC.from_height(15),),
             Text('Select the Gender',
-              style: TextStyle(fontSize: SC.from_height(17)),),
+              style: TextStyle(fontSize: SC.from_height(18),fontWeight: FontWeight.w500),),
 
             // RADIO BUTTON //
             Row(
@@ -74,7 +77,7 @@ class _CampaignSettingState extends State<CampaignSetting> {
                         });
                       },
                     ),
-                    Text('Male',style: TextStyle(fontSize: SC.from_height(16)),),
+                    Text('Male',style: TextStyle(fontSize: SC.from_height(17)),),
                   ],
                 ),
                 Row(
@@ -89,7 +92,7 @@ class _CampaignSettingState extends State<CampaignSetting> {
                         });
                       },
                     ),
-                    Text('Female',style: TextStyle(fontSize: SC.from_height(16))),
+                    Text('Female',style: TextStyle(fontSize: SC.from_height(17))),
                   ],
                 ),
                 Row(
@@ -104,7 +107,7 @@ class _CampaignSettingState extends State<CampaignSetting> {
                         });
                       },
                     ),
-                    Text('Other',style: TextStyle(fontSize: SC.from_height(16))),
+                    Text('Other',style: TextStyle(fontSize: SC.from_height(17))),
                   ],
                 ),
               ],
@@ -113,9 +116,10 @@ class _CampaignSettingState extends State<CampaignSetting> {
 
             // TARGET AREAS //
             SizedBox(height: SC.from_height(10),),
-            Text('Target areas',style: TextStyle(fontSize:SC.from_height(18) ),),
+            Text('Target areas',style: TextStyle(fontSize:SC.from_height(18) ,fontWeight: FontWeight.w500,letterSpacing: 0.5),),
             SizedBox(height: SC.from_height(10),),
-            Text('Your ad will be shown in this area. It could be list of local area/ city / state or pan india',style: TextStyle(fontSize:SC.from_height(16),color: Colors.grey ),),
+            Text('Your ad will be shown in this area. It could be list of local area/ city / state or pan india',
+              style: TextStyle(fontSize:SC.from_height(16),color: Colors.grey.shade700,fontWeight: FontWeight.w500 ),),
 
             SizedBox(height: SC.from_height(20),),
 
@@ -135,7 +139,7 @@ class _CampaignSettingState extends State<CampaignSetting> {
               label: Text(
                 'Bhopal Railway station, Railway Colony,Bhopal Madhya Predesh India',
                 style: TextStyle(
-                    color: Colors.grey, fontSize: SC.from_height(13)),
+                    color: Colors.grey.shade600, fontSize: SC.from_height(14)),
                 maxLines: 2, // Set max lines for the text
                 overflow: TextOverflow.ellipsis,
               ),
@@ -174,8 +178,8 @@ class _CampaignSettingState extends State<CampaignSetting> {
                 children: [
 
                   Text('Add Target Area', style: TextStyle(
-                      fontSize: SC.from_height(14.5),
-                      color: Colors.grey,
+                      fontSize: SC.from_height(15),
+                      color: Colors.grey.shade700,
                       fontWeight: FontWeight.w500),),
                   Expanded(child: Container()),
                   InkWell(
@@ -196,8 +200,8 @@ class _CampaignSettingState extends State<CampaignSetting> {
               children: [
 
                 Text('Targeting Suggestions', style: TextStyle(
-                    fontSize: SC.from_height(15.5),
-                    color: Colors.black,
+                    fontSize: SC.from_height(17.5),
+                    color: Colors.grey.shade700,
                     fontWeight: FontWeight.w500),),
 
                 SizedBox(width: SC.from_height(7),),
@@ -206,7 +210,7 @@ class _CampaignSettingState extends State<CampaignSetting> {
 
                     },
                     child: Text(' (optional)', style: TextStyle(
-                        fontSize: SC.from_height(15.5), color: Colors.grey),)),
+                        fontSize: SC.from_height(16.5), color: Colors.grey),)),
               ],
             ),
 
@@ -214,7 +218,7 @@ class _CampaignSettingState extends State<CampaignSetting> {
             Text(
               'You can suggest to which type of audience you want to show this ad',
               style: TextStyle(
-                  fontSize: SC.from_height(16), color: Colors.grey),),
+                  fontSize: SC.from_height(16.5), color: Colors.grey.shade700,fontWeight: FontWeight.w500),),
 
             SizedBox(height: SC.from_height(15),),
 
@@ -235,7 +239,7 @@ class _CampaignSettingState extends State<CampaignSetting> {
                 labelText: 'Target Sugestion',
                 // Add label text
                 labelStyle:
-                TextStyle(color: Colors.grey),
+                TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(16),fontWeight: FontWeight.w500),
                 // Customize label text style
                 contentPadding: EdgeInsets.symmetric(
                     vertical: SC.from_height(12),
@@ -292,7 +296,7 @@ class _CampaignSettingState extends State<CampaignSetting> {
                       Icons.settings, color: Color.fromRGBO(36, 238, 221, 1),),
                     SizedBox(width: SC.from_height(7),),
                     Text('Advance Setting', style: TextStyle(
-                      fontSize: SC.from_height(16),
+                      fontSize: SC.from_height(17),
                       color: Color.fromRGBO(36, 238, 221, 1),),)
                   ],
                 ),
@@ -304,10 +308,10 @@ class _CampaignSettingState extends State<CampaignSetting> {
             Row(
               children: [
                 Text(
-                  'Age Range', style: TextStyle(fontSize: SC.from_height(17)),),
+                  'Age Range', style: TextStyle(fontSize: SC.from_height(18)),),
                 Expanded(child: Container()),
                 Text(
-                  '18 to 66', style: TextStyle(fontSize: SC.from_height(17)),),
+                  '18 to 66', style: TextStyle(fontSize: SC.from_height(17.5)),),
               ],
             ),
             SizedBox(height: SC.from_height(10),),
@@ -333,7 +337,7 @@ class _CampaignSettingState extends State<CampaignSetting> {
               ),
             ),
             SizedBox(height: SC.from_height(20),),
-            Text('Days', style: TextStyle(fontSize: SC.from_height(17))),
+            Text('Days', style: TextStyle(fontSize: SC.from_height(17.5))),
 
             SizedBox(height: SC.from_height(20),),
 
@@ -343,7 +347,8 @@ class _CampaignSettingState extends State<CampaignSetting> {
               width: SC.from_height(340), // Adjust as needed
               child: GFButton(
                 onPressed: () {
-                  Get.to(CampaignSetting());
+                  // Get.to(CampaignSetting());
+                  context.pushNamed('getNewLeads');
                   // Your onPressed logic here
                 },
                 color: Color.fromRGBO(36, 238, 221, 1),
@@ -356,7 +361,7 @@ class _CampaignSettingState extends State<CampaignSetting> {
                   child: Text(
                     'Proceed to payment',
                     style: TextStyle(color: Colors.white,
-                        fontSize: SC.from_height(16)), // Text color
+                        fontSize: SC.from_height(17)), // Text color
                   ),
                 ),
               ),

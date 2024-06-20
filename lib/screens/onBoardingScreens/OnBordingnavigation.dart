@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:leadkart/helper/dimention.dart';
 import 'package:leadkart/helper/helper.dart';
-import 'package:leadkart/screens/1%20.%20OnBording%20Screens/on1.dart';
-import 'package:leadkart/screens/1%20.%20OnBording%20Screens/on2.dart';
+import 'package:leadkart/screens/onBoardingScreens/on1.dart';
+import 'package:leadkart/screens/onBoardingScreens/on2.dart';
 
 import 'on3.dart';
 import 'on4.dart';

@@ -3,8 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:go_router/go_router.dart';
 import 'package:leadkart/add_images/campaign_setting_page.dart';
 import 'package:leadkart/helper/dimention.dart';
+import 'package:leadkart/helper/helper.dart';
 
 class CreateAds extends StatefulWidget {
   const CreateAds({Key? key}) : super(key: key);
@@ -24,9 +26,13 @@ class _CreateAdsState extends State<CreateAds> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Create an Ad'),
+
+      appBar:  AppBar(
+        foregroundColor: Colors.white,
+        backgroundColor: MyHelper.appConstent.primeryColor,
+        title: Text('Create an Ad',style: TextStyle( fontSize: SC.from_height(21) ),)
       ),
+
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: SC.from_height(15)),
         children: [
@@ -47,7 +53,8 @@ class _CreateAdsState extends State<CreateAds> {
                 border: InputBorder.none, // Remove the default underline
                 contentPadding: EdgeInsets.symmetric(
                     horizontal: SC.from_height(10)), // Adjust padding
-                hintText: 'Select Campaign', // Add hint text
+                hintText: 'Select Campaign',
+                hintStyle: TextStyle(fontSize:SC.from_height(16),color: Colors.grey.shade700 )// Add hint text
               ),
               items: <String>['Option 1', 'Option 2', 'Option 3', 'Option 4']
                   .map((String value) {
@@ -98,7 +105,7 @@ class _CreateAdsState extends State<CreateAds> {
                   Text(
                     'Select an Image',
                     style: TextStyle(
-                        color: Colors.grey, fontSize: SC.from_height(16)),
+                        color: Colors.grey, fontSize: SC.from_height(17),fontWeight: FontWeight.w500),
                   )
                 ],
               ),
@@ -121,7 +128,7 @@ class _CreateAdsState extends State<CreateAds> {
                 ),
                 labelText: 'Title', // Add label text
                 labelStyle:
-                TextStyle(color: Colors.grey), // Customize label text style
+                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)), // Customize label text style
                 contentPadding: EdgeInsets.symmetric(
                     vertical: SC.from_height(12),
                     horizontal: SC.from_height(10)), // Adjust padding
@@ -178,7 +185,7 @@ class _CreateAdsState extends State<CreateAds> {
                 ),
                 labelText: 'Caption', // Add label text
                 labelStyle:
-                TextStyle(color: Colors.grey), // Customize label text style
+                TextStyle(color: Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)),
                 contentPadding: EdgeInsets.symmetric(
                     vertical: SC.from_height(12),
                     horizontal: SC.from_height(10)), // Adjust padding
@@ -222,7 +229,7 @@ class _CreateAdsState extends State<CreateAds> {
           ),
           Container(
             width: double.infinity,
-            height: SC.from_height(95),
+            // height: SC.from_height(100),
             decoration: BoxDecoration(
                 color: Color.fromRGBO(236, 253, 243, 0.5),
                 borderRadius: BorderRadius.circular(
@@ -236,26 +243,26 @@ class _CreateAdsState extends State<CreateAds> {
                       top: SC.from_height(10), left: SC.from_height(15)),
                   child: Text('AI Suggested Caption',
                       style: TextStyle(
-                          color: Colors.black,
-                          fontSize: SC.from_height(15),
-                          fontWeight: FontWeight.w600)),
+                          color: Colors.grey.shade700,
+                          fontSize: SC.from_height(16),
+                          fontWeight: FontWeight.w500)),
                 ),
                 ListTile(
                     title: Text(
                       'Order tastiest momos in Bhopal.',
                       style: TextStyle(
-                          color: Colors.grey, fontSize: SC.from_height(15)),
+                          color: Colors.grey, fontSize: SC.from_height(15),fontWeight: FontWeight.w500),
                     ),
                     subtitle: Text(
                       'Click on Link now',
                       style: TextStyle(
-                          color: Colors.grey, fontSize: SC.from_height(15)),
+                          color: Colors.grey, fontSize: SC.from_height(15),fontWeight: FontWeight.w500),
                     ),
                     trailing: Text(
                       'Add',
                       style: TextStyle(
                           color: Color.fromRGBO(36, 238, 221, 1),
-                          fontSize: SC.from_height(15)),
+                          fontSize: SC.from_height(16),fontWeight: FontWeight.w500),
                     ))
               ],
             ),
@@ -271,7 +278,7 @@ class _CreateAdsState extends State<CreateAds> {
             children: [
               Text(
                 'Call to Action',
-                style: TextStyle(fontSize: SC.from_height(17)),
+                style: TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(19),fontWeight: FontWeight.w500),
               ),
               SizedBox(
                 width: SC.from_height(10),
@@ -324,7 +331,8 @@ class _CreateAdsState extends State<CreateAds> {
                 border: InputBorder.none, // Remove the default underline
                 contentPadding: EdgeInsets.symmetric(
                     horizontal: SC.from_height(10)), // Adjust padding
-                hintText: 'Select a Call to Action', // Add hint text
+                hintText: 'Select a Call to Action',
+                hintStyle: TextStyle(fontSize:SC.from_height(15) ,color: Colors.grey.shade700)// Add hint text
               ),
               items: <String>['Option 1', 'Option 2', 'Option 3', 'Option 4']
                   .map((String value) {
@@ -364,6 +372,7 @@ class _CreateAdsState extends State<CreateAds> {
                 contentPadding: EdgeInsets.symmetric(
                     horizontal: SC.from_height(10)), // Adjust padding
                 hintText: 'Destination URL', // Add hint text
+                hintStyle: TextStyle(fontSize:SC.from_height(15),color: Colors.grey.shade700 )
               ),
               items: <String>['Option 1', 'Option 2', 'Option 3', 'Option 4']
                   .map((String value) {
@@ -420,7 +429,7 @@ class _CreateAdsState extends State<CreateAds> {
                           Chip(
                             label: Text(
                               'Food Shopper',
-                              style: TextStyle(color: Colors.grey),
+                              style: TextStyle(color: Colors.grey.shade700,fontSize:SC.from_height(15) ),
                             ),
                             backgroundColor:
                             Colors.white, // Customize chip background color
@@ -448,7 +457,7 @@ class _CreateAdsState extends State<CreateAds> {
                           Chip(
                             label: Text(
                               'Retailer',
-                              style: TextStyle(color: Colors.grey),
+                              style: TextStyle(color: Colors.grey.shade700,fontSize:SC.from_height(15) ),
                             ),
                             backgroundColor:
                             Colors.white, // Customize chip background color
@@ -489,7 +498,7 @@ class _CreateAdsState extends State<CreateAds> {
                     child: Text(
                       ' Audience ',
                       style: TextStyle(
-                          color: Colors.black, fontSize: SC.from_height(15)),
+                          color: Colors.grey.shade700, fontSize: SC.from_height(16)),
                     ),
                   ),
                 )
@@ -500,6 +509,8 @@ class _CreateAdsState extends State<CreateAds> {
           SizedBox(
             height: SC.from_height(15),
           ),
+
+           // AI SUGESTED CAPTION  //
           Container(
             width: double.infinity,
             height: SC.from_height(95),
@@ -515,10 +526,10 @@ class _CreateAdsState extends State<CreateAds> {
                   padding: EdgeInsets.only(
                       top: SC.from_height(10), left: SC.from_height(15)),
                   child: Text('AI Suggested Caption',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: SC.from_height(15),
-                          fontWeight: FontWeight.w600)),
+                      style:  TextStyle(
+                          color: Colors.grey.shade700,
+                          fontSize: SC.from_height(16),
+                          fontWeight: FontWeight.w500)),
                 ),
                 SizedBox(
                   height: SC.from_height(10),
@@ -533,7 +544,7 @@ class _CreateAdsState extends State<CreateAds> {
                       height: SC.from_height(32),
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        border: Border.all(color: Colors.grey),
+                        border: Border.all(color: Colors.grey,),
                         borderRadius: BorderRadius.circular(SC.from_height(15)),
                       ),
                       child: Row(
@@ -542,9 +553,8 @@ class _CreateAdsState extends State<CreateAds> {
                           Text(
                             'Food Shopper',
                             style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: SC.from_height(14),
-                                fontWeight: FontWeight.w500),
+                                color: Colors.grey.shade700,
+                                fontSize:SC.from_height(15)),
                           ),
                           Icon(
                             Icons.add,
@@ -570,9 +580,8 @@ class _CreateAdsState extends State<CreateAds> {
                           Text(
                             'Retailer',
                             style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: SC.from_height(14),
-                                fontWeight: FontWeight.w500),
+                                color: Colors.grey.shade700,
+                                fontSize:SC.from_height(15)),
                           ),
                           Icon(
                             Icons.add,
@@ -613,7 +622,7 @@ class _CreateAdsState extends State<CreateAds> {
                       height: SC.from_height(50),
                       child: Text(
                         'Add a location',
-                        style: TextStyle(fontSize: SC.from_height(14)),
+                        style: TextStyle(fontSize: SC.from_height(16),color:Colors.grey.shade700),
                       ),
                     ),
                   ],
@@ -629,7 +638,7 @@ class _CreateAdsState extends State<CreateAds> {
                     child: Text(
                       ' Target Area ',
                       style: TextStyle(
-                          color: Colors.black, fontSize: SC.from_height(14)),
+                          color: Colors.grey.shade700, fontSize: SC.from_height(15)),
                     ),
                   ),
                 )
@@ -648,7 +657,7 @@ class _CreateAdsState extends State<CreateAds> {
             child: GFButton(
               onPressed: () {
 
-                Get.to(CampaignSetting());
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> CampaignSetting()));
                 // Your onPressed logic here
               },
               color: Color.fromRGBO(36, 238, 221, 1), // The button's background color
@@ -658,7 +667,7 @@ class _CreateAdsState extends State<CreateAds> {
               child: Center(
                 child: Text(
                   'Next',
-                  style: TextStyle(color: Colors.white,fontSize: SC.from_height(16)), // Text color
+                  style: TextStyle(color: Colors.white,fontSize: SC.from_height(17)), // Text color
                 ),
               ),
             ),
