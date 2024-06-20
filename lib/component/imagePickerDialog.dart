@@ -193,7 +193,7 @@ class _TextFieldPickerDialogState extends State<TextFieldPickerDialog> {
                       widgetId: Uuid().v4(),
                     widgetType: WidgetType.textField.toString()
                   ));
-                  textController.clear();
+                  // textController.clear();
                   context.pop();
                 }, child: Text('Submit')),
               ],
