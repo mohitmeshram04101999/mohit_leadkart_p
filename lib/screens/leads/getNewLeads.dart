@@ -44,7 +44,7 @@ class GetNewLeads extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: SC.from_height(10),
+                    height: SC.fromWidth(10),
                   ),
                   Row(
                     // mainAxisSize: MainAxisSize.min,
@@ -58,7 +58,7 @@ class GetNewLeads extends StatelessWidget {
                     ],
                   ),
               SizedBox(
-                    height: SC.from_height(10),
+                    height: SC.fromWidth(10),
                   ),
                   Row(
                     children: [
@@ -70,11 +70,11 @@ class GetNewLeads extends StatelessWidget {
                     ],
                   ),
               SizedBox(
-                    height: SC.from_height(10),
+                    height: SC.fromWidth(10),
                   ),
                   Text("OR"),
                   SizedBox(
-                    height: SC.from_height(10),
+                    height: SC.fromWidth(10),
                   ),
                   Row(
                     children: [
@@ -85,7 +85,7 @@ class GetNewLeads extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: SC.from_height(10),
+                    height: SC.fromWidth(10),
                   ),
               ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
@@ -104,7 +104,7 @@ class GetNewLeads extends StatelessWidget {
               right: 0,
               child: Container(
                 width: SC.Screen_width,
-                // height: SC.from_height(50),
+                // height: SC.fromWidth(50),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
@@ -146,7 +146,7 @@ class _LeadSelecterState extends State<LeadSelecter> {
   Widget build(BuildContext context) {
     return             Container(
 
-      margin: EdgeInsets.symmetric(horizontal:SC.from_height(8)),
+      margin: EdgeInsets.symmetric(horizontal:SC.fromWidth(8)),
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(11),
         color: Colors.white,
         boxShadow: [
@@ -168,16 +168,16 @@ class _LeadSelecterState extends State<LeadSelecter> {
             decoration: BoxDecoration(
               color: Color.fromRGBO(199, 255, 222, 1),
               borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(SC.from_height(18)), // Adjust the radius value as needed
-                topLeft: Radius.circular(SC.from_height(8)), // Adjust the radius value as needed
+                bottomRight: Radius.circular(SC.fromWidth(18)), // Adjust the radius value as needed
+                topLeft: Radius.circular(SC.fromWidth(8)), // Adjust the radius value as needed
               ),
             ),
-            height: SC.from_height(25),
-            child: Text('Recommendation',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize:SC.from_height(13) )),
+            height: SC.fromWidth(25),
+            child: Text('Recommendation',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize:SC.fromWidth(13) )),
           ),
-          SizedBox(height: SC.from_height(8),),
+          SizedBox(height: SC.fromWidth(8),),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: SC.from_width(10)),
+            padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(10)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -185,8 +185,8 @@ class _LeadSelecterState extends State<LeadSelecter> {
                   crossAxisAlignment: CrossAxisAlignment.start,
 
                   children: [
-                    Text('Get New leads', style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: SC.from_height(17)),),
-                    SizedBox(width: SC.from_height(5)),
+                    Text('Get New leads', style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: SC.fromWidth(17)),),
+                    SizedBox(width: SC.fromWidth(5)),
 
                     // Expanded(child: Container()),
                     Text('Duration : 30 days',style: TextStyle(color: Colors.black.withOpacity(0.8)),)
@@ -196,45 +196,45 @@ class _LeadSelecterState extends State<LeadSelecter> {
               ],
             ),
           ),
-          SizedBox(height: SC.from_height(8),),
+          SizedBox(height: SC.fromWidth(8),),
           Padding(
             padding: EdgeInsets.only(
-              left: SC.from_height(10),
-              right: SC.from_height(100),
-              bottom: SC.from_height(10),
+              left: SC.fromWidth(10),
+              right: SC.fromWidth(100),
+              bottom: SC.fromWidth(10),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   children: [
-                    Text('Lead',style: TextStyle(color: Colors.black.withOpacity(0.8),fontSize:SC.from_height(16) )),
-                    SizedBox(height: SC.from_height(5)),
-                    Text('200',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize:SC.from_height(16) ),),
+                    Text('Lead',style: TextStyle(color: Colors.black.withOpacity(0.8),fontSize:SC.fromWidth(16) )),
+                    SizedBox(height: SC.fromWidth(5)),
+                    Text('200',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize:SC.fromWidth(16) ),),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('Reach',style: TextStyle(color: Colors.black.withOpacity(0.8),fontSize:SC.from_height(16) )),
-                    SizedBox(height: SC.from_height(5)),
-                    Text('>50,000',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize:SC.from_height(16) ),),
+                    Text('Reach',style: TextStyle(color: Colors.black.withOpacity(0.8),fontSize:SC.fromWidth(16) )),
+                    SizedBox(height: SC.fromWidth(5)),
+                    Text('>50,000',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize:SC.fromWidth(16) ),),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('Platform',style: TextStyle(color: Colors.black.withOpacity(0.8),fontSize:SC.from_height(16) )),
-                    SizedBox(height: SC.from_height(5)),
+                    Text('Platform',style: TextStyle(color: Colors.black.withOpacity(0.8),fontSize:SC.fromWidth(16) )),
+                    SizedBox(height: SC.fromWidth(5)),
                     Row(
                       children: [
                         Container(
-                          width: SC.from_height(25),
-                          height: SC.from_height(25),
+                          width: SC.fromWidth(25),
+                          height: SC.fromWidth(25),
                           child: Image.asset('assets/instagram_wbg.png'),
                         ),
-                        SizedBox(width: SC.from_height(13)),
+                        SizedBox(width: SC.fromWidth(13)),
                         Container(
-                          width: SC.from_height(25),
-                          height: SC.from_height(25),
+                          width: SC.fromWidth(25),
+                          height: SC.fromWidth(25),
                           child: Image.asset('assets/facebook_wbg.png'),
                         ),
                       ],
@@ -245,7 +245,7 @@ class _LeadSelecterState extends State<LeadSelecter> {
               ],
             ),
           ),
-          // SizedBox(height: SC.from_height(15)),
+          // SizedBox(height: SC.fromWidth(15)),
           // GFBUTTON //
           // InkWell(
           //   onTap: () {
@@ -258,21 +258,21 @@ class _LeadSelecterState extends State<LeadSelecter> {
           //       border: Border.all(color: Color.fromRGBO(36, 238, 221, 1)),
           //
           //     ),
-          //     margin: EdgeInsets.symmetric(horizontal: SC.from_height(12)),
-          //     height: SC.from_height(42), // Adjust as needed
-          //     width: SC.from_height(340), // Adjust as needed
+          //     margin: EdgeInsets.symmetric(horizontal: SC.fromWidth(12)),
+          //     height: SC.fromWidth(42), // Adjust as needed
+          //     width: SC.fromWidth(340), // Adjust as needed
           //     child: Center(
           //       child: Text(
           //         'Continue',
           //         style: TextStyle(
           //           color: Color.fromRGBO(36, 238, 221, 1),
-          //           fontSize: SC.from_height(14),
+          //           fontSize: SC.fromWidth(14),
           //         ), // Text color
           //       ),
           //     ),
           //   ),
           // ),
-          // SizedBox(height: SC.from_height(20)),
+          // SizedBox(height: SC.fromWidth(20)),
         ],
       ),
     );
@@ -310,14 +310,14 @@ class _BudgetSelecterState extends State<BudgetSelecter> {
                   horizontal: 10, vertical: 10),
               child: Image.asset(
                 widget.icon,
-                height: SC.from_height(20),
+                height: SC.fromWidth(20),
               )),
            Expanded(child: Padding(
              padding: const EdgeInsets.all(8.0),
              child: Text(widget.budget,style: Theme.of(context).textTheme.displaySmall,),
            )),
           Container(
-            height: SC.from_height(27),
+            height: SC.fromWidth(27),
             decoration:  BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(color: Colors.grey)),
@@ -338,7 +338,7 @@ setState(() {
                       padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 0),
                       child: Image.asset(
                         'assets/minus.png',
-                        width: SC.from_height(15),
+                        width: SC.fromWidth(15),
                       ),
                     ),
                   ),
@@ -360,7 +360,7 @@ setState(() {
                         child: Center(
                           child: Image.asset(
                             'assets/add.png',
-                            width: SC.from_height(15),
+                            width: SC.fromWidth(15),
                           ),
                         ),
                       ),
@@ -391,8 +391,8 @@ class InfoCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         padding: EdgeInsets.symmetric(
-            horizontal: SC.from_width(10), vertical: SC.from_height(10)),
-        margin: EdgeInsets.symmetric(vertical: SC.from_height(10)),
+            horizontal: SC.fromWidth(10), vertical: SC.fromWidth(10)),
+        margin: EdgeInsets.symmetric(vertical: SC.fromWidth(10)),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -400,7 +400,7 @@ class InfoCard extends StatelessWidget {
           children: [
             const Icon(Icons.info_outline_rounded, color: Colors.black,),
             SizedBox(
-              width: SC.from_width(10),
+              width: SC.fromWidth(10),
             ),
             SizedBox(
               width: SC.Screen_width * 0.82,
@@ -427,8 +427,8 @@ class HelpButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: SC.from_height(30),
-      width: SC.from_width(90),
+      height: SC.fromWidth(30),
+      width: SC.fromWidth(90),
       child: OutlinedButton(
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -437,7 +437,7 @@ class HelpButton extends StatelessWidget {
           children: [
             const Icon(Icons.call),
             SizedBox(
-              width: SC.from_width(5),
+              width: SC.fromWidth(5),
             ),
             Text(
               'Help?',

@@ -86,12 +86,12 @@ class _ImagePickerDialogState extends State<ImagePickerDialog> {
                   },
                   child: Text('Cancel'),
                   style: ButtonStyle(
-                    shape: WidgetStatePropertyAll<RoundedRectangleBorder>(
+                    shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                             side: BorderSide(
                                 color: Theme.of(context).primaryColor))),
-                    fixedSize: WidgetStatePropertyAll<Size>(Size(100, 40)),
+                    fixedSize: MaterialStatePropertyAll<Size>(Size(100, 40)),
                   ),
                 ),
                 ElevatedButton(onPressed: () {
@@ -168,12 +168,12 @@ class _TextFieldPickerDialogState extends State<TextFieldPickerDialog> {
                   },
                   child: Text('Cancel'),
                   style: ButtonStyle(
-                    shape: WidgetStatePropertyAll<RoundedRectangleBorder>(
+                    shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                             side: BorderSide(
                                 color: Theme.of(context).primaryColor))),
-                    fixedSize: WidgetStatePropertyAll<Size>(Size(100, 40)),
+                    fixedSize: MaterialStatePropertyAll<Size>(Size(100, 40)),
                   ),
                 ),
                 ElevatedButton(onPressed: () {

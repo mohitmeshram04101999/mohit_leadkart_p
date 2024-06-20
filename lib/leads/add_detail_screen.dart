@@ -19,7 +19,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
 
   List<String> names = ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace'];
 
-  List<int> ages = [25, 30, 35, 40, 45, 50, 55];
+  List<int> views = [25, 30, 35, 40, 45, 50, 55];
   List<int> clicks = [25, 30, 35, 40, 45, 50, 55];
   List<int> ctr = [25, 30, 35, 40, 45, 50, 55];
 
@@ -39,39 +39,39 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
       appBar: AppBar(
         foregroundColor: Colors.white,
         backgroundColor: MyHelper.appConstent.primeryColor,
-        title: Text('Add Detail',style: TextStyle(fontSize: SC.from_height(21)),),
+        title: Text('Add Detail',style: TextStyle(fontSize: SC.fromWidth(21)),),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: SC.from_height(18)),
+        padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(18)),
         child: ListView(
           children: [
             SizedBox(
-              height: SC.from_height(18),
+              height: SC.fromWidth(18),
             ),
             Container(
               padding: EdgeInsets.all(10),
               width: double.infinity,
-              height: SC.from_height(150),
+              height: SC.fromWidth(150),
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey.shade300),
-                borderRadius: BorderRadius.circular(SC.from_height(8)),
+                borderRadius: BorderRadius.circular(SC.fromWidth(8)),
               ),
               child: Row(
                 children: [
                   // LEAD GENERATION //
                   Container(
                     clipBehavior: Clip.hardEdge,
-                    width: SC.from_height(120),
-                    height: SC.from_height(105),
+                    width: SC.fromWidth(120),
+                    height: SC.fromWidth(105),
                     child: Image.asset(
                       'assets/img_4.png',
                       fit: BoxFit.cover,
                     ),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(SC.from_height(8))),
+                        borderRadius: BorderRadius.circular(SC.fromWidth(8))),
                   ),
                   SizedBox(
-                    width: SC.from_height(15),
+                    width: SC.fromWidth(15),
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -81,17 +81,17 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                         'Lead Generation',
                         style: TextStyle(
                             fontWeight: FontWeight.w600,
-                            fontSize: SC.from_height(18),
+                            fontSize: SC.fromWidth(27),
                             color:  MyHelper.appConstent.primeryColor),
                       ),
                       Container(
-                        width: SC.from_height(90),
-                        height: SC.from_height(30),
+                        width: SC.fromWidth(90),
+                        height: SC.fromWidth(30),
                         child: Center(
                           child: Text(
                             'Finished',
                             style: TextStyle(
-                              fontSize: SC.from_height(15),
+                              fontSize: SC.fromWidth(15),
                                 color: MyHelper.appConstent.primeryColor),
                           ),
                         ),
@@ -100,18 +100,16 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                             border: Border.all(
                                 color: Color.fromRGBO(12, 151, 134, 1)),
                             borderRadius:
-                            BorderRadius.circular(SC.from_height(15))),
+                            BorderRadius.circular(SC.fromWidth(15))),
                       ),
                       Text(
                         '1 May - 10 May',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
-                            color: Colors.grey.shade700, fontSize: SC.from_height(15)),
+                            color: Colors.grey.shade700, fontSize: SC.fromWidth(30)),
                       ),
                       Row(
                         children: [
-                          SizedBox(width: SC.from_height(95)),
-
                           InkWell(
                             onTap: (){
 
@@ -120,7 +118,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                               'See Detail >',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
-                                  fontSize: SC.from_height(16.5),
+                                  fontSize: SC.fromWidth(27),
                                   color: Color.fromRGBO(36, 238, 221, 1)),
                             ),
                           )
@@ -132,23 +130,23 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
               ),
             ),
             SizedBox(
-              height: SC.from_height(18),
+              height: SC.fromWidth(18),
             ),
             Text(
               'Yay, Your ad reached to 211109 people',
               style: TextStyle(
-                  fontWeight: FontWeight.w600, fontSize: SC.from_height(17)),
+                  fontWeight: FontWeight.w600, fontSize: SC.fromWidth(17)),
             ),
             SizedBox(
-              height: SC.from_height(12),
+              height: SC.fromWidth(12),
             ),
             Text(
               'Congratulations, in just 10 days your ad has reached to 211109 people and got 191 leads.',
               style: TextStyle(
-                  fontSize: SC.from_height(15), color: Colors.grey.shade700),
+                  fontSize: SC.fromWidth(15), color: Colors.grey.shade700),
             ),
             SizedBox(
-              height: SC.from_height(15),
+              height: SC.fromWidth(15),
             ),
             // SEE ALL LEADS //
             Center(
@@ -160,23 +158,23 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                 child: Text(
                   'See All Leads',
                   style: TextStyle(
-                      fontSize: SC.from_height(17),
+                      fontSize: SC.fromWidth(17),
                       color: Color.fromRGBO(36, 238, 221, 1)),
                 ),
               ),
             ),
             SizedBox(
-              height: SC.from_height(15),
+              height: SC.fromWidth(15),
             ),
             Container(
               padding: EdgeInsets.all(10),
               width: double.infinity,
-              height: SC.from_height(180),
+              height: SC.fromWidth(180),
               decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey.shade300),
-                  borderRadius: BorderRadius.circular(SC.from_height(8))),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(8))),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: SC.from_height(18)),
+                padding: EdgeInsets.only(left: SC.fromWidth(45),right: SC.fromWidth(35)),
                 child: Column(
                   children: [
                     //  FACEBOOK AND INSTAGRAM //
@@ -187,32 +185,34 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                           'Facebook',
                           style: TextStyle(
                               color: Color.fromRGBO(36, 238, 221, 1),
-                              fontSize: SC.from_height(16)),
+                              fontSize: SC.fromWidth(16)),
                         ),
                         SizedBox(
-                          width: SC.from_height(10),
+                          width: SC.fromWidth(10),
                         ),
                         Text(
                           'Instagram',
-                          style: TextStyle(fontSize: SC.from_height(16)),
+                          style: TextStyle(fontSize: SC.fromWidth(16)),
                         )
                       ],
                     ),
                     Flexible(
                       child: ListView.builder(
                         shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
                         itemCount: data.length,
                         itemBuilder: (context, index) {
                           final item = data[index];
                           return Padding(
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             child: Row(
+
                               children: [
                                 Text(
                                   item['label']!,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
-                                    fontSize: SC.from_height(15),
+                                    fontSize: SC.fromWidth(15),
                                     color: Colors.grey.shade700,
                                   ),
                                 ),
@@ -221,16 +221,16 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                                   item['value1']!,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
-                                    fontSize: SC.from_height(15),
+                                    fontSize: SC.fromWidth(15),
                                     color: Colors.grey.shade700,
                                   ),
                                 ),
-                                SizedBox(width: SC.from_height(20)),
+                                SizedBox(width: SC.fromWidth(18)),
                                 Text(
                                   item['value2']!,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
-                                    fontSize: SC.from_height(15),
+                                    fontSize: SC.fromWidth(15),
                                     color: Colors.grey.shade700,
                                   ),
                                 ),
@@ -245,7 +245,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
               ),
             ),
             SizedBox(
-              height: SC.from_height(20),
+              height: SC.fromWidth(20),
             ),
 
 
@@ -264,14 +264,14 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                 });
               },
               child: Container(
-                width: SC.from_height(150),
-                height: SC.from_height(45),
+                width: SC.fromWidth(2.8),
+                height: SC.fromWidth(45),
                 child: Center(
                   child: Text(
                     'Facebook',
                     style: TextStyle(
                       color: isFacebookSelected ? Colors.white : Colors.grey.shade700,fontWeight: FontWeight.w500,
-                      fontSize: SC.from_height(16),
+                      fontSize: SC.fromWidth(16),
                     ),
                   ),
                 ),
@@ -280,7 +280,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                       ? Color.fromRGBO(36, 238, 221, 1)
                       : Colors.white,
                   border: Border.all(color:Color.fromRGBO(36, 238, 221, 1)),
-                  borderRadius: BorderRadius.circular(SC.from_height(30)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(30)),
                 ),
               ),
             ),
@@ -294,14 +294,14 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                 });
               },
               child: Container(
-                width: SC.from_height(150),
-                height: SC.from_height(45),
+                width: SC.fromWidth(2.8),
+                height: SC.fromWidth(45),
                 child: Center(
                   child: Text(
                     'Instagram',
                     style: TextStyle(
                       color: isInstagramSelected ? Colors.white : Colors.grey.shade700,fontWeight: FontWeight.w500,
-                      fontSize: SC.from_height(16),
+                      fontSize: SC.fromWidth(16),
                     ),
                   ),
                 ),
@@ -310,7 +310,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                       ? Color.fromRGBO(36, 238, 221, 1)
                       : Colors.white,
                   border: Border.all(color: Color.fromRGBO(36, 238, 221, 1)),
-                  borderRadius: BorderRadius.circular(SC.from_height(30)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(30)),
                 ),
               ),
             ),
@@ -318,18 +318,18 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
         ),
 
             SizedBox(
-              height: SC.from_height(30),
+              height: SC.fromWidth(30),
             ),
 
             // DEVICE AND VIEWS //
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: SC.from_height(15)),
+              padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(15)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Device',
-                    style: TextStyle(fontSize: SC.from_height(18),color: Colors.grey.shade700,fontWeight: FontWeight.w500),
+                    style: TextStyle(fontSize: SC.fromWidth(18),color: Colors.grey.shade700,fontWeight: FontWeight.w500),
                   ),
                   InkWell(
                     onTap: (){
@@ -338,7 +338,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                     child: Text(
                       'Views',
                       style: TextStyle(
-                          fontSize: SC.from_height(18),
+                          fontSize: SC.fromWidth(18),
                           color: Color.fromRGBO(36, 238, 221, 1)),
                     ),
                   ),
@@ -346,35 +346,35 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
               ),
             ),
             SizedBox(
-              height: SC.from_height(60),
+              height: SC.fromWidth(60),
             ),
             Column(
               children: [
                 Container(
                   clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(),
-                  width: SC.from_height(55),
-                  height: SC.from_height(55),
+                  width: SC.fromWidth(55),
+                  height: SC.fromWidth(55),
                   child: Image.asset('assets/phone.png'),
                 ),
                 Text(
                   'Mobile',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
-                      color: Colors.grey.shade700, fontSize: SC.from_height(16)),
+                      color: Colors.grey.shade700, fontSize: SC.fromWidth(16)),
                 ),
                 Text(
                   '3.08 lacs',
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: SC.from_height(18),
+                      fontSize: SC.fromWidth(18),
                       fontWeight: FontWeight.w600),
                 ),
               ],
             ),
 
             SizedBox(
-              height: SC.from_height(30),
+              height: SC.fromWidth(30),
             ),
             // DIVIDER //
             Container(
@@ -385,18 +385,18 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
               ),
             ),
             SizedBox(
-              height: SC.from_height(30),
+              height: SC.fromWidth(30),
             ),
 
             // AGE AND VIEWS  BarChart //
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: SC.from_height(15)),
+              padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(15)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Age',
-                    style: TextStyle(fontSize: SC.from_height(18),color: Colors.grey.shade700,fontWeight: FontWeight.w500),
+                    style: TextStyle(fontSize: SC.fromWidth(18),color: Colors.grey.shade700,fontWeight: FontWeight.w500),
                   ),
                   InkWell(
                     onTap: (){
@@ -405,7 +405,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                     child: Text(
                       'Views',
                       style: TextStyle(
-                          fontSize: SC.from_height(18),
+                          fontSize: SC.fromWidth(18),
                           color: Color.fromRGBO(36, 238, 221, 1)),
                     ),
                   ),
@@ -487,7 +487,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
              ),
 
             SizedBox(
-              height: SC.from_height(15),
+              height: SC.fromWidth(15),
             ),
 
             // DIVIDER //
@@ -500,22 +500,22 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
             ),
 
             SizedBox(
-              height: SC.from_height(15),
+              height: SC.fromWidth(15),
             ),
             // POST ENGAGEMENT //
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: SC.from_height(15)),
+              padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(15)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Post Engagement',
-                    style: TextStyle(fontSize: SC.from_height(18),fontWeight: FontWeight.w600,color: Colors.grey.shade700),
+                    style: TextStyle(fontSize: SC.fromWidth(18),fontWeight: FontWeight.w600,color: Colors.grey.shade700),
                   ),
                   Text(
                     '4322',
                     style: TextStyle(
-                        fontSize: SC.from_height(17),
+                        fontSize: SC.fromWidth(17),
                         color: Color.fromRGBO(36, 238, 221, 1)),
                   ),
                 ],
@@ -562,7 +562,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
         ),
       ),
             SizedBox(
-              height: SC.from_height(15),
+              height: SC.fromWidth(15),
             ),
 
             // DIVIDER //
@@ -574,18 +574,18 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
               ),
             ),
             SizedBox(
-              height: SC.from_height(15),
+              height: SC.fromWidth(15),
             ),
 
             // Gender and CTR //
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: SC.from_height(15)),
+              padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(15)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Gender',
-                    style: TextStyle(fontSize: SC.from_height(19),fontWeight: FontWeight.w600,color: Colors.grey.shade700),
+                    style: TextStyle(fontSize: SC.fromWidth(19),fontWeight: FontWeight.w600,color: Colors.grey.shade700),
                   ),
                   InkWell(
                     onTap: (){
@@ -594,7 +594,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                     child: Text(
                       'Views (CTR)',
                       style: TextStyle(
-                          fontSize: SC.from_height(18),
+                          fontSize: SC.fromWidth(18),
                           color: Color.fromRGBO(36, 238, 221, 1)),
                     ),
                   ),
@@ -651,8 +651,8 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
             //       ),
             //     ],
             //   ),
-            //   width: SC.from_height(300),
-            //   height: SC.from_height(250),
+            //   width: SC.fromWidth(300),
+            //   height: SC.fromWidth(250),
             // ),
 
 
@@ -701,7 +701,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
             //             }
             //             return Text(
             //               labelText,
-            //               style: TextStyle(fontSize: SC.from_height(13), color: Colors.grey),
+            //               style: TextStyle(fontSize: SC.fromWidth(13), color: Colors.grey),
             //             );
             //           },
             //           // Adjust the connector line settings
@@ -716,8 +716,8 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
             //       ),
             //     ],
             //   ),
-            //   width: SC.from_height(300),
-            //   height: SC.from_height(250),
+            //   width: SC.fromWidth(300),
+            //   height: SC.fromWidth(250),
             // ),
 
             Container(
@@ -761,13 +761,13 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
       }
     ''',
               ),
-              width: SC.from_height(300),
-              height: SC.from_height(300),
+              width: SC.fromWidth(300),
+              height: SC.fromWidth(300),
             ),
 
 
             SizedBox(
-              height: SC.from_height(15),
+              height: SC.fromWidth(15),
             ),
 
             // DIVIDER //
@@ -780,17 +780,17 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
             ),
 
             SizedBox(
-              height: SC.from_height(15),
+              height: SC.fromWidth(15),
             ),
             // TOP PLACEMENT and CTR //
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: SC.from_height(15)),
+              padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(15)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Top Placement ',
-                    style: TextStyle(fontSize: SC.from_height(19),fontWeight: FontWeight.w600,color: Colors.grey.shade700),
+                    style: TextStyle(fontSize: SC.fromWidth(19),fontWeight: FontWeight.w600,color: Colors.grey.shade700),
                   ),
                   InkWell(
                     onTap: (){
@@ -799,7 +799,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                     child: Text(
                       'Views',
                       style: TextStyle(
-                          fontSize: SC.from_height(18),
+                          fontSize: SC.fromWidth(18),
                           color: Color.fromRGBO(36, 238, 221, 1)),
                     ),
                   ),
@@ -848,8 +848,8 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
     //   }
     // ''',
     //           ),
-    //           width:  SC.from_height(300),
-    //           height:  SC.from_height(250),
+    //           width:  SC.fromWidth(300),
+    //           height:  SC.fromWidth(250),
     //         ),
 
             Container(
@@ -899,12 +899,12 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
       }
     ''',
               ),
-              width:  SC.from_height(300),
-              height:  SC.from_height(300),
+              width:  SC.fromWidth(300),
+              height:  SC.fromWidth(300),
             ),
 
             SizedBox(
-              height: SC.from_height(15),
+              height: SC.fromWidth(15),
             ),
 
             // DIVIDER //
@@ -917,43 +917,32 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
             ),
 
             SizedBox(
-              height: SC.from_height(15),
+              height: SC.fromWidth(15),
             ),
             // Top Performing State and CTR //
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: SC.from_height(15)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Top Performing State ',
-                    style: TextStyle(fontSize: SC.from_height(19),fontWeight: FontWeight.w600,color: Colors.grey.shade700),
-                  ),
-                  Text(
-                    '',
-                    style: TextStyle(
-                        fontSize: SC.from_height(17),
-                        color: Color.fromRGBO(36, 238, 221, 1)),
-                  ),
-                ],
+              padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(15)),
+              child:    Text(
+                'Top Performing State ',
+                style: TextStyle(fontSize: SC.fromWidth(19),fontWeight: FontWeight.w600,color: Colors.grey.shade700),
               ),
             ),
             SizedBox(
-              height: SC.from_height(15),
+              height: SC.fromWidth(15),
             ),
             Container(
               // decoration: BoxDecoration(border: Border.all()),
               width: double.infinity,
-              height: SC.from_height(25),
+              height: SC.fromWidth(25),
               child: Container(
                 color: Colors.blue,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                  Text('City',style: TextStyle(color: Colors.white,fontSize:SC.from_height(16) ),),
-                  Text('Views',style: TextStyle(color: Colors.white,fontSize:SC.from_height(16) ),),
-                  Text('Click',style: TextStyle(color: Colors.white,fontSize:SC.from_height(16) ),),
-                  Text('CTR',style: TextStyle(color: Colors.white,fontSize:SC.from_height(16) ),),
+                  Text('City',style: TextStyle(color: Colors.white,fontSize:SC.fromWidth(16) ),),
+                  Text('Views',style: TextStyle(color: Colors.white,fontSize:SC.fromWidth(16) ),),
+                  Text('Click',style: TextStyle(color: Colors.white,fontSize:SC.fromWidth(16) ),),
+                  Text('CTR',style: TextStyle(color: Colors.white,fontSize:SC.fromWidth(16) ),),
                 ],),
               ),
             ),
@@ -994,42 +983,67 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
               children: [
                 TableRow(
                   children: [
+
+                    // CITY TABLE CELL //
+
                     TableCell(
                       child: Container(
 
-                        padding: EdgeInsets.all(SC.from_height(8)),
+                        padding: EdgeInsets.all(SC.fromWidth(8)),
                         color: Colors.blue.shade200,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: List.generate(
-                            names.length,
+                            views.length,
                                 (index) => Padding(
-                                  padding:   EdgeInsets.all(SC.from_height(8)),
-                                  child: Text(names[index],style: TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(16)),),
-                                ),
+                              padding:   EdgeInsets.all(SC.fromWidth(8)),
+                              child: Flexible(child: Text('${names[index]}',
+                                style: TextStyle(overflow: TextOverflow.ellipsis,color: Colors.black,fontSize: SC.fromWidth(16)),)),
+                            ),
                           ),
                         ),
                       ),
                     ),
+                    // TableCell(
+                    //   child: Container(
+                    //
+                    //     padding: EdgeInsets.all(SC.fromWidth(8)),
+                    //     color: Colors.blue.shade200,
+                    //     child: Column(
+                    //       crossAxisAlignment: CrossAxisAlignment.center,
+                    //       children: List.generate(
+                    //         names.length,
+                    //             (index) => Padding(
+                    //               padding:   EdgeInsets.all(SC.fromWidth(6)),
+                    //               child: Text(names[index],style: TextStyle(color: Colors.grey.shade700,fontSize: SC.fromWidth(15.3)),),
+                    //             ),
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+
+                    // VIEWS TABLE CELL //
                     TableCell(
                       child: Container(
-                        padding: EdgeInsets.all(SC.from_height(8)),
+                        padding: EdgeInsets.all(SC.fromWidth(8)),
                         color: Colors.blue.shade50,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: List.generate(
-                            ages.length,
+                            views.length,
                                 (index) => Padding(
-                                  padding:   EdgeInsets.all(SC.from_height(8)),
-                                  child: Text('${ages[index]}',style: TextStyle(color: Colors.black,fontSize: SC.from_height(16)),),
+                                  padding:   EdgeInsets.all(SC.fromWidth(8)),
+                                  child: Text('${views[index]}',style: TextStyle(color: Colors.black,fontSize: SC.fromWidth(16)),),
                                 ),
                           ),
                         ),
                       ),
                     ),
+
+                    // CLICK TABLE CELL //
                     TableCell(
                       child: Container(
-                        padding: EdgeInsets.all(SC.from_height(8)),
+                        padding: EdgeInsets.all(SC.fromWidth(8)),
                         color: Colors.blue.shade50,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -1037,24 +1051,26 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                             growable: true,
                             clicks.length,
                                 (index) => Padding(
-                                  padding:   EdgeInsets.all(SC.from_height(8)),
-                                  child: Text('${clicks[index]}',style: TextStyle(color: Colors.black,fontSize: SC.from_height(16)),),
+                                  padding:   EdgeInsets.all(SC.fromWidth(8)),
+                                  child: Text('${clicks[index]}',style: TextStyle(color: Colors.black,fontSize: SC.fromWidth(16)),),
                                 ),
                           ),
                         ),
                       ),
                     ),
+
+                    // CTR TABLE CELL //
                     TableCell(
                       child: Container(
-                        padding: EdgeInsets.all(SC.from_height(8)),
+                        padding: EdgeInsets.all(SC.fromWidth(8)),
                         color: Colors.blue.shade50,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: List.generate(
                             ctr.length,
                                 (index) => Padding(
-                                  padding:   EdgeInsets.all(SC.from_height(8)),
-                                  child: Text('${ctr[index].toStringAsFixed(1)}%',style: TextStyle(color: Colors.black,fontSize: SC.from_height(16)),),
+                                  padding:   EdgeInsets.all(SC.fromWidth(8)),
+                                  child: Text('${ctr[index].toStringAsFixed(0)}%',style: TextStyle(color: Colors.black,fontSize: SC.fromWidth(16)),),
                                 ),
                           ),
                         ),
@@ -1066,7 +1082,7 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
             ),
 
             SizedBox(
-              height: SC.from_height(30),
+              height: SC.fromWidth(30),
             ),
           ],
         ),
@@ -1081,26 +1097,26 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
     required Color countColor,
   }) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: SC.from_height(15)),
+      padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(15)),
       child: Row(
         children: [
           Container(
             child: Image.asset(
               iconPath,
-              width: SC.from_height(24),
-              height: SC.from_height(24),
+              width: SC.fromWidth(24),
+              height: SC.fromWidth(24),
               color: Colors.black,
             ),
           ),
-          SizedBox(width: SC.from_height(10)),
+          SizedBox(width: SC.fromWidth(10)),
           Text(
             title,
-            style: TextStyle(fontSize: SC.from_height(16), color: textColor,fontWeight: FontWeight.w500),
+            style: TextStyle(fontSize: SC.fromWidth(16), color: textColor,fontWeight: FontWeight.w500),
           ),
           Expanded(child: Container()),
           Text(
             count,
-            style: TextStyle(fontSize: SC.from_height(16), color: countColor,fontWeight: FontWeight.w500),
+            style: TextStyle(fontSize: SC.fromWidth(16), color: countColor,fontWeight: FontWeight.w500),
           ),
         ],
       ),

@@ -1,9 +1,12 @@
+import 'dart:convert';
+
 import 'package:go_router/go_router.dart';
 import 'package:leadkart/add_images/campaign_setting_page.dart';
 import 'package:leadkart/business_pages/growBusinessFaster.dart';
 
 import 'package:leadkart/leads/add_detail_screen.dart';
 import 'package:leadkart/login_pages/login_screen.dart';
+import 'package:leadkart/login_pages/otp_screen.dart';
 import 'package:leadkart/screens/imageEditor/imageEditor.dart';
 import 'package:leadkart/screens/leads/getNewLeads.dart';
 import 'package:leadkart/screens/leads/getNewLeads.dart';
@@ -26,6 +29,15 @@ class GoRouterConfig {
         name: 'logInScreen',
         path: '/logInScreen',
         builder: (context, state) => LoginScreen(),
+        routes: [
+          GoRoute(
+            name: 'otpScreen',
+            path: 'otpScreen',
+            builder: (context, state){
+              final data = jsonEncode(state.pathParameters);
+              return OtpScreen();},
+          ),
+        ]
       ),
       GoRoute(
         name: 'homePage',

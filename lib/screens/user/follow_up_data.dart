@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/components/button/gf_button.dart';
+import 'package:leadkart/component/custom_button.dart';
 import 'package:leadkart/helper/dimention.dart';
 import 'package:leadkart/helper/helper.dart';
 
@@ -43,42 +44,42 @@ class _FollowUpDateState extends State<FollowUpDate> {
       appBar:  AppBar(
         foregroundColor: Colors.white,
         backgroundColor: MyHelper.appConstent.primeryColor,
-        title: Text('Set Follow Up Date',style: TextStyle(fontSize:  SC.from_height(21)),),
+        title: Text('Set Follow Up Date',style: TextStyle(fontSize:  SC.fromWidth(21)),),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: SC.from_height(25)),
+        padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(25)),
         child: ListView(
 
           children: [
-            SizedBox(height: SC.from_height(22),),
+            SizedBox(height: SC.fromWidth(22),),
             Center(
               child: Container(
                   clipBehavior: Clip.hardEdge,
-                  width: SC.from_height(195),
-                  height: SC.from_height(165),
+                  width: SC.fromWidth(195),
+                  height: SC.fromWidth(165),
                   decoration: BoxDecoration(
                     // border: Border.all(),
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(SC.from_height(10)),
+                    borderRadius: BorderRadius.circular(SC.fromWidth(10)),
 
                   ),
 
                   child: Image.asset('assets/10.png',fit: BoxFit.cover,)
               ),
             ),
-            SizedBox(height: SC.from_height(22),),
+            SizedBox(height: SC.fromWidth(22),),
 
             //  Select date //
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: SC.from_height(0)),
+              padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(0)),
               child: TextFormField(
 
                 cursorColor: Colors.grey,
                 decoration: InputDecoration(
                   hintText: 'Select date',
-                  hintStyle: TextStyle(fontSize: SC.from_height(16),color: Colors.grey.shade600),
+                  hintStyle: TextStyle(fontSize: SC.fromWidth(16),color: Colors.grey.shade600),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(SC.from_height(7)),
+                    borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                     borderSide: BorderSide(color: Colors.grey), // Set border color
                   ),
                   suffixIcon: InkWell(
@@ -87,16 +88,16 @@ class _FollowUpDateState extends State<FollowUpDate> {
                     },
                       child: Icon(Icons.calendar_month_outlined, color: Colors.grey,)), // Add search icon
                   contentPadding: EdgeInsets.symmetric(
-                      vertical: SC.from_height(12),
-                      horizontal: SC.from_height(10)), // Adjust padding
+                      vertical: SC.fromWidth(12),
+                      horizontal: SC.fromWidth(10)), // Adjust padding
                   filled: true,
                   fillColor: Colors.white, // Optional: Set background color of the text field
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(SC.from_height(7)),
+                    borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                     borderSide: BorderSide(color: Colors.grey.shade400), // Set border color
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(SC.from_height(7)),
+                    borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                     borderSide: BorderSide(color: Colors.grey.shade400), // Set border color when focused
                   ),
                 ),
@@ -104,18 +105,18 @@ class _FollowUpDateState extends State<FollowUpDate> {
               ),
             ),
 
-            SizedBox(height: SC.from_height(22),),
+            SizedBox(height: SC.fromWidth(22),),
 
             //  Select time for a follow up //
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: SC.from_height(0)),
+              padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(0)),
               child: TextFormField(
                 cursorColor: Colors.grey,
                 decoration: InputDecoration(
                   hintText: 'Select time',
-                  hintStyle: TextStyle(fontSize: SC.from_height(16),color: Colors.grey.shade600),
+                  hintStyle: TextStyle(fontSize: SC.fromWidth(16),color: Colors.grey.shade600),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(SC.from_height(7)),
+                    borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                     borderSide: BorderSide(color: Colors.grey), // Set border color
                   ),
                   suffixIcon: GestureDetector(
@@ -125,54 +126,54 @@ class _FollowUpDateState extends State<FollowUpDate> {
                     child: Icon(Icons.calendar_month_outlined, color: Colors.grey),
                   ), // Add calendar icon with tap handler
                   contentPadding: EdgeInsets.symmetric(
-                    vertical: SC.from_height(12),
-                    horizontal: SC.from_height(10),
+                    vertical: SC.fromWidth(12),
+                    horizontal: SC.fromWidth(10),
                   ), // Adjust padding
                   filled: true,
                   fillColor: Colors.white, // Optional: Set background color of the text field
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(SC.from_height(7)),
+                    borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                     borderSide: BorderSide(color: Colors.grey.shade400), // Set border color
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(SC.from_height(7)),
+                    borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                     borderSide: BorderSide(color: Colors.grey.shade400), // Set border color when focused
                   ),
                 ),
               ),
             ),
-            SizedBox(height: SC.from_height(22),),
+            SizedBox(height: SC.fromWidth(22),),
 
             // Write a note here... //
             Padding(
               padding: EdgeInsets.symmetric(
-                  horizontal: SC.from_height(0)), // Adjust padding if needed
+                  horizontal: SC.fromWidth(0)), // Adjust padding if needed
               child: TextFormField(
                 cursorColor: Colors.grey,
                 maxLines: null, // Allow multiline input
                 keyboardType: TextInputType.multiline, // Allow multiline keyboard
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(SC.from_height(7)),
+                    borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                     borderSide:
                     BorderSide(color: Colors.grey,), // Set border color
                   ),
                   labelText: 'Write a note here...', // Add label text
                   labelStyle:
-                  TextStyle(color: Colors.grey.shade600,fontSize: SC.from_height(16)), // Customize label text style
+                  TextStyle(color: Colors.grey.shade600,fontSize: SC.fromWidth(16)), // Customize label text style
                   contentPadding: EdgeInsets.symmetric(
-                      vertical: SC.from_height(12),
-                      horizontal: SC.from_height(10)), // Adjust padding
+                      vertical: SC.fromWidth(12),
+                      horizontal: SC.fromWidth(10)), // Adjust padding
                   filled: true,
                   fillColor: Colors
                       .white, // Optional: Set background color of the text field
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(SC.from_height(7)),
+                    borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                     borderSide:
                     BorderSide(color: Colors.grey.shade400), // Set border color
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(SC.from_height(7)),
+                    borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                     borderSide: BorderSide(
                         color: Colors.grey.shade400), // Set border color when focused
                   ),
@@ -197,30 +198,17 @@ class _FollowUpDateState extends State<FollowUpDate> {
               ),
             ),
 
-            SizedBox(height: SC.from_height(35),),
+            SizedBox(height: SC.fromWidth(35),),
 
             // GFBUTTON //
-            Container(
-              height: SC.from_height(45), // Adjust as needed
-              width: SC.from_height(340), // Adjust as needed
-              child: GFButton(
-                onPressed: () {
 
-                  // Navigator.push(context, MaterialPageRoute(builder: (context)=> BusinesCategory()));
-                  // Your onPressed logic here
-                },
-                color: Color.fromRGBO(36, 238, 221, 1), // The button's background color
-                borderShape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
-                ),
-                child: Center(
-                  child: Text(
-                    'Save',
-                    style: TextStyle(color: Colors.white,fontSize: SC.from_height(18)), // Text color
-                  ),
-                ),
-              ),
+            CustomButton(
+              text: 'Save', onPressed: () {
+              // context.pushNamed("homePage");
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> FollowUpDate()));
+            },
             ),
+
           ],
         ),
       ),
@@ -232,27 +220,27 @@ class _FollowUpDateState extends State<FollowUpDate> {
       context: context,
       builder: (context) {
         return Container(
-          height: SC.from_height(400),
+          height: SC.fromWidth(400),
           child: Column(
             children: [
-              SizedBox(height: SC.from_height(20),),
+              SizedBox(height: SC.fromWidth(20),),
               ListTile(
                 leading: Icon(Icons.arrow_back),
-                title: Text('Set Follow up date',style: TextStyle(color: Colors.grey.shade700,fontSize:SC.from_height(19),fontWeight: FontWeight.w500 ),),
-                subtitle: Text('07 May 2024, 09:32 AM',style: TextStyle(fontSize:SC.from_height(15),color: Colors.grey.shade700 ),),
+                title: Text('Set Follow up date',style: TextStyle(color: Colors.grey.shade700,fontSize:SC.fromWidth(19),fontWeight: FontWeight.w500 ),),
+                subtitle: Text('07 May 2024, 09:32 AM',style: TextStyle(fontSize:SC.fromWidth(15),color: Colors.grey.shade700 ),),
                 onTap: () {
                   Navigator.pop(context);
                 },
               ),
 
-              SizedBox(height: SC.from_height(10),),
+              SizedBox(height: SC.fromWidth(10),),
               Expanded(
                 child: GridView.builder(
-                  padding: EdgeInsets.all(SC.from_height(10)),
+                  padding: EdgeInsets.all(SC.fromWidth(10)),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    mainAxisSpacing: SC.from_height(15),
-                    crossAxisSpacing: SC.from_height(15),
+                    mainAxisSpacing: SC.fromWidth(15),
+                    crossAxisSpacing: SC.fromWidth(15),
                     childAspectRatio: 2.35, // Adjust aspect ratio to fit your design
                   ),
                   itemCount: 6, // Number of items in the grid
@@ -260,24 +248,24 @@ class _FollowUpDateState extends State<FollowUpDate> {
                     return Container(
                       decoration: BoxDecoration(
                         border: Border.all(color: MyHelper.appConstent.primeryColor),
-                        borderRadius: BorderRadius.circular(SC.from_height(8)),
+                        borderRadius: BorderRadius.circular(SC.fromWidth(8)),
                       ),
-                      width: SC.from_height(155),
-                      height: SC.from_height(70),
+                      width: SC.fromWidth(155),
+                      height: SC.fromWidth(70),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             'Today',
                             style: TextStyle(
-                              fontSize: SC.from_height(16),
+                              fontSize: SC.fromWidth(16),
                               color: Colors.grey.shade700,
                             ),
                           ),
                           Text(
                             'At 09:32 AM',
                             style: TextStyle(
-                              fontSize: SC.from_height(16),
+                              fontSize: SC.fromWidth(16),
                               color: Colors.grey.shade700,
                             ),
                           ),

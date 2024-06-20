@@ -45,10 +45,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
         title: Container(
           clipBehavior: Clip.hardEdge,
-          width: SC.from_height(30),
+          width: SC.from_width(40),
           height: SC.from_height(30),
           decoration: BoxDecoration(
-
+            // border: Border.all(),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Image.asset(
@@ -56,16 +56,43 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         actions: [
-TextButton(onPressed: () {
+          DropdownButton<String>(
+            dropdownColor: Color.fromRGBO(36, 238, 221, 0.6),
+            hint: Text(
+              " SK e solution  ",
+              style: TextStyle(color: Colors.white, fontSize: SC.from_height(18)),
+            ),
+            value: dropdownValue,
+            icon: Transform.rotate(
+              angle: 1.5708, // 90 degrees in radians (π/2 or 1.5708 radians)
+              child: Icon(Icons.arrow_forward_ios_rounded, color: Colors.white,size: SC.from_height(17)),
+            ),
+            iconSize: SC.from_height(22),
+            elevation: 16,
+            style: TextStyle(color: Colors.black),
+            underline: Container(), // Remove the underline
+            onChanged: (String? newValue) {
+              setState(() {
+                dropdownValue = newValue;
+                // Handle the selected option here
+                print('Selected: $dropdownValue');
+              });
+            },
 
-}, child: Row(
-  children: [
-    Text(" SK e solutions",style: TextStyle(color: Colors.white,fontSize: SC.from_height(16)),),
-    Icon(Icons.arrow_drop_down,color: Colors.white,)
-  ],
-)),
+            items: <String>['SK e solution 1 ', 'SK e solution 2 ', 'SK e solution 3 ']
+                .map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
 
-          SizedBox(width: SC.from_height(80)),
+                value: value,
+                child: Text(
+                  value,
+                  style: TextStyle(color: Colors.white, fontSize: SC.from_height(19.5)),
+                ),
+              );
+            }).toList(),
+          ),
+
+          SizedBox(width: SC.from_width(50)),
 
           HelpButton(),
 
@@ -95,7 +122,7 @@ TextButton(onPressed: () {
 
           SizedBox(height: SC.from_height(15),),
 
-          Text('Introducing AI-powered ads with Leadkart',style: TextStyle(fontSize: SC.from_height(18),  fontWeight: FontWeight.w500,),),
+          Text('Introducing AI-powered ads with Leadkart',style: TextStyle(fontSize: SC.fromWidth(22),  fontWeight: FontWeight.w500,),),
 
           SizedBox(height: SC.from_height(8),),
 
@@ -156,14 +183,14 @@ TextButton(onPressed: () {
             clipBehavior: Clip.hardEdge,
             child:
             Image.asset('assets/home_images/img_3.png',fit: BoxFit.cover,),
-            width: SC.from_height(250),
-            height: SC.from_height(200),
+            // width: SC.fromWidth(50),
+            // height: SC.from_height(200),
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(SC.from_height(8)),),
           ),
 
           SizedBox(height: SC.from_height(15),),
 
-          Image.asset('assets/home_images/4.png',fit: BoxFit.cover,),
+          Container(child: Image.asset('assets/home_images/4.png',fit: BoxFit.cover,)),
 
           SizedBox(height: SC.from_height(19),),
 
@@ -171,6 +198,7 @@ TextButton(onPressed: () {
 
           SizedBox(height: SC.from_height(15),),
 
+          // CHOOSE ADD REQUIREMENT //
           ListView.builder(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
@@ -205,7 +233,7 @@ TextButton(onPressed: () {
           SizedBox(height: SC.from_height(20),),
 
           Container(
-              height: SC.from_height(134),
+              // height: SC.from_height(134),
               clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
               child: Image.asset('assets/home_images/img_4.png',fit: BoxFit.cover,)),
@@ -214,13 +242,6 @@ TextButton(onPressed: () {
 
           SizedBox(height: SC.from_height(20),),
 
-
-          // MyactionButton(
-          //     onActionComplit: (v){},
-          //     action: ()async{
-          //       await Future.delayed(Duration(seconds: 3));
-          //     },
-          //     duretion: Duration(milliseconds: 300)),
           SizedBox(height: SC.from_height(10),),
 
         ],

@@ -15,8 +15,8 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: SC.from_height(45), // Adjust as needed
-      width: SC.from_height(340),
+      height: SC.fromWidth(45), // Adjust as needed
+      width: SC.fromWidth(340),
       child: GFButton(
         onPressed: onPressed,
         color: MyHelper.appConstent.primeryColor,
@@ -28,7 +28,7 @@ class CustomButton extends StatelessWidget {
             text,
             style: TextStyle(
               color: Colors.white,
-              fontSize: SC.from_height(15.5),
+              fontSize: SC.fromWidth(22),
             ),
           ),
         ),

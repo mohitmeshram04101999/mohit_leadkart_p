@@ -66,7 +66,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
             color: Colors.transparent,
             shape: CircularNotchedRectangle(),
             child: BottomNavigationBar(
-              iconSize: SC.from_width(22),
+              iconSize: SC.fromWidth(22),
               type: BottomNavigationBarType.fixed,
               currentIndex: curruntPage,
               selectedItemColor: Color.fromRGBO(36, 238, 221, 1),
@@ -86,8 +86,8 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                 ),
                 BottomNavigationBarItem(
                   icon: Container(
-                    width: SC.from_width(23),
-                    height: SC.from_width(23),
+                    width: SC.fromWidth(23),
+                    height: SC.fromWidth(23),
                     child: Image.asset(
                       'assets/bottom_nav/5.png',
                       color: curruntPage == 1 ? Color.fromRGBO(36, 238, 221, 1) : Colors.grey,
@@ -97,8 +97,8 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                 ),
                 BottomNavigationBarItem(
                   icon: Container(
-                    width: SC.from_width(23),
-                    height: SC.from_width(23),
+                    width: SC.fromWidth(23),
+                    height: SC.fromWidth(23),
                     child: Image.asset(
                       'assets/bottom_nav/2.png',
                       color: curruntPage == 2 ? Color.fromRGBO(36, 238, 221, 1) : Colors.grey,
@@ -108,8 +108,8 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                 ),
                 BottomNavigationBarItem(
                   icon: Container(
-                    width: SC.from_width(23),
-                    height: SC.from_width(23),
+                    width: SC.fromWidth(23),
+                    height: SC.fromWidth(23),
                     child: Image.asset(
                       'assets/bottom_nav/3.png',
                       color: curruntPage == 3 ? Color.fromRGBO(36, 238, 221, 1) : Colors.grey,
@@ -119,8 +119,8 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                 ),
                 BottomNavigationBarItem(
                   icon: Container(
-                    width: SC.from_width(23),
-                    height: SC.from_width(23),
+                    width: SC.fromWidth(23),
+                    height: SC.fromWidth(23),
                     child: Image.asset(
                       'assets/bottom_nav/4.png',
                       color: curruntPage == 4 ? Color.fromRGBO(36, 238, 221, 1) : Colors.grey,

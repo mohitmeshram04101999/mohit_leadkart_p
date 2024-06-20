@@ -30,8 +30,8 @@ class On3 extends StatelessWidget {
 
         child: Center(
           child: SizedBox(
-            height: SC.from_width(300),
-            width: SC.from_width(300),
+            height: SC.fromWidth(300),
+            width: SC.fromWidth(300),
             child: Stack(
               children: [
                 GridView(
@@ -58,9 +58,9 @@ class On3 extends StatelessWidget {
                 ),
 
                 Positioned(
-                  top: SC.from_width(65),
-                    left: SC.from_width(10),
-                    right: SC.from_width(10),
+                  top: SC.fromWidth(65),
+                    left: SC.fromWidth(10),
+                    right: SC.fromWidth(10),
 
                     child: Image.asset("assets/onBording2/mian3.png"))
               ],

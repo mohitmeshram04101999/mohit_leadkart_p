@@ -3,6 +3,7 @@ import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:getwidget/components/button/gf_button.dart';
 import 'package:leadkart/component/HelpButtonWhite.dart';
 import 'package:leadkart/component/addRequirmentTile.dart';
+import 'package:leadkart/component/custom_button.dart';
 import 'package:leadkart/helper/dimention.dart';
 import 'package:leadkart/helper/helper.dart';
 import 'package:leadkart/screens/user/follow_up_data.dart';
@@ -43,56 +44,56 @@ class _BusinesCategoryState extends State<BusinesCategory> {
         actions: [
 
           HelpButton(),
-           SizedBox(width: SC.from_height(20)),
+           SizedBox(width: SC.fromWidth(20)),
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: SC.from_height(15)),
+        padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(15)),
         child: ListView(
           children: [
-            SizedBox(height: SC.from_height(15),),
+            SizedBox(height: SC.fromWidth(15),),
 
             Padding(
-              padding:   EdgeInsets.symmetric(horizontal:SC.from_height(0) ),
-              child: Text('What’s your Business',style: TextStyle(fontSize: SC.from_height(19.5),fontWeight: FontWeight.w500,color: Colors.grey.shade700),),
+              padding:   EdgeInsets.symmetric(horizontal:SC.fromWidth(0) ),
+              child: Text('What’s your Business',style: TextStyle(fontSize: SC.fromWidth(19.5),fontWeight: FontWeight.w500,color: Colors.grey.shade700),),
             ),
-            SizedBox(height: SC.from_height(7),),
+            SizedBox(height: SC.fromWidth(7),),
             Padding(
-              padding:   EdgeInsets.symmetric(horizontal:SC.from_height(0) ),
-              child: Text('Let us know which of the following describe the  business',style: TextStyle(fontSize: SC.from_height(17),color: Colors.grey.shade700),),
+              padding:   EdgeInsets.symmetric(horizontal:SC.fromWidth(0) ),
+              child: Text('Let us know which of the following describe the  business',style: TextStyle(fontSize: SC.fromWidth(17),color: Colors.grey.shade700),),
             ),
 
             SizedBox(
-              height: SC.from_height(18),
+              height: SC.fromWidth(18),
             ),
 
             // Busines Name //
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: SC.from_height(0)),
+              padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(0)),
               child: TextFormField(
                 cursorColor: Colors.grey,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(SC.from_height(7)),
+                    borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                     borderSide:
                     BorderSide(color: Colors.grey), // Set border color
                   ),
                   labelText: 'Busines Name', // Add label text
                   labelStyle:
-                  TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(16)), // Customize label text style
+                  TextStyle(color: Colors.grey.shade700,fontSize: SC.fromWidth(16)), // Customize label text style
                   contentPadding: EdgeInsets.symmetric(
-                      vertical: SC.from_height(12),
-                      horizontal: SC.from_height(10)), // Adjust padding
+                      vertical: SC.fromWidth(12),
+                      horizontal: SC.fromWidth(10)), // Adjust padding
                   filled: true,
                   fillColor: Colors
                       .white, // Optional: Set background color of the text field
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(SC.from_height(7)),
+                    borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                     borderSide:
                     BorderSide(color: Colors.grey), // Set border color
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(SC.from_height(7)),
+                    borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                     borderSide: BorderSide(
                         color: Colors.grey), // Set border color when focused
                   ),
@@ -116,41 +117,41 @@ class _BusinesCategoryState extends State<BusinesCategory> {
                 autovalidateMode: AutovalidateMode.onUserInteraction,
               ),
             ),
-            SizedBox(height: SC.from_height(18),),
+            SizedBox(height: SC.fromWidth(18),),
 
             // Select business category //
             Padding(
-              padding:   EdgeInsets.symmetric(horizontal:SC.from_height(0) ),
-              child: Text('Select business category',style: TextStyle(fontSize: SC.from_height(18),fontWeight: FontWeight.w600),),
+              padding:   EdgeInsets.symmetric(horizontal:SC.fromWidth(0) ),
+              child: Text('Select business category',style: TextStyle(fontSize: SC.fromWidth(18),fontWeight: FontWeight.w600),),
             ),
 
-            SizedBox(height: SC.from_height(15),),
+            SizedBox(height: SC.fromWidth(15),),
 
             //  SELECT BUSINESS CATEGORY //
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: SC.from_height(0)),
+              padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(0)),
               child: TextFormField(
 
                 cursorColor: Colors.grey,
                 decoration: InputDecoration(
                   hintText: 'Select busines category',
-                  hintStyle: TextStyle(fontSize: SC.from_height(16.5),color: Colors.grey.shade700),
+                  hintStyle: TextStyle(fontSize: SC.fromWidth(16.5),color: Colors.grey.shade700),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(SC.from_height(7)),
+                    borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                     borderSide: BorderSide(color: Colors.grey), // Set border color
                   ),
                   prefixIcon: Icon(Icons.search, color: Colors.grey.shade700,), // Add search icon
                   contentPadding: EdgeInsets.symmetric(
-                      vertical: SC.from_height(12),
-                      horizontal: SC.from_height(10)), // Adjust padding
+                      vertical: SC.fromWidth(12),
+                      horizontal: SC.fromWidth(10)), // Adjust padding
                   filled: true,
                   fillColor: Colors.white, // Optional: Set background color of the text field
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(SC.from_height(7)),
+                    borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                     borderSide: BorderSide(color: Colors.grey), // Set border color
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(SC.from_height(7)),
+                    borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                     borderSide: BorderSide(color: Colors.grey), // Set border color when focused
                   ),
                 ),
@@ -174,7 +175,7 @@ class _BusinesCategoryState extends State<BusinesCategory> {
               ),
             ),
 
-            SizedBox(height: SC.from_height(15),),
+            SizedBox(height: SC.fromWidth(15),),
 
 
             // Grid of containers
@@ -183,10 +184,10 @@ class _BusinesCategoryState extends State<BusinesCategory> {
               physics: NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
-                mainAxisExtent: SC.from_height(115),
-                crossAxisSpacing: SC.from_height(15),
-                mainAxisSpacing: SC.from_height(15),
-                childAspectRatio: (SC.from_width(50) / SC.from_height(80)), // Adjust the aspect ratio as needed
+                mainAxisExtent: SC.fromHeight(8),
+                crossAxisSpacing: SC.fromWidth(15),
+                mainAxisSpacing: SC.fromWidth(15),
+                // childAspectRatio: (SC.fromWidth(50) / SC.fromWidth(80)), // Adjust the aspect ratio as needed
               ),
               itemCount: categoryNames.length, // Number of containers you want to display
               itemBuilder: (context, index) {
@@ -199,14 +200,14 @@ class _BusinesCategoryState extends State<BusinesCategory> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        width: SC.from_height(50),
-                        height: SC.from_height(40),
+                        width: SC.fromWidth(50),
+                        height: SC.fromWidth(40),
                         child: Image.asset('assets/edit.png'),
                       ),
-                      SizedBox(height: SC.from_height(10)),
+                      SizedBox(height: SC.fromWidth(10)),
                       Text(
                         categoryNames[index], // Use the name from the list
-                        style: TextStyle(color: Colors.grey.shade700, fontSize: SC.from_height(15)),
+                        style: TextStyle(color: Colors.grey.shade700, fontSize: SC.fromWidth(30)),
                         textAlign: TextAlign.center,
                       ),
                     ],
@@ -215,34 +216,21 @@ class _BusinesCategoryState extends State<BusinesCategory> {
               },
             ),
 
-            SizedBox(height: SC.from_height(25),),
+            SizedBox(height: SC.fromWidth(25),),
 
 
 
             // GFBUTTON //
-            Container(
-              height: SC.from_height(45), // Adjust as needed
-              width: SC.from_height(340), // Adjust as needed
-              child: GFButton(
-                onPressed: () {
 
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> FollowUpDate()));
-                  // Your onPressed logic here
-                },
-                color: Color.fromRGBO(36, 238, 221, 1), // The button's background color
-                borderShape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
-                ),
-                child: Center(
-                  child: Text(
-                    'Next',
-                    style: TextStyle(color: Colors.white,fontSize: SC.from_height(18)), // Text color
-                  ),
-                ),
-              ),
+            CustomButton(
+              text: 'Next', onPressed: () {
+              // context.pushNamed("homePage");
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> FollowUpDate()));
+            },
             ),
 
-            SizedBox(height: SC.from_height(20),),
+
+            SizedBox(height: SC.fromWidth(20),),
 
           ],
         ),

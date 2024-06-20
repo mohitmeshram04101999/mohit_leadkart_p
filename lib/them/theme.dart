@@ -13,15 +13,16 @@ ThemeData AppTheme()
 secondaryHeaderColor: MyHelper.appConstent.leadTiletagColor,
     iconTheme: IconThemeData(
       color: Colors.black,
-      size: SC.from_width(20)
+      size: SC.fromWidth(20)
     ),
     checkboxTheme: CheckboxThemeData(
-      fillColor: WidgetStateProperty.resolveWith((states) => MyHelper.appConstent.checkBoxColor),
-      checkColor: WidgetStateProperty.resolveWith((states) => Colors.white),
+      fillColor: MaterialStateProperty.resolveWith((states) => MyHelper.appConstent.checkBoxColor),
+      checkColor: MaterialStateProperty.resolveWith((states) => Colors.white),
     ),
     textTheme: TextTheme(
       displayMedium: MyHelper.textStyls.mediumText,
       displaySmall: MyHelper.textStyls.smallText,
+      bodyMedium: MyHelper.textStyls.onBordingMainText,
     ),
 
     appBarTheme: AppBarTheme(
@@ -32,12 +33,12 @@ secondaryHeaderColor: MyHelper.appConstent.leadTiletagColor,
     outlinedButtonTheme: OutlinedButtonThemeData(
       
       style: ButtonStyle(
-        iconSize: WidgetStateProperty.resolveWith((states) => SC.from_width(20)),
-        padding:WidgetStateProperty.resolveWith((states) => EdgeInsets.symmetric(horizontal: SC.from_width(10))),
-          shape: WidgetStateProperty.resolveWith((states) =>RoundedRectangleBorder(
+        iconSize: MaterialStateProperty.resolveWith((states) => SC.fromWidth(20)),
+        padding:MaterialStateProperty.resolveWith((states) => EdgeInsets.symmetric(horizontal: SC.fromWidth(10))),
+          shape: MaterialStateProperty.resolveWith((states) =>RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
           )),
-        side:WidgetStateProperty.resolveWith((states) => BorderSide(color: Colors.red))
+        side:MaterialStateProperty.resolveWith((states) => BorderSide(color: Colors.red))
       ),
     ),
 
@@ -53,15 +54,15 @@ secondaryHeaderColor: MyHelper.appConstent.leadTiletagColor,
       
       style: ButtonStyle(
         //border
-        shape: WidgetStateProperty.resolveWith((states) => RoundedRectangleBorder(
+        shape: MaterialStateProperty.resolveWith((states) => RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8)
         )),
 
-        foregroundColor: WidgetStateProperty.resolveWith((states) => Colors.white),
+        foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
 
-        backgroundColor: WidgetStateProperty.resolveWith((states) => MyHelper.appConstent.primeryColor),
+        backgroundColor: MaterialStateProperty.resolveWith((states) => MyHelper.appConstent.primeryColor),
 
-        textStyle: WidgetStateProperty.resolveWith((states) => TextStyle(fontSize: SC.from_width(14),fontWeight: FontWeight.w600,color: Colors.white))
+        textStyle: MaterialStateProperty.resolveWith((states) => TextStyle(fontSize: SC.fromWidth(14),fontWeight: FontWeight.w600,color: Colors.white))
       )
     ),
 

@@ -82,13 +82,13 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
       appBar:  AppBar(
         foregroundColor: Colors.white,
         backgroundColor: MyHelper.appConstent.primeryColor,
-        title: Text('Additional Detail',style: TextStyle(fontSize: SC.from_height(21)),),
+        title: Text('Additional Detail',style: TextStyle(fontSize: SC.fromWidth(21)),),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: SC.from_height(15)),
+        padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(15)),
         child: ListView(
           children: [
-            SizedBox(height: SC.from_height(15),),
+            SizedBox(height: SC.fromWidth(15),),
             Row(
               children: [
 
@@ -98,21 +98,21 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
                 dashPattern: [8],
                 color: Colors.grey,
                 child: Container(
-                  width: SC.from_height(105),
-                  height: SC.from_height(110),
+                  width: SC.fromWidth(105),
+                  height: SC.fromWidth(110),
                   decoration: BoxDecoration(
                     // border: Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(SC.from_height(5))),
+                      borderRadius: BorderRadius.circular(SC.fromWidth(5))),
                   child:  Center(
                     child: Text(
                       'Business \n   Logo',
                       style: TextStyle(
-                          color: Colors.grey.shade700, fontSize: SC.from_height(17),fontWeight: FontWeight.w500),
+                          color: Colors.grey.shade700, fontSize: SC.fromWidth(17),fontWeight: FontWeight.w500),
                     ),
                   )
                 ),
               ),
-                SizedBox(width: SC.from_height(10),),
+                SizedBox(width: SC.fromWidth(10),),
 
               // TEXTFIELDS OF 'BUSINESS NAME' OR 'INDUSTRY'
               Expanded(
@@ -120,9 +120,9 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
                   children: [
                     // Your Business Name //
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: SC.from_height(0)),
+                      padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(0)),
                       child: Container(
-                        width: SC.from_height(230),
+                        width: SC.fromWidth(230),
                         child: TextFormField(
                           controller: textEditingController,
                           cursorColor: Colors.grey,
@@ -132,26 +132,26 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
                               child: isListening ? Icon(Icons.record_voice_over) : Icon(Icons.mic),
                             ),
                             border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(SC.from_height(7)),
+                              borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                               borderSide:
                               BorderSide(color: Colors.grey.shade400), // Set border color
                             ),
                             labelText: 'Your Business Name', // Add label text
                             labelStyle:
-                            TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)), // Customize label text style
+                            TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.fromWidth(16)), // Customize label text style
                             contentPadding: EdgeInsets.symmetric(
-                                vertical: SC.from_height(12),
-                                horizontal: SC.from_height(10)), // Adjust padding
+                                vertical: SC.fromWidth(12),
+                                horizontal: SC.fromWidth(10)), // Adjust padding
                             filled: true,
                             fillColor: Colors
                                 .white, // Optional: Set background color of the text field
                             enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(SC.from_height(7)),
+                              borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                               borderSide:
                               BorderSide(color: Colors.grey.shade400), // Set border color
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(SC.from_height(7)),
+                              borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                               borderSide: BorderSide(
                                   color: Colors.grey.shade400), // Set border color when focused
                             ),
@@ -177,23 +177,23 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
                       ),
                     ),
 
-                    SizedBox(height: SC.from_height(20),),
+                    SizedBox(height: SC.fromWidth(20),),
 
                     // Industry   DROPDOWN//
                     Container(
-                      width: SC.from_height(230),
-                      height: SC.from_height(45),
+                      width: SC.fromWidth(230),
+                      height: SC.fromWidth(45),
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.grey.shade400),
-                        borderRadius: BorderRadius.circular(SC.from_height(7)),
+                        borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                       ),
                       child: DropdownButtonFormField<String>(
                         decoration: InputDecoration(
                             border: InputBorder.none, // Remove the default underline
                             contentPadding: EdgeInsets.symmetric(
-                                horizontal: SC.from_height(10)), // Adjust padding
+                                horizontal: SC.fromWidth(10)), // Adjust padding
                             hintText: 'Industry',
-                            hintStyle: TextStyle(fontSize:SC.from_height(16),color: Colors.grey.shade700 )// Add hint text
+                            hintStyle: TextStyle(fontSize:SC.fromWidth(16),color: Colors.grey.shade700 )// Add hint text
                         ),
                         items: <String>['Option 1', 'Option 2', 'Option 3', 'Option 4']
                             .map((String value) {
@@ -210,7 +210,7 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
                           child: Icon(
                             Icons.arrow_forward_ios_rounded,
                             color: Colors.black.withOpacity(0.8),
-                            size: SC.from_height(17),
+                            size: SC.fromWidth(17),
                           ),
                         ),
                       ),
@@ -220,7 +220,7 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
               )
             ],),
 
-            SizedBox(height: SC.from_height(15),),
+            SizedBox(height: SC.fromWidth(15),),
 
             // Container(
             //   padding: EdgeInsets.all(5),
@@ -271,20 +271,20 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 // border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(SC.from_height(7)),
+                borderRadius: BorderRadius.circular(SC.fromWidth(7)),
               ),
               width: double.infinity,
-              height: SC.from_height(140),
+              height: SC.fromWidth(140),
               child: Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
                   Container(
                     padding: EdgeInsets.all(10),
-                    height: SC.from_height(110),
+                    height: SC.fromWidth(110),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(color: Colors.grey.shade400),
-                      borderRadius: BorderRadius.circular(SC.from_height(10)),
+                      borderRadius: BorderRadius.circular(SC.fromWidth(10)),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -293,112 +293,118 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
                         Row(
                           children: [
                              // Optional: Add some space before the chip
-                            Chip(
-                              label: Text(
-                                'App Development',
-                                style: TextStyle(color: Colors.grey.shade700,fontSize:SC.from_height(15) ),
-                              ),
-                              backgroundColor:
-                              Colors.white, // Customize chip background color
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(
-                                    SC.from_height(
-                                        15)), // Match container border radius
-                                side: BorderSide(
-                                    color: Colors
-                                        .grey), // Optional: Match container border color
-                              ),
+                            Flexible(
+                              child: Chip(
+                                label: Text(
+                                  'App Development',
+                                  style: TextStyle(color: Colors.grey.shade700,fontSize:SC.fromWidth(26) ),
+                                ),
+                                backgroundColor:
+                                Colors.white, // Customize chip background color
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(
+                                      SC.fromWidth(
+                                          15)), // Match container border radius
+                                  side: BorderSide(
+                                      color: Colors
+                                          .grey), // Optional: Match container border color
+                                ),
 
-                              // Optional: Add an icon to the chip
-                              onDeleted: () {
-                                // Handle chip deletion or button click action
-                                print('Chip button pressed');
-                              },
-                              deleteIcon: Icon(Icons.cancel,
-                                  color: Colors
-                                      .grey), // Optional: Customize delete icon
-                              deleteButtonTooltipMessage:
-                              'Remove', // Tooltip for the delete button
+                                // Optional: Add an icon to the chip
+                                onDeleted: () {
+                                  // Handle chip deletion or button click action
+                                  print('Chip button pressed');
+                                },
+                                deleteIcon: Icon(Icons.cancel,
+                                    color: Colors
+                                        .grey), // Optional: Customize delete icon
+                                deleteButtonTooltipMessage:
+                                'Remove', // Tooltip for the delete button
+                              ),
                             ),
-                            SizedBox(width: SC.from_height(10)),
-                            Chip(
-                              label: Text(
-                                'UI UX Design',
-                                style: TextStyle(color: Colors.grey.shade700,fontSize:SC.from_height(15) ),
-                              ),
-                              backgroundColor:
-                              Colors.white, // Customize chip background color
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(
-                                    SC.from_height(
-                                        15)), // Match container border radius
-                                side: BorderSide(
+                            SizedBox(width: SC.fromWidth(10)),
+                            Flexible(
+                              child: Chip(
+                                label: Text(
+                                  'UI UX Design',
+                                  style: TextStyle(color: Colors.grey.shade700,fontSize:SC.fromWidth(15) ),
+                                ),
+                                backgroundColor:
+                                Colors.white, // Customize chip background color
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(
+                                      SC.fromWidth(
+                                          15)), // Match container border radius
+                                  side: BorderSide(
+                                      color: Colors
+                                          .grey), // Optional: Match container border color
+                                ),
+                              
+                                // Optional: Add an icon to the chip
+                                onDeleted: () {
+                                  // Handle chip deletion or button click action
+                                  print('Chip button pressed');
+                                },
+                                deleteIcon: Icon(Icons.cancel,
                                     color: Colors
-                                        .grey), // Optional: Match container border color
+                                        .grey), // Optional: Customize delete icon
+                                deleteButtonTooltipMessage:
+                                'Remove', // Tooltip for the delete button
                               ),
-
-                              // Optional: Add an icon to the chip
-                              onDeleted: () {
-                                // Handle chip deletion or button click action
-                                print('Chip button pressed');
-                              },
-                              deleteIcon: Icon(Icons.cancel,
-                                  color: Colors
-                                      .grey), // Optional: Customize delete icon
-                              deleteButtonTooltipMessage:
-                              'Remove', // Tooltip for the delete button
                             ),
 
                           ],
                         ),
 
                         SizedBox(
-                            width: SC.from_height(
+                            width: SC.fromWidth(
                                 10)), // Optional: Add some space before the chip
-                        Chip(
-                          label: Text(
-                            'Website Development',
-                            style: TextStyle(color: Colors.grey.shade700,fontSize:SC.from_height(15) ),
-                          ),
-                          backgroundColor:
-                          Colors.white, // Customize chip background color
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(
-                                SC.from_height(
-                                    15)), // Match container border radius
-                            side: BorderSide(
+                        Flexible(
+                          child: Chip(
+                            label: Text(
+                              'Website Development',
+                              style: TextStyle(color: Colors.grey.shade700,fontSize:SC.fromWidth(26) ),
+                            ),
+                            backgroundColor:
+                            Colors.white, // Customize chip background color
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                  SC.fromWidth(
+                                      15)), // Match container border radius
+                              side: BorderSide(
+                                  color: Colors
+                                      .grey), // Optional: Match container border color
+                            ),
+                          
+                            // Optional: Add an icon to the chip
+                            onDeleted: () {
+                              // Handle chip deletion or button click action
+                              print('Chip button pressed');
+                            },
+                            deleteIcon: Icon(Icons.cancel,
                                 color: Colors
-                                    .grey), // Optional: Match container border color
+                                    .grey), // Optional: Customize delete icon
+                            deleteButtonTooltipMessage:
+                            'Remove', // Tooltip for the delete button
                           ),
-
-                          // Optional: Add an icon to the chip
-                          onDeleted: () {
-                            // Handle chip deletion or button click action
-                            print('Chip button pressed');
-                          },
-                          deleteIcon: Icon(Icons.cancel,
-                              color: Colors
-                                  .grey), // Optional: Customize delete icon
-                          deleteButtonTooltipMessage:
-                          'Remove', // Tooltip for the delete button
                         ),
 
                       ],
                     ),
                   ),
                   Positioned(
-                    top: SC.from_height(19),
-                    left: SC.from_height(20),
+                    top: SC.fromWidth(19),
+                    left: SC.fromWidth(20),
                     child: Container(
                       decoration: BoxDecoration(
                         // border: Border.all(),
-                        borderRadius: BorderRadius.circular(SC.from_height(7)),
+                        borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                         color: Colors.white,
                       ),
                       child: Text(
                         ' Services ',
                         style: TextStyle(
-                            color: Colors.grey.shade700, fontSize: SC.from_height(16)),
+                            color: Colors.grey.shade700, fontSize: SC.fromWidth(26)),
                       ),
                     ),
                   )
@@ -408,7 +414,7 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
             ),
 
 
-            SizedBox(height: SC.from_height(20),),
+            SizedBox(height: SC.fromWidth(20),),
 
 
             // Business Contact No. //
@@ -416,26 +422,26 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
               cursorColor: Colors.grey,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 labelText: 'Business Contact No.', // Add label text
                 labelStyle:
-                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)), // Customize label text style
+                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.fromWidth(16)), // Customize label text style
                 contentPadding: EdgeInsets.symmetric(
-                    vertical: SC.from_height(12),
-                    horizontal: SC.from_height(10)), // Adjust padding
+                    vertical: SC.fromWidth(12),
+                    horizontal: SC.fromWidth(10)), // Adjust padding
                 filled: true,
                 fillColor: Colors
                     .white, // Optional: Set background color of the text field
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide: BorderSide(
                       color: Colors.grey.shade400), // Set border color when focused
                 ),
@@ -458,33 +464,33 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
               },
               autovalidateMode: AutovalidateMode.onUserInteraction,
             ),
-            SizedBox(height: SC.from_height(20),),
+            SizedBox(height: SC.fromWidth(20),),
 
             // Add WhatsApp No.. //
             TextFormField(
               cursorColor: Colors.grey,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 labelText: 'Add WhatsApp No.', // Add label text
                 labelStyle:
-                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)), // Customize label text style
+                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.fromWidth(16)), // Customize label text style
                 contentPadding: EdgeInsets.symmetric(
-                    vertical: SC.from_height(12),
-                    horizontal: SC.from_height(10)), // Adjust padding
+                    vertical: SC.fromWidth(12),
+                    horizontal: SC.fromWidth(10)), // Adjust padding
                 filled: true,
                 fillColor: Colors
                     .white, // Optional: Set background color of the text field
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide: BorderSide(
                       color: Colors.grey.shade400), // Set border color when focused
                 ),
@@ -509,32 +515,32 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
             ),
 
 
-            SizedBox(height: SC.from_height(20),),
+            SizedBox(height: SC.fromWidth(20),),
             // State //
             TextFormField(
               cursorColor: Colors.grey,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 labelText: 'State', // Add label text
                 labelStyle:
-                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)), // Customize label text style
+                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.fromWidth(16)), // Customize label text style
                 contentPadding: EdgeInsets.symmetric(
-                    vertical: SC.from_height(12),
-                    horizontal: SC.from_height(10)), // Adjust padding
+                    vertical: SC.fromWidth(12),
+                    horizontal: SC.fromWidth(10)), // Adjust padding
                 filled: true,
                 fillColor: Colors
                     .white, // Optional: Set background color of the text field
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide: BorderSide(
                       color: Colors.grey.shade400), // Set border color when focused
                 ),
@@ -558,32 +564,32 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
               autovalidateMode: AutovalidateMode.onUserInteraction,
             ),
 
-            SizedBox(height: SC.from_height(20),),
+            SizedBox(height: SC.fromWidth(20),),
             // City //
             TextFormField(
               cursorColor: Colors.grey,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 labelText: 'City', // Add label text
                 labelStyle:
-                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)), // Customize label text style
+                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.fromWidth(16)), // Customize label text style
                 contentPadding: EdgeInsets.symmetric(
-                    vertical: SC.from_height(12),
-                    horizontal: SC.from_height(10)), // Adjust padding
+                    vertical: SC.fromWidth(12),
+                    horizontal: SC.fromWidth(10)), // Adjust padding
                 filled: true,
                 fillColor: Colors
                     .white, // Optional: Set background color of the text field
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide: BorderSide(
                       color: Colors.grey.shade400), // Set border color when focused
                 ),
@@ -608,22 +614,22 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
             ),
 
 
-            SizedBox(height: SC.from_height(20),),
+            SizedBox(height: SC.fromWidth(20),),
             // Business Name //
             Container(
 
-              height: SC.from_height(45),
+              height: SC.fromWidth(45),
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey.shade400),
-                borderRadius: BorderRadius.circular(SC.from_height(7)),
+                borderRadius: BorderRadius.circular(SC.fromWidth(7)),
               ),
               child: DropdownButtonFormField<String>(
                 decoration: InputDecoration(
                     border: InputBorder.none, // Remove the default underline
                     contentPadding: EdgeInsets.symmetric(
-                        horizontal: SC.from_height(10)), // Adjust padding
+                        horizontal: SC.fromWidth(10)), // Adjust padding
                     hintText: 'Industry',
-                    hintStyle: TextStyle(fontSize:SC.from_height(16),color: Colors.grey.shade700 )// Add hint text
+                    hintStyle: TextStyle(fontSize:SC.fromWidth(16),color: Colors.grey.shade700 )// Add hint text
                 ),
                 items: <String>['Option 1', 'Option 2', 'Option 3', 'Option 4']
                     .map((String value) {
@@ -640,38 +646,38 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
                   child: Icon(
                     Icons.arrow_forward_ios_rounded,
                     color: Colors.black.withOpacity(0.8),
-                    size: SC.from_height(17),
+                    size: SC.fromWidth(17),
                   ),
                 ),
               ),
             ),
 
-            SizedBox(height: SC.from_height(20),),
+            SizedBox(height: SC.fromWidth(20),),
             // Website Link //
             TextFormField(
               cursorColor: Colors.grey,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 labelText: 'Website link', // Add label text
                 labelStyle:
-                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)), // Customize label text style
+                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.fromWidth(16)), // Customize label text style
                 contentPadding: EdgeInsets.symmetric(
-                    vertical: SC.from_height(12),
-                    horizontal: SC.from_height(10)), // Adjust padding
+                    vertical: SC.fromWidth(12),
+                    horizontal: SC.fromWidth(10)), // Adjust padding
                 filled: true,
                 fillColor: Colors
                     .white, // Optional: Set background color of the text field
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide: BorderSide(
                       color: Colors.grey.shade400), // Set border color when focused
                 ),
@@ -696,32 +702,32 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
             ),
 
 
-            SizedBox(height: SC.from_height(20),),
+            SizedBox(height: SC.fromWidth(20),),
             // Instagram Link //
             TextFormField(
               cursorColor: Colors.grey,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 labelText: 'Instagram link', // Add label text
                 labelStyle:
-                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)), // Customize label text style
+                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.fromWidth(16)), // Customize label text style
                 contentPadding: EdgeInsets.symmetric(
-                    vertical: SC.from_height(12),
-                    horizontal: SC.from_height(10)), // Adjust padding
+                    vertical: SC.fromWidth(12),
+                    horizontal: SC.fromWidth(10)), // Adjust padding
                 filled: true,
                 fillColor: Colors
                     .white, // Optional: Set background color of the text field
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide: BorderSide(
                       color: Colors.grey.shade400), // Set border color when focused
                 ),
@@ -746,32 +752,32 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
             ),
 
 
-            SizedBox(height: SC.from_height(20),),
+            SizedBox(height: SC.fromWidth(20),),
             // Twitter Link //
             TextFormField(
               cursorColor: Colors.grey,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 labelText: 'Twitter link', // Add label text
                 labelStyle:
-                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)), // Customize label text style
+                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.fromWidth(16)), // Customize label text style
                 contentPadding: EdgeInsets.symmetric(
-                    vertical: SC.from_height(12),
-                    horizontal: SC.from_height(10)), // Adjust padding
+                    vertical: SC.fromWidth(12),
+                    horizontal: SC.fromWidth(10)), // Adjust padding
                 filled: true,
                 fillColor: Colors
                     .white, // Optional: Set background color of the text field
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide: BorderSide(
                       color: Colors.grey.shade400), // Set border color when focused
                 ),
@@ -795,32 +801,32 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
               autovalidateMode: AutovalidateMode.onUserInteraction,
             ),
 
-            SizedBox(height: SC.from_height(20),),
+            SizedBox(height: SC.fromWidth(20),),
             // Youtube Link //
             TextFormField(
               cursorColor: Colors.grey,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 labelText: 'Youtube link', // Add label text
                 labelStyle:
-                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)), // Customize label text style
+                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.fromWidth(16)), // Customize label text style
                 contentPadding: EdgeInsets.symmetric(
-                    vertical: SC.from_height(12),
-                    horizontal: SC.from_height(10)), // Adjust padding
+                    vertical: SC.fromWidth(12),
+                    horizontal: SC.fromWidth(10)), // Adjust padding
                 filled: true,
                 fillColor: Colors
                     .white, // Optional: Set background color of the text field
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide: BorderSide(
                       color: Colors.grey.shade400), // Set border color when focused
                 ),
@@ -844,32 +850,32 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
               autovalidateMode: AutovalidateMode.onUserInteraction,
             ),
 
-            SizedBox(height: SC.from_height(20),),
+            SizedBox(height: SC.fromWidth(20),),
             // Facebook Link //
             TextFormField(
               cursorColor: Colors.grey,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 labelText: 'Facbook link', // Add label text
                 labelStyle:
-                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)), // Customize label text style
+                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.fromWidth(16)), // Customize label text style
                 contentPadding: EdgeInsets.symmetric(
-                    vertical: SC.from_height(12),
-                    horizontal: SC.from_height(10)), // Adjust padding
+                    vertical: SC.fromWidth(12),
+                    horizontal: SC.fromWidth(10)), // Adjust padding
                 filled: true,
                 fillColor: Colors
                     .white, // Optional: Set background color of the text field
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide: BorderSide(
                       color: Colors.grey.shade400), // Set border color when focused
                 ),
@@ -894,32 +900,32 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
             ),
 
 
-            SizedBox(height: SC.from_height(20),),
+            SizedBox(height: SC.fromWidth(20),),
             // Address //
             TextFormField(
               cursorColor: Colors.grey,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 labelText: 'Address', // Add label text
                 labelStyle:
-                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)), // Customize label text style
+                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.fromWidth(16)), // Customize label text style
                 contentPadding: EdgeInsets.symmetric(
-                    vertical: SC.from_height(12),
-                    horizontal: SC.from_height(10)), // Adjust padding
+                    vertical: SC.fromWidth(12),
+                    horizontal: SC.fromWidth(10)), // Adjust padding
                 filled: true,
                 fillColor: Colors
                     .white, // Optional: Set background color of the text field
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide: BorderSide(
                       color: Colors.grey.shade400), // Set border color when focused
                 ),
@@ -943,32 +949,32 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
               autovalidateMode: AutovalidateMode.onUserInteraction,
             ),
 
-            SizedBox(height: SC.from_height(20),),
+            SizedBox(height: SC.fromWidth(20),),
             // Tagline //
             TextFormField(
               cursorColor: Colors.grey,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 labelText: 'Tagline', // Add label text
                 labelStyle:
-                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)), // Customize label text style
+                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.fromWidth(16)), // Customize label text style
                 contentPadding: EdgeInsets.symmetric(
-                    vertical: SC.from_height(12),
-                    horizontal: SC.from_height(10)), // Adjust padding
+                    vertical: SC.fromWidth(12),
+                    horizontal: SC.fromWidth(10)), // Adjust padding
                 filled: true,
                 fillColor: Colors
                     .white, // Optional: Set background color of the text field
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey.shade400), // Set border color
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide: BorderSide(
                       color: Colors.grey.shade400), // Set border color when focused
                 ),
@@ -995,7 +1001,7 @@ class _AdditionalDetailState extends State<AdditionalDetail> {
 
 
 
-            SizedBox(height: SC.from_height(20),),
+            SizedBox(height: SC.fromWidth(20),),
           ],
         ),
       ),

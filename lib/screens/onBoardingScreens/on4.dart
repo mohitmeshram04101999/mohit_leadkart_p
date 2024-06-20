@@ -10,7 +10,7 @@ class On4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnBordingPage(
         child: Center(
-          child: Image.asset("assets/onBording2/on4.png",width: SC.from_width(300),),
+          child: Image.asset("assets/onBording2/on4.png",width: SC.fromWidth(300),),
         ),
         mainText: "Monitor your ad performance",
         subTitle: "We serve you the ad performance in real time.",

@@ -8,7 +8,6 @@ import 'package:go_router/go_router.dart';
 import 'package:leadkart/component/bottom_navigation_screen.dart';
 import 'package:leadkart/helper/dimention.dart';
 import 'package:pinput/pinput.dart';
-import 'package:leadkart/my%20custom%20assets%20dart%20file/actionButton.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({Key? key}) : super(key: key);
@@ -87,62 +86,64 @@ class _OtpScreenState extends State<OtpScreen> {
             Container(
               width: double.infinity,
               margin: EdgeInsets.symmetric(horizontal: 25),
-              child: RichText(
-                text: TextSpan(
-                  style: TextStyle(fontSize: SC.from_height(15), color: Colors.grey),
-                  children: [
-                    TextSpan(
-                      text: 'We have sent you a 4 digit code to verify your\n            phone number on ',
-                      style: TextStyle(color: Colors.grey.shade600)
-                    ),
-                    TextSpan(
-                      text: '9988090679',
-                      style: TextStyle(color: Color.fromRGBO(36, 238, 221, 1)), // Change color of the phone number
-                    ),
-                  ],
+              child: Center(
+                child: RichText(
+                  text: TextSpan(
+                    style: TextStyle(fontSize: SC.fromWidth(28), color: Colors.grey),
+                    children: [
+                      TextSpan(
+                        text: 'We have sent you a 4 digit code to verify your\n            phone number on ',
+                        style: TextStyle(color: Colors.grey.shade600)
+                      ),
+                      TextSpan(
+                        text: '9988090679',
+                        style: TextStyle(color: Color.fromRGBO(36, 238, 221, 1)), // Change color of the phone number
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
 
 
-            SizedBox(height: SC.from_height(40),),
+            SizedBox(height:  SC.fromWidth(28),),
 
 
 
       // PINPUT OTP TEXT FIELD  //
       SizedBox(height: SC.from_height(20),),
       Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Pinput(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Pinput(
 
-            length: 4,
-            defaultPinTheme: defaultPinTheme,
-            focusedPinTheme: defaultPinTheme.copyWith(
-              decoration: BoxDecoration(
-                border: Border.all(color: Color.fromRGBO(36, 238, 221, 1)), // Changed border color for focused state
-                borderRadius: BorderRadius.circular( SC.from_height(10)),
+                  length: 4,
+                  defaultPinTheme: defaultPinTheme,
+                  focusedPinTheme: defaultPinTheme.copyWith(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Color.fromRGBO(36, 238, 221, 1)), // Changed border color for focused state
+                      borderRadius: BorderRadius.circular( SC.from_height(10)),
+                    ),
+                  ),
+                  submittedPinTheme: defaultPinTheme.copyWith(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(color: Colors.grey.shade200), // Keep the border for submitted state
+                      borderRadius: BorderRadius.circular( SC.from_height(10)),
+                    ),
+                  ),
+
+                  separatorBuilder: (index) => SizedBox(width:  SC.from_height(20)),
+                  // Space between the PIN fields
+                  onChanged: (value) {
+                    print('PIN changed: $value');
+                  },
+                  onCompleted: (pin) {
+                    print('PIN completed: $pin');
+                  },
+                ),
               ),
             ),
-            submittedPinTheme: defaultPinTheme.copyWith(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Colors.grey.shade200), // Keep the border for submitted state
-                borderRadius: BorderRadius.circular( SC.from_height(10)),
-              ),
-            ),
-
-            separatorBuilder: (index) => SizedBox(width:  SC.from_height(20)),
-            // Space between the PIN fields
-            onChanged: (value) {
-              print('PIN changed: $value');
-            },
-            onCompleted: (pin) {
-              print('PIN completed: $pin');
-            },
-          ),
-        ),
-      ),
 
 
             SizedBox(height: SC.from_height(40),),
@@ -163,6 +164,7 @@ class _OtpScreenState extends State<OtpScreen> {
 
             Center(
               child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 18,vertical: 10),
                 height: SC.from_height(45), // Adjust as needed
                 width: SC.from_height(340),  // Adjust as needed
                 child: _isLoading
@@ -187,8 +189,6 @@ class _OtpScreenState extends State<OtpScreen> {
                 ),
               ),
             ),
-
-
           ],
         ),
       ),
