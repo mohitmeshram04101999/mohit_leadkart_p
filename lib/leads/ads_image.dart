@@ -62,7 +62,6 @@ class _AdsPageState extends State<AdsPage> {
       'platforms': [
         'assets/facebook.png',
         'assets/add_images/insta.png',
-        'assets/twitter.png',
       ],
     },
     // Add more recommendations as needed
@@ -79,8 +78,8 @@ class _AdsPageState extends State<AdsPage> {
 
         title: Container(
           clipBehavior: Clip.hardEdge,
-          width: SC.fromWidth(30),
-          height: SC.fromWidth(30),
+          width: SC.from_height(30),
+          height: SC.from_height(30),
           decoration: BoxDecoration(
 
             borderRadius: BorderRadius.circular(10),
@@ -94,14 +93,14 @@ class _AdsPageState extends State<AdsPage> {
             dropdownColor: Color.fromRGBO(36, 238, 221, 0.6),
             hint: Text(
               " SK e solution  ",
-              style: TextStyle(color: Colors.white, fontSize: SC.fromWidth(18)),
+              style: TextStyle(color: Colors.white, fontSize: SC.from_height(18)),
             ),
             value: dropdownValue,
             icon: Transform.rotate(
               angle: 1.5708, // 90 degrees in radians (π/2 or 1.5708 radians)
-              child: Icon(Icons.arrow_forward_ios_rounded, color: Colors.white,size: SC.fromWidth(17)),
+              child: Icon(Icons.arrow_forward_ios_rounded, color: Colors.white,size: SC.from_height(17)),
             ),
-            iconSize: SC.fromWidth(22),
+            iconSize: SC.from_height(22),
             elevation: 16,
             style: TextStyle(color: Colors.black),
             underline: Container(), // Remove the underline
@@ -120,30 +119,30 @@ class _AdsPageState extends State<AdsPage> {
                 value: value,
                 child: Text(
                   value,
-                  style: TextStyle(color: Colors.white, fontSize: SC.fromWidth(19.5)),
+                  style: TextStyle(color: Colors.white, fontSize: SC.from_height(19.5)),
                 ),
               );
             }).toList(),
           ),
 
-          SizedBox(width: SC.fromWidth(50)),
+          SizedBox(width: SC.from_width(50)),
 
     Container(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.call_outlined,size:  SC.fromWidth(17),color: Colors.white,),
-              SizedBox(width: SC.fromWidth(4),),
-              Center(child: Text('Help ?',style: TextStyle(fontSize: SC.fromWidth(16),color: Colors.white),),),
+              Icon(Icons.call_outlined,size:  SC.from_height(17),color: Colors.white,),
+              SizedBox(width: SC.from_height(4),),
+              Center(child: Text('Help ?',style: TextStyle(fontSize: SC.from_height(16),color: Colors.white),),),
             ],
           ),
-          width: SC.fromWidth(85),
-          height: SC.fromWidth(30),
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(SC.fromWidth(15)),border: Border.all(
+          width: SC.from_height(85),
+          height: SC.from_height(30),
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(SC.from_height(15)),border: Border.all(
               color: Colors.white
           )),
         ),
-          SizedBox(width: SC.fromWidth(20)),
+          SizedBox(width: SC.from_height(20)),
         ],
       ),
       // backgroundColor: Colors.white,
@@ -153,8 +152,8 @@ class _AdsPageState extends State<AdsPage> {
       //
       //   title: Container(
       //     clipBehavior: Clip.hardEdge,
-      //     width: SC.fromWidth(30),
-      //     height: SC.fromWidth(30),
+      //     width: SC.from_height(30),
+      //     height: SC.from_height(30),
       //     decoration: BoxDecoration(
       //       borderRadius: BorderRadius.circular(10),
       //     ),
@@ -166,14 +165,14 @@ class _AdsPageState extends State<AdsPage> {
       //     DropdownButton<String>(
       //       hint: Text(
       //         " SK e solution  ",
-      //         style: TextStyle(color: Colors.white, fontSize: SC.fromWidth(18)),
+      //         style: TextStyle(color: Colors.white, fontSize: SC.from_height(18)),
       //       ),
       //       value: dropdownValue,
       //       icon: Transform.rotate(
       //         angle: 1.5708, // 90 degrees in radians (π/2 or 1.5708 radians)
-      //         child: Icon(Icons.arrow_forward_ios_rounded, color: Colors.white,size: SC.fromWidth(17)),
+      //         child: Icon(Icons.arrow_forward_ios_rounded, color: Colors.white,size: SC.from_height(17)),
       //       ),
-      //       iconSize: SC.fromWidth(22),
+      //       iconSize: SC.from_height(22),
       //       elevation: 16,
       //       style: TextStyle(color: Colors.black),
       //       underline: Container(), // Remove the underline
@@ -190,44 +189,44 @@ class _AdsPageState extends State<AdsPage> {
       //           value: value,
       //           child: Text(
       //             value,
-      //             style: TextStyle(color: Colors.white, fontSize: SC.fromWidth(18)),
+      //             style: TextStyle(color: Colors.white, fontSize: SC.from_height(18)),
       //           ),
       //         );
       //       }).toList(),
       //     ),
       //
-      //     SizedBox(width: SC.fromWidth(60)),
+      //     SizedBox(width: SC.from_height(60)),
       //
       //     Container(
       //       child: Row(
       //         mainAxisAlignment: MainAxisAlignment.center,
       //         children: [
-      //           Icon(Icons.call_outlined,size:  SC.fromWidth(17),),
-      //           SizedBox(width: SC.fromWidth(4),),
-      //           Center(child: Text('Help ?',style: TextStyle(fontSize: SC.fromWidth(16),color: Colors.white),),),
+      //           Icon(Icons.call_outlined,size:  SC.from_height(17),),
+      //           SizedBox(width: SC.from_height(4),),
+      //           Center(child: Text('Help ?',style: TextStyle(fontSize: SC.from_height(16),color: Colors.white),),),
       //         ],
       //       ),
-      //       width: SC.fromWidth(85),
-      //       height: SC.fromWidth(30),
-      //       decoration: BoxDecoration(borderRadius: BorderRadius.circular(SC.fromWidth(15)),border: Border.all(
+      //       width: SC.from_height(85),
+      //       height: SC.from_height(30),
+      //       decoration: BoxDecoration(borderRadius: BorderRadius.circular(SC.from_height(15)),border: Border.all(
       //           color: Colors.white
       //       )),
       //     ),
-      //     SizedBox(width: SC.fromWidth(20)),
+      //     SizedBox(width: SC.from_height(20)),
       //   ],
       // ),
       body: Padding(
-        padding:   EdgeInsets.symmetric(horizontal:SC.fromWidth(19) ),
+        padding:   EdgeInsets.symmetric(horizontal:SC.from_height(17) ),
         child: ListView(
           children: [
 
-            SizedBox(height: SC.fromWidth(15),),
+            SizedBox(height: SC.from_height(15),),
 
-            Text('How ads report will look',style: TextStyle(fontSize: SC.fromWidth(17),fontWeight: FontWeight.w600),),
-            SizedBox(height: SC.fromWidth(7),),
-            Text('You can see your ad performance in real time',style: TextStyle(fontSize: SC.fromWidth(15),color: Colors.grey.shade500,fontWeight: FontWeight.w500),),
+            Text('How ads report will look',style: TextStyle(fontSize: SC.from_height(17),fontWeight: FontWeight.w600),),
+            SizedBox(height: SC.from_height(7),),
+            Text('You can see your ad performance in real time',style: TextStyle(fontSize: SC.from_height(15),color: Colors.grey.shade500,fontWeight: FontWeight.w500),),
 
-            SizedBox(height: SC.fromWidth(20),),
+            SizedBox(height: SC.from_height(20),),
 
             // DEMO ADD //
 
@@ -254,17 +253,17 @@ class _AdsPageState extends State<AdsPage> {
             ),
 
 
-            SizedBox(height: SC.fromWidth(20),),
+            SizedBox(height: SC.from_height(20),),
 
             Row(
               children: [
-                Text('Select a Package',style: TextStyle(fontSize: SC.fromWidth(18),fontWeight: FontWeight.w500),),
+                Text('Select a Package',style: TextStyle(fontSize: SC.from_height(18),fontWeight: FontWeight.w500),),
                 Spacer(),
                 Text('See More',style: TextStyle(color: MyHelper.appConstent.primeryColor,fontSize: SC.fromWidth(27),fontWeight: FontWeight.w600),),
               ],
             ),
 
-            SizedBox(height: SC.fromWidth(15),),
+            SizedBox(height: SC.from_height(15),),
 
 
             //  RECOMENDATION //
@@ -294,7 +293,7 @@ class _AdsPageState extends State<AdsPage> {
               },
             ),
 
-            SizedBox(height: SC.fromWidth(18),),
+            SizedBox(height: SC.from_height(18),),
 
           ],
         ),
