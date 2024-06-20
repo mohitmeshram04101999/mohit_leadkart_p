@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
     return  DevicePreview(
       builder: (context)=>
      GetMaterialApp.router(
+
         debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.light,
         theme:Theme.of(context).brightness==Brightness.light? AppTheme():AppTheme(),

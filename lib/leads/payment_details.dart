@@ -58,6 +58,8 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                     physics: NeverScrollableScrollPhysics(),
                     children: [
                       SizedBox(height: SC.fromHeight(30),),
+
+                      // TOTAL COST //
                       Container(
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -90,7 +92,6 @@ class _PaymentDetailsState extends State<PaymentDetails> {
 
                       SizedBox(height: SC.fromHeight(40),),
                       Text('Pay Using Upi',style: TextStyle(fontSize: SC.fromWidth(19)),),
-
                       SizedBox(height: SC.fromHeight(40),),
 
 

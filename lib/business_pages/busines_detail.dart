@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -43,7 +44,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
           padding:   EdgeInsets.symmetric(horizontal: SC.from_height(14)),
           child: Column(
             children: [
-        
+
               SizedBox(height: SC.from_height(22),),
               Container(
                 width: double.infinity,
@@ -60,7 +61,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
                     ),
                   ],
                 ),
-        
+
                 child: Column(
                   // crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -72,7 +73,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
                         ],
                       ),
                     ),
-        
+
                     Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(SC.from_height(55))
@@ -102,24 +103,42 @@ class _BusinessDetailState extends State<BusinessDetail> {
                               style: TextStyle(
                                 color: Colors.black, // Color for the rest of the text
                                 fontSize: SC.from_height(15),
-        
+
                               ),
                             ),
                           ],
                         ),
                       ),
                     ),
-        
+
                   ],
                 ),
               ),
-        
+
               SizedBox(height: SC.from_height(22),),
-        
-              // Campaign Settings //
+
+
+
+           //   Campaign Settings //
               ReuseableBusinesContainer(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => AddCreation()));
+                  Navigator.push(
+                    context,
+                    PageRouteBuilder(
+
+                      reverseTransitionDuration: Duration(seconds: 1),
+                      transitionDuration: Duration(seconds: 1),
+                      pageBuilder: (context, animation, secondaryAnimation) => AddCreation(),
+                      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                        return FadeThroughTransition(
+
+                          animation: animation,
+                          secondaryAnimation: secondaryAnimation,
+                          child: child,
+                        );
+                      },
+                    ),
+                  );
                 },
                 child: Row(
                   children: [
@@ -137,10 +156,29 @@ class _BusinessDetailState extends State<BusinessDetail> {
                   ],
                 ),
               ),
-
+           //    ReuseableBusinesContainer(
+           //      onTap: () {
+           //        Navigator.push(context, MaterialPageRoute(builder: (context) => AddCreation()));
+           //      },
+           //      child: Row(
+           //        children: [
+           //          SizedBox(width: SC.from_height(10)),
+           //          Icon(Icons.description, color: Colors.grey, size: SC.from_height(24)),
+           //          SizedBox(width: SC.from_height(10)),
+           //          Text(
+           //            'Campaign Settings',
+           //            style: TextStyle(
+           //              color: Colors.grey.shade700,
+           //              fontWeight: FontWeight.w500,
+           //              fontSize: SC.from_height(16),
+           //            ),
+           //          ),
+           //        ],
+           //      ),
+           //    ),
 
               SizedBox(height: SC.from_height(11),),
-        
+
               //Billing Details //
               ReuseableBusinesContainer(
                 onTap: () {
@@ -164,7 +202,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
               ),
 
               SizedBox(height: SC.from_height(11),),
-        
+
               //Payment & Invoices //
               ReuseableBusinesContainer(
                 onTap: () {
@@ -188,7 +226,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
               ),
 
               SizedBox(height: SC.from_height(11),),
-        
+
               // Manage Website //
               ReuseableBusinesContainer(
                 onTap: () {
@@ -212,7 +250,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
               ),
 
               SizedBox(height: SC.from_height(11),),
-        
+
               // Notification //
               ReuseableBusinesContainer(
                 onTap: () {
@@ -260,7 +298,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
               ),
 
               SizedBox(height: SC.from_height(22),),
-        
+
             ],
           ),
         ),
