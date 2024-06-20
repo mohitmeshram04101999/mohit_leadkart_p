@@ -1,14 +1,18 @@
-import 'dart:developer';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:leadkart/component/custom_button.dart';
+import 'package:leadkart/helper/controllerInstances.dart';
+import 'package:leadkart/helper/helper.dart';
 
 import 'package:leadkart/login_pages/otp_screen.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-import '../component/custom_button.dart';
+
 import '../helper/dimention.dart';
+import '../my custom assets dart file/actionButton.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -19,28 +23,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LogInPageState extends State<LoginScreen> {
-  loginWithFacebook() async {
-    final LoginResult result = await FacebookAuth.instance.login(
-      permissions: ['email', 'public_profile'],
-      loginBehavior: LoginBehavior.webOnly,
-    ); // by default we request the email and the public profile
-    // final LoginResult result = await FacebookAuth.instance.expressLogin(); // by default we request the email and the public profile
-// or FacebookAuth.i.login()
-    log(result.status.toString());
-    if (result.status == LoginStatus.success) {
-      // you are logged
-      final AccessToken accessToken = result.accessToken!;
-      log('Access Token: ${accessToken.tokenString}');
-      final userData = await FacebookAuth.instance.getUserData(
-      );
-      log("User Data: $userData");
-    } else {
-      log('Error');
-log(result.status.toString());
-log('Error: ${result.message.toString()}');
-    }
-  }
-  double value = 0.0;
+  //vars --
+  TextEditingController mobileNumController = TextEditingController();
+  //
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,6 +37,10 @@ log('Error: ${result.message.toString()}');
           children:[
 
             Container(
+
+              // margin: EdgeInsets.only(top: 35,bottom: 35),
+              // decoration: BoxDecoration(border: Border.all()),
+
               width: double.infinity,
               height: SC.from_height(360),
 
@@ -60,7 +49,7 @@ log('Error: ${result.message.toString()}');
 
             Container(
               width: double.infinity,
-              height:SC.from_height(450) ,
+              // height:SC.from_height(450) ,
               decoration: BoxDecoration(
                 // border: Border.all(),
                 color: Colors.white,
@@ -100,11 +89,13 @@ log('Error: ${result.message.toString()}');
                   SizedBox(height: SC.from_height(20),),
 
                   Container(
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-                    height: SC.from_height(45),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(SC.from_height(10)),
+                    ),
+                    height: SC.from_height(47),
                     padding: EdgeInsets.symmetric(horizontal: SC.from_height(20)), // Optional padding to give some space around the TextField
                     child: TextFormField(
-
+                      controller: Controllers.authController.phonController,
                       keyboardType: TextInputType.number,
                       cursorColor: Colors.grey,
                       inputFormatters: [LengthLimitingTextInputFormatter(10)],
@@ -129,6 +120,10 @@ log('Error: ${result.message.toString()}');
                     ),
                   ),
 
+                  SizedBox(height: SC.from_height(30),),
+
+                  MyactionButton(child: Text("LogIn",style: TextStyle(color: Colors.white),),action:()=>Controllers.authController.login(context), duretion: Duration(milliseconds: 300)),
+
 
                   SizedBox(height: SC.from_height(30),),
 
@@ -146,8 +141,8 @@ log('Error: ${result.message.toString()}');
 
 
 
-                 // ROW //
-                  SizedBox(height: SC.from_height(40),),
+                  // ROW //
+                  SizedBox(height: SC.from_height(5),),
 
                   Padding(
                     padding:   EdgeInsets.symmetric(horizontal: SC.from_height(17)),
@@ -198,7 +193,9 @@ log('Error: ${result.message.toString()}');
                         ),
                       ],
                     ),
-                  )
+                  ),
+
+                  SizedBox(height: SC.from_height(30),),
 
                 ],
               ),
@@ -210,4 +207,10 @@ log('Error: ${result.message.toString()}');
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
+
+
+  //log in
+
+
 }

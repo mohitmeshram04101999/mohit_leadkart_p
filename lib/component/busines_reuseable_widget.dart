@@ -13,10 +13,10 @@ class ReuseableBusinesContainer extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: double.infinity,
-        height: SC.from_height(50),
+        height: SC.fromWidth(50),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(SC.from_height(10)),
+          borderRadius: BorderRadius.circular(SC.fromWidth(10)),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.shade300, // Shadow color

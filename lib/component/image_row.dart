@@ -16,9 +16,9 @@ class ImageRow extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: List.generate(imagePaths.length, (index) {
             return Container(
-              margin: EdgeInsets.all(SC.from_height(4)),
-              width: SC.from_height(125),
-              height: SC.from_height(125),
+              margin: EdgeInsets.all(SC.fromWidth(4)),
+              width: SC.fromWidth(125),
+              height: SC.fromWidth(125),
               child: Image.asset(
                 imagePaths[index],
                 fit: BoxFit.cover,
@@ -59,7 +59,7 @@ class CustomListTile extends StatelessWidget {
         subtitle,
         style: TextStyle(
           color: Colors.grey.shade400,
-          fontSize: SC.from_height(14),
+          fontSize: SC.fromWidth(14),
           fontWeight: FontWeight.w500,
         ),
       ),

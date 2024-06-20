@@ -14,7 +14,7 @@ class On2 extends StatelessWidget {
           children: [
             Center(
               child: SizedBox(
-                height: SC.from_width(330),
+                height: SC.fromWidth(330),
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(8),child: Image.asset("assets/onBording2/on2.png")),
               ),

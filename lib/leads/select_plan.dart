@@ -87,16 +87,16 @@ class _SelectPlanState extends State<SelectPlan> {
       appBar: AppBar(
         foregroundColor: Colors.white,
         backgroundColor: MyHelper.appConstent.primeryColor,
-        title: Text('Select a Plan',style: TextStyle(fontSize: SC.from_height(21)),),
+        title: Text('Select a Plan',style: TextStyle(fontSize: SC.fromWidth(21)),),
         actions: [
           HelpButton(),
-          SizedBox(width: SC.from_height(21),)
+          SizedBox(width: SC.fromWidth(21),)
         ],
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: SC.from_height(18)),
+        padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(18)),
         children: [
-          SizedBox(height: SC.from_height(15),),
+          SizedBox(height: SC.fromWidth(15),),
 
           // RECOMMENDATION //
 
@@ -130,7 +130,7 @@ class _SelectPlanState extends State<SelectPlan> {
 
 
 
-          SizedBox(height: SC.from_height(20),),
+          SizedBox(height: SC.fromWidth(20),),
           // GFBUTTON //
 
           CustomButton(
@@ -139,7 +139,7 @@ class _SelectPlanState extends State<SelectPlan> {
           },
           ),
 
-          SizedBox(height: SC.from_height(20),),
+          SizedBox(height: SC.fromWidth(20),),
 
         ],
       ),

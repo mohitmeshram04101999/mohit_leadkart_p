@@ -15,8 +15,8 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: SC.from_height(45), // Adjust as needed
-      width: SC.from_height(340),
+      height: SC.fromWidth(45), // Adjust as needed
+      width: SC.fromWidth(340),
       child: GFButton(
         onPressed: onPressed,
         color: MyHelper.appConstent.primeryColor,

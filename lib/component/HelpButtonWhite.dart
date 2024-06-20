@@ -12,7 +12,7 @@ class HelpButton extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return SizedBox(
-      height: SC.from_height(30),
+      height: SC.fromWidth(30),
 
       //Outlin Button
       child: OutlinedButton(
@@ -28,9 +28,9 @@ class HelpButton extends StatelessWidget {
           child: Row(
             children: [
               Icon(Icons.call_outlined,color: Colors.white,),
-              SizedBox(width: SC.from_width(2),),
+              SizedBox(width: SC.fromWidth(2),),
               Text("Help ?",style: TextStyle(
-                  color: Colors.white,fontSize: SC.from_height(16)
+                  color: Colors.white,fontSize: SC.fromWidth(16)
               )),
             ],
           )),

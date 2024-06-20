@@ -32,7 +32,7 @@ class DemoAdWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: SC.from_height(2)),
+      margin: EdgeInsets.symmetric(horizontal: SC.fromWidth(2)),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: Colors.white,
@@ -53,23 +53,23 @@ class DemoAdWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: EdgeInsets.only(left: SC.from_height(10), top: SC.from_height(10)),
+                padding: EdgeInsets.only(left: SC.fromWidth(10), top: SC.fromWidth(10)),
                 child: Text(
                   dateRange,
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: SC.from_height(14.5)),
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: SC.fromWidth(14.5)),
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: SC.from_height(8)),
+                padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(8)),
                 decoration: BoxDecoration(
                   color: Color.fromRGBO(233, 233, 233, 1),
                   borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(SC.from_height(12)),
-                    bottomLeft: Radius.circular(SC.from_height(15)),
+                    topRight: Radius.circular(SC.fromWidth(12)),
+                    bottomLeft: Radius.circular(SC.fromWidth(15)),
                   ),
                 ),
-                height: SC.from_height(28),
-                width: SC.from_height(70),
+                height: SC.fromWidth(28),
+                width: SC.fromWidth(70),
                 child: Center(
                   child: Text(
                     adLabel,
@@ -79,23 +79,23 @@ class DemoAdWidget extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: SC.from_height(4)),
+          SizedBox(height: SC.fromWidth(4)),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(30)),
             child: Row(
               children: [
                 Text(
                   mainText,
-                  style: TextStyle(color: mainTextColor, fontWeight: FontWeight.w600, fontSize: SC.from_height(16)),
+                  style: TextStyle(color: mainTextColor, fontWeight: FontWeight.w600, fontSize: SC.fromWidth(16)),
                 ),
                 SizedBox(width: SC.fromWidth(11.5)),
                 Row(
                   children: platformIcons.map((icon) {
                     return Padding(
-                      padding: EdgeInsets.only(right: SC.from_height(13)),
+                      padding: EdgeInsets.only(right: SC.fromWidth(13)),
                       child: Container(
-                        width: SC.from_height(18),
-                        height: SC.from_height(18),
+                        width: SC.fromWidth(18),
+                        height: SC.fromWidth(18),
                         child: Image.asset(icon),
                       ),
                     );
@@ -104,7 +104,7 @@ class DemoAdWidget extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: SC.from_height(12)),
+          SizedBox(height: SC.fromWidth(12)),
           Padding(
             padding: EdgeInsets.only(
               left: SC.fromWidth(25),
@@ -115,9 +115,9 @@ class DemoAdWidget extends StatelessWidget {
               children: [
                 Container(
                   clipBehavior: Clip.hardEdge,
-                  width: SC.from_width(124),
-                  height: SC.from_height(124),
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(SC.from_height(10))),
+                  width: SC.fromWidth(124),
+                  height: SC.fromWidth(124),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(SC.fromWidth(10))),
                   child: Image.asset(imagePath),
                 ),
                 Column(
@@ -133,7 +133,7 @@ class DemoAdWidget extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(right: SC.from_height(12)),
+            padding: EdgeInsets.only(right: SC.fromWidth(12)),
             child: Column(
               children: [
                 InkWell(
@@ -142,19 +142,19 @@ class DemoAdWidget extends StatelessWidget {
                     'View Reports',
                     style: TextStyle(
                       color: Color.fromRGBO(36, 238, 221, 1),
-                      fontSize: SC.from_height(15),
+                      fontSize: SC.fromWidth(15),
                     ),
                   ),
                 ),
                 Container(
-                  height: SC.from_height(1),
-                  width: SC.from_height(85),
+                  height: SC.fromWidth(1),
+                  width: SC.fromWidth(85),
                   child: Divider(thickness: 1, color: MyHelper.appConstent.primeryColor),
                 ),
               ],
             ),
           ),
-          SizedBox(height: SC.from_height(20)),
+          SizedBox(height: SC.fromWidth(20)),
         ],
       ),
     );
@@ -162,18 +162,18 @@ class DemoAdWidget extends StatelessWidget {
 
   Widget _buildInfoRow(String label, String value) {
     return Padding(
-      padding: EdgeInsets.only(bottom: SC.from_height(8)),
+      padding: EdgeInsets.only(bottom: SC.fromWidth(8)),
       child: Row(
         children: [
           SizedBox(width: SC.fromWidth(17)),
           Text(
             value,
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600, fontSize: SC.from_height(16)),
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600, fontSize: SC.fromWidth(16)),
           ),
-          SizedBox(width: SC.from_height(10)),
+          SizedBox(width: SC.fromWidth(10)),
           Text(
             label,
-            style: TextStyle(color: Colors.grey, fontSize: SC.from_height(15)),
+            style: TextStyle(color: Colors.grey, fontSize: SC.fromWidth(15)),
           ),
         ],
       ),

@@ -50,8 +50,8 @@ class RecommendationWidget extends StatelessWidget {
                 topLeft: Radius.circular(8), // Adjust the radius value as needed
               ),
             ),
-            height: SC.from_height(28),
-            width: SC.from_height(120),
+            height: SC.fromWidth(28),
+            width: SC.fromWidth(120),
             child: Center(
               child: Text(
                 title,
@@ -67,12 +67,12 @@ class RecommendationWidget extends StatelessWidget {
                 Expanded(
                   child: Text(
                     description,
-                    style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: SC.from_height(18)),
+                    style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: SC.fromWidth(18)),
                   ),
                 ),
                 Text(
                   'Duration : $duration',
-                  style: TextStyle(fontWeight: FontWeight.w500,color: Colors.black54,fontSize: SC.from_height(13)),
+                  style: TextStyle(fontWeight: FontWeight.w500,color: Colors.black54,fontSize: SC.fromWidth(13)),
                 ),
               ],
             ),
@@ -80,42 +80,42 @@ class RecommendationWidget extends StatelessWidget {
           SizedBox(height: 8),
           Padding(
     padding: EdgeInsets.only(
-              left: SC.from_height(14),
-              right: SC.from_height(14),
-              bottom: SC.from_height(10),
+              left: SC.fromWidth(14),
+              right: SC.fromWidth(14),
+              bottom: SC.fromWidth(10),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   children: [
-                    Text('Lead', style: TextStyle(fontWeight: FontWeight.w500,color: Colors.black54,fontSize:SC.from_height(17))),
+                    Text('Lead', style: TextStyle(fontWeight: FontWeight.w500,color: Colors.black54,fontSize:SC.fromWidth(17))),
                     SizedBox(height: 5),
-                    Text(leads.toString(), style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize:SC.from_height(17) )),
+                    Text(leads.toString(), style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize:SC.fromWidth(17) )),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('Reach', style: TextStyle(fontWeight: FontWeight.w500,color: Colors.black54,fontSize:SC.from_height(17))),
+                    Text('Reach', style: TextStyle(fontWeight: FontWeight.w500,color: Colors.black54,fontSize:SC.fromWidth(17))),
                     SizedBox(height: 5),
-                    Text(reach.toString(), style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize:SC.from_height(17) )),
+                    Text(reach.toString(), style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize:SC.fromWidth(17) )),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('Platform', style: TextStyle(fontWeight: FontWeight.w500,color: Colors.black54,fontSize:SC.from_height(17) )),
-                    SizedBox(height: SC.from_height(5)),
+                    Text('Platform', style: TextStyle(fontWeight: FontWeight.w500,color: Colors.black54,fontSize:SC.fromWidth(17) )),
+                    SizedBox(height: SC.fromWidth(5)),
                     Row(
                       children: platforms.map((platform) {
                         return Row(
                           children: [
                             Container(
-                              width: SC.from_height(18),
-                              height: SC.from_height(18),
+                              width: SC.fromWidth(18),
+                              height: SC.fromWidth(18),
                               child: Image.asset(platform),
                             ),
 
-                            SizedBox(width: SC.from_height(13)),
+                            SizedBox(width: SC.fromWidth(13)),
                           ],
                         );
                       }).toList(),
@@ -125,7 +125,7 @@ class RecommendationWidget extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: SC.from_height(15)),
+          SizedBox(height: SC.fromWidth(15)),
           InkWell(
             onTap: () => onTap(),
             child: Container(
@@ -135,21 +135,21 @@ class RecommendationWidget extends StatelessWidget {
                 border: Border.all(color: MyHelper.appConstent.primeryColor),
 
               ),
-              margin: EdgeInsets.symmetric(horizontal: SC.from_height(12)),
-              height: SC.from_height(42), // Adjust as needed
-              width: SC.from_height(340),
+              margin: EdgeInsets.symmetric(horizontal: SC.fromWidth(12)),
+              height: SC.fromWidth(42), // Adjust as needed
+              width: SC.fromWidth(340),
               child: Center(
                 child: Text(
                   'Choose Package',
                   style: TextStyle(
                     color:  MyHelper.appConstent.primeryColor, // Replace with your primary color
-                    fontSize: SC.from_height(14),
+                    fontSize: SC.fromWidth(14),
                   ),
                 ),
               ),
             ),
           ),
-          SizedBox(height: SC.from_height(20)),
+          SizedBox(height: SC.fromWidth(20)),
         ],
       ),
     );

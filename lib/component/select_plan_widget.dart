@@ -29,7 +29,7 @@ class CustomContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: SC.from_height(2), vertical: SC.from_height(5)),
+      margin: EdgeInsets.symmetric(horizontal: SC.fromWidth(2), vertical: SC.fromWidth(5)),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(11),
         color: Colors.white,
@@ -52,12 +52,12 @@ class CustomContainerWidget extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Color.fromRGBO(199, 255, 222, 0.8),
                 borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(SC.from_height(18)),
-                  topLeft: Radius.circular(SC.from_height(8)),
+                  bottomRight: Radius.circular(SC.fromWidth(18)),
+                  topLeft: Radius.circular(SC.fromWidth(8)),
                 ),
               ),
-              height: SC.from_height(28),
-              width: SC.from_height(120),
+              height: SC.fromWidth(28),
+              width: SC.fromWidth(120),
               child: Center(
                 child: Text(
                   'Recommendation',
@@ -70,7 +70,7 @@ class CustomContainerWidget extends StatelessWidget {
               ),
             ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: SC.from_height(10)),
+            padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(10)),
             child: Row(
               children: [
                 Text(
@@ -78,10 +78,10 @@ class CustomContainerWidget extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     color: Colors.black54,
-                    fontSize: SC.from_height(13),
+                    fontSize: SC.fromWidth(13),
                   ),
                 ),
-                SizedBox(width: SC.from_height(10)),
+                SizedBox(width: SC.fromWidth(10)),
                 Text(
                   '₹ $price',
                   style: TextStyle(
@@ -99,12 +99,12 @@ class CustomContainerWidget extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: SC.from_height(8)),
+          SizedBox(height: SC.fromWidth(8)),
           Padding(
             padding: EdgeInsets.only(
-              left: SC.from_height(14),
-              right: SC.from_height(14),
-              bottom: SC.from_height(10),
+              left: SC.fromWidth(14),
+              right: SC.fromWidth(14),
+              bottom: SC.fromWidth(10),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -116,7 +116,7 @@ class CustomContainerWidget extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: SC.from_height(5)),
+          SizedBox(height: SC.fromWidth(5)),
         ],
       ),
     );
@@ -133,7 +133,7 @@ class CustomContainerWidget extends StatelessWidget {
             fontSize: SC.fromWidth(23),
           ),
         ),
-        SizedBox(height: SC.from_height(5)),
+        SizedBox(height: SC.fromWidth(5)),
         Text(
           value,
           style: TextStyle(
@@ -157,11 +157,11 @@ class CustomContainerWidget extends StatelessWidget {
             fontSize: SC.fromWidth(23),
           ),
         ),
-        SizedBox(height: SC.from_height(5)),
+        SizedBox(height: SC.fromWidth(5)),
         Row(
           children: icons.map((icon) {
             return Padding(
-              padding: EdgeInsets.only(right: SC.from_height(13)),
+              padding: EdgeInsets.only(right: SC.fromWidth(13)),
               child: Container(
                 width: SC.fromWidth(22),
                 height: SC.fromWidth(22),

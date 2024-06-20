@@ -31,31 +31,31 @@ class _CreateAdsState extends State<CreateAds> {
       appBar:  AppBar(
         foregroundColor: Colors.white,
         backgroundColor: MyHelper.appConstent.primeryColor,
-        title: Text('Create an Ad',style: TextStyle( fontSize: SC.from_height(21) ),)
+        title: Text('Create an Ad',style: TextStyle( fontSize: SC.fromWidth(21) ),)
       ),
 
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: SC.from_height(15)),
+        padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(15)),
         children: [
           SizedBox(
-            height: SC.from_height(15),
+            height: SC.fromWidth(15),
           ),
 
           // SELECT CAMPAIGN   DROPDOWN//
           Container(
             width: double.infinity,
-            height: SC.from_height(45),
+            height: SC.fromWidth(45),
             decoration: BoxDecoration(
               border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(SC.from_height(7)),
+              borderRadius: BorderRadius.circular(SC.fromWidth(7)),
             ),
             child: DropdownButtonFormField<String>(
               decoration: InputDecoration(
                 border: InputBorder.none, // Remove the default underline
                 contentPadding: EdgeInsets.symmetric(
-                    horizontal: SC.from_height(10)), // Adjust padding
+                    horizontal: SC.fromWidth(10)), // Adjust padding
                 hintText: 'Select Campaign',
-                hintStyle: TextStyle(fontSize:SC.from_height(16),color: Colors.grey.shade700 )// Add hint text
+                hintStyle: TextStyle(fontSize:SC.fromWidth(16),color: Colors.grey.shade700 )// Add hint text
               ),
               items: <String>['Option 1', 'Option 2', 'Option 3', 'Option 4']
                   .map((String value) {
@@ -72,13 +72,13 @@ class _CreateAdsState extends State<CreateAds> {
                 child: Icon(
                   Icons.arrow_forward_ios_rounded,
                   color: Colors.black.withOpacity(0.8),
-                  size: SC.from_height(17),
+                  size: SC.fromWidth(17),
                 ),
               ),
             ),
           ),
           SizedBox(
-            height: SC.from_height(15),
+            height: SC.fromWidth(15),
           ),
 
           // SELECT AN IMAGE //
@@ -88,61 +88,61 @@ class _CreateAdsState extends State<CreateAds> {
             color: Colors.grey,
             child: Container(
               width: double.infinity,
-              height: SC.from_height(210),
+              height: SC.fromWidth(210),
               decoration: BoxDecoration(
                 // border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(SC.from_height(5))),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(5))),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: SC.from_height(30),
-                    height: SC.from_height(30),
+                    width: SC.fromWidth(30),
+                    height: SC.fromWidth(30),
                     child: Image.asset('assets/create.png'),
                   ),
                   SizedBox(
-                    width: SC.from_height(15),
+                    width: SC.fromWidth(15),
                   ),
                   Text(
                     'Select an Image',
                     style: TextStyle(
-                        color: Colors.grey, fontSize: SC.from_height(17),fontWeight: FontWeight.w500),
+                        color: Colors.grey, fontSize: SC.fromWidth(17),fontWeight: FontWeight.w500),
                   )
                 ],
               ),
             ),
           ),
           SizedBox(
-            height: SC.from_height(15),
+            height: SC.fromWidth(15),
           ),
 
           // TITILE //
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: SC.from_height(0)),
+            padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(0)),
             child: TextFormField(
               cursorColor: Colors.grey,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey), // Set border color
                 ),
                 labelText: 'Title', // Add label text
                 labelStyle:
-                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)), // Customize label text style
+                TextStyle(color:Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.fromWidth(16)), // Customize label text style
                 contentPadding: EdgeInsets.symmetric(
-                    vertical: SC.from_height(12),
-                    horizontal: SC.from_height(10)), // Adjust padding
+                    vertical: SC.fromWidth(12),
+                    horizontal: SC.fromWidth(10)), // Adjust padding
                 filled: true,
                 fillColor: Colors
                     .white, // Optional: Set background color of the text field
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey), // Set border color
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide: BorderSide(
                       color: Colors.grey), // Set border color when focused
                 ),
@@ -167,39 +167,39 @@ class _CreateAdsState extends State<CreateAds> {
             ),
           ),
           SizedBox(
-            height: SC.from_height(15),
+            height: SC.fromWidth(15),
           ),
 
           // CAPTION //
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: SC.from_height(0)), // Adjust padding if needed
+                horizontal: SC.fromWidth(0)), // Adjust padding if needed
             child: TextFormField(
               cursorColor: Colors.grey,
               maxLines: null, // Allow multiline input
               keyboardType: TextInputType.multiline, // Allow multiline keyboard
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey), // Set border color
                 ),
                 labelText: 'Caption', // Add label text
                 labelStyle:
-                TextStyle(color: Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.from_height(16)),
+                TextStyle(color: Colors.grey.shade700,fontWeight: FontWeight.w500,fontSize: SC.fromWidth(16)),
                 contentPadding: EdgeInsets.symmetric(
-                    vertical: SC.from_height(12),
-                    horizontal: SC.from_height(10)), // Adjust padding
+                    vertical: SC.fromWidth(12),
+                    horizontal: SC.fromWidth(10)), // Adjust padding
                 filled: true,
                 fillColor: Colors
                     .white, // Optional: Set background color of the text field
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide:
                   BorderSide(color: Colors.grey), // Set border color
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                   borderSide: BorderSide(
                       color: Colors.grey), // Set border color when focused
                 ),
@@ -226,51 +226,51 @@ class _CreateAdsState extends State<CreateAds> {
 
           // AI SUGGESTED   //
           SizedBox(
-            height: SC.from_height(15),
+            height: SC.fromWidth(15),
           ),
           Container(
             width: double.infinity,
-            // height: SC.from_height(100),
+            // height: SC.fromWidth(100),
             decoration: BoxDecoration(
                 color: Color.fromRGBO(236, 253, 243, 0.5),
                 borderRadius: BorderRadius.circular(
-                  SC.from_height(5),
+                  SC.fromWidth(5),
                 )),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                      top: SC.from_height(10), left: SC.from_height(15)),
+                      top: SC.fromWidth(10), left: SC.fromWidth(15)),
                   child: Text('AI Suggested Caption',
                       style: TextStyle(
                           color: Colors.grey.shade700,
-                          fontSize: SC.from_height(16),
+                          fontSize: SC.fromWidth(16),
                           fontWeight: FontWeight.w500)),
                 ),
                 ListTile(
                     title: Text(
                       'Order tastiest momos in Bhopal.',
                       style: TextStyle(
-                          color: Colors.grey, fontSize: SC.from_height(15),fontWeight: FontWeight.w500),
+                          color: Colors.grey, fontSize: SC.fromWidth(15),fontWeight: FontWeight.w500),
                     ),
                     subtitle: Text(
                       'Click on Link now',
                       style: TextStyle(
-                          color: Colors.grey, fontSize: SC.from_height(15),fontWeight: FontWeight.w500),
+                          color: Colors.grey, fontSize: SC.fromWidth(15),fontWeight: FontWeight.w500),
                     ),
                     trailing: Text(
                       'Add',
                       style: TextStyle(
                           color: Color.fromRGBO(36, 238, 221, 1),
-                          fontSize: SC.from_height(16),fontWeight: FontWeight.w500),
+                          fontSize: SC.fromWidth(16),fontWeight: FontWeight.w500),
                     ))
               ],
             ),
           ),
 
           SizedBox(
-            height: SC.from_height(15),
+            height: SC.fromWidth(15),
           ),
 
 
@@ -279,10 +279,10 @@ class _CreateAdsState extends State<CreateAds> {
             children: [
               Text(
                 'Call to Action',
-                style: TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(19),fontWeight: FontWeight.w500),
+                style: TextStyle(color: Colors.grey.shade700,fontSize: SC.fromWidth(19),fontWeight: FontWeight.w500),
               ),
               SizedBox(
-                width: SC.from_height(10),
+                width: SC.fromWidth(10),
               ),
               Center(
                 child: SwitchTheme(
@@ -318,22 +318,22 @@ class _CreateAdsState extends State<CreateAds> {
 
           //  CALL TO ACTION  DROPDOWN//
           SizedBox(
-            height: SC.from_height(15),
+            height: SC.fromWidth(15),
           ),
           Container(
             width: double.infinity,
-            height: SC.from_height(45),
+            height: SC.fromWidth(45),
             decoration: BoxDecoration(
               border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(SC.from_height(7)),
+              borderRadius: BorderRadius.circular(SC.fromWidth(7)),
             ),
             child: DropdownButtonFormField<String>(
               decoration: InputDecoration(
                 border: InputBorder.none, // Remove the default underline
                 contentPadding: EdgeInsets.symmetric(
-                    horizontal: SC.from_height(10)), // Adjust padding
+                    horizontal: SC.fromWidth(10)), // Adjust padding
                 hintText: 'Select a Call to Action',
-                hintStyle: TextStyle(fontSize:SC.from_height(15) ,color: Colors.grey.shade700)// Add hint text
+                hintStyle: TextStyle(fontSize:SC.fromWidth(15) ,color: Colors.grey.shade700)// Add hint text
               ),
               items: <String>['Option 1', 'Option 2', 'Option 3', 'Option 4']
                   .map((String value) {
@@ -350,7 +350,7 @@ class _CreateAdsState extends State<CreateAds> {
                 child: Icon(
                   Icons.arrow_forward_ios_rounded,
                   color: Colors.black.withOpacity(0.8),
-                  size: SC.from_height(17),
+                  size: SC.fromWidth(17),
                 ),
               ),
             ),
@@ -358,22 +358,22 @@ class _CreateAdsState extends State<CreateAds> {
 
           // DESTINATION URL   DROPDOWN//
           SizedBox(
-            height: SC.from_height(15),
+            height: SC.fromWidth(15),
           ),
           Container(
             width: double.infinity,
-            height: SC.from_height(45),
+            height: SC.fromWidth(45),
             decoration: BoxDecoration(
               border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(SC.from_height(7)),
+              borderRadius: BorderRadius.circular(SC.fromWidth(7)),
             ),
             child: DropdownButtonFormField<String>(
               decoration: InputDecoration(
                 border: InputBorder.none, // Remove the default underline
                 contentPadding: EdgeInsets.symmetric(
-                    horizontal: SC.from_height(10)), // Adjust padding
+                    horizontal: SC.fromWidth(10)), // Adjust padding
                 hintText: 'Destination URL', // Add hint text
-                hintStyle: TextStyle(fontSize:SC.from_height(15),color: Colors.grey.shade700 )
+                hintStyle: TextStyle(fontSize:SC.fromWidth(15),color: Colors.grey.shade700 )
               ),
               items: <String>['Option 1', 'Option 2', 'Option 3', 'Option 4']
                   .map((String value) {
@@ -390,14 +390,14 @@ class _CreateAdsState extends State<CreateAds> {
                 child: Icon(
                   Icons.arrow_forward_ios_rounded,
                   color: Colors.black.withOpacity(0.8),
-                  size: SC.from_height(17),
+                  size: SC.fromWidth(17),
                 ),
               ),
             ),
           ),
 
           SizedBox(
-            height: SC.from_height(15),
+            height: SC.fromWidth(15),
           ),
 
           // ADD AUDIENCEE //
@@ -405,10 +405,10 @@ class _CreateAdsState extends State<CreateAds> {
             decoration: BoxDecoration(
               color: Colors.white,
               // border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(SC.from_height(7)),
+              borderRadius: BorderRadius.circular(SC.fromWidth(7)),
             ),
             width: double.infinity,
-            // height: SC.from_height(100),
+            // height: SC.fromWidth(100),
             height: SC.fromHeight(8.2),
             child: Stack(
               // alignment: Alignment.bottomCenter,
@@ -419,25 +419,25 @@ class _CreateAdsState extends State<CreateAds> {
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.grey),
-                        borderRadius: BorderRadius.circular(SC.from_height(7)),
+                        borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                       ),
                       width: double.infinity,
-                      height: SC.from_height(55),
+                      height: SC.fromWidth(55),
                       child: Row(
                         children: [
                           SizedBox(
-                              width: SC.from_height(
+                              width: SC.fromWidth(
                                   10)), // Optional: Add some space before the chip
                           Chip(
                             label: Text(
                               'Food Shopper',
-                              style: TextStyle(color: Colors.grey.shade700,fontSize:SC.from_height(15) ),
+                              style: TextStyle(color: Colors.grey.shade700,fontSize:SC.fromWidth(15) ),
                             ),
                             backgroundColor:
                             Colors.white, // Customize chip background color
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(
-                                  SC.from_height(
+                                  SC.fromWidth(
                                       15)), // Match container border radius
                               side: BorderSide(
                                   color: Colors
@@ -455,17 +455,17 @@ class _CreateAdsState extends State<CreateAds> {
                             deleteButtonTooltipMessage:
                             'Remove', // Tooltip for the delete button
                           ),
-                          SizedBox(width: SC.from_height(10)),
+                          SizedBox(width: SC.fromWidth(10)),
                           Chip(
                             label: Text(
                               'Retailer',
-                              style: TextStyle(color: Colors.grey.shade700,fontSize:SC.from_height(15) ),
+                              style: TextStyle(color: Colors.grey.shade700,fontSize:SC.fromWidth(15) ),
                             ),
                             backgroundColor:
                             Colors.white, // Customize chip background color
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(
-                                  SC.from_height(
+                                  SC.fromWidth(
                                       15)), // Match container border radius
                               side: BorderSide(
                                   color: Colors
@@ -489,18 +489,18 @@ class _CreateAdsState extends State<CreateAds> {
                   ],
                 ),
                 Positioned(
-                  top: SC.from_height(8),
-                  left: SC.from_height(20),
+                  top: SC.fromWidth(8),
+                  left: SC.fromWidth(20),
                   child: Container(
                     decoration: BoxDecoration(
                       // border: Border.all(),
-                      borderRadius: BorderRadius.circular(SC.from_height(7)),
+                      borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                       color: Colors.white,
                     ),
                     child: Text(
                       ' Audience ',
                       style: TextStyle(
-                          color: Colors.grey.shade700, fontSize: SC.from_height(16)),
+                          color: Colors.grey.shade700, fontSize: SC.fromWidth(16)),
                     ),
                   ),
                 )
@@ -509,41 +509,41 @@ class _CreateAdsState extends State<CreateAds> {
           ),
 
           SizedBox(
-            height: SC.from_height(15),
+            height: SC.fromWidth(15),
           ),
 
            // AI SUGESTED CAPTION  //
           Container(
             width: double.infinity,
-            height: SC.from_height(95),
+            height: SC.fromWidth(95),
             decoration: BoxDecoration(
                 color: Color.fromRGBO(236, 253, 243, 0.5),
                 borderRadius: BorderRadius.circular(
-                  SC.from_height(5),
+                  SC.fromWidth(5),
                 )),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                      top: SC.from_height(10), left: SC.from_height(15)),
+                      top: SC.fromWidth(10), left: SC.fromWidth(15)),
                   child: Text('AI Suggested Caption',
                       style:  TextStyle(
                           color: Colors.grey.shade700,
-                          fontSize: SC.from_height(16),
+                          fontSize: SC.fromWidth(16),
                           fontWeight: FontWeight.w500)),
                 ),
                 SizedBox(
-                  height: SC.from_height(10),
+                  height: SC.fromWidth(10),
                 ),
                 Row(
                   children: [
                     SizedBox(
-                      width: SC.from_height(12),
+                      width: SC.fromWidth(12),
                     ),
                     Container(
                       padding: EdgeInsets.only(left: 8,right: 8,top: 5,bottom: 5),
-                      // height: SC.from_height(32),
+                      // height: SC.fromWidth(32),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(color: Colors.grey,),
@@ -566,14 +566,14 @@ class _CreateAdsState extends State<CreateAds> {
                       ),
                     ),
                     SizedBox(
-                      width: SC.from_height(20),
+                      width: SC.fromWidth(20),
                     ),
                     Container(
                       padding: EdgeInsets.only(left: 8,right: 8,top: 5,bottom: 5),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(color: Colors.grey),
-                        borderRadius: BorderRadius.circular(SC.from_height(15)),
+                        borderRadius: BorderRadius.circular(SC.fromWidth(15)),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -602,10 +602,10 @@ class _CreateAdsState extends State<CreateAds> {
             decoration: BoxDecoration(
               color: Colors.white,
               // border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(SC.from_height(7)),
+              borderRadius: BorderRadius.circular(SC.fromWidth(7)),
             ),
             width: double.infinity,
-            height: SC.from_height(80),
+            height: SC.fromWidth(80),
             child: Stack(
               // alignment: Alignment.bottomCenter,
               children: [
@@ -614,32 +614,32 @@ class _CreateAdsState extends State<CreateAds> {
                   children: [
                     Container(
                       padding: EdgeInsets.only(
-                          top: SC.from_height(15), left: SC.from_height(15)),
+                          top: SC.fromWidth(15), left: SC.fromWidth(15)),
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.grey),
-                        borderRadius: BorderRadius.circular(SC.from_height(7)),
+                        borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                       ),
                       width: double.infinity,
-                      height: SC.from_height(50),
+                      height: SC.fromWidth(50),
                       child: Text(
                         'Add a location',
-                        style: TextStyle(fontSize: SC.from_height(16),color:Colors.grey.shade700),
+                        style: TextStyle(fontSize: SC.fromWidth(16),color:Colors.grey.shade700),
                       ),
                     ),
                   ],
                 ),
                 Positioned(
-                  top: SC.from_height(5),
-                  left: SC.from_height(20),
+                  top: SC.fromWidth(5),
+                  left: SC.fromWidth(20),
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(SC.from_height(7)),
+                      borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                       color: Colors.white,
                     ),
                     child: Text(
                       ' Target Area ',
                       style: TextStyle(
-                          color: Colors.grey.shade700, fontSize: SC.from_height(15)),
+                          color: Colors.grey.shade700, fontSize: SC.fromWidth(15)),
                     ),
                   ),
                 )
@@ -648,7 +648,7 @@ class _CreateAdsState extends State<CreateAds> {
           ),
 
           SizedBox(
-            height: SC.from_height(15),
+            height: SC.fromWidth(15),
           ),
 
           // GFBUTTON //
@@ -661,7 +661,7 @@ class _CreateAdsState extends State<CreateAds> {
 
 
           SizedBox(
-            height: SC.from_height(15),
+            height: SC.fromWidth(15),
           ),
         ],
       ),

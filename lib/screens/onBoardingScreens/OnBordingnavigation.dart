@@ -32,7 +32,7 @@ class _OnBordingMainState extends State<OnBordingMain> {
           //Page view
           PageView(
 
-            physics: NeverScrollableScrollPhysics(),
+            // physics: NeverScrollableScrollPhysics(),
 
             onPageChanged: (pageIndex){
               curruntPage= pageIndex;
@@ -57,7 +57,7 @@ class _OnBordingMainState extends State<OnBordingMain> {
 
           //Page Index Indicator
           Positioned(
-            top: SC.from_width(530),
+            top: SC.fromWidth(530),
             left: 0,
             right: 0,
             child: Row(

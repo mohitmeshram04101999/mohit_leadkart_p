@@ -11,25 +11,25 @@ class AiAddTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: SC.from_width(5)),
+      margin: EdgeInsets.symmetric(horizontal: SC.fromWidth(5)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           AspectRatio(
             aspectRatio: 1,
             child: Container(
-              padding: EdgeInsets.all(SC.from_width(8)),
+              padding: EdgeInsets.all(SC.fromWidth(8)),
               // decoration: BoxDecoration(border: Border.all()),
               //item['image']!
               child: icon
             ),
           ),
-          SizedBox(width: SC.from_width(3)), // Add some spacing between image and text
+          SizedBox(width: SC.fromWidth(3)), // Add some spacing between image and text
           Expanded(
             child: Text(
               title,
               style: TextStyle(
-                fontSize: SC.from_width(15),
+                fontSize: SC.fromWidth(15),
               ),
               overflow: TextOverflow.ellipsis,
               maxLines: 1, // Adjust maxLines if you want to limit the number of lines for text

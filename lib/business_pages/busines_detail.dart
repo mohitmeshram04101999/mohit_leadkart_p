@@ -35,22 +35,22 @@ class _BusinessDetailState extends State<BusinessDetail> {
      appBar:  AppBar(
         foregroundColor: Colors.white,
         backgroundColor: MyHelper.appConstent.primeryColor,
-        title: Text('Business Detail',style: TextStyle(fontSize: SC.from_height(21)),),
+        title: Text('Business Detail',style: TextStyle(fontSize: SC.fromWidth(21)),),
       ),
 
       body: SingleChildScrollView(
         child: Padding(
-          padding:   EdgeInsets.symmetric(horizontal: SC.from_height(14)),
+          padding:   EdgeInsets.symmetric(horizontal: SC.fromWidth(14)),
           child: Column(
             children: [
         
-              SizedBox(height: SC.from_height(22),),
+              SizedBox(height: SC.fromWidth(22),),
               Container(
                 width: double.infinity,
-                height: SC.from_height(165),
+                height: SC.fromWidth(165),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(SC.from_height(10)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(10)),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.shade300, // Shadow color
@@ -65,28 +65,28 @@ class _BusinessDetailState extends State<BusinessDetail> {
                   // crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Padding(
-                      padding:   EdgeInsets.only(top: SC.from_height(10),right:SC.from_height(10) ),
+                      padding:   EdgeInsets.only(top: SC.fromWidth(10),right:SC.fromWidth(10) ),
                       child: Row(mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          Icon(Icons.edit,color: Color.fromRGBO(36, 238, 221, 1),size: SC.from_height(28),),
+                          Icon(Icons.edit,color: Color.fromRGBO(36, 238, 221, 1),size: SC.fromWidth(28),),
                         ],
                       ),
                     ),
         
                     Container(
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(SC.from_height(55))
+                          borderRadius: BorderRadius.circular(SC.fromWidth(55))
                       ),
                       clipBehavior: Clip.hardEdge,
-                      width: SC.from_height(58),
-                      height: SC.from_height(58),
+                      width: SC.fromWidth(58),
+                      height: SC.fromWidth(58),
                       child: Image.asset('assets/img_1.png'),
                     ),
-                    SizedBox(height: SC.from_height(12),),
-                    Text('Pawan Kumar',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize:SC.from_height(19) ),),
-                    SizedBox(height: SC.from_height(5),),
+                    SizedBox(height: SC.fromWidth(12),),
+                    Text('Pawan Kumar',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize:SC.fromWidth(19) ),),
+                    SizedBox(height: SC.fromWidth(5),),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: SC.from_height(28)),
+                      padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(28)),
                       child: RichText(overflow: TextOverflow.ellipsis,
                         text: TextSpan(
                           children: [
@@ -94,14 +94,14 @@ class _BusinessDetailState extends State<BusinessDetail> {
                               text: 'Address : ',
                               style: TextStyle(
                                 color: Color.fromRGBO(36, 238, 221, 1), // Different color for the label
-                                fontSize: SC.from_height(17),
+                                fontSize: SC.fromWidth(17),
                               ),
                             ),
                             TextSpan(
                               text: 'Amar Nagar, Shivpuri Bhopal Uttar Pradesh',
                               style: TextStyle(
                                 color: Colors.black, // Color for the rest of the text
-                                fontSize: SC.from_height(15),
+                                fontSize: SC.fromWidth(15),
         
                               ),
                             ),
@@ -114,7 +114,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
                 ),
               ),
         
-              SizedBox(height: SC.from_height(22),),
+              SizedBox(height: SC.fromWidth(22),),
         
               // Campaign Settings //
               ReuseableBusinesContainer(
@@ -123,15 +123,15 @@ class _BusinessDetailState extends State<BusinessDetail> {
                 },
                 child: Row(
                   children: [
-                    SizedBox(width: SC.from_height(10)),
-                    Icon(Icons.description, color: Colors.grey, size: SC.from_height(24)),
-                    SizedBox(width: SC.from_height(10)),
+                    SizedBox(width: SC.fromWidth(10)),
+                    Icon(Icons.description, color: Colors.grey, size: SC.fromWidth(24)),
+                    SizedBox(width: SC.fromWidth(10)),
                     Text(
                       'Campaign Settings',
                       style: TextStyle(
                         color: Colors.grey.shade700,
                         fontWeight: FontWeight.w500,
-                        fontSize: SC.from_height(16),
+                        fontSize: SC.fromWidth(16),
                       ),
                     ),
                   ],
@@ -139,7 +139,7 @@ class _BusinessDetailState extends State<BusinessDetail> {
               ),
 
 
-              SizedBox(height: SC.from_height(11),),
+              SizedBox(height: SC.fromWidth(11),),
         
               //Billing Details //
               ReuseableBusinesContainer(
@@ -148,22 +148,22 @@ class _BusinessDetailState extends State<BusinessDetail> {
                 },
                 child: Row(
                   children: [
-                    SizedBox(width: SC.from_height(10)),
-                    Icon(Icons.description, color: Colors.grey, size: SC.from_height(24)),
-                    SizedBox(width: SC.from_height(10)),
+                    SizedBox(width: SC.fromWidth(10)),
+                    Icon(Icons.description, color: Colors.grey, size: SC.fromWidth(24)),
+                    SizedBox(width: SC.fromWidth(10)),
                     Text(
                       'Billing Details ',
                       style: TextStyle(
                         color: Colors.grey.shade700,
                         fontWeight: FontWeight.w500,
-                        fontSize: SC.from_height(16),
+                        fontSize: SC.fromWidth(16),
                       ),
                     ),
                   ],
                 ),
               ),
 
-              SizedBox(height: SC.from_height(11),),
+              SizedBox(height: SC.fromWidth(11),),
         
               //Payment & Invoices //
               ReuseableBusinesContainer(
@@ -172,22 +172,22 @@ class _BusinessDetailState extends State<BusinessDetail> {
                 },
                 child: Row(
                   children: [
-                    SizedBox(width: SC.from_height(10)),
-                    Icon(Icons.description, color: Colors.grey, size: SC.from_height(24)),
-                    SizedBox(width: SC.from_height(10)),
+                    SizedBox(width: SC.fromWidth(10)),
+                    Icon(Icons.description, color: Colors.grey, size: SC.fromWidth(24)),
+                    SizedBox(width: SC.fromWidth(10)),
                     Text(
                       'Payment & Invoices ',
                       style: TextStyle(
                         color: Colors.grey.shade700,
                         fontWeight: FontWeight.w500,
-                        fontSize: SC.from_height(16),
+                        fontSize: SC.fromWidth(16),
                       ),
                     ),
                   ],
                 ),
               ),
 
-              SizedBox(height: SC.from_height(11),),
+              SizedBox(height: SC.fromWidth(11),),
         
               // Manage Website //
               ReuseableBusinesContainer(
@@ -196,22 +196,22 @@ class _BusinessDetailState extends State<BusinessDetail> {
                 },
                 child: Row(
                   children: [
-                    SizedBox(width: SC.from_height(10)),
-                    Icon(Icons.blur_circular_sharp, color: Colors.grey, size: SC.from_height(24)),
-                    SizedBox(width: SC.from_height(10)),
+                    SizedBox(width: SC.fromWidth(10)),
+                    Icon(Icons.blur_circular_sharp, color: Colors.grey, size: SC.fromWidth(24)),
+                    SizedBox(width: SC.fromWidth(10)),
                     Text(
                       'Manage Website  ',
                       style: TextStyle(
                         color: Colors.grey.shade700,
                         fontWeight: FontWeight.w500,
-                        fontSize: SC.from_height(16),
+                        fontSize: SC.fromWidth(16),
                       ),
                     ),
                   ],
                 ),
               ),
 
-              SizedBox(height: SC.from_height(11),),
+              SizedBox(height: SC.fromWidth(11),),
         
               // Notification //
               ReuseableBusinesContainer(
@@ -220,22 +220,22 @@ class _BusinessDetailState extends State<BusinessDetail> {
                 },
                 child: Row(
                   children: [
-                    SizedBox(width: SC.from_height(10)),
-                    Icon(Icons.notifications, color: Colors.grey, size: SC.from_height(24)),
-                    SizedBox(width: SC.from_height(10)),
+                    SizedBox(width: SC.fromWidth(10)),
+                    Icon(Icons.notifications, color: Colors.grey, size: SC.fromWidth(24)),
+                    SizedBox(width: SC.fromWidth(10)),
                     Text(
                       'Notification ',
                       style: TextStyle(
                         color: Colors.grey.shade700,
                         fontWeight: FontWeight.w500,
-                        fontSize: SC.from_height(16),
+                        fontSize: SC.fromWidth(16),
                       ),
                     ),
                   ],
                 ),
               ),
 
-              SizedBox(height: SC.from_height(11),),
+              SizedBox(height: SC.fromWidth(11),),
 
               // Logout  //
               ReuseableBusinesContainer(
@@ -244,22 +244,22 @@ class _BusinessDetailState extends State<BusinessDetail> {
                 },
                 child: Row(
                   children: [
-                    SizedBox(width: SC.from_height(10)),
-                    Icon(Icons.logout, color: Colors.grey, size: SC.from_height(24)),
-                    SizedBox(width: SC.from_height(10)),
+                    SizedBox(width: SC.fromWidth(10)),
+                    Icon(Icons.logout, color: Colors.grey, size: SC.fromWidth(24)),
+                    SizedBox(width: SC.fromWidth(10)),
                     Text(
                       'Logout',
                       style: TextStyle(
                         color: Colors.grey.shade700,
                         fontWeight: FontWeight.w500,
-                        fontSize: SC.from_height(16),
+                        fontSize: SC.fromWidth(16),
                       ),
                     ),
                   ],
                 ),
               ),
 
-              SizedBox(height: SC.from_height(22),),
+              SizedBox(height: SC.fromWidth(22),),
         
             ],
           ),

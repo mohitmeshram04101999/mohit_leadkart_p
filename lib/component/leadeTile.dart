@@ -15,9 +15,9 @@ class LeadeTile extends StatelessWidget {
       surfaceTintColor: Colors.transparent,
       color: Colors.white,
       clipBehavior: Clip.hardEdge,
-      margin: EdgeInsets.symmetric(horizontal: SC.from_width(20)),
+      margin: EdgeInsets.symmetric(horizontal: SC.fromWidth(20)),
       child: Container(
-        height: SC.from_width(73),
+        height: SC.fromWidth(73),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -25,8 +25,8 @@ class LeadeTile extends StatelessWidget {
             //Leading
             Container(
               clipBehavior: Clip.hardEdge,
-              margin: EdgeInsets.all(SC.from_width(8)),
-              width: SC.from_width(69),
+              margin: EdgeInsets.all(SC.fromWidth(8)),
+              width: SC.fromWidth(69),
               decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey.shade300,width: 2),
                   borderRadius: BorderRadius.circular(5)),
@@ -37,12 +37,12 @@ class LeadeTile extends StatelessWidget {
                   Align(
                     alignment: Alignment.bottomCenter,
                     child: Container(
-                      height: SC.from_width(17),
+                      height: SC.fromWidth(17),
                       color: Colors.black.withOpacity(.5),
                       width: double.infinity,
                       alignment: Alignment.center,
                       child: Text("See detail",
-                      style: TextStyle(fontSize: SC.from_width(8.7),color: Colors.white),),
+                      style: TextStyle(fontSize: SC.fromWidth(8.7),color: Colors.white),),
                     ),
                   )
 
@@ -75,7 +75,7 @@ class LeadeTile extends StatelessWidget {
                     Container(
                       alignment: Alignment.center,
                       width: double.infinity,
-                      child: Text("New Lead",style: TextStyle(fontSize: SC.from_width(12),fontWeight: FontWeight.w500),),
+                      child: Text("New Lead",style: TextStyle(fontSize: SC.fromWidth(12),fontWeight: FontWeight.w500),),
                       decoration: BoxDecoration(
                           color: MyHelper.appConstent.leadTiletagColor,
                         borderRadius: BorderRadius.only(

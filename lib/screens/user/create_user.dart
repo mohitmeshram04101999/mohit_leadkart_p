@@ -26,34 +26,34 @@ class _CreateUserState extends State<CreateUser> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: SC.from_height(15)),
+          padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(15)),
           child: Column(
         
             children: [
-              SizedBox(height: SC.from_height(22),),
+              SizedBox(height: SC.fromWidth(22),),
               Container(
                 clipBehavior: Clip.hardEdge,
-                  width: SC.from_height(195),
-                height: SC.from_height(165),
+                  width: SC.fromWidth(195),
+                height: SC.fromWidth(165),
                 decoration: BoxDecoration(
                   // border: Border.all(),
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(SC.from_height(10)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(10)),
         
                 ),
         
                 child: Image.asset('assets/img_9.png',fit: BoxFit.cover,)
               ),
-              SizedBox(height: SC.from_height(0),),
+              SizedBox(height: SC.fromWidth(0),),
         
               // Enter user name //
               Container(
-                height: SC.from_height(45),
+                height: SC.fromWidth(45),
                 child: TextFormField(
                   cursorColor: Colors.grey,
                   decoration: InputDecoration(
                     labelText: 'Name',
-                    labelStyle: TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(16)), // Your label text
+                    labelStyle: TextStyle(color: Colors.grey.shade700,fontSize: SC.fromWidth(16)), // Your label text
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide(color: Colors.grey, width: 1.0), // Set default border color
@@ -87,22 +87,22 @@ class _CreateUserState extends State<CreateUser> {
                 ),
               ),
         
-              SizedBox(height: SC.from_height(20),),
+              SizedBox(height: SC.fromWidth(20),),
         
               // Email-ID //
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                 ),
-                height: SC.from_height(45),
-                // padding: EdgeInsets.symmetric(horizontal: SC.from_height(20)), // Optional padding to give some space around the TextField
+                height: SC.fromWidth(45),
+                // padding: EdgeInsets.symmetric(horizontal: SC.fromWidth(20)), // Optional padding to give some space around the TextField
                 child: TextFormField(
                   keyboardType: TextInputType.number,
                   cursorColor: Colors.grey,
                   inputFormatters: [LengthLimitingTextInputFormatter(10)],
                   decoration: InputDecoration(
                     labelText: 'Email-ID',
-                    labelStyle: TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(16)),// Your label text
+                    labelStyle: TextStyle(color: Colors.grey.shade700,fontSize: SC.fromWidth(16)),// Your label text
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide(color: Colors.grey, width: 1.0), // Set default border color
@@ -119,24 +119,24 @@ class _CreateUserState extends State<CreateUser> {
                 ),
               ),
         
-              SizedBox(height: SC.from_height(20),),
+              SizedBox(height: SC.fromWidth(20),),
         
               // Select roles for user //
               Container(
                 width: double.infinity,
-                height: SC.from_height(45),
+                height: SC.fromWidth(45),
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(SC.from_height(7)),
+                  borderRadius: BorderRadius.circular(SC.fromWidth(7)),
                 ),
                 child: DropdownButtonFormField<String>(
                   decoration: InputDecoration(
                     border: InputBorder.none, // Remove the default underline
                     contentPadding: EdgeInsets.symmetric(
-                        horizontal: SC.from_height(10)), // Adjust padding
+                        horizontal: SC.fromWidth(10)), // Adjust padding
                     hintText: 'Select roles for user',
 
-                    hintStyle:  TextStyle(fontWeight: FontWeight.w400,color: Colors.grey.shade700,fontSize: SC.from_height(16))// Add hint text
+                    hintStyle:  TextStyle(fontWeight: FontWeight.w400,color: Colors.grey.shade700,fontSize: SC.fromWidth(16))// Add hint text
                   ),
                   items: <String>['Option 1', 'Option 2', 'Option 3', 'Option 4']
                       .map((String value) {
@@ -153,22 +153,22 @@ class _CreateUserState extends State<CreateUser> {
                     child: Icon(
                       Icons.arrow_forward_ios_rounded,
                       color: Colors.black.withOpacity(0.8),
-                      size: SC.from_height(17),
+                      size: SC.fromWidth(17),
                     ),
                   ),
                 ),
               ),
         
-              SizedBox(height: SC.from_height(20),),
+              SizedBox(height: SC.fromWidth(20),),
         
               // Password //
               Container(
-                height: SC.from_height(45),
+                height: SC.fromWidth(45),
                 child: TextFormField(
                   cursorColor: Colors.grey,
                   decoration: InputDecoration(
                     labelText: 'Password',
-                    labelStyle: TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(16)),// Your label text
+                    labelStyle: TextStyle(color: Colors.grey.shade700,fontSize: SC.fromWidth(16)),// Your label text
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide(color: Colors.grey, width: 1.0), // Set default border color
@@ -186,16 +186,16 @@ class _CreateUserState extends State<CreateUser> {
                 ),
               ),
         
-              SizedBox(height: SC.from_height(20),),
+              SizedBox(height: SC.fromWidth(20),),
         
               // Confirm Password //
               Container(
-                height: SC.from_height(45),
+                height: SC.fromWidth(45),
                 child: TextFormField(
                   cursorColor: Colors.grey,
                   decoration: InputDecoration(
                     labelText: 'Confirm Password',
-                    labelStyle: TextStyle(color: Colors.grey.shade700,fontSize: SC.from_height(16)), // Your label text
+                    labelStyle: TextStyle(color: Colors.grey.shade700,fontSize: SC.fromWidth(16)), // Your label text
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide(color: Colors.grey, width: 1.0), // Set default border color
@@ -213,7 +213,7 @@ class _CreateUserState extends State<CreateUser> {
                 ),
               ),
         
-              SizedBox(height: SC.from_height(30),),
+              SizedBox(height: SC.fromWidth(30),),
 
 
 
@@ -230,7 +230,7 @@ class _CreateUserState extends State<CreateUser> {
 
 
 
-              SizedBox(height: SC.from_height(11),),
+              SizedBox(height: SC.fromWidth(11),),
             ],
           ),
         ),
