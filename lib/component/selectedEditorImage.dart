@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -48,81 +49,88 @@ RxBool isClicked = false.obs;
         scaledSize = widget.widgetId.isNotEmpty? Size(size.width * scale, size.height * scale):Size(0, 0);
         print("Scaled size of the image: $scaledSize");
       });
-
+imageController.containerWidth.value = scaledSize.width;
+      imageController.containerHeight.value = scaledSize.height;
     }
   }
   @override
   Widget build(BuildContext context) {
     log(isClicked.value.toString());
     return widget.widgetId.isNotEmpty
-        ? FittedBox(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Stack(
-              clipBehavior: Clip.none,
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  constraints: BoxConstraints(
-                    // maxWidth: MediaQuery.of(context).size.width,
-                    // maxHeight: MediaQuery.of(context).size.width,
-                    minWidth: 100,
-                    minHeight: 100,
-                  ),
-                  width: _width*imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale,
-                  height: _height*imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
-                    child: Transform.rotate(
-                      angle: imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).rotation,
-                      child: Transform.scale(
-                        scale: imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale,
-                        alignment: Alignment.center,
-                        key: _widgetKey,
-                        child: widget.child,
-                      ),
-                    ),
-                  ),
-                ),
-                TopPostionedButton(
-                  isShow: !imageController.isAdjustClicked.value,
-                  onTap: () {
-                    log('${widget.widgetId}');
-                    imageController.widgetList.removeWhere((element) => element.widgetId == widget.widgetId);
-                  },
-                  iconPath: widget.iconPath,
-                ),
-                BottomPostionedButton(
-                  isShow: !imageController.isAdjustClicked.value,
-                  onPanUpdate: (details) {
-                    setState(() {
-                      if (imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale + (details.delta.dy / 10) > 0.1) {
-                        double scale = imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale;
-                        imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale = scale + (details.delta.dy / 10);
-                      }
-                      WidgetsBinding.instance.addPostFrameCallback((_) {
-                        _getWidgetSize();
-                      });
-                    });
+        ? Container(
+      constraints: BoxConstraints(
+        // maxWidth: MediaQuery.of(context).size.width,
+        // maxHeight: MediaQuery.of(context).size.width,
+        minWidth: 100,
+        minHeight: 100,
+      ),
+      width: imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale *100,
+      height: imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale *100,
+          child: Stack(
+            clipBehavior: Clip.none,
+            alignment: Alignment.center,
+            children: [
+              SizedBox(
+                key: _widgetKey,
 
-                  },
-                  onTap: () {},
-                  iconPath: 'assets/expand.svg',
+                child: Transform.rotate(
+                  angle: imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).rotation,
+                  child: Transform.scale(
+                    scale: imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale,
+                    alignment: Alignment.center,
+                    child: widget.child,
+                  ),
                 ),
-                BottomLeftPostionedButton(
-                  isShow: !imageController.isAdjustClicked.value,
-                  onPanUpdate: (details) {
-                    setState(() {
-                      double rotation = imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).rotation;
-                      imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).rotation = rotation - (details.delta.dy * 0.02);
-                      imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).rotation %= 2 * 3.141592653589793;
+              ),
+              TopPostionedButton(
+                isShow: !imageController.isAdjustClicked.value,
+                onTap: () {
+                  log('${widget.widgetId}');
+                  imageController.widgetList.removeWhere((element) => element.widgetId == widget.widgetId);
+                },
+                iconPath: widget.iconPath,
+              ),
+              BottomPostionedButton(
+                isShow: !imageController.isAdjustClicked.value,
+                // onPanUpdate: (details) {
+                //   setState(() {
+                //     if (imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale + (details.delta.dy / 10) > 0.1) {
+                //       double scale = imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale;
+                //       imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale = scale + (details.delta.dy / 10);
+                //     }
+                //     WidgetsBinding.instance.addPostFrameCallback((_) {
+                //       _getWidgetSize();
+                //     });
+                //   });
+                //
+                // },
+                onPanUpdate: (details) {
+                  setState(() {
+                    double currentScale = imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale;
+                    double newScale = currentScale + (details.delta.dy / 100); // adjust sensitivity here
+                    imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).scale =
+                        math.max(0.1, math.min(100, newScale)); // set minimum and maximum scale
+                    WidgetsBinding.instance.addPostFrameCallback((_) {
+                      _getWidgetSize();
                     });
-                  },
-                  onTap: () {},
-                  iconPath: 'assets/scale.svg',
-                ),
-              ],
-            ),
+                  });
+                },
+                onTap: () {},
+                iconPath: 'assets/expand.svg',
+              ),
+              BottomLeftPostionedButton(
+                isShow: !imageController.isAdjustClicked.value,
+                onPanUpdate: (details) {
+                  setState(() {
+                    double rotation = imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).rotation;
+                    imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).rotation = rotation - (details.delta.dy * 0.02);
+                    imageController.widgetList.singleWhere((element) => element.widgetId == widget.widgetId).rotation %= 2 * 3.141592653589793;
+                  });
+                },
+                onTap: () {},
+                iconPath: 'assets/scale.svg',
+              ),
+            ],
           ),
         )
         : Container();

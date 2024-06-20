@@ -82,13 +82,14 @@ borderRadius: BorderRadius.circular(10),
                                 Positioned(
                                   left: i.offset.dx,
                                   top: i.offset.dy,
-                                  child: SelectedEditorWidgetView(
+
+                                  child: i.widgetType==WidgetType.image.toString()? SelectedEditorWidgetView(
                                     width: 200,
                                     height: 200,
                                     widgetId: i.widgetId,
                                     child: i.child,
                                     iconPath: 'assets/close.svg',
-                                  ),
+                                  ):SelectedEditorTextView(child: i.child, width: 300, height: 100, widgetId: i.widgetId, iconPath: 'assets/close.svg'),
                                 ),
                               ],
                             ),

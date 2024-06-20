@@ -21,6 +21,8 @@ class ImageEditorController extends GetxController {
       image.value = result.files.single.path!;
     }
   }
+  final containerWidth = 0.0.obs;
+  final containerHeight = 0.0.obs;
   final isTextFieldClicked = false.obs;
   final imageOffset = Offset.zero.obs;
   final imageScale = 1.0.obs;
