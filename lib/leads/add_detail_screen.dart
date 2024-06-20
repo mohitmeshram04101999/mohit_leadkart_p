@@ -997,8 +997,8 @@ class _AddDetailScreenState extends State<AddDetailScreen> {
                             views.length,
                                 (index) => Padding(
                               padding:   EdgeInsets.all(SC.from_height(8)),
-                              child: Flexible(child: Text('${names[index]}',
-                                style: TextStyle(overflow: TextOverflow.ellipsis,color: Colors.black,fontSize: SC.from_height(16)),)),
+                              child: Text('${names[index]}',
+                                style: TextStyle(overflow: TextOverflow.ellipsis,color: Colors.black,fontSize: SC.from_height(16)),),
                             ),
                           ),
                         ),
