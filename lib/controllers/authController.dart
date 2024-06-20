@@ -22,7 +22,7 @@ class Authcontroller extends GetxController
   Future<dynamic> login(BuildContext context) async
   {
     var resp = await MyHelper.userApi.loginWithPhonNumber(_phonNumController.text.trim());
-    if(resp.statusCode==200)
+    if(resp.statusCode==201)
       {
         Map<String,dynamic> _d = resp.data;
         _otp = _d["data"].toString();
